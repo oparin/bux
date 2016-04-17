@@ -1,0 +1,18 @@
+<table class="table table-bordered table-condensed table-hover table-striped dataTable no-footer">
+    <tr>
+        <th>Bot type</th>
+        <th>Percentage</th>
+        <th></th>
+    </tr>
+    {% for type in data %}
+        <tr class="grid-row-cells even">
+            <td>{{ type.botType.name }}</td>
+            <td>{{ type.percent }}</td>
+            <td>
+                <a href="{{ path('admin_utilities_bot_system_delete_membership_type', {'id': type.id}) }}" onclick="return confirm('You really want to delete?')">
+                    <button type="button">Delete</button>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>

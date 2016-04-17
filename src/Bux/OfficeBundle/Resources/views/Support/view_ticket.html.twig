@@ -1,0 +1,114 @@
+{% extends '::office_base.html.twig' %}
+
+{#{% form_theme form ':form:fields.html.twig' %}#}
+
+{% block iconbar %}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage|raw }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <div class="col4-4 lastcol">
+            <!-- CONTENT BOX - DATATABLE -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.support.menu.support'|trans }}</h2>
+                    </div>
+                    <div class="box-wrap clear">
+                        <div class="content-box bt-space10">
+                            <div class="box-body">
+                                <div class="box-header box-slide-head">
+                                    <h2>{{ 'frontend.support.form.ticket_information'|trans }}</h2>
+                                </div>
+                                <div class="box-wrap clear box-slide-body hidden" style="display: block;">
+                                    <table>
+                                        <tr>
+                                            <td style="width: 150px; border: 4px double #808080; padding: 5px; font-weight: bold">{{ 'frontend.support.menu.ticket_id'|trans }}</td>
+                                            <td style="border: 4px double #808080; padding: 5px;">{{ ticket.ticketNumber }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 150px; border: 4px double #808080; padding: 5px; font-weight: bold">{{ 'frontend.support.form.ticket_added'|trans }}</td>
+                                            <td style="border: 4px double #808080; padding: 5px;">{{ ticket.dateSubmitted|date('d M, Y g:i a') }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 150px; border: 4px double #808080; padding: 5px; font-weight: bold">{{ 'frontend.support.form.ticket_status'|trans }}</td>
+                                            <td style="border: 4px double #808080; padding: 5px;">
+                                                {% if ticket.status == 0 %}
+                                                    <span style="color: #779500">{{ 'frontend.support.form.open'|trans }}</span>
+                                                {% elseif ticket.status == 1 %}
+                                                    <span style="color: #000000">{{ 'frontend.support.form.answered'|trans }}</span>
+                                                {% elseif ticket.status == 2 %}
+                                                    <span style="color: #ff6600">{{ 'frontend.support.form.awaiting_reply'|trans }}</span>
+                                                {% elseif ticket.status == 3 %}
+                                                    <span style="color: #888888">{{ 'frontend.support.form.closed'|trans }}</span>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 150px; border: 4px double #808080; padding: 5px; font-weight: bold">{{ 'frontend.support.form.ticket_subject'|trans }}</td>
+                                            <td style="border: 4px double #808080; padding: 5px;">{{ ticket.subject }}</td>
+                                        </tr>
+
+                                    </table>
+                                </div> <!-- end of box-wrap -->
+                            </div> <!-- end of box-body -->
+                        </div>
+                        <div class="content-box bt-space10">
+                            <div class="box-body">
+                                <div class="box-header box-slide-head">
+                                    <h2>{{ 'frontend.support.form.conversation'|trans }}</h2>
+                                </div>
+                                <div class="box-wrap clear box-slide-body hidden" style="display: block;">
+                                    <div style="background-color: #dde9f7; border: 1px solid #50b0ec; padding: 10px; border-radius: 4px">
+                                        <p style="font-weight: bold">{{ 'frontend.support.form.you'|trans }}, {{ ticket.dateSubmitted|date('d M, Y g:i a' ) }}</p>
+                                        <p>{{ ticket.text }}</p>
+                                    </div>
+
+                                {% for reply in reply_ticket %}
+                                    <div style="margin-top: 15px">
+                                        {% if 'ROLE_ADMIN' in reply.user.roles %}
+                                            <div style="background-color: #dffad3; padding: 10px; border-radius: 4px;border: 1px solid #72cb67;">
+                                                <p style="font-weight: bold">{{ 'frontend.support.form.admin'|trans }}, {{ reply.date|date('d M, Y g:i a' ) }}</p>
+                                                <p>{{ reply.text }}</p>
+                                            </div>
+                                        {% else %}
+                                            <div style="background-color: #dde9f7; padding: 10px; border-radius: 4px;border: 1px solid #50b0ec;">
+                                                <p style="font-weight: bold">{{ 'frontend.support.form.you'|trans }}, {{ reply.date|date('d M, Y g:i a' ) }}</p>
+                                                <p>{{ reply.text }}</p>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                                </div> <!-- end of box-wrap -->
+                            </div> <!-- end of box-body -->
+                        </div>
+                        <div style="margin-left: 20%">
+                        {{ form_start(form, {'attr': {'class': 'validate-form form bt-space15'} }) }}
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.text, ' ', {'label_attr': {'class': 'form-label size-80 fl-space2'} }) }}
+                                    {{ form_widget(form.text, {'attr': {'class': 'required text fl-space2', 'cols': '80', 'rows': '6'} }) }}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+                        {{ form_rest(form) }}
+                        <div class="form-field clear" style="float: left; margin-left: 35%">
+                            <input type="submit" class="button blue fr" value="{{ 'frontend.support.form.reply'|trans }}" />
+                        </div><!-- /.form-field -->
+                        {{ form_end(form) }}
+                        </div>
+                    </div><!-- end of box-wrap -->
+                </div> <!-- end of box-body -->
+            </div> <!-- end of content-box -->
+        </div>
+    </div>
+{% endblock content %}

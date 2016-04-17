@@ -1,0 +1,34 @@
+<html>
+<head>
+    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+</head>
+<body>
+<form id="my_form" action="https://perfectmoney.is/api/step1.asp" method="post">
+    <input type='hidden' name='PAYMENT_ID' value="{{ status }}">
+    <input type="hidden" name="PAYEE_ACCOUNT" value="{{ setting.account }}">
+    <input type="hidden" name="PAYEE_NAME" value="{{ name }}">
+    <input type="hidden" name="PAYMENT_AMOUNT" value="{{ sum }}">
+    <input type="hidden" name="PAYMENT_UNITS" value="{{ setting.currency }}">
+    <input type="hidden" name="SUGGESTED_MEMO" value="Add funds - {{ app.user.username }}">
+
+    <input type="hidden" name="STATUS_URL"
+           value="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ path('office_account_add_funds_perfect_money_success') }}">
+    <input type="hidden" name="PAYMENT_URL"
+           value="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ path('office_account_add_funds_perfect_money_success') }}">
+    <input type="hidden" name="NOPAYMENT_URL"
+           value="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ path('office_account_add_funds_perfect_money_success') }}">
+    <input type="hidden" name="BAGGAGE_FIELDS" value="ORDER_STATUS">
+</form>
+
+<script type="text/javascript">
+    //Our form submission function.
+    function submitForm() {
+        document.getElementById('my_form').submit();
+    }
+    //Call the function submitForm() as soon as the page has loaded.
+    $( document ).ready(function() {
+        window.onload = submitForm;
+    });
+</script>
+</body>
+</html>

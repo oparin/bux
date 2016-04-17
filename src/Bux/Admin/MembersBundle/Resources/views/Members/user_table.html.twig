@@ -1,0 +1,59 @@
+{% extends ':admin:admin_base.html.twig' %}
+
+{% block content_title %}
+    <i class="fa fa-users"></i>&nbsp; Members - Manage Members
+{% endblock content_title %}
+
+{% block content %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        {% include ':admin:admin_alert_succes.html.twig' %}
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        {% include ':admin:admin_alert_error.html.twig' %}
+    {% endfor %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
+                <header>
+                    <div class="icons">
+                        <i class="fa fa-table"></i>
+                    </div>
+                    <h5>Users table</h5>
+                </header>
+                <div class="body" id="collapse4">
+                    {{ grid_search(grid, ':admin:admin_grid.html.twig') }}
+                    {{ grid(grid, ':admin:admin_grid.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dialog" title="Basic dialog" style="display: none">
+        <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(function() {
+                $( "#accordion" ).accordion({
+                    collapsible: true,
+                    active: false
+                });
+            });
+            $('.action-show-info').click(function(){
+                $.ajax({
+                    url: "{{ path('admin_home_show_administrator_info') }}",
+                    data: { id: $(this).attr('rel') }
+                }).done(function(data) {
+                    $( "#dialog" ).html(data);
+                    $( "#dialog" ).dialog({
+                        width: 700,
+                        title: "Member:"
+                    });
+                });
+            })
+
+        });
+    </script>
+{% endblock js %}

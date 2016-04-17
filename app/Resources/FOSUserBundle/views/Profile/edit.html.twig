@@ -1,0 +1,217 @@
+{% extends '::office_base.html.twig' %}
+
+{% form_theme form _self %}
+
+{% block form_label -%}
+    {% if label is not sameas(false) %}
+        {%- if not compound -%}
+            {% set label_attr = label_attr|merge({'for': id}) %}
+        {%- endif -%}
+        {%- if required -%}
+            {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+        {%- endif -%}
+        {%- if label is empty -%}
+            {% set label = name|humanize %}
+        {%- endif -%}
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
+        {{ label|trans({}, translation_domain) }}
+        {%- if required -%}
+            &nbsp;<span class="required">*</span>
+        {%- endif -%}
+        </label>
+    {%- endif %}
+{%- endblock form_label %}
+
+{% block iconbar %}
+    {#{% include 'BuxAccountBundle::iconbar.html.twig' %}#}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {% include 'BuxAccountBundle::blog_menu.html.twig' %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <div class="notification note-error">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <div class="col3-4 lastcol">
+            <!-- CONTENT BOX -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.account.menu.settings'|trans }}</h2>
+                    </div>
+
+                    <div class="box-wrap clear">
+                        {{ form_start(form, {'attr': {'class': 'validate-form form bt-space15'} }) }}
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.email, 'frontend.settings.form.email'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}
+                                    {{ form_widget(form.email, {'attr': {'class': 'required list fl-space2'} }) }}
+                                    {% if form_errors(form.email) %}
+                                        <label class="error form-error">{{ form_errors(form.email) }}</label>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.fullName, 'frontend.settings.form.full_name'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}
+                                    {{ form_widget(form.fullName, {'attr': {'class': 'required list fl-space2'} }) }}
+                                    {% if form_errors(form.fullName) %}
+                                        <label class="error form-error">{{ form_errors(form.fullName) }}</label>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.country, 'frontend.settings.form.country'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}
+                                    {{ form_widget(form.country, {'attr': {'class': 'required list fl-space2', 'value': 'http://'} }) }}
+                                    {% if form_errors(form.country) %}
+                                        <label class="error form-error">{{ form_errors(form.country) }}</label>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        {% for account in form.paymentAccounts %}
+                            <div class="columns clear bt-space15">
+                                <div class="col2-3">
+                                    <div class="form-field clear">
+                                        <label class="form-label size-180 fl-space2 required">
+                                            {{ account.vars.value.paymentMethod.name }} Ac.
+                                        </label>
+                                        {{ form_widget(account.account, {'attr': {'class': 'list fl-space2'} }) }}
+                                        {% if form_errors(account.account) %}
+                                            <label class="error form-error">{{ form_errors(account.account) }}</label>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {#{{ dump(form.plainPassword) }}#}
+                                    {{ form_label(form.plainPassword.first, 'frontend.settings.form.new_password'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}
+                                    {{ form_widget(form.plainPassword.first, {'attr': {'class': 'list fl-space2'} }) }}
+                                    {% if form_errors(form.plainPassword.first) %}
+                                        <label class="error form-error">{{ form_errors(form.plainPassword.first) }}</label>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {#{{ dump(form.plainPassword) }}#}
+                                    {{ form_label(form.plainPassword.second, 'frontend.settings.form.new_password_confirmation'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}
+                                    {{ form_widget(form.plainPassword.second, {'attr': {'class': 'list fl-space2'} }) }}
+                                    {% if form_errors(form.plainPassword.second) %}
+                                        <label class="error form-error">{{ form_errors(form.plainPassword.second) }}</label>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.current_password, 'frontend.settings.form.current_password'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}
+                                    {{ form_widget(form.current_password, {'attr': {'class': 'required list fl-space2'} }) }}
+                                    {% if form_errors(form.current_password) %}
+                                        <label class="error form-error">{{ form_errors(form.current_password) }}</label>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        {#<div class="columns clear bt-space15">#}
+                            {#<div class="col2-3">#}
+                                {#<div class="form-field clear">#}
+                                    {#{{ form_label(form.premiumMembers, 'frontend.account.advertiser.form.premium_members'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}#}
+                                    {#{{ form_widget(form.premiumMembers, {'attr': {'class': 'required list fl-space2'} }) }}#}
+                                    {#{% if form_errors(form.premiumMembers) %}#}
+                                        {#<label class="error form-error">{{ form_errors(form.premiumMembers) }}</label>#}
+                                    {#{% endif %}#}
+                                {#</div><!-- /.form-field -->#}
+                            {#</div>#}
+                        {#</div>#}
+
+                        {#<div class="columns clear bt-space15">#}
+                            {#<div class="col2-3">#}
+                                {#<div class="form-field clear">#}
+                                    {#{{ form_label(form.value, 'frontend.account.advertiser.form.ad_value'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}#}
+                                    {#{{ form_widget(form.value, {'attr': {'class': 'required list fl-space2', 'style': 'width: 190px'} }) }}#}
+                                    {#{% if form_errors(form.value) %}#}
+                                        {#<label class="error form-error">{{ form_errors(form.value) }}</label>#}
+                                    {#{% endif %}#}
+                                {#</div><!-- /.form-field -->#}
+                            {#</div>#}
+                        {#</div>#}
+
+                        {#<div class="columns clear bt-space15">#}
+                            {#<div class="col2-3">#}
+                                {#<div class="form-field clear">#}
+                                    {#{{ form_label(form.countries, 'frontend.account.advertiser.form.target_country'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}#}
+                                    {#{{ form_widget(form.countries, {'attr': {'class': 'required fl-space2'} }) }}#}
+                                    {#{% if form_errors(form.countries) %}#}
+                                        {#<label class="error form-error">{{ form_errors(form.countries) }}</label>#}
+                                    {#{% endif %}#}
+                                {#</div><!-- /.form-field -->#}
+                            {#</div>#}
+                        {#</div>#}
+
+                        {#<div class="columns clear bt-space15">#}
+                            {#<div class="col2-3">#}
+                                {#<div class="form-field clear">#}
+                                    {#{{ form_label(form.terms, 'frontend.account.advertiser.form.terms'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}#}
+                                    {#{{ form_widget(form.terms, {'attr': {'class': 'required list fl-space2', 'style': 'margin-left: -80px'} }) }}#}
+                                    {#{% if form_errors(form.terms) %}#}
+                                        {#<label class="error form-error">{{ form_errors(form.terms) }}</label>#}
+                                    {#{% endif %}#}
+                                {#</div><!-- /.form-field -->#}
+                            {#</div>#}
+                        {#</div>#}
+
+                        {{ form_rest(form) }}
+                        <div class="form-field clear" style="float: left; margin-left: 138px">
+                            <input type="submit" class="button blue fr" value="{{ 'frontend.blogs.action.save'|trans }}" />
+                        </div><!-- /.form-field -->
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+        });
+    </script>
+{% endblock js %}

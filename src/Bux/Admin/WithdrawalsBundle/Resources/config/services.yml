@@ -1,0 +1,5 @@
+services:
+  grid.column.withdraw_status:
+    class: Bux\Admin\WithdrawalsBundle\Grid\Column\WithdrawStatusColumn
+    tags:
+      - { name: grid.column.extension }

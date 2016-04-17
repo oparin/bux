@@ -1,0 +1,28 @@
+services:
+  bux.listener.purchase.deposit:
+    class: Bux\StatisticBundle\EventListener\WalletListener
+    arguments:
+      mailer: "@doctrine.orm.entity_manager"
+    tags:
+      - { name: kernel.event_listener, event: purchase.deposit, method: purchaseDeposit }
+
+  bux.listener.save.poll.statistic:
+    class: Bux\StatisticBundle\EventListener\PollListener
+    arguments:
+        mailer: "@doctrine.orm.entity_manager"
+    tags:
+        - { name: kernel.event_listener, event: save.poll.statistic, method: savePollComplete }
+
+  bux.listener.save.auto_serf.statistic:
+    class: Bux\StatisticBundle\EventListener\AutoSerfListener
+    arguments:
+        mailer: "@doctrine.orm.entity_manager"
+    tags:
+        - { name: kernel.event_listener, event: save.auto_serf.statistic, method: saveAutoSerfComplete }
+
+  bux.listener.save.video.statistic:
+    class: Bux\StatisticBundle\EventListener\VideoListener
+    arguments:
+        mailer: "@doctrine.orm.entity_manager"
+    tags:
+        - { name: kernel.event_listener, event: save.video.statistic, method: saveVideoComplete }

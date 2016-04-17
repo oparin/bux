@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block header_title %}
+    <!-- subheader -->
+    <div class="rightsidebar" id="subheader">
+        <div class="subheader">
+            <div class="subtitle"><h1>Testimonials</h1></div>
+            <div class="subdesc">
+                Testimonials
+            </div>
+        </div>
+    </div>
+    <!-- subheader -->
+{% endblock header_title %}
+
+{% block header_subtitle %}
+{% endblock header_subtitle %}
+
+{% block body %}
+    <div id="main">
+
+        <!-- breadcrumb -->
+        <div id="breadcrumbs">
+            <img width="16" height="16" class="bread-icon" src="{{ asset('lib/versatile/images/home-icon.png') }}">
+            <div class="breadcrumbs">
+                <a href="{{ path('home') }}">Home</a>
+            </div>
+        </div><!-- breadcrumb -->
+
+        <div class="content">
+            <div class="post">
+                {{ page|raw }}
+            </div>
+        </div>
+    </div>
+{% endblock body %}

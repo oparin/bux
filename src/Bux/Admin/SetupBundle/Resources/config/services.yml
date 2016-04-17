@@ -1,0 +1,8 @@
+services:
+    buy_referral_extension:
+        class: Bux\Admin\SetupBundle\Twig\BuyReferralExtension
+        public: false
+        arguments:
+            em: "@doctrine.orm.entity_manager"
+        tags:
+            - { name: twig.extension }

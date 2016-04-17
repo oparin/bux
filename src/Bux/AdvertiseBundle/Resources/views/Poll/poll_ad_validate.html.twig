@@ -1,0 +1,51 @@
+{% extends '::office_base.html.twig' %}
+
+{#{% form_theme form 'BuxAccountBundle:Twig:fields.html.twig' %}#}
+
+{% block iconbar %}
+    {% include 'BuxAccountBundle::iconbar.html.twig' %}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {% include 'BuxAccountBundle::blog_menu.html.twig' %}
+        <div class="col3-4 lastcol">
+            <!-- CONTENT BOX -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.account.advertiser.poll_ads_validate'|trans }}</h2>
+                    </div>
+
+                    <div class="box-wrap clear">
+                        {{ form_start(form, {'attr': {'class': 'validate-form form bt-space15'} }) }}
+                        {% for answer in form.answers %}
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(answer, null,{'label_attr': {'class': 'form-label size-120 fl-space2'} }) }}
+                                    {{ form_widget(answer, {'attr': {'class': 'required fl-space2'} }) }}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        {{ form_rest(form) }}
+                        <div class="form-field clear" style="float: left; margin-left: 138px">
+                            <input type="submit" class="button blue fr" value="{{ 'frontend.blogs.action.save'|trans }}" />
+                        </div><!-- /.form-field -->
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+        });
+    </script>
+{% endblock js %}

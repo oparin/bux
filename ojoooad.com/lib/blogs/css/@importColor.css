@@ -1,0 +1,43 @@
+@charset "utf-8";
+/*
+	CSS Document
+	Project : ENV2
+	File 	: color.css
+	Date 	: 20/02/13 (dd-mm-yy)
+	Author  : shiraz (shiraz@digitalbrandgroup.com)
+*/
+
+/*=== Text colors CSS ===*/
+
+.txtBlack{
+    color: #000;
+}
+.txtBlue{
+    color: #36769a;
+}
+.txtGreen{
+    color: #41a300;
+}
+.txtGrey{
+    color: #4a4a4a;
+}
+.txtRed{
+    color: #ff0000;
+}
+.txtWhite{
+    color: #FFFFFF;
+}
+.txtError{
+    color: #FF0000;
+}
+.txtSuccess{
+    color: #41a300;
+}
+
+/*=== Text colors CSS used in the event detail popup only ===*/
+.blueTxt{
+    color: #3faed7 !important;
+}
+.redTxt{
+    color: #cc1916 !important
+}

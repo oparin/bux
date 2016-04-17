@@ -1,0 +1,10 @@
+services:
+  grid.column.support_ticket_status:
+    class: Bux\Admin\SupportBundle\Grid\Column\TicketStatusColumn
+    tags:
+      - { name: grid.column.extension }
+
+  grid.column.support_ticket_number:
+      class: Bux\Admin\SupportBundle\Grid\Column\TicketNumberColumn
+      tags:
+        - { name: grid.column.extension }

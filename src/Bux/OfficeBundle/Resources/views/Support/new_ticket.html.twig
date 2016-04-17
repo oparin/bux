@@ -1,0 +1,54 @@
+{% extends '::office_base.html.twig' %}
+
+{% form_theme form ':form:fields.html.twig' %}
+
+{% block iconbar %}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage|raw }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <div class="col4-4 lastcol">
+            <!-- CONTENT BOX - DATATABLE -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.support.menu.support'|trans }}</h2>
+                    </div>
+                    <div class="box-wrap clear" style="margin-left: 20%">
+                        {{ form_start(form, {'attr': {'class': 'validate-form form bt-space15'} }) }}
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.subject, 'frontend.support.form.subject'|trans, {'label_attr': {'class': 'form-label size-80 fl-space2'} }) }}
+                                    {{ form_widget(form.subject, {'attr': {'class': 'required text fl-space2'} }) }}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.text, 'frontend.support.form.text'|trans, {'label_attr': {'class': 'form-label size-80 fl-space2'} }) }}
+                                    {{ form_widget(form.text, {'attr': {'class': 'required text fl-space2', 'cols': "50", 'rows': '10'} }) }}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+                        {{ form_rest(form) }}
+                        <div class="form-field clear" style="float: left; margin-left: 90px">
+                            <input type="submit" class="button blue fr" value="{{ 'frontend.support.form.send'|trans }}" />
+                        </div><!-- /.form-field -->
+                        {{ form_end(form) }}
+                    </div><!-- end of box-wrap -->
+                </div> <!-- end of box-body -->
+            </div> <!-- end of content-box -->
+        </div>
+    </div>
+{% endblock content %}

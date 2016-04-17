@@ -1,0 +1,127 @@
+{% extends ':admin:admin_base.html.twig' %}
+
+{#{% form_theme form ':admin:twig_theme.html.twig' %}#}
+
+{% block content_title %}
+    <i class="fa fa-cogs"></i>&nbsp; Setup - Marketing
+{% endblock content_title %}
+
+{% block content %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        {% include ':admin:admin_alert_succes.html.twig' %}
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        {% include ':admin:admin_alert_error.html.twig' %}
+    {% endfor %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box">
+            <div class="body" id="collapse4">
+                <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <li class="{% if tab == 'manage' %}active{% endif %}" role="presentation">
+                        <a aria-expanded="false" aria-controls="manage" data-toggle="tab" role="tab" id="manage-tab" href="#manage">Manage</a>
+                    </li>
+                    <li class="{% if tab == 'new' %}active{% endif %}" role="presentation">
+                        <a aria-expanded="true" aria-controls="new" data-toggle="tab" role="tab" id="new-tab" href="#new">Add New</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div aria-labelledby="manage-tab" id="manage" class="tab-pane fade {% if tab == 'manage' %}in active{% endif %}" role="tabpanel">
+                        <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                            {% for membership in memberships %}
+                                <div class="box">
+                                    <header>
+                                        <div class="icons">
+                                            <i class="fa fa-table"></i>
+                                        </div>
+                                        <h5>{{ membership.name }}</h5>
+                                    </header>
+                                    <div class="body collapse in" id="div-2" aria-expanded="true" style="">
+                                        {% if membership.levels|length > 0 %}
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <table class="table table-bordered table-condensed table-hover table-striped dataTable no-footer">
+                                                <tbody>
+                                                    <tr class="grid-row-titles">
+                                                        <th class="">Level</th>
+                                                        <th class="">Commission (%)</th>
+                                                        <th class=" last-column">Actions</th>
+                                                    </tr>
+                                                    {% for level in membership.levels %}
+                                                        <tr class="grid-row-cells even">
+                                                            <td class="grid-column-name">
+                                                                {{ level.level }}
+                                                            </td>
+                                                            <td class="grid-column-price align-right">
+                                                                {{ level.commission }}
+                                                            </td>
+                                                            <td class="grid-column-__actions last-column">
+                                                                <a target="_self" href="{{ path('admin_setup_marketing_settings', {'id': level.id}) }}" class="action-icon">
+                                                                    <i class="glyphicon glyphicon-edit"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div aria-labelledby="new-tab" id="new" class="tab-pane fade {% if tab == 'new' %}in active{% endif %}" role="tabpanel">
+                        <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                            {{ form_start(form, {'attr': {'class': 'form-horizontal'} }) }}
+                            <div class="form-group {% if form_errors(form.membership) %}has-error{% endif %}">
+                                {{ form_label(form.membership, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.membership, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                    {% if form_errors(form.membership) %}
+                                        <span id="required2-error" class="help-block">
+                                                    {{ form_errors(form.membership) }}
+                                                </span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+                            <div class="form-group {% if form_errors(form.level) %}has-error{% endif %}">
+                                {{ form_label(form.level, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.level, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                    {% if form_errors(form.level) %}
+                                        <span id="required2-error" class="help-block">
+                                                    {{ form_errors(form.level) }}
+                                                </span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+                            <div class="form-group {% if form_errors(form.commission) %}has-error{% endif %}">
+                                {{ form_label(form.commission, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.commission, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                    <div style="position: absolute; margin-top: -27px; margin-left: 300px">%</div>
+                                    {% if form_errors(form.commission) %}
+                                        <span id="required2-error" class="help-block">
+                                                    {{ form_errors(form.commission) }}
+                                                </span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+                            {{ form_rest(form) }}
+                            <div class="form-group">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4">
+                                    <input type="submit" class="btn btn-primary" value="Save">
+                                </div>
+                            </div>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

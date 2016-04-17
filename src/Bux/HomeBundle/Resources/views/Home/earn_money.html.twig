@@ -1,0 +1,74 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block header_title %}
+    <!-- subheader -->
+    <div class="rightsidebar" id="subheader">
+        <div class="subheader">
+            <div class="subtitle"><h1>Earn Money</h1></div>
+            <div class="subdesc">
+                Earn Money
+            </div>
+        </div>
+    </div>
+    <!-- subheader -->
+{% endblock header_title %}
+
+{% block header_subtitle %}
+{% endblock header_subtitle %}
+
+{% block body %}
+    <div id="main">
+
+        <!-- breadcrumb -->
+        <div id="breadcrumbs">
+            <img width="16" height="16" class="bread-icon" src="{{ asset('lib/versatile/images/home-icon.png') }}">
+            <div class="breadcrumbs">
+                <a href="{{ path('home') }}">Home</a>
+            </div>
+        </div><!-- breadcrumb -->
+
+        <div class="content">
+            <div class="post">
+                <h2>Video Ads</h2>
+                <p>
+                    {% for ad in video %}
+                        {%  set url = ad.targetUrl|replace({'watch?v=': 'embed/'}) %}
+                        <div class="video-ads">
+                            <iframe class="video-frame" src="{{ url }}"></iframe>
+                        </div>
+                        {% if (loop.index % 2) != 0 %}
+                            <div style="width: 12px; float: left">&nbsp;</div>
+                        {% endif %}
+                    {% endfor %}
+                </p>
+
+                <div class="divider top" style="margin-top: 600px"><a href="#">Top</a></div>
+                <h2>Survey Ads</h2>
+                <a href="{{ path('fos_user_security_login') }}">
+				    <img src="{{ asset('uploads//surveys.jpg')}}">
+				</a>
+
+                <div class="divider top" style="margin-top: 10px" style="margin-top: -500px"><a href="#">Top</a></div>
+                <h2>Autosurf</h2>
+                <p>
+                    <div class="autosurf-ads">
+                        <div style="float: left; margin-left: 260px; margin-top: 40px" class="form-field clear">
+                            <input id="autosurf" type="submit" value="Start" class="button blue fr">
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    $('#autosurf').click(function(){
+//       console.log(1111)
+//        $('.autosurf-ads').html('<iframe src="' + ad.targetUrl + '" width="590" height="500"></iframe>')
+        $('.autosurf-ads').css('height', '500px');
+        $('.autosurf-ads').html('<iframe src="' + 'http://www.calvinbecerra.com' + '" width="590" height="500"></iframe>')
+    });
+</script>
+{% endblock body %}

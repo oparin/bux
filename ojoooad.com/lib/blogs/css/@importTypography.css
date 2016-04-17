@@ -1,0 +1,144 @@
+
+@charset "utf-8";
+@font-face {
+    font-family: "droid_sansbold";
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/DroidSans-Bold.ttf');
+}
+.droidsansBold {
+    font-family: 'droid_sansbold';
+}
+@font-face {
+    font-family: "droid_sansregular";
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/DroidSans.ttf');
+}
+.droidsans {
+    font-family: 'droid_sansregular';
+}
+.font10px {
+    font-size: 0.65em;
+}
+.font11px {
+    font-size: 0.7em;
+}
+.font12px {
+    font-size: 1em;
+}
+.font14px {
+    font-size: 0.9em;
+}
+.font16px {
+    font-size: 1em;
+}
+.font18px {
+    font-size: 1.1em;
+}
+.font20px {
+    font-size: 1.25em;
+}
+.font22px {
+    font-size: 1.35em;
+}
+.font24px {
+    font-size: 1.5em;
+}
+.font26px {
+    font-size: 1.65em;
+}
+.font28px {
+    font-size: 1.75em;
+}
+.font30px {
+    font-size: 1.85em;
+}
+.font32px {
+    font-size: 2em;
+}
+.font34px {
+    font-size: 2.1em;
+}
+.font36px {
+    font-size: 2.25em;
+}
+.font38px {
+    font-size: 2.4em;
+}
+.font40px {
+    font-size: 2.5em;
+}
+.font42px {
+    font-size: 2.65em;
+}
+.font44px {
+    font-size: 2.75em;
+}
+.font46px {
+    font-size: 2.85em;
+}
+.font48px {
+    font-size: 3em;
+}
+.font50px {
+    font-size: 3.1em;
+}
+.font52px {
+    font-size: 3.25em;
+}
+.font54px {
+    font-size: 3.35em;
+}
+.font56px {
+    font-size: 3.5em;
+}
+.font58px {
+    font-size: 3.65em;
+}
+.font60px {
+    font-size: 3.75em;
+}
+.font62px {
+    font-size: 3.85em;
+}
+.font64px {
+    font-size: 4em;
+}
+.font66px {
+    font-size: 4.1em;
+}
+.font68px {
+    font-size: 4.25em;
+}
+.font70px {
+    font-size: 4.4em;
+}
+.font72px {
+    font-size: 4.5em;
+}
+.font74px {
+    font-size: 4.65em;
+}
+.font76px {
+    font-size: 4.75em;
+}
+.font78px {
+    font-size: 4.85em;
+}
+.font80px {
+    font-size: 5em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+.envStrong {
+    font-family: 'droid_sansbold';
+    font-weight: normal;
+}
+.fontSizeFix11px {
+    font-size: 0.9em;
+}
+.fontSizeFix14px {
+    font-size: 1.2em;
+}

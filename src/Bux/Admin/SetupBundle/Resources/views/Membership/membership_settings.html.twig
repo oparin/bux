@@ -1,0 +1,479 @@
+{% extends ':admin:admin_base.html.twig' %}
+
+{% form_theme form ':admin:twig_theme.html.twig' %}
+
+{% block content_title %}
+    <i class="fa fa-users"></i>&nbsp; Setup - Membership Settings
+{% endblock content_title %}
+
+{% block content %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        {% include ':admin:admin_alert_succes.html.twig' %}
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        {% include ':admin:admin_alert_error.html.twig' %}
+    {% endfor %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
+                <div class="body" id="collapse4">
+                    <ul role="tablist" class="nav nav-tabs" id="myTab">
+                        <li class="{% if tab == 'manage' %}active{% endif %}" role="presentation">
+                            <a aria-expanded="false" aria-controls="manage" data-toggle="tab" role="tab" id="manage-tab" href="#manage">Manage Memberships</a>
+                        </li>
+                        <li class="{% if tab == 'new' %}active{% endif %}" role="presentation">
+                            <a aria-expanded="true" aria-controls="new" data-toggle="tab" role="tab" id="new-tab" href="#new">Add New Membership</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div aria-labelledby="manage-tab" id="manage" class="tab-pane fade {% if tab == 'manage' %}in active{% endif %}" role="tabpanel">
+                            <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                                {{ grid(grid, ':admin:admin_grid.html.twig') }}
+                            </div>
+                        </div>
+                        <div aria-labelledby="new-tab" id="new" class="tab-pane fade {% if tab == 'new' %}in active{% endif %}" role="tabpanel">
+                            {{ form_start(form, {'attr': {'class': 'form-horizontal'} }) }}
+                            <div class="box">
+                                <header>
+                                    <div class="icons">
+                                        <i class="fa fa-edit"></i>
+                                    </div>
+                                    <h5>Add new membership</h5>
+                                </header>
+                                <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                                    <div class="form-group {% if form_errors(form.name) %}has-error{% endif %}">
+                                        {{ form_label(form.name, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                                            {% if form_errors(form.name) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.name) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.duration) %}has-error{% endif %}">
+                                        {{ form_label(form.duration, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.duration, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px">days</div>
+                                            {% if form_errors(form.duration) %}
+                                                <span id="required2-error" class="help-block">
+                                                    {{ form_errors(form.duration) }}
+                                                </span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.price) %}has-error{% endif %}">
+                                        {{ form_label(form.price, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.price, {'attr': {'class': 'form-control', 'placeholder': '0.00'}}) }}
+                                            {% if form_errors(form.price) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.price) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.click) %}has-error{% endif %}">
+                                        {{ form_label(form.click, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.click, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px">%</div>
+                                            {% if form_errors(form.click) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.click) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.videoClick) %}has-error{% endif %}">
+                                        {{ form_label(form.videoClick, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.videoClick, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px">%</div>
+                                            {% if form_errors(form.videoClick) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.videoClick) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.pollClick) %}has-error{% endif %}">
+                                        {{ form_label(form.pollClick, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.pollClick, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px">%</div>
+                                            {% if form_errors(form.pollClick) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.pollClick) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.maxClickInDay) %}has-error{% endif %}">
+                                        {{ form_label(form.maxClickInDay, 'Maximum clicks per day', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.maxClickInDay, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">0 = Unlimited</div>
+                                            {% if form_errors(form.maxClickInDay) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.maxClickInDay) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.maxVideoClickInDay) %}has-error{% endif %}">
+                                        {{ form_label(form.maxVideoClickInDay, 'Maximum video clicks per day', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.maxVideoClickInDay, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">0 = Unlimited</div>
+                                            {% if form_errors(form.maxVideoClickInDay) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.maxVideoClickInDay) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.maxPollClickInDay) %}has-error{% endif %}">
+                                        {{ form_label(form.maxPollClickInDay, 'Maximum poll clicks per day', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.maxPollClickInDay, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">0 = Unlimited</div>
+                                            {% if form_errors(form.maxPollClickInDay) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.maxPollClickInDay) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.refClick) %}has-error{% endif %}">
+                                        {{ form_label(form.refClick, 'Referral Click', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.refClick, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px">%</div>
+                                            {% if form_errors(form.refClick) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.refClick) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.refVideoClick) %}has-error{% endif %}">
+                                        {{ form_label(form.refVideoClick, 'Referral Video Click', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.refVideoClick, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px">%</div>
+                                            {% if form_errors(form.refVideoClick) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.refVideoClick) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.refPollClick) %}has-error{% endif %}">
+                                        {{ form_label(form.refPollClick, 'Referral Poll Click', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.refPollClick, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px">%</div>
+                                            {% if form_errors(form.refPollClick) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.refPollClick) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.purchaseComission) %}has-error{% endif %}">
+                                        {{ form_label(form.purchaseComission, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.purchaseComission, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px">%</div>
+                                            {% if form_errors(form.purchaseComission) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.purchaseComission) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.upgradeComission) %}has-error{% endif %}">
+                                        {{ form_label(form.upgradeComission, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.upgradeComission, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px">%</div>
+                                            {% if form_errors(form.upgradeComission) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.upgradeComission) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.refLimit) %}has-error{% endif %}">
+                                        {{ form_label(form.refLimit, 'Direct Referral Limit', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.refLimit, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">-1 = Unlimited</div>
+                                            {% if form_errors(form.refLimit) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.refLimit) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.refDeletionCost) %}has-error{% endif %}">
+                                        {{ form_label(form.refDeletionCost, 'Direct Referral Deletion Cost', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.refDeletionCost, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">0 = free</div>
+                                            {% if form_errors(form.refDeletionCost) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.refDeletionCost) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group">
+                                        {{ form_label(form.active, 'Membership Active', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-8">
+                                            {{ form_widget(form.active, {'attr':{'class': 'uniform'} }) }}
+                                            <div style="float: left; position: absolute; margin-top: -18px; margin-left: 20px">Tick to enable - membership will be allowed to purchase</div>
+                                        </div>
+                                    </div><!-- /.row -->
+
+                                </div>
+                            </div>
+
+
+                            <div class="box">
+                                <header>
+                                    <div class="icons">
+                                        <i class="fa fa-edit"></i>
+                                    </div>
+                                    <h5>Rent Referral Settings</h5>
+                                </header>
+                                <div class="body collapse in" id="div-2" aria-expanded="true" style="">
+                                    <div class="form-group {% if form_errors(form.rentReferral.refPack) %}has-error{% endif %}">
+                                        {{ form_label(form.rentReferral.refPack, 'Rent Referrals Pack', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.rentReferral.refPack, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 120px">Ex: 5,10,50,100</div>
+                                            {% if form_errors(form.rentReferral.refPack) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.rentReferral.refPack) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.rentReferral.refLimit) %}has-error{% endif %}">
+                                        {{ form_label(form.rentReferral.refLimit, 'Rented Referral Limit', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.rentReferral.refLimit, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">-1 = Unlimited</div>
+                                            {% if form_errors(form.rentReferral.refLimit) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.rentReferral.refLimit) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.rentReferral.recycleCost) %}has-error{% endif %}">
+                                        {{ form_label(form.rentReferral.recycleCost, 'Direct Referral Deletion Cost', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.rentReferral.recycleCost, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">0 = free</div>
+                                            {% if form_errors(form.rentReferral.recycleCost) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.rentReferral.recycleCost) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.rentReferral.refTime) %}has-error{% endif %}">
+                                        {{ form_label(form.rentReferral.refTime, 'Rent Referrals Time', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.rentReferral.refTime, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">0 = Disable</div>
+                                            {% if form_errors(form.rentReferral.refTime) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.rentReferral.refTime) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <header>
+                                    <div class="icons">
+                                        <i class="fa fa-edit"></i>
+                                    </div>
+                                    <h5>Rent Referral Price</h5>
+                                </header>
+                                <div class="body collapse in" id="div-2" aria-expanded="true" style="">
+                                    <table class="table table-striped responsive-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Referrals</th>
+                                                <th>Monthly</th>
+                                                <th>Autopay</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for price in form.referralPrice %}
+                                                <tr>
+                                                    <td>
+                                                        <div style="font-size: 16px; margin-top: 5px">
+                                                        {{ price.vars.value.minRef }} -> {{ price.vars.value.maxRef }}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(price.monthly, {'attr': {'class': 'form-control', 'placeholder': '0.00'}}) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(price.autopay, {'attr': {'class': 'form-control', 'placeholder': '0.00'}}) }}
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <header>
+                                    <div class="icons">
+                                        <i class="fa fa-edit"></i>
+                                    </div>
+                                    <h5>Withdraw Settings</h5>
+                                </header>
+                                <div class="body collapse in" id="div-2" aria-expanded="true" style="">
+                                    <div class="form-group {% if form_errors(form.withdrawSettings.maxInDay) %}has-error{% endif %}">
+                                        {{ form_label(form.withdrawSettings.maxInDay, 'Maximum withdraw per day', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.withdrawSettings.maxInDay, {'attr': {'class': 'form-control', 'placeholder': '0.00'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">0 = No limit</div>
+                                            {% if form_errors(form.withdrawSettings.maxInDay) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.withdrawSettings.maxInDay) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.withdrawSettings.minPayout) %}has-error{% endif %}">
+                                        {{ form_label(form.withdrawSettings.minPayout, 'Minimum Payout', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.withdrawSettings.minPayout, {'attr': {'class': 'form-control', 'placeholder': '0.00'}}) }}
+                                            {% if form_errors(form.withdrawSettings.minPayout) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.withdrawSettings.minPayout) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.withdrawSettings.cashoutTime) %}has-error{% endif %}">
+                                        {{ form_label(form.withdrawSettings.cashoutTime, 'Cashout Time', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.withdrawSettings.cashoutTime, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">0 = Disable</div>
+                                            {% if form_errors(form.withdrawSettings.cashoutTime) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.withdrawSettings.cashoutTime) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <header>
+                                    <div class="icons">
+                                        <i class="fa fa-edit"></i>
+                                    </div>
+                                    <h5>Poll Settings</h5>
+                                </header>
+                                <div class="body collapse in" id="div-2" aria-expanded="true" style="">
+                                    <div class="form-group {% if form_errors(form.countPollAd) %}has-error{% endif %}">
+                                        {{ form_label(form.countPollAd, 'Count Poll Ad', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.countPollAd, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            {% if form_errors(form.countPollAd) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.countPollAd) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <header>
+                                    <div class="icons">
+                                        <i class="fa fa-edit"></i>
+                                    </div>
+                                    <h5>Ads Credit</h5>
+                                </header>
+                                <div class="body collapse in" id="div-2" aria-expanded="true" style="">
+                                    <div class="form-group {% if form_errors(form.bannerCredits) %}has-error{% endif %}">
+                                        {{ form_label(form.bannerCredits, 'Banner Credits', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.bannerCredits, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            {% if form_errors(form.bannerCredits) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.bannerCredits) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.vipBannerCredits) %}has-error{% endif %}">
+                                        {{ form_label(form.vipBannerCredits, 'Vip Banner Credits', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.vipBannerCredits, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            {% if form_errors(form.vipBannerCredits) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.vipBannerCredits) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group {% if form_errors(form.autosurfCredits) %}has-error{% endif %}">
+                                        {{ form_label(form.autosurfCredits, 'Autosurf Credits', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(form.autosurfCredits, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                            {% if form_errors(form.autosurfCredits) %}
+                                                <span id="required2-error" class="help-block">{{ form_errors(form.autosurfCredits) }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    {{ form_rest(form) }}
+                                    <div class="form-group">
+                                        <div class="col-lg-4"></div>
+                                        <div class="col-lg-4">
+                                            <input type="submit" class="btn btn-primary" value="Save">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dialog" title="Basic dialog" style="display: none">
+        <p></p>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script>
+        $(function() {
+            Metis.formWizard();
+        });
+    </script>
+    <script>
+        $(function() {
+            Metis.formGeneral();
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+//            $(function() {
+//                $( "#accordion" ).accordion({
+//                    collapsible: true,
+//                    active: false
+//                });
+//            });
+            $('.action-show-info').click(function(){
+                $.ajax({
+                    url: "{{ path('admin_home_show_administrator_info') }}",
+                    data: { id: $(this).attr('rel') }
+                }).done(function(data) {
+                    $( "#dialog" ).html(data);
+                    $( "#dialog" ).dialog({
+                        width: 700,
+                        title: "Member:"
+                    });
+                });
+            })
+
+        });
+    </script>
+{% endblock js %}

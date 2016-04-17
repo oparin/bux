@@ -1,0 +1,29 @@
+<div class="content-box clear">
+    <div class="box-body iconbar">
+        <div class="box-wrap">
+            <div class="main-icons" id="iconbar">
+                <ul class="clear">
+                    <li class="{% if app.request.attributes.get('_route') == 'office_account_add_funds' %} active{% endif %}">
+                        <a href="{{ path('office_account_add_funds') }}">
+                            <img src="{{ asset('lib/terminator/') }}images/coin-add-icon.png" class="icon" alt="" />
+                            <span class="text">{{ 'frontend.account.menu.add_funds'|trans }}</span>
+                        </a>
+                    </li>
+                    <li class="
+                        {%
+                            if app.request.attributes.get('_route') == 'office_account_cashout'
+                            or app.request.attributes.get('_route') == 'office_account_withdraw_perfect_money'
+                        %}
+                        active
+                        {% endif %}
+                    ">
+                        <a href="{{ path('office_account_cashout') }}">
+                            <img src="{{ asset('lib/terminator/') }}images/Paper-Money-icon.png" class="icon" alt="" />
+                            <span class="text">{{ 'frontend.account.menu.cashout'|trans }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

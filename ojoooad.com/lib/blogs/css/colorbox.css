@@ -1,0 +1,101 @@
+/*
+    ColorBox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto; -webkit-overflow-scrolling: touch;}
+#cboxTitle{margin:0; display: none; font-size:0; line-height: 0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
+
+/*
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background:#555;}
+#colorbox{outline:0;}
+#cboxTopLeft{width:8px; height:8px; background:url(images/cboxCorners.png) no-repeat 0 0; }
+#cboxTopRight{width:8px; height:8px; background:url(images/cboxCorners.png) no-repeat -8px 0;}
+#cboxBottomLeft{width:8px; height:8px; background:url(images/cboxCorners.png) no-repeat 0 -8px;}
+#cboxBottomRight{width:8px; height:8px; background:url(images/cboxCorners.png) no-repeat -8px -8px;}
+#cboxMiddleLeft{width:8px; background:url(images/lftNrgtBorders.png) 0 0 repeat-y;}
+#cboxMiddleRight{width:8px; background:url(images/lftNrgtBorders.png) -8px 0 repeat-y;}
+#cboxTopCenter{height:8px; background:url(images/topNbtmBorders.png) 0 0 repeat-x;}
+#cboxBottomCenter{height:8px; background:url(images/topNbtmBorders.png) 0 -8px repeat-x;}
+#cboxContent{background:#fff; overflow:hidden;}
+.cboxIframe{background:#fff;}
+#cboxError{padding:50px; border:1px solid #ccc;}
+#cboxLoadedContent{margin-bottom:0;}
+#cboxTitle{position:absolute; bottom:0; left:0; text-align:center; width:100%; color:#949494; background: #FFF;}
+#cboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
+/* Arish #cboxLoadingOverlay{background:url(images/loading_background.png) no-repeat center center;}
+#cboxLoadingGraphic{background:url(images/loading.gif) no-repeat center center;}*/
+
+/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; }
+
+/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+#cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
+
+#cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+#cboxPrevious{position:absolute; bottom:0; left:0; background:url(images/controls.png) no-repeat -75px 0; width:25px; height:25px; text-indent:-9999px;}
+#cboxPrevious:hover{background-position:-75px -25px;}
+#cboxNext{position:absolute; bottom:0; left:27px; background:url(images/controls.png) no-repeat -50px 0; width:25px; height:25px; text-indent:-9999px;}
+#cboxNext:hover{background-position:-50px -25px;}
+#cboxClose{position:absolute; top:16px; right:18px; background:url(images/btnClose.png?nocache=1) no-repeat 0 0; width:16px; height:16px; text-indent:-9999px;}
+#cboxClose:hover{background-position:-16px 0;}
+
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+#colorbox.blackBox,
+.blackBox #cboxWrapper{height: 286px !important; width: 451px !important;}
+.blackBox #cboxTopLeft{width:18px; height:18px; background:url(images/blackCboxCorners.png) no-repeat 0 0; }
+.blackBox #cboxTopRight{width:18px; height:18px; background:url(images/blackCboxCorners.png) no-repeat -18px 0;}
+.blackBox #cboxBottomLeft{width:18px; height:18px; background:url(images/blackCboxCorners.png) no-repeat 0 -18px;}
+.blackBox #cboxBottomRight{width:18px; height:18px; background:url(images/blackCboxCorners.png) no-repeat -18px -18px;}
+.blackBox #cboxMiddleLeft{width:18px; background:url(images/blackLftNrgtBorders.png) 0 0 repeat-y;}
+.blackBox #cboxMiddleRight{width:18px; background:url(images/blackLftNrgtBorders.png) -18px 0 repeat-y;}
+.blackBox #cboxTopCenter{height:18px; background:url(images/blackTopNbtmBorders.png) 0 0 repeat-x;}
+.blackBox #cboxBottomCenter{height:18px; background:url(images/blackTopNbtmBorders.png) 0 -18px repeat-x;}
+.blackBox #cboxClose{display: none !important;}
+.blackBox #cboxLoadedContent,
+.blackBox #cboxContent,
+.blackBox #cboxWrapper,
+#colorbox.blackBox{ overflow: visible !important;}
+
+#colorbox.whiteBox,
+.whiteBox #cboxWrapper{ width: 584px !important;}
+.whiteBox #cboxTopLeft{width:17px; height:17px; background:url(images/whiteCboxCorners.png) no-repeat 0 0; }
+.whiteBox #cboxTopRight{width:17px; height:17px; background:url(images/whiteCboxCorners.png) no-repeat -17px 0;}
+.whiteBox #cboxBottomLeft{width:17px; height:17px; background:url(images/whiteCboxCorners.png) no-repeat 0 -17px;}
+.whiteBox #cboxBottomRight{width:17px; height:17px; background:url(images/whiteCboxCorners.png) no-repeat -17px -17px;}
+.whiteBox #cboxMiddleLeft{width:17px; background:url(images/whiteLftNrgtBorders.png) 0 0 repeat-y;}
+.whiteBox #cboxMiddleRight{width:17px; background:url(images/whiteLftNrgtBorders.png) -17px 0 repeat-y;}
+.whiteBox #cboxTopCenter{height:17px; background:url(images/whiteTopNbtmBorders.png) 0 0 repeat-x;}
+.whiteBox #cboxBottomCenter{height:17px; background:url(images/whiteTopNbtmBorders.png) 0 -17px repeat-x;}
+.whiteBox #cboxClose{display: none !important;}
+.whiteBox #cboxLoadedContent,
+.whiteBox #cboxContent,
+.whiteBox #cboxWrapper,
+#colorbox.whiteBox{ overflow: visible !important;}

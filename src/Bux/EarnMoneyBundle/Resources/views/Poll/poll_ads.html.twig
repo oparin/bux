@@ -1,0 +1,74 @@
+{% extends '::office_base.html.twig' %}
+
+{#{% form_theme form ':form:fields.html.twig' %}#}
+
+{% block iconbar %}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {#{% for flashMessage in app.session.flashbag.get('success') %}#}
+        {#<div class="notification note-success">#}
+        {#<a href="#" class="close" title="Close notification">close</a>#}
+        {#<p><strong>{{ flashMessage|raw }}</strong></p>#}
+        {#</div>#}
+        {#{% endfor %}#}
+
+        <div class="col4-4 lastcol">
+            <!-- CONTENT BOX - DATATABLE -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.dashboard.menu.poll_ad'|trans }}</h2>
+                    </div>
+                    <div class="box-wrap clear" style="margin-left: 0%">
+                        {% if not ads %}
+                            <div style="margin-left: 10px">
+                                <h2>{{ message }}</h2>
+                            </div>
+                        {% endif %}
+                        {% for ad in ads %}
+                            <div class="category">
+                                <div class="surf">
+                                    {#<div class="image"></div>#}
+                                    <div class="adname" id="da1a">
+                                        <div>
+                                            {#<a class="azul" href="{{ path('office_earn_money_view_poll_ad', {'id': ad.id}) }}">{{ ad.title }}</a>#}
+                                            <a>{{ ad.title }}</a>
+                                        </div>
+                                        <div class="desc bold">{{ ad.description }}</div>
+                                    </div>
+                                    <div class="counter-cash">
+                                        <div style="width: 40px;" class="cash1"><b>${{ ad.value.value }}</b></div>
+                                    </div>
+                                </div>
+                                {#<div style="border-radius: 4px; border: 1px solid #e8e8e8; margin: 10px; height: 150px; background-color: #FFF77F">#}
+                                <div style="border-radius: 4px; border: 1px solid #e8e8e8; margin: 10px; height: 150px;">
+                                    <form action="{{ path('office_earn_money_poll_ad_completed') }}" method="post">
+                                        <div style="margin-left: 15px; margin-top: 10px">
+                                            {#<div style="font-weight: bolder; font-size: 18px; margin-top: 10px">#}
+                                                {#{{ ad.question }}#}
+                                            {#</div>#}
+                                            <div>
+                                                {% for answer in ad.answers %}
+                                                    <div style="font-weight: bold; height: 20px">
+                                                        <input type="radio" name="answer" value="{{ answer.id }}" required="required" style="float: left"> <div style="padding-top: 4px">{{ answer.answer }}</div><Br>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                            <input type="hidden" name="ad" value="{{ ad.id }}">
+                                            <div style="float: left; margin-top: 10px; margin-left: 5px">
+                                                <button class="button fr">{{ 'frontend.advertise.form.send'|trans }}</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div><!-- end of box-wrap -->
+                </div> <!-- end of box-body -->
+            </div> <!-- end of content-box -->
+        </div>
+    </div>
+{% endblock content %}

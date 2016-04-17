@@ -1,0 +1,732 @@
+@charset "utf-8";
+/*
+	CSS Document
+	Project : NA
+	File 	: common.css
+	Date 	: 16/01/13(dd-mm-yy)
+	Author  : shiraz(shiraz@digitalbrandgroup.com)
+	Credits	: Inspired from Normalize.css - (http://necolas.github.com/normalize.css/) and
+						HTML5 Boilerplate(http://html5boilerplate.com/)
+*/
+
+/* =============================================================================
+   HTML5 display definitions
+========================================================================== */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+audio:not([controls]) {
+    display: none;
+    height:0;
+}
+
+[hidden] {
+    display: none;
+}
+
+/* =============================================================================
+   Base
+========================================================================== */
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: sans-serif;
+}
+
+/* =============================================================================
+   Links
+========================================================================== */
+
+a:focus {
+    outline: thin dotted;
+}
+a:active,
+a:hover {
+    outline: 0;
+    color: #fff;
+}
+a img{
+    border: none;
+}
+
+/* =============================================================================
+   Typography
+========================================================================== */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+}
+
+h3 {
+    font-size: 1.17em;
+    margin: 1em 0;
+}
+
+h4 {
+    font-size: 1em;
+    margin: 1.33em 0;
+}
+
+h5 {
+    font-size: 0.83em;
+    margin: 1.67em 0;
+}
+
+h6 {
+    font-size: 0.67em;
+    margin: 2.33em 0;
+}
+
+h1 img,
+h2 img,
+h3 img,
+h4 img,
+h5 img,
+h6 img {
+    margin: 0;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+blockquote {
+    margin: 1em 40px;
+}
+
+dfn {
+    font-style: italic;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+p, pre {
+    margin: 1em 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    _font-family: 'courier new', monospace;
+    font-size: 1em;
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+q {
+    quotes: none;
+}
+
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/* =============================================================================
+   Lists
+========================================================================== */
+
+dl,
+menu,
+ol,
+ul {
+    margin: 1em 0;
+}
+
+dd {
+    margin: 0 0 0 40px;
+}
+
+menu,
+ol,
+ul {
+    padding: 0 0 0 40px;
+}
+
+nav ul,
+nav ol {
+    list-style: none;
+    list-style-image: none;
+}
+
+/* =============================================================================
+   Embedded content
+========================================================================== */
+
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* =============================================================================
+   Figures
+========================================================================== */
+
+figure {
+    margin: 0;
+}
+
+/* =============================================================================
+   Forms
+========================================================================== */
+
+form {
+    margin: 0;
+    display:inline;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+    *margin-left: -7px;
+    white-space: normal;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+}
+
+button,
+input {
+    line-height: normal;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+    *overflow: visible;
+}
+
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+    *width: 13px;
+    *height: 13px;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+/* =============================================================================
+   Tables
+========================================================================== */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    vertical-align: middle;
+}
+
+th{
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+/* You can zebra-stripe your tables in outdated browsers by adding the class "even" to every other table row. */
+
+tbody tr:nth-child(even) td,
+tbody tr.even td {
+    background: #ddd;
+}
+tfoot {
+    font-style: italic;
+}
+caption {
+    background: #eee;
+}
+
+/* =============================================================================
+	 Helper classes (Ordered alphabetically)
+========================================================================== */
+
+.added {
+    background:#060;
+    color:#fff;
+}
+.asterisk {
+    color:#ff0000 !important;
+}
+.autoFlow {
+    overflow:auto;
+}
+
+.bold {
+    font-weight:bold;
+}
+.bottom {
+    margin-bottom:0;
+    padding-bottom:0;
+}
+.block {
+    display:block;
+}
+.btn {
+    font-size:0;
+    line-height:0;
+    cursor:pointer;
+    overflow:hidden;
+    border:0 none;
+    text-indent:-999em;
+}
+
+.check {
+    border:1px solid red;
+}
+.checkBg {
+    background:red;
+}
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+.clear {
+    clear: both;
+    display:
+        block;overflow:
+    hidden;visibility:
+    hidden;width: 0;
+    height: 0;
+    line-height:0;
+}
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:after,
+.clearfix:before {
+    content: ""; display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+}
+.error {
+    color:#ff0000;
+    line-height:normal;
+}
+
+.first {
+    margin-left:0;
+    padding-left:0;
+}
+.floatLeft {
+    float:left
+}
+.floatRight {
+    float:right
+}
+.floatNone {
+    float:none;
+}
+
+.hide {
+    display: none !important;
+    visibility: hidden;
+}
+.hideFlow {
+    overflow:hidden;
+}
+.highlight {
+    background:#ffc;
+}
+.hr {
+    border-bottom:1px solid #d3d3d3;
+    float:left;
+    font-size:0;
+    line-height:1px;
+    margin:0 0 20px;
+    width:100%;
+}
+.hr hr {
+    display:none;
+}
+
+.imgLeft {
+    float:left;
+    margin:0px 10px 10px 0px;
+}
+.imgReplace {
+    display: block;
+    border: 0;
+    text-indent: -999em;
+    overflow: hidden;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    text-align: left;
+    direction: ltr;
+}
+.imgRight {
+    float:right;
+    margin:0px 0px 10px 10px;
+}
+.inline {
+    display:inline;
+}
+.inlineBlock {
+    display:inline-block;
+}
+.invisible {
+    visibility: hidden;
+}
+.italic {
+    font-style:italic;
+}
+
+.large {
+    font-size: 1.2em;
+    margin-bottom: 1.25em;
+    line-height: 2.5;
+}
+.last {
+    margin-right:0;
+    padding-right:0;
+}
+.loud {
+    color:#000;
+}
+
+.marginAuto {
+    margin:0 auto;
+}
+.maxWidth {
+    width:100%;
+}
+
+.nobg {
+    background:none !important;
+}
+.nobgColor {
+    background-color:transparent !important;
+}
+.nobgImg {
+    background-image:none !important;
+}
+.noBorder {
+    border:0px none;
+}
+.nobtmMargin {
+    margin-bottom:0px !important;
+}
+.nobtmPadding {
+    padding-bottom:0px !important;
+}
+.noBullet {
+    list-style:none;
+    list-style-image:none;
+}
+.noIndent {
+    text-indent:0px !important;
+}
+.nolftMargin {
+    margin-left:0px !important;
+}
+.nolftPadding {
+    padding-left:0px !important;
+}
+.noMargin {
+    margin:0 !important;
+}
+.nomarginNpadding {
+    padding: 0;
+    margin: 0;
+}
+.noPadding {
+    padding:0 !important;
+}
+.norgtMargin {
+    margin-right:0px !important;
+}
+.norgtPadding {
+    padding-right:0px !important;
+}
+.notopMargin {
+    margin-top:0px !important;
+}
+.notopPadding {
+    padding-top:0px !important;
+}
+
+.posAbsolute {
+    position:absolute;
+}
+.posFixed {
+    position:fixed;
+}
+.posRelative {
+    position:relative;
+}
+
+.quiet {
+    color:#fff;
+}
+
+.removed {
+    background:#900;
+    color:#fff;
+}
+
+.small {
+    font-size: .8em;
+    margin-bottom: 1.875em;
+    line-height: 1.875;
+}
+.showFlow {
+    overflow:visible;
+}
+.spacer {
+    padding-bottom:20px;
+    width:100%;
+    font-size:0;
+    height:0;
+    line-height:0;
+    float:left;
+}
+
+.tableCell {
+    display: table-cell;
+}
+.tablelayoutFixed {
+    table-layout: fixed;
+}
+.textCenter {
+    text-align:center
+}
+.textJustify {
+    text-align:justify
+}
+.textLeft {
+    text-align:left
+}
+.textRight {
+    text-align:right
+}
+.toCapitalize {
+    text-transform:capitalize;
+}
+.toLowercase {
+    text-transform:lowercase;
+}
+.top {
+    margin-top:0; padding-top:0;
+}
+.toUppercase {
+    text-transform:uppercase;
+}
+.txtIndent {
+    text-indent:-999em;
+}
+.txtReplace {
+    text-indent:-999em;
+    font-size:0;
+    line-height:0;
+    overflow: hidden;
+}
+
+.underline {
+    border-bottom:1px solid;
+}
+
+.wordWrap {
+    word-wrap:break-word;
+    white-space: normal !important
+}
+
+/*=============================================================================
+	* Common styles for adjusting margins and paddings
+=============================================================================-*/
+
+.marginBtm05 { margin-bottom:5px; }  .marginBtm10{ margin-bottom:10px; } .marginBtm15{ margin-bottom:15px; }
+.marginBtm20 { margin-bottom:20px; } .marginBtm25{ margin-bottom:25px; } .marginBtm30{ margin-bottom:30px; }
+
+.marginLft05 { margin-left:5px; }  .marginLft10{ margin-left:10px; } .marginLft15{ margin-left:15px; }
+.marginLft20 { margin-left:20px; } .marginLft25{ margin-left:25px; } .marginLft30{ margin-left:30px; }
+
+.marginRgt05 { margin-right:5px; }  .marginRgt10{ margin-right:10px; } .marginRgt15{ margin-right:15px; }
+.marginRgt20 { margin-right:20px; } .marginRgt25{ margin-right:25px; } .marginRgt30{ margin-right:30px; }
+
+.marginTop05 { margin-top:5px; }  .marginTop10 { margin-top:10px; } .marginTop15{ margin-top:15px; }
+.marginTop20 { margin-top:20px; } .marginTop25 { margin-top:25px; } .marginTop30 { margin-top:30px; }
+
+.paddingBtm05 { padding-bottom:5px; }  .paddingBtm10{ padding-bottom:10px; } .paddingBtm15{ padding-bottom:15px; }
+.paddingBtm20 { padding-bottom:20px; } .paddingBtm25{ padding-bottom:25px; } .paddingBtm30{ padding-bottom:30px; }
+
+.paddingLft05 { padding-left:5px; }  .paddingLft10{ padding-left:10px; } .paddingLft15{ padding-left:15px; }
+.paddingLft20 { padding-left:20px; } .paddingLft25{ padding-left:25px; } .paddingLft30{ padding-left:30px; }
+
+.paddingRgt05 { padding-right:5px; }  .paddingRgt10{ padding-right:10px; } .paddingRgt15{ padding-right:15px; }
+.paddingRgt20 { padding-right:20px; } .paddingRgt25{ padding-right:25px; } .paddingRgt30{ padding-right:30px; }
+
+.paddingTop05 { padding-top:5px; }  .paddingTop10{ padding-top:10px; } .paddingTop15{padding-top:15px;}
+.paddingTop20 { padding-top:20px; } .paddingTop25{ padding-top:25px; } .paddingTop30{ padding-top:30px; }
+
+/*=============================================================================*/
+
+
+#postListContainer .commentBlock .postAddCommentInput {
+    font-size: 12px !important;
+    line-height: 12px !important;
+}
+
+#sidebar_callout {
+    margin-bottom:10px;
+}
+
+#sidebar_callout a img {
+    display:block;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#sidebar_callout a img:hover {
+    box-shadow: 0px 0px 2px 4px gold;
+}
+
+.programBonusButton {
+    background-color: #D3D3D3;
+    background: linear-gradient(to bottom, #D3D3D3, #EAEAEA) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #DDDDDD;
+    display: block;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: 20px;
+    padding: 5px 0;
+    text-align: center;
+}

@@ -1,0 +1,14 @@
+services:
+    app.banner_extension:
+        class: Bux\OfficeBundle\Twig\BannerExtension
+        arguments: ["@doctrine.orm.entity_manager"]
+        public: false
+        tags:
+            - { name: twig.extension }
+
+    app.big_banner_extension:
+        class: Bux\OfficeBundle\Twig\BigBannerExtension
+        arguments: ["@doctrine.orm.entity_manager"]
+        public: false
+        tags:
+            - { name: twig.extension }

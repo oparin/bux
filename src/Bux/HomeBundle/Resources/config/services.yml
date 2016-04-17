@@ -1,0 +1,12 @@
+services:
+    footer.twig_extension:
+        class: Bux\HomeBundle\Twig\FooterExtension
+        arguments: ["@doctrine.orm.entity_manager"]
+        tags:
+            - { name: twig.extension }
+
+    visitor.twig_extension:
+        class: Bux\HomeBundle\Twig\VisitorExtension
+        arguments: ["@doctrine.orm.entity_manager"]
+        tags:
+            - { name: twig.extension }

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Ojoooad blogs</title>
+
+    <link href="{{ asset('lib/blogs/css/common.css') }}" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="{{ asset('lib/blogs/css/print.css') }}" media="print" rel="stylesheet" type="text/css">
+    <link href="{{ asset('lib/blogs/css/common-base.css') }}" media="screen" rel="stylesheet" type="text/css">
+    <link href="{{ asset('lib/blogs/css/jqueryUi.css') }}" media="screen" rel="stylesheet" type="text/css">
+    <link href="{{ asset('lib/blogs/css/colorpicker.css') }}" media="screen" rel="stylesheet" type="text/css">
+    <link href="{{ asset('lib/blogs/css/colorbox.css') }}" media="screen" rel="stylesheet" type="text/css">
+    <link href="{{ asset('lib/blogs/css/prettyCheckboxes.css') }}" media="screen" rel="stylesheet" type="text/css">
+    <link href="{{ asset('lib/blogs/css/dd.css') }}" media="screen" rel="stylesheet" type="text/css">
+    <link href="{{ asset('lib/blogs/css/jscrollpane.css') }}" media="screen" rel="stylesheet" type="text/css">
+    <link href="{{ asset('lib/blogs/css/stream.css') }}" media="screen" rel="stylesheet" type="text/css">
+    <link href="{{ asset('lib/blogs/css/instant-login.css') }}" media="screen" rel="stylesheet" type="text/css">
+    <link href="{{ asset('lib/blogs/css/blog.css') }}" media="screen" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
+    <style>
+        body{
+            background-color: #ffffff;
+        }
+        #blogContainer{
+            background: none;
+        }
+        .theme1 .blogContent .blogPostColum .postContent p a {
+            color: #14a2b8;
+        }
+        .theme1 .articleBtn{
+            background: #ffffff;
+        }
+        .theme1 .blogContent .postBody {
+            background-color: #ffffff;
+        }
+        .theme1 .articleTitle {
+            font: Arial;
+        }
+
+        .theme1 .articleTitle {
+            color: #ff8400 ;
+        }
+        .theme1 .articleTitle a{
+            color: #ff8400;
+        }
+        .theme1 .postBody .postInfo {
+            color: #ff8400;
+        }
+        .theme1 .postBody .postInfo a{
+            color: #ff8400;
+        }
+        .theme1 .postBody .postInfo strong{
+            color: #ff8400;
+        }
+        .theme1 .articleTitle {
+            font-family: Arial;
+        }
+        .theme1 .articleTitle a{
+            font-family: Arial;
+        }
+        .theme1 .postBody .postContent p {
+            font-family: Arial;
+        }
+        .theme1 .sidebarTitle {
+            color: #ff7700;
+        }
+        .theme1 .sidebarTitle a {
+            color: #ff7700;
+        }
+        .theme1 .rssFeed a {
+            color: #ff7700;
+        }
+        .theme1 .sidebarSubtext a {
+            color: #737373;
+        }
+        .theme1 .sidebarSubtext a {
+            font-family: Gadget;
+        }
+
+        .cke_button__addmedia {display:none !important;}
+    </style>
+</head>
+<body id="customBlog">
+<div class="clearfix">
+    <header id="header">
+        <div class="header">
+            <h1 class="logo ">
+                <a href="#" title=""></a>
+            </h1>
+            {#<a class="envbtnBlue floatRight marginTop13" href="#">Member Login</a>#}
+        </div>
+    </header>
+</div>
+
+<div class="topOptionsPanel">
+    <div class="blogEditorWrap">
+        <div id="blogEditor" class="clearfix hide"></div>
+    </div>
+</div>
+<div id="globalContainer" class="theme1">
+    <script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+    <div id="contentContainer" class="nobg">
+        <div class="content">
+            <div id="publicBlog" class="clearfix publicBlog">
+                <header class="blogHeader">
+                    <div class="blogBanner">
+                        <div class="bolgBannerImage">
+                            <a target="_blank" href="" title="The Secret is Out" class="bannerImg">
+                                {% if user.blogSettings.header %}
+                                    <img src="{{ vich_uploader_asset(settings, 'headerFile') }}" alt="{{ settings.id }}">
+                                {% else %}
+                                    <img src="{{ asset('uploads/header.jpg') }}">
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="progileImg">
+                            <a href="#" title="Profile image" >
+                                {% if user.blogSettings.avatar %}
+                                    <img src="{{ vich_uploader_asset(settings, 'avatarFile') }}" alt="{{ settings.id }}">
+                                {% else %}
+                                    <img src="{{ asset('uploads/avatar.jpg') }}">
+                                {% endif %}
+                            </a>
+                        </div>
+                    </div>
+                    <nav>
+                        <ul class="blogNav">
+                            {% if menu %}
+                                {% for item in menu %}
+                                    <li>
+                                        <a title="{{ item.name }}" href="#">{{ item.name|trans }}</a>
+                                    </li>
+                                {% endfor %}
+                            {% else %}
+                                <li style="height: 57px">
+                                    {#<a title="" href="#"></a>#}
+                                </li>
+                            {% endif %}
+                            {#<li>#}
+                                {#<a title="Get Money" href="#">Get Money</a>#}
+                            {#</li>#}
+                            {#<li>#}
+                                {#<a title="System" href="#">System</a>#}
+                            {#</li>#}
+                            {#<li>#}
+                                {#<a title="Leadership" href="#">Leadership</a>#}
+                            {#</li>#}
+                            {#<li>#}
+                                {#<a title="Vision" href="#">Vision</a>#}
+                            {#</li>#}
+                            {#<li class="active">#}
+                                {#<a title="Home" href="#">Home</a>#}
+                            {#</li>#}
+                        </ul>
+                    </nav>
+                    <div class="clear"></div>
+                    <div class="resizeMenu">
+                        <select class="blogMenu maxWidth">
+                            <option>Home</option>
+                            <option>Residence</option>
+                            <option>Family</option>
+                            <option>School</option>
+                        </select>
+                    </div>
+                </header>
+                <div class="blogInner">
+
+                    <section id="blogContentPlotOne" class="blogContent floatRight">
+                        {% block blog_content %}
+                        {% endblock blog_content %}
+                    </section>
+
+                    <section  id="blogContentPlotTwo" class="blogList  floatLeft">
+                        <ul class="categoriesList categoryList sidebarSubtext" style="display: block;">
+                            <li class="sidebarTitle">Categories</li>
+                            {% for category in categories %}
+                                <li>
+                                    {#<a href="{{ path('network_home_home_showuserpostsbycategory', {'username': user.username,'id': category.id}) }}">{{ category.name }} ({{ category.blogs|length }})</a>#}
+                                    <a href="{{ path('user_posts_category', {'username': category.user.username, 'id': category.id}) }}">{{ category.name }} ({{ category.blogs|length }})</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                        <ul class="categoriesList recentPostList sidebarSubtext">
+                            <li class="sidebarTitle">Recent Posts</li>
+                            {% for post in recent_posts %}
+                                <li>
+                                    {#<a href="{{ path('network_home_home_showuserblog', {'username': user.username, 'id': post.id}) }}" class="wordWrap block">{{ post.title }}</a>#}
+                                    <a href="{{ path('show_user_post', {'username': post.user.username, 'id': post.id}) }}" class="wordWrap block">{{ post.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                        <ul class="categoriesList recentPostList sidebarSubtext">
+                            <li class="sidebarTitle">Latest Posts</li>
+                            {% for post in latest_posts %}
+                                <li>
+                                    {#<a href="{{ path('network_home_home_userblogs', {'username': user.username, 'id': post.id}) }}" class="wordWrap block">{{ post.title }}</a>#}
+                                    <a href="{{ path('show_user_post', {'username': post.user.username, 'id': post.id}) }}" class="wordWrap block">{{ post.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        {#<div class="poweredVerisign clearfix marginBtm30">#}
+                            {#<a href="#" class="norton" title="Norton Secured">Norton Secured</a>#}
+                            {#<div class="verisign">#}
+                                {#<a href="#" title="Powered by VeriSign">powered by <span class="magendaTxt">VeriSign</span></a>#}
+                            {#</div>#}
+                            {#<a href="#" class="masterCard" title="Master Card">Master Card</a>#}
+                            {#<a href="#" class="visa" title="Visa Card">Master Card</a>#}
+                        {#</div>#}
+                        <div class="watchitNow marginBtm30">
+                            <a target="_blank" href="{{ 'side'|blogBannerLink }}" title="">
+                                <img src="{{ asset('uploads/admin/blog/banners/312x555_blogBanner.jpg') }}" alt="" />
+                            </a>
+                        </div>
+                    </section>
+
+                    <div class="proveitNow">
+                        <a target="_blank" href="{{ 'bottom'|blogBannerLink }}" title="" >
+                            <img src="{{ asset('uploads/admin/blog/banners/960x188_blogBanner.jpg') }}" alt="" />
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear">&nbsp;</div>
+
+    <footer id="footer">
+        <div class="footer">
+            <div class="footerSpacer">&nbsp;</div>
+            <div class="footerContents extented">
+                {#<p class="supportTxt">If you have any billing questions please contact our billing support team.<br />#}
+                    {#Monday thru Friday 9am-5pm (EST) at: 1-888-262-1934</p>#}
+                <div class="footerNavWrap">
+                    {#<nav class="footerNav">#}
+                        {#<a href="">Terms  Conditions</a> |#}
+                        {#<a href="">Refund Policy</a> |#}
+                        {#<a href="">Privacy</a> |#}
+                        {#<a href="">Earnings Disclosure</a> |#}
+                        {#<a href="">Support Desk</a> |#}
+                        {#<a href="">Find Us on Facebook</a>#}
+                    {#</nav>#}
+                    <span class="droidsansBold coprights">Copyright © 2015 </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<div class="hide">
+
+</div>
+</body>
+</html>

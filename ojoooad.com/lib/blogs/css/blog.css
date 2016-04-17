@@ -1,0 +1,2110 @@
+@charset "utf-8";
+/*
+	CSS Document
+	Project : ENV2
+	File 	: blog.css
+	Date 	: 20/02/13 (dd-mm-yy)
+	Author  : shiraz (shiraz@digitalbrandgroup.com)
+*/
+body {
+    background: url(../images/common/pageTopBg.png) repeat-x scroll 0 0 transparent;
+}
+#globalContainer {
+    background: none;
+    width: 960px;
+    margin: auto;
+    float: none;
+}
+.publicBlog {
+    margin: auto;
+    width: 960px;
+}
+.publicBlog .blogHeader {
+    float: left;
+    width: 100%;
+}
+.publicBlog .blogHeader .blogBanner {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.publicBlog .blogHeader .blogBanner .bannerEditBg, .uploadImageHolder .bannerEditBg,  .uploadImageHolderVertical .bannerEditBg  {
+    background: url(../../../images/blog/editSectionBg.png) repeat 0 0;
+    bottom: 0;
+    color: #fff;
+    display: none;
+    left: 0;
+    padding: .9% 1.2% .9% 0;
+    position: absolute;
+    text-align: right;
+    width: 98.8%;
+}
+.publicBlog .blogHeader .bolgBannerImage:hover .bannerEditBg, .uploadImageHolder:hover .bannerEditBg {
+    display: block !important;
+}
+.publicBlog .blogHeader .bolgBannerImage a.bannerImg img {
+    width: 100%;
+}
+.publicBlog .blogHeader .blogBanner .bannerEditBg a,  .uploadImageHolder .bannerEditBg a {
+    background: url(../../../images/blog/editImg.png) no-repeat top left;
+    color: #fff;
+    font: normal .8em/1 'droid_sansregular' ;
+    padding-left: 2.5%;
+    text-align: right;
+    text-decoration: none;
+}
+.publicBlog .blogHeader .blogBanner .progileImg {
+    background: #fff;
+    bottom: -10%;
+    box-shadow: 0px 0px 6px rgba(50, 50, 50, 0.75);
+    left: 2.1%;
+    padding: .4%;
+    position: absolute;
+    z-index: 2;
+    width: 17.9%;
+}
+.publicBlog .blogHeader .blogBanner .progileImg a img {
+    width: 100%
+}
+.publicBlog .blogHeader .blogBanner .progileImg .profileImgEditBg {
+    background: url(../../../images/blog/editSectionBg.png) repeat 0 0;
+    color: #fff;
+    display: none;
+    left: 0;
+    margin-left: .4%;
+    padding: 4% .9% 4% 0;
+    position: absolute;
+    text-align: right;
+    top: 25%;
+    width: 98.8%;
+}
+.publicBlog .blogHeader .blogBanner .progileImg:hover .profileImgEditBg {
+    display: block;
+}
+.publicBlog .blogHeader .blogBanner .profileImgEditBg a {
+    background: url(../../../images/blog/editImg.png) no-repeat top left;
+    color: #fff;
+    font: normal .8em/1 'droid_sansregular' ;
+    padding-left: 11%;
+    text-align: right;
+    text-decoration: none;
+    margin-right: 5%;
+}
+.publicBlog .blogHeader ul.blogNav {
+    background: url(../images/blog/blogNavBg.jpg) repeat-x 0 0;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 99.8%;
+}
+.publicBlog .blogHeader ul.blogNav li {
+    float: right;
+    height: 5%;
+    position: relative;
+    text-align: center;
+}
+.publicBlog .blogHeader ul.blogNav li.noMenuItem{
+    min-height: 57px;
+}
+.publicBlog .blogHeader ul.blogNav li a {
+    background: url(../images/blog/blogNavSeperator.jpg) no-repeat top left;
+    color: #fff;
+    display: inline-block;
+    font: normal .8em/1 'droid_sansregular' ;
+    padding: 24px 23px 20px;
+    text-decoration: none;
+}
+.publicBlog .blogHeader ul.blogNav li.more {
+    float: right;
+    width: 90px;
+}
+.publicBlog .blogHeader ul.blogNav li.more a {
+    padding: 24px 0px 20px;
+    width: 90px;
+}
+.publicBlog .blogHeader ul.blogNav li.more a .moreArrow {
+    background: url(../../../images/blog/moreMenuItem.png) no-repeat 0 0;
+    float: right;
+    height: 6px;
+    margin: 4px 0 0 10px;
+    position: absolute;
+    width: 6px;
+}
+.publicBlog .blogHeader ul.blogNav li:hover {
+    background: url(../images/blog/blogNavHover.jpg) repeat-x 0 0;
+}
+.publicBlog .blogHeader ul.blogNav li ul.blogSubnav {
+    border-top: none;
+    border: 1px solid #000;
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: -1px;
+    top: 56px;
+    width: 197px;
+    z-index: 3;
+}
+.publicBlog .blogHeader ul.blogNav li ul.blogSubnav li {
+    background: url(../../../images/blog/blogNavSubnavBg.jpg) repeat-x top left #303030;
+    height: 40px;
+    text-align: left;
+    width: 197px;
+}
+.publicBlog .blogHeader ul.blogNav li ul.blogSubnav li a {
+    background: none;
+    color: #fff;
+    padding: 14px 0 14px 20px;
+    text-align: left;
+    text-decoration: none;
+    width: 180px;
+}
+.publicBlog .blogHeader ul.blogNav li ul.blogSubnav li:hover {
+    background: url(../../../images/blog/blogNavHover.jpg) repeat-x top left
+}
+.publicBlog .blogHeader ul.blogNav li.more .moreGreyBg {
+    background: #2e2e2e;
+    bottom: -2px;
+    display: none;
+    float: right;
+    height: 5px;
+    position: absolute;
+    right: 0px;
+    width: 88px;
+    z-index: 10;
+}
+.publicBlog .blogHeader ul.blogNav li.more:hover {
+    background: url(../../../images/blog/blogNavBg.jpg) repeat-x 0 0;
+}
+.publicBlog .blogHeader ul.blogNav li.more:hover .moreGreyBg {
+    display: block
+}
+.publicBlog .blogHeader .resizeMenu {
+    display: none;
+    padding-top: 5px;
+    margin-top: 15px;
+    vertical-align: middle;
+}
+.publicBlog .archivesList {
+    padding-top: 5px;
+    margin: 15px 0 32px 0;
+    vertical-align: middle;
+}
+.publicBlog .blogInner {
+    float: left;
+    margin-top: 3.7%;
+    width: 100%;
+}
+.publicBlog .blogContent {
+    width: 60%;
+}
+.publicBlog .blogContent .noPostFound{
+    border: 1px solid #d8d9da;
+    padding: 20px;
+    text-align: center;
+}
+.publicBlog .blogContent .searchResult{
+    border-bottom: 1px solid #d8d9da;
+    font-size: 1em;
+    margin: 0 0 1.5em 0;
+    padding-bottom: 0.3em;
+}
+.blogContent .blogPostColum {
+    background: #fff;
+    border: 1px solid #d8d9da;
+    margin-bottom: 7%;
+    padding: 4% 3%;
+    position: relative;
+}
+.publicBlog .blogContent .reblogedPost .blogPostColum {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+.blogPostColum .txtPermissionDenied{
+    border-bottom:1px solid #d4d4d4;
+    color:#3a759f;
+    font-size:1.2em;
+}
+.articleTitle {
+    color: #4e4d4f;
+    font: bold 1.2em/1.5 Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+.articleTitle a{
+    color: #4e4d4f;
+    text-decoration: none;
+}
+.articleTitle a:hover{
+    color: #3a759f;
+}
+.publicBlog .blogContent .blogPostColum .blogPostHead p.postDate {
+    font: normal .9em/1.5 Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+.publicBlog .blogContent .blogPostColum .blogPostHead p.postComment {
+    font: normal .8em/1.5 Arial, Helvetica, sans-serif;
+    margin: 6.5px 0;
+    text-align: right;
+}
+.publicBlog .blogContent .blogPostColum .postContent {
+    border-bottom: 1px solid #d8d9da;
+    border-top: 1px solid #d8d9da;
+    overflow: hidden;
+    padding: 4.5% 0;
+}
+.publicBlog .blogContent .blogPostColum .postContent .postImg {
+    float: left;
+    margin-bottom: 4%;
+    overflow: hidden;
+    width: 100%;
+}
+.publicBlog .blogContent .blogPostColum .postContent .postImg img {
+    width: 100%;
+}
+.postBody .postContent p {
+    color: #000;
+    font: normal .8em/2 Arial, Helvetica, sans-serif;
+    line-height: 20px;
+    margin-bottom: 15px;
+}
+.publicBlog .blogList {
+    width: 32.5%;
+}
+
+.publicBlog .greyBtn {
+    background: url(../../../images/blog/greyBtnBg.jpg) repeat-x 0 0;
+    border-radius: 4px;
+    border: 1px solid #c6c6c6;
+    color: #4e4d4f;
+    font: normal .8em/3 'droid_sansbold';
+    height: 36px;
+    padding: 0 15px;
+    text-decoration: none;
+}
+.publicBlog .blogList .blogSearch {
+    background: #fff;
+    border: 1px solid #d8d9da;
+    color: #4A4A4A;
+    font: 0.9em "droid_sansregular","Helvetica Neue",Helvetica,Arial,sans-serif;
+    height: 40px;
+    margin: 0 0 8.5% 0;
+    overflow: hidden;
+    box-shadow: 0 1px 5px #dadada inset;
+    padding: 0 0 0 7%;
+    position: relative;
+    text-indent: 1px;
+    width: 93%;
+    border-radius: 0;
+    z-index: 1;
+    line-height:40px;
+}
+.publicBlog .blogList ul.categoriesList {
+    border: 1px solid #d8d9da;
+    list-style-type: none;
+    margin: 0 0 8.5% 0;
+    padding: 0;
+}
+.publicBlog .blogList ul.categoriesList li {
+    background: #fff;
+    border-bottom: 1px solid #d8d9da;
+    display: block;
+    /*padding: 3.5% 0 3.5% 7%;*/
+    padding: 3.5% 7%;
+}
+.sidebarTitle{
+    color: #777;
+    font: normal .9em/1.2 Arial, Helvetica, sans-serif;
+    background: #fff;
+    display: block;
+    padding: 3.5% 7%;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.sidebarSubtext a {
+    color: #777;
+    font: normal .9em/1.2 Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+.publicBlog .blogList ul.categoriesList li.last {
+    border-bottom: none;
+}
+.rssFeed {
+    background: #fff;
+    border: 1px solid #d8d9da;
+    padding: 1.2%;
+}
+.rssFeed a {
+    background: url(../../../images/blog/rssFeedIcon.jpg) no-repeat right 5px;
+    color: #777;
+    display: block;
+    font: bold .9em/2.5 Arial, Helvetica, sans-serif;
+    height: 2.5%;
+    padding-left: 3.5%;
+    text-decoration: none;
+    width: 93%;
+}
+.publicBlog .blogList .poweredVerisign {
+    background: #fff;
+    border: 1px solid #d8d9da;
+    padding: 1.2%;
+}
+.publicBlog .blogList .poweredVerisign {
+    background: #fff;
+    border: 1px solid #d8d9da;
+    padding: 1.2%;
+}
+.publicBlog .blogList .poweredVerisign a {
+    background: url(../images/blog/verisignIcons.jpg);
+    float: left;
+    text-decoration: none;
+    text-indent: -9999em;
+}
+.publicBlog .blogList .poweredVerisign a.norton {
+    background-position: 0 0;
+    float: left;
+    height: 60px;
+    margin-right: 25px;
+    width: 130px;
+}
+.publicBlog .blogList .poweredVerisign a.masterCard {
+    background-position: -131px 0;
+    height: 37px;
+    margin-right: 10px;
+    width: 58px;
+}
+.publicBlog .blogList .poweredVerisign a.visa {
+    background-position: -192px 0;
+    height: 37px;
+    width: 59px;
+}
+.publicBlog .blogList .poweredVerisign .verisign a {
+    background: none;
+    color: #979696;
+    font: bold .7em/1 Arial, Helvetica, sans-serif;
+    margin-bottom: 1.2%;
+    text-indent: 5px;
+}
+.publicBlog .blogList .poweredVerisign .verisign .magendaTxt {
+    color: #9f0a35;
+}
+.publicBlog .blogList .watchitNow {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+.publicBlog .blogList .watchitNow a img {
+    width: 100%;
+}
+.publicBlog .blogList .watchitNow .watchitNowImgEditBg,
+#updateBannerImageContainer.imageUploadPortrait  #bannerImageContainer .bannerEditBg{
+    background: url(../../../images/blog/editSectionBg.png) repeat 0 0;
+    bottom: 0px;
+    color: #fff;
+    display: none;
+    left: 0;
+    padding: 3% 0.9% 3% 0;
+    position: absolute;
+    text-align: right;
+    width: 99%;
+}
+.publicBlog .blogList .watchitNow:hover .watchitNowImgEditBg,
+#updateBannerImageContainer.imageUploadPortrait  #bannerImageContainer:hover .bannerEditBg{
+    display: block !important;
+}
+.publicBlog .blogList .watchitNow .watchitNowImgEditBg a,
+#updateBannerImageContainer.imageUploadPortrait  #bannerImageContainer .bannerEditBg a{
+    background: url(../../../images/blog/editImg.png) no-repeat top left;
+    color: #fff;
+    font: normal .8em/1 'droid_sansregular' ;
+    padding-left: 7%;
+    text-align: right;
+    text-decoration: none;
+    margin-right: 3%;
+}
+.publicBlog .proveitNow {
+    display: block;
+    float: left;
+    margin-top: 3%;
+    position: relative;
+    width: 100%;
+}
+.publicBlog .proveitNow a img {
+    width: 100%;
+}
+.publicBlog .proveitNow .proveitNowImgEditBg {
+    background: url(../../../images/blog/editSectionBg.png) repeat 0 0;
+    bottom: 0px;
+    color: #fff;
+    display: none;
+    height: 30px;
+    left: 0;
+    padding: 1% 1% 0 0;
+    position: absolute;
+    text-align: right;
+    width: 99%;
+}
+.publicBlog .proveitNow:hover .proveitNowImgEditBg {
+    display: block;
+}
+.publicBlog .proveitNow .proveitNowImgEditBg a {
+    background: url(../../../images/blog/editImg.png) no-repeat top left;
+    color: #fff;
+    font: normal .8em/1 'droid_sansregular' ;
+    padding-left: 2.2%;
+    text-align: right;
+    text-decoration: none;
+}
+.publicBlog .blogContent
+.noborderBtm {
+    border-bottom: none !important
+}
+.pagination{
+    font-size: 1em;
+    margin: 2%;
+}
+.pagination a{
+    background: #fff url(../images/helpCenter/paginationBg.jpg) repeat-x bottom left;
+    border:1px solid #dddddd;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    color: #4a4a4a;
+    display: inline-block;
+    font: normal normal normal .85em/1.8 'droid_sansbold' ;
+    outline: none;
+    padding:4px 10px 0px 10px;
+    text-decoration: none;
+}
+.pagination a:hover{
+    color: #6a6a6a;
+}
+.pagination a.current{
+    background: url("../images/common/greyBtnBg.png") repeat-x scroll 0 0 #D6D6D6;
+    border:1px solid #C6C6C6;
+    color: #000;
+}
+/*=============================================================================
+	The Comment Block css classes
+=============================================================================*/
+#contentContainer .content .contentBlockRight .commentBlock,
+#contentContainer .content .contentBlockRight .postBlock{
+    background: #e1e1e1;
+}
+#contentContainer .content .commentList{
+    font-size: 1em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: #e1e1e1;
+    border:1px solid #c9c9c9;
+    border-bottom: none;
+}
+#contentContainer .content .commentList li{
+    color: #767575;
+    font-size: .85em;
+}
+#contentContainer .content .commentList .error{
+    display: none;
+}
+#contentContainer .content .commentList .addComment,
+#contentContainer .content .commentList .comments{
+    border-bottom: 1px solid #c9c9c9;
+    padding: 19px 15px 15px 15px;
+}
+#contentContainer .content .commentList .addComment.videoComment{
+    background: #e1e1e1;
+}
+#contentContainer .content .commentList .comments.replyFirstDegree{
+    background: url(../../../images/blog/blogRreplayIcon.jpg) no-repeat 20px 10px;
+    padding: 19px 15px 15px 45px;
+}
+#contentContainer .content .commentList .comments.replySecondDegree{
+    background: url(../../../images/blog/blogRreplayIcon.jpg) no-repeat 55px 10px;
+    padding: 19px 15px 15px 80px;
+}
+#contentContainer .content .commentList .comments.replyThirdDegree{
+    background: url(../../../images/blog/blogRreplayIcon.jpg) no-repeat 90px 10px;
+    padding: 19px 15px 15px 115px;
+}
+#contentContainer .content .commentList .comments.moreComments{
+    background: #767575;
+    border:0;
+    color: #c9c9c9;
+    padding: 15px;
+}
+#contentContainer .content .commentList .comments.moreComments a{
+    background: url(../../../images/stream/viewMoreCommentIcon.jpg) no-repeat;
+    color: #c9c9c9;
+    float: left;
+    margin: 0 0 0 5px;
+    padding: 5px 0 5px 45px;
+    text-decoration: none;
+}
+#contentContainer .content .commentList .comments.moreComments a:hover{
+    color: #4d4d4d;
+}
+#contentContainer .content .commentList .comments.moreComments .commentCountBlock{
+    float: right;
+    padding: 5px 10px 0 0;
+}
+#contentContainer .content .commentList .profileImage{
+    border:1px solid #2b5770;
+    float: left;
+    margin: 0 20px 0 0;
+}
+#contentContainer .content .commentList .comment{
+    float: left;
+    font-size: .85em;
+    min-height: 32px;
+    padding-bottom: 20px;
+    width:470px;
+}
+#contentContainer .content .commentList .comments.replyFirstDegree .comment{
+    width: 440px;
+}
+#contentContainer .content .commentList .comments.replySecondDegree .comment{
+    width: 405px;
+}
+#contentContainer .content .commentList .comments.replyThirdDegree .comment{
+    width: 370px;
+}
+#contentContainer .content .commentList .comments .commentMeta{
+    float: left;
+    list-style-type: none;
+    margin: 0 0 0 70px;
+    padding: 0;
+}
+#contentContainer .content .commentList .comments .commentMeta li{
+    background: url(../../../images/stream/likeIcon.png) no-repeat 0 -14px;
+    float: left;
+    padding: 0 0 0 12px;
+}
+#contentContainer .content .commentList .comments .commentMeta li.badass{
+    background: url(../../../images/stream/likeIcon.png) no-repeat 0 0;
+    padding: 0 0 0 18px;
+}
+#contentContainer .content .commentList .comments.commentBubble{
+    background: #767575;
+}
+#contentContainer .content .commentList .comments.commentBubble a{
+    background: url(../../../images/stream/viewMoreCommentIcon.jpg) no-repeat top right;
+    color: #c9c9c9;
+    float: right;
+    font-size: .85em;
+    margin: 0 0 0 5px;
+    padding: 5px 45px 5px 0;
+    text-decoration: none;
+}
+#contentContainer .content .commentList .comments.commentBubble a:hover{
+    color: #4d4d4d;
+}
+#contentContainer .content .commentList li .blogInput {
+    width: 470px;
+}
+#contentContainer .content .commentList li .blogInput .blogInputInner {
+    width: 460px;
+}
+.publicBlog .blogList .searchBtn {
+    display: none;
+}
+
+/*=============================================================================
+	The Post Block css classes
+=============================================================================*/
+
+
+/*=============================================================================
+	The Blog Customize with Media Queries
+=============================================================================*/
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 320px)
+and (max-width : 480px) {
+    #globalContainer {
+        margin: auto;
+        float: none;
+        width: 320px;
+    }
+    .publicBlog {
+        margin: auto;
+        width: 320px;
+        float: none;
+    }
+    #contentContainer .content {
+        width: 100%;
+        margin: auto;
+        float: none;
+    }
+    #header {
+        width: 320px;
+    }
+    #header .header {
+        width: 320px;
+    }
+    #header .header h1.logo {
+        float: left;
+        margin: 2px 0 0;
+        width: 320px;
+    }
+    #header .header h1.logo a {
+        background: url(../../../images/blog/empowerNetwork_logo.png) no-repeat 0 0;
+        width: 300px;
+        margin: auto;
+        height: 38px;
+    }
+    .publicBlog .blogHeader {
+        width: 320px;
+        margin: auto;
+    }
+    .publicBlog .blogHeader .resizeMenu {
+        display: block;
+        width: 310px;
+        margin: auto;
+        padding-top: 20px;
+    }
+    .publicBlog .archiesList {
+        width: 320px;
+    }
+    .publicBlog .blogHeader .blogBanner .progileImg {
+        left: 12px;
+        bottom: -13px;
+    }
+    .publicBlog .blogHeader ul.blogNav {
+        display: none;
+    }
+    .publicBlog .blogList {
+        width: 99%;
+        margin: auto;
+        float: none;
+    }
+    .publicBlog .blogContent {
+        width: 99%;
+        margin: auto;
+        float: none;
+    }
+    .publicBlog .proveitNow {
+        display: none;
+    }
+    .publicBlog .blogList .poweredVerisign {
+        display: none;
+    }
+    #footer {
+        width: 320px;
+    }
+    .footer .footerContents {
+        width: 320px !important;
+        text-align: center;
+        margin: 0;
+        padding: 5% 0;
+    }
+    .footer .footerContents .supportTxt{
+        margin-bottom: 20px;
+        width: auto !important;
+    }
+    .footerNavWrap {
+        width: 320px;
+        text-align: center;
+    }
+    .footer .footerContents .supportTxt {
+        float: none;
+    }
+    .footer .footerContents .footerNav {
+        float: left;
+    }
+    .footer .footerContents .coprights {
+        float: none;
+    }
+    .pagination {
+        margin-bottom: 5%;
+        float: left;
+    }
+    #contentContainer .content .commentList{
+        margin-bottom: 8.5%;
+    }
+    #contentContainer .content .commentList .comment {
+        width: 210px;
+    }
+    #contentContainer .content .commentList .comments.replyFirstDegree .comment {
+        width: 180px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 145px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree {
+        background-position: 35px 10px;
+        padding: 19px 15px 15px 60px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 160px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree {
+        background-position: 60px 10px;
+        padding: 19px 15px 15px 87px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree .comment {
+        width: 140px;
+    }
+    #contentContainer .content .commentList li .blogInput {
+        width: 210px;
+    }
+    #contentContainer .content .commentList li .blogInput .blogInputInner {
+        width: 200px;
+    }
+    .publicBlog .blogList .blogSearch {
+        width: 57%;
+    }
+    .publicBlog .blogList .searchBtn {
+        height: 36px;
+        display: block;
+        float: right;
+        margin-right:5%
+    }
+}
+
+@media only screen
+and (min-width : 480px)
+and (max-width : 640px) {
+    #globalContainer {
+        margin: auto;
+        float: none;
+        width: 480px;
+    }
+    .publicBlog {
+        margin: auto;
+        width: 480px;
+        float: none;
+    }
+    #contentContainer .content {
+        width: 100%;
+        margin: auto;
+        float: none;
+    }
+    #header {
+        width: 480px;
+    }
+    #header .header {
+        width: 480px;
+    }
+    #header .header h1.logo {
+        float: left;
+        margin: 2px 0 0;
+        width: 480px;
+    }
+    #header .header h1.logo a {
+        background: url(../../../images/blog/empowerNetwork_logo.png) no-repeat 0 0;
+        width: 300px;
+        float: left;
+        height: 38px;
+    }
+    .publicBlog .blogHeader {
+        width: 480px;
+        margin: auto;
+    }
+    .publicBlog .blogHeader .resizeMenu {
+        display: block;
+        width: 470px;
+        margin: auto;
+        padding-top: 20px;
+    }
+    .publicBlog .blogHeader ul.blogNav {
+        display: none;
+    }
+    .publicBlog .blogList {
+        width: 99%;
+        margin: auto;
+        float: none;
+    }
+    .publicBlog .blogContent {
+        width: 99%;
+        margin: auto;
+        float: none;
+    }
+    .publicBlog .proveitNow {
+        display: none;
+    }
+    .publicBlog .blogList .poweredVerisign {
+        display: none;
+    }
+    #footer {
+        width: 480px;
+    }
+    .footer .footerContents {
+        width: 480px !important;
+        text-align: center;
+        margin: 0;
+        padding: 5% 0;
+    }
+    .footer .footerContents .supportTxt{
+        margin-bottom: 20px;
+        width: auto !important;
+    }
+    .footerNavWrap {
+        width: 480px;
+        text-align: center;
+    }
+    .footer .footerContents .supportTxt {
+        float: none;
+    }
+    .footer .footerContents .footerNav {
+        float: none;
+    }
+    .footer .footerContents .coprights {
+        display: block;
+        float: none;
+        text-align: center;
+    }
+    #contentContainer .content .commentList{
+        margin-bottom: 8.5%;
+    }
+    #contentContainer .content .commentList .comment {
+        width: 370px;
+    }
+    #contentContainer .content .commentList .comments.replyFirstDegree .comment {
+        width: 340px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 325px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree {
+        background-position: 35px 10px;
+        padding: 19px 15px 15px 60px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 160px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree {
+        background-position: 60px 10px;
+        padding: 19px 15px 15px 87px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree .comment {
+        width: 295px;
+    }
+    #contentContainer .content .commentList li .blogInput {
+        width: 370px;
+    }
+    #contentContainer .content .commentList li .blogInput .blogInputInner {
+        width: 360px;
+    }
+}
+
+@media only screen
+and (min-width : 640px)
+and (max-width : 768px) {
+    #globalContainer {
+        margin: auto;
+        float: none;
+        width: 640px;
+    }
+    .publicBlog {
+        margin: auto;
+        width: 640px;
+        float: none;
+    }
+    #contentContainer .content {
+        width: 100%;
+        margin: auto;
+        float: none;
+    }
+    #header {
+        width: 640px;
+    }
+    #header .header {
+        width: 640px;
+    }
+    #header .header h1.logo {
+        float: left;
+        margin: 2px 0 0;
+        width: 500px;
+    }
+    #header .header h1.logo a {
+        background: url(../../../images/blog/empowerNetwork_logo.png) no-repeat 0 0;
+        width: 300px;
+        float: left;
+        height: 38px;
+    }
+    .publicBlog .blogHeader {
+        width: 640px;
+        margin: auto;
+    }
+    .publicBlog .blogHeader .resizeMenu {
+        display: block;
+        width: 630px;
+        margin: auto;
+        padding-top: 20px;
+    }
+    .publicBlog .blogHeader ul.blogNav {
+        display: none;
+    }
+    .publicBlog .blogList {
+        width: 99%;
+        margin: auto;
+        float: none;
+    }
+    .publicBlog .blogContent {
+        width: 99%;
+        margin: auto;
+        float: none;
+    }
+    .publicBlog .proveitNow {
+        display: none;
+    }
+    .publicBlog .blogList .poweredVerisign {
+        display: none;
+    }
+    #footer {
+        width: 640px;
+    }
+    .footer .footerContents {
+        width: 640px !important;
+        text-align: center;
+        margin: 0;
+        padding: 5% 0;
+    }
+    .footer .footerContents .supportTxt{
+        margin-bottom: 20px;
+        width: auto !important;
+    }
+    .footerNavWrap {
+        float: none;
+        text-align: center;
+        width: auto;
+    }
+    .footer .footerContents .supportTxt {
+        float: none;
+    }
+    .footer .footerContents .footerNav {
+        float: none;
+    }
+    .footer .footerContents .coprights {
+        display: block;
+        float: none;
+        text-align: center;
+    }
+    #contentContainer .content .commentList{
+        margin-bottom: 8.5%;
+    }
+    #contentContainer .content .commentList .comment {
+        width: 370px;
+    }
+    #contentContainer .content .commentList .comments.replyFirstDegree .comment {
+        width: 340px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 325px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree {
+        background-position: 35px 10px;
+        padding: 19px 15px 15px 60px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 160px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree {
+        background-position: 60px 10px;
+        padding: 19px 15px 15px 87px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree .comment {
+        width: 295px;
+    }
+    #contentContainer .content .commentList li .blogInput {
+        width: 370px;
+    }
+    #contentContainer .content .commentList li .blogInput .blogInputInner {
+        width: 360px;
+    }
+}
+
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px) {
+    #customBlog #globalContainer{
+        width: auto;
+    }
+    #customBlog #contentContainer .content{
+        width: 768px;
+    }
+    .publicBlog {
+        margin: auto;
+        width: 768px;
+        float: none;
+    }
+    #header {
+        width: 768px;
+        margin: auto;
+    }
+    .publicBlog .blogHeader ul.blogNav li a {
+        padding: 24px 17px 20px;
+    }
+    .publicBlog .blogList .poweredVerisign {
+        display: none;
+    }
+    #footer {
+        width: 768px;
+        margin: auto;
+    }
+    #footer .footer {
+        width: 768px;
+        margin: auto;
+    }
+    .footer .footerContents {
+        width: 768px !important;
+        text-align: center;
+        margin: auto;
+        padding: 5% 0;
+    }
+    .footerNavWrap {
+        width: 100%;
+        text-align: center;
+    }
+    .footer .footerContents .supportTxt {
+        float: none;
+        padding-bottom: 3%;
+        width: 100%;
+    }
+    .footer .footerContents .footerNav {
+        float: none;
+    }
+    .footer .footerContents .coprights {
+        float: none;
+    }
+    #contentContainer .content .commentList{
+        margin-bottom: 8.5%;
+    }
+    #contentContainer .content .commentList .comment {
+        width: 355px;
+    }
+    #contentContainer .content .commentList .comments.replyFirstDegree .comment {
+        width: 325px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 325px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree {
+        background-position: 35px 10px;
+        padding: 19px 15px 15px 60px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 305px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree {
+        background-position: 60px 10px;
+        padding: 19px 15px 15px 87px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree .comment {
+        width: 280px;
+    }
+    #contentContainer .content .commentList li .blogInput {
+        width: 355px;
+    }
+    #contentContainer .content .commentList li .blogInput .blogInputInner {
+        width: 345px;
+    }
+
+}
+
+
+/*=============================================================================
+	The Blog Customizer Block css classes
+=============================================================================*/
+.blogEditorWrap{
+    background:#FFF url(../images/blog/customizerBlockBg.png) repeat-x;
+}
+#blogEditor{
+    font-size: 1em;
+    margin: 0 auto;
+    width: 960px;
+}
+#domainListBlock{
+    float: left;
+    width: 100%;
+}
+#domainListBlock .domainList{
+    float: left;
+    font-size: .75em;
+    margin: 0;
+    padding: 0 0 11px 0;
+    width: 775px;
+}
+#domainListBlock .domainList li{
+    float: left;
+    margin: 0;
+    padding: 11px 40px 0 0;
+    position: relative;
+    z-index: 9999;
+}
+#domainListBlock .domainList li.hasSubnav{
+    background: url(../../../images/blog/submenuPointer.png) no-repeat  right 7px;
+}
+#domainListBlock .domainList li.hasSubnav.subnavActive{
+    background: url(../../../images/blog/submenuPointer.png) no-repeat  right -14px;
+}
+#domainListBlock .domainList li a{
+    color: #4a4a4a;
+    text-decoration: none;
+    position: relative;
+}
+#domainListBlock .domainList li .activeLink{
+    background: url(../../../images/blog/navSelected.png) no-repeat;
+    bottom: -20px;
+    display: block;
+    height: 9px;
+    left: 50%;
+    position: absolute;
+    width: 10px;
+}
+#domainListBlock .domainList li .subNav{
+    background: #fff;
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+}
+#domainListBlock .domainList li .subNav li{
+    background: url(../../../images/blog/subnavListBg.png) repeat-y;
+    padding: 0;
+    position: relative;
+    width: 179px;
+}
+#domainListBlock .domainList li .subNav li.corners{
+    background: url(../../../images/blog/subnavCorners.png) no-repeat !important;
+    border:0 !important;
+    height: 4px;
+    overflow: hidden;
+}
+#domainListBlock .domainList li .subNav li.corners.btmCorner{
+    background-position: 0 -4px !important;
+}
+#domainListBlock .domainList li .subNav li a{
+    float: left;
+    padding: 12px 10px 0 15px;
+}
+#domainListBlock .domainList li .subNav li a.last{
+    padding-bottom: 10px;
+}
+#domainListBlock .addDomain{
+    background:#c8c8c8 url(../../../images/blog/iconAdd.png) no-repeat 14px 14px;
+    color: #6e6e6e;
+    float: right;
+    font-size: .75em;
+    height:28px;
+    padding: 10px 0 0 35px;
+    text-decoration: none;
+    width: 150px;
+}
+#blogCustomizerBlock{
+    float: left;
+    width: 960px;
+}
+#blogCustomizerBlock .customizerControlBlock ul{
+    font-size: .75em;
+    margin: 0;
+    padding: 0;
+}
+#blogCustomizerBlock .customizerControlBlock ul li{
+    float: left;
+    margin: 0 25px;
+    padding: 0;
+}
+#blogCustomizerBlock .customizerControlBlock ul li a{
+    color: #4a4a4a;
+    float: left;
+    padding: 13px 0;
+    text-decoration: none;
+}
+#blogCustomizerBlock .customizerControlBlock ul li a:hover{
+    color: #3a759f;
+}
+#blogCustomizerBlock .customizerControlBlock ul li a.active{
+    color: #3a759f;
+    font-family: 'droid_sansbold';
+    outline: none;
+}
+#blogCustomizerBlock .customizerContentBlock{
+    float: left;
+    width: 960px;
+}
+#blogCustomizerBlock .pageCustomizerBlock{
+    margin:20px 0 10px 0;
+    overflow: hidden;
+}
+.domainInfo {
+    background: url(../../../../../images/common/tick.png) no-repeat 2% center #e9f5ff;
+    border: 1px solid #c4e4fe;
+    border-radius: 3px 3px 3px 3px;
+    padding: 1% 1% 1% 6%;
+}
+.wrapBox {
+    background: #f9f8f8;
+    border: 1px solid #e1e2e2;
+    border-radius: 3px 3px 3px 3px;
+    padding: 1% 1.5% 1% 1.5%;
+    position: relative;
+}
+.wrapBoxLft {
+    background: #f9f8f8;
+    border: 1px solid #e1e2e2;
+    border-radius: 3px 0px 0px 3px;
+    padding: 5px;
+    position: relative;
+    width: 470px;
+    border-right: 0;
+}
+.lnk-url label.error{
+    position: absolute;
+    top:65px;
+    left: 60px;
+}
+.lnk-ttl label.error{
+    position: absolute;
+    top:65px;
+    left:68px;
+}
+.wrapBoxRgt {
+    background: #f9f8f8;
+    border: 1px solid #e1e2e2;
+    border-radius: 0 3px 3px 0;
+    padding: 5px;
+    position: relative;
+    width: 469px;
+    border-left: 0;
+}
+.wrapBoxRgt label.error{
+    margin-left: 55px;
+}
+.domainDetailsTable th {
+    background: #4a4a4a;
+    padding: 3px 25px 3px 15px;
+    font-weight: normal;
+    color: #fff;
+}
+.domainDetailsTable tr td {
+    background: #fff !important;
+    padding: 3px 25px 3px 15px;
+    border-bottom: 1px solid #6e6e6e;
+}
+.wrapBox.redAlert {
+    padding: 1.2% 1.5% 1% 4%;
+    background: url(../../../images/blog/alert.png) no-repeat 2% center #f9f8f8;
+    color: #e50000;
+    font-size: 1.2em;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.topOptionsPanel #filterForm li.formList {
+    width: 960px !important;
+}
+#menucheck_cntnr .cboxContainer label.list{
+    line-height:1.5 !important;
+}
+.ddTitleText#article_title_font_title .ddlabel,
+.ddTitleText#article_body_font_title .ddlabel,
+.ddTitleText#sidebar_title_font_title .ddlabel,
+.ddTitleText#sidebar_subtext_font_title .ddlabel{
+    display: block;
+    height: 18px;
+    overflow: hidden;
+}
+.countDisplay {
+    background: #fff;
+    border: 1px solid #c9c9c9;
+    padding: 2px 4px;
+    margin: 4px 10px 0 20px;
+    border-radius: 3px 3px 3px 3px;
+}
+.pageCustomizerBlock .wrapBox a{
+    text-decoration: underline;
+    color: #37779b;
+}
+.pageCustomizerBlock .wrapBox a.delete{
+    color: #ee0000;
+}
+.navCustomizerBlock .btnSaveChanges{
+    float: right;
+    font-size: 1em;
+}
+.seoCustomizerBlock #meta_title_error,
+.seoCustomizerBlock #meta_keyword_error,
+.seoCustomizerBlock #google_analytics_error{
+    float: left;
+    width: 100%;
+}
+.subdomainCustomizerBlock .cboxContainer{
+    float: left;
+    margin: 5px 0 0 0 !important;
+    width: 110px;
+}
+.subdomainCustomizerBlock .message{
+    float: right;
+    background: url(../../../images/blog/iconSuccess_fail.png) no-repeat;
+    margin: 8px 0 0 0;
+    padding: 0 20px 0 0;
+}
+.subdomainCustomizerBlock .message.available{
+    background-position: 100% -39px;
+    color: #569900;
+}
+.subdomainCustomizerBlock .message.taken{
+    background-position: 100% 2px;
+    color: #fe0000;
+}
+.photoBlock {
+    background: #f6f6f6 url(../../../images/blog/uploadImageHolder.jpg) center center no-repeat;
+    border: 1px solid #d9d9d9;
+    float: left;
+    height: 235px;
+    width: 278px;
+}
+.photoBlockWrap .sliderBlock {
+    float: left;
+    padding: 10px 0 10px 0;
+    width: 280px;
+}
+.photoBlockWrap .sliderBlock .scale {
+    background: url(../../../images/profile/iconScale.jpg) no-repeat;
+    float: left;
+    height: 24px;
+    text-indent: -999em;
+}
+
+.photoBlockWrap .sliderBlock .scale.scaleDown {
+    width: 20px;
+}
+.photoBlockWrap .sliderBlock .scale.scaleUp {
+    background-position: -20px 0;
+    width: 32px;
+}
+.photoBlockWrap .sliderBlock .scale a {
+    display: block;
+    text-indent: -999em;
+}
+.photoBlockWrap .btnSaveImage,
+.photoBlockWrap .btnBrowseImage{
+    font-size: .85em;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.photoBlockWrap .browse{
+    cursor: pointer;
+    height:30px;
+    left: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    position: absolute;
+    top:0;
+    width: 100%;
+}
+.slider {
+    float: left;
+    width: 210px;
+    height: 25px;
+    margin: 0 9px;
+}
+.uploadImageHolder {
+    background: url(../../../images/blog/uploadImageHolder.jpg) no-repeat center center #f7f6f6;
+    padding: 12px;
+    min-height: 183px;
+    display: block;
+    width: 960px;
+    border: 1px solid #d8d9da;
+}
+.uploadImageHolderVertical {
+    background: url(../../../images/blog/uploadImageHolder.jpg) no-repeat center center #f7f6f6;
+    padding: 12px;
+    min-height: 340px;
+    display: block;
+    width: 174px;
+    border: 1px solid #d8d9da;
+}
+.uploadImageHolderVertical:hover .bannerEditBg a {
+    padding-left: 11.5%;
+}
+.imageUploadLandscape .footerImageUpload{
+    margin: 20px auto;
+    overflow: hidden;
+    width:400px;
+}
+.imageHeader #bannerImageContainer.landscapeImageHoder{
+    height:265px;
+}
+.imageFooter #bannerImageContainer.landscapeImageHoder{
+    height:188px;
+}
+.imageUploadPortrait  #bannerImageContainer.potraitImageHoder {
+    height:555px;
+    width: 312px;
+}
+#filterForm{
+    float: left;
+    font-family: 'droid_sansregular';
+    font-size: .75em;
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+#filterForm li.formList{
+    border-bottom: 1px solid #e0e1e1;
+    clear: both;
+    float: left;
+    padding: 12px 0;
+    width: 898px;
+}
+#filterForm li.noBorder{
+    border: 0px;
+}
+#filterForm li label.labelTxt{
+    float: left;
+    padding-bottom: 8px;
+}
+#filterForm li .btnSubmit{
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid #366c8b;
+    float: right;
+    font-family: 'droid_sansregular' !important;
+    font-size: 1em;
+    margin:25px 0 0 0;
+    padding: 5px 20px;
+    width: 100px;
+}
+#filterForm li .cboxContainer{
+    float: left;
+    margin-right: 15px;
+}
+#filterForm li  label.list{
+    line-height: 1.7;
+    margin:0;
+}
+#filterForm li .dd{
+    font-size: 1em;
+}
+#filterForm li .dd .ddTitle .ddTitleText{
+    padding:8px 20px 6px 6px
+}
+#filterForm li.nobottomPadding{
+    padding-bottom: 0 !important;
+}
+#filterForm li .btnSaveChanges,
+#filterForm li .btnNext,
+#filterForm li .btnVerifyDomain{
+    float: right;
+    font-size: 1em;
+    margin-bottom: 20px;
+    min-width: 100px;
+}
+#filterForm li .btnSeoChanges{
+    float: right;
+    font-size: 1em;
+    margin-top: 24px;
+    margin-bottom: 25px;
+}
+#filterForm li .btnAddPages,
+#filterForm li .btnCancelCustomization,
+#filterForm li .btnpublishPage,
+#filterForm li .btnRemoveDomain{
+    float: right;
+    font-size: 1em;
+    min-width: 100px;
+}
+.optionsTab {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 0 0 0;
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #e0e1e1;
+}
+.optionsTab li {
+    float: left;
+    width: 185px;
+    position: relative;
+    bottom: -1px;
+    z-index: 1000;
+}
+.optionsTab li a {
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+}
+.optionsTab li.active {
+    background: #fff;
+    border-left: 1px solid #e0e1e1;
+    border-top: 1px solid #e0e1e1;
+    border-right: 1px solid #e0e1e1;
+}
+.optionsTab li.active strong {
+    color: #3a759f;
+}
+.photoBlock .currentImage {
+    margin: 6.5% 14.025%;
+}
+.popupContent .photouploadBlock .btnBrowseImage.browsed{
+    width:100px !important;
+}
+.popupContent .photouploadBlock .btnCropImage{
+    float:right !important;
+    width:100px !important;
+    margin-left: 10px !important;
+}
+#bannerImageFormContainer #uploadError{
+    font-size:.8em;
+}
+#updateBannerImageContainer.imageUploadLandscape .photouploadBlock{
+    width:210px;
+}
+#updateBannerImageContainer.imageUploadLandscape .photouploadBlock.cropActive{
+    width:620px;
+}
+#updateBannerImageContainer.imageUploadLandscape .btnSave,
+#updateBannerImageContainer.imageUploadPortrait .btnSave{
+    width:100px;
+    float: left;
+}
+#updateBannerImageContainer .photouploadBlock .btnReset{
+    margin-left: 10px !important;
+}
+#updateBannerImageContainer .photouploadBlock.cropActive .btnSave{
+    margin: 10px 0 0 20px;
+}
+#updateBannerImageContainer .photouploadBlock.cropActive .btnReset{
+    margin: 10px 0 0 10px;
+}
+#updateBannerImageContainer .photouploadBlock.cropActive .btnCropImage{
+    margin: 10px 0 0 0;
+}
+#updateBannerImageContainer.imageUploadPortrait .photouploadBlock.cropActive .btnSave{
+    float:left;
+    margin: 0;
+}
+#updateBannerImageContainer.imageUploadPortrait .photouploadBlock.cropActive .btnCropImage{
+    margin: 0;
+}
+#updateBannerImageContainer .photouploadBlock .photoBlockWrap .sliderBlock{
+    float: left;
+    min-height: 25px;
+    padding: 15px 0 20px 0;
+    width: 280px;
+}
+#updateBannerImageContainer .photouploadBlock .photoBlockWrap .sliderBlock .scale{
+    background: url(../../../images/profile/iconScale.jpg) no-repeat;
+    height: 24px;
+    float: left;
+    text-indent: -999em;
+}
+#updateBannerImageContainer .photouploadBlock .photoBlockWrap .sliderBlock .scale.scaleDown{
+    width:20px;
+}
+#updateBannerImageContainer .photouploadBlock .photoBlockWrap .sliderBlock .scale.scaleUp{
+    width:32px;
+    background-position: -20px 0;
+}
+#updateBannerImageContainer .photouploadBlock .photoBlockWrap .sliderBlock .scale a{
+    display: block;
+    text-indent: -999em;
+}
+#updateBannerImageContainer.imageUploadPortrait  #bannerImageFormContainer,
+#updateBannerImageContainer.imageUploadPortrait  #bannerImageFormContainer .formList,
+#updateBannerImageContainer.imageUploadPortrait  #bannerImageFormContainer .formList .inputContainer{
+    width:280px;
+}
+#updateBannerImageContainer.imageUploadPortrait  #bannerImageFormContainer .formList .txtInput {
+    width:270px;
+}
+#updateBannerImageContainer.imageUploadPortrait  #bannerImageFormContainer .formList .destUrl{
+    margin-top:10px;
+    padding: 0;
+    width:280px;
+}
+.slider{
+    float: left;
+    width: 210px;
+    height: 15px;
+    margin: 10px 9px 0 9px;
+}
+#zoomSlider{
+    height:4px;
+}
+#zoomSlider .ui-slider-handle{
+    background: url(../../../images/profile/sliderKnobe.png) no-repeat;
+    border:0;
+    height: 18px;
+    width: 18px;
+    top:-0.4em;
+    outline: none;
+    cursor: pointer;
+}
+
+/*============================================================================
+	The responsive slides css( same copy used in the stream page also)
+=============================================================================*/
+.rslides {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+.rslides li {
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+}
+.rslides li:first-child {
+    display: block;
+    float: left;
+    position: relative;
+}
+.rslides img {
+    border: 0;
+    display: block;
+    float: left;
+    height: auto;
+    width: 100%;
+}
+.imagePostBlock .large-btns_nav {
+    position: absolute;
+    z-index: 3;
+    background: #000 url("../../../images/stream/slideControl.gif") no-repeat left 50%;
+    bottom: 0;
+    left: 0;
+    opacity: 0.3;
+    overflow: hidden;
+    text-indent: -9999px;
+    top: 0;
+    width: 55px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.imagePostBlock .large-btns_nav:active {
+    opacity: 1.0;
+}
+.imagePostBlock .large-btns_nav.next {
+    background-position: right 50%;
+    left: auto;
+    right: 0;
+}
+.imagePostBlock .pager,
+.previewPostBlock .pager{
+    float: right;
+}
+.imagePostBlock .rslides_nav,
+.previewPostBlock .rslides_nav{
+    background: url(../../../images/stream/slideNxtPrev.png);
+    float: left;
+    height: 17px;
+    margin: 15px 0 0 10px;
+    text-indent: -999em;
+    width: 17px;
+}
+.imagePostBlock .rslides_nav.prev,
+.previewPostBlock .rslides_nav.prev{
+    background-position: 0 -17px;
+}
+.imagePostBlock .rslides_nav.prev:hover,
+.previewPostBlock .rslides_nav.prev:hover{
+    background-position: 0 0;
+}
+.imagePostBlock .rslides_nav.next,
+.previewPostBlock .rslides_nav.next{
+    background-position: -18px -17px;
+}
+.imagePostBlock .rslides_nav.next:hover,
+.previewPostBlock .rslides_nav.next:hover{
+    background-position: -18px 0;
+}
+.imagePostBlock .rslides li,
+.previewPostBlock .rslides li{
+    padding-bottom:0 !important;
+    font-size: .85em !important;
+}
+.previewPostBlock .rslides li{
+    left: 1px;
+    width: 540px;
+}
+.previewPostBlock h3.title{
+    float: left;
+    margin: 0 0 5px 0;
+    width:400px;
+}
+.previewPostBlock a.removeMedia{
+    color: #d90808;
+    float: right;
+    margin-right: 2px;
+}
+.previewPostBlock a.removeMedia:hover{
+    color: #4d4d4d;
+}
+.previewPostBlock .mediaPlay{
+    background:url(../../../images/stream/playIcon.png);
+    display: block;
+    height: 100px;
+    margin: -50px -50px 0 0;
+    position: absolute;
+    right: 50%;
+    text-indent: -999em;
+    top:50%;
+    width:100px;
+}
+.previewPostBlock .audioPlayerBlock{
+    border:1px solid #e6e6e6;
+    clear: both;
+    float: left;
+    margin: 5px 0 0 0;
+    padding: 20px;
+    width: 497px;
+}
+.previewPostBlock .playAudio{
+    background:url(../../../images/stream/playAudioIcon.jpg) no-repeat;
+    float: left;
+    height: 20px;
+    margin-top: 6px;
+    text-indent: -999em;
+    width: 20px;
+}
+.previewPostBlock .audioDetailBlock{
+    float: left;
+    margin-left: 20px;
+    width: 450px;
+}
+
+/*============================================================================
+	The blog comment section
+=============================================================================*/
+.commentBlock{
+    background: #e1e1e1;
+    border:1px solid #c9c9c9;
+}
+#contentContainer .content .addCommentBlock{
+    background: #e1e1e1;
+    border-bottom: 1px solid #c9c9c9;
+    font-size: .9em;
+    overflow: hidden;
+    padding: 15px 20px;
+}
+#contentContainer .content .addCommentBlock .profileImage {
+    border: 1px solid #c9c9c9;
+    float: left;
+    margin: 0 20px 0 0;
+}
+#contentContainer .commentArticle .commentWrapper{
+    background:url(../../../images/stream/horizontalLine.jpg) repeat-x 100% 100%;
+    background-color: #edeff4;
+    color: #767575;
+    overflow: hidden;
+    position: relative;
+}
+#contentContainer .commentArticle .commentWrapper .commentDivider{
+    background:url(../../../images/stream/horizontalLine.jpg) repeat-x 100% 100%;
+    bottom: 0;
+    display: block;
+    height: 1px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+#contentContainer .commentArticle .commentWrapper.replyFirstDegree {
+    background: url(../../../images/stream/replyIcon.png) no-repeat 25px 10px;
+    padding-left: 35px;
+}
+#contentContainer .commentArticle .commentWrapper.replySecondDegree {
+    background: url(../../../images/stream/replyIcon.png) no-repeat 60px 10px;
+    padding-left: 70px;
+}
+#contentContainer .commentArticle .commentWrapper.replyThirdDegree {
+    background: url(../../../images/stream/replyIcon.png) no-repeat 95px 10px;
+    padding-left: 105px;
+}
+#contentContainer .content .commentArticle{
+    font-size: 1em;
+    position: relative;
+}
+#contentContainer .content .commentArticle .commentUser{
+    float: left;
+    margin:15px 0 0 20px;
+}
+#contentContainer .content .commentArticle .commentUser .profileImage{
+    border: 1px solid #c9c9c9;
+}
+#contentContainer .content .commentArticle .commentBlock{
+    background: none;
+    border:none;
+    font-size: .75em;
+    padding: 15px 20px;
+}
+#contentContainer .content .commentArticle .commentBlock .comment{
+    padding: 0 0 0 70px;
+}
+#contentContainer .content .commentArticle .commentBlock .comment .commentTxt{
+    margin-bottom:10px;
+    min-height: 25px;
+}
+#contentContainer .content .commentArticle .commentBlock .comment .commentText{
+    color: #000;
+}
+#contentContainer .content .commentArticle .commentBlock .commentMeta{
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#contentContainer .content .commentArticle .commentBlock .commentMeta li{
+    background: url(../../../images/stream/likeIcon.png) no-repeat 0 -14px;
+    float: left;
+    padding: 0 0 0 12px;
+}
+#contentContainer .content .commentArticle .commentBlock .commentMeta li.badass{
+    background: url(../../../images/stream/likeIcon.png) no-repeat 0 0;
+    padding: 0 0 0 18px;
+}
+#contentContainer .content .commentArticle .commentBlock .commentMeta li.badass a{
+    color: #767575;
+    text-decoration: none;
+}
+#contentContainer .content .commentArticle .commentBlock .commentMeta li.badass a:hover{
+    color: #2b2b2b;
+}
+#contentContainer .content .commentArticle .commentBlock .flagComment{
+    display: none;
+}
+#contentContainer .content .commentArticle .commentBlock:hover .flagComment{
+    background: url(../../../images/stream/icon_flag.png) no-repeat 4px 0;
+    display: block;
+    float: right;
+    font-size: .85em;
+    font-size: 1em !important;
+    padding: 0 0 0 25px;
+}
+#contentContainer .content .commentArticle .commentBlock .postOwnerActions{
+    background: url(../../../images/stream/dot.png) no-repeat 32px center;
+    display: none;
+    float:right;
+    width: 80px;
+}
+#contentContainer .content .commentArticle .commentBlock:hover .postOwnerActions,
+#contentContainer .content .commentArticle .commentBlock.hover .postOwnerActions{
+    display: block;
+}
+#contentContainer .content .commentArticle .commentBlock .postOwnerActions .actions{
+    color: #4182a6;
+    float:right;
+    padding: 0 6px 0 10px;
+}
+#contentContainer .content .commentArticle .commentBlock .postOwnerActions .actions.actionEdit{
+    padding: 0 6px 0 0;
+}
+#contentContainer .content .commentArticle .commentBlock .postOwnerActions .actions:hover{
+    color: #4d4d4d;
+}
+#contentContainer .content .addCommentBlock .txtareaInputContainer{
+    font-size: 1em;
+    overflow: hidden;
+    position: relative;
+}
+#contentContainer .content .addCommentBlock .txtareaInputContainer .txtArea,
+#contentContainer .content .replySameDegree .comment .txtareaInputContainer .txtArea,
+#contentContainer .content .replyFirstDegree .comment .txtareaInputContainer .txtArea,
+#contentContainer .content .replySecondDegree .comment .txtareaInputContainer .txtArea,
+#contentContainer .content .replyThirdDegree .comment .txtareaInputContainer .txtArea{
+    border:0;
+    font: normal normal normal .85em/normal "droid_sansregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 16px;
+    padding: 4px 5px 0 5px;
+    resize:none;
+}
+#contentContainer .content .addCommentBlock label.error{
+    font-size: .9em;
+}
+#contentContainer .content .addCommentBlock .txtareaInputContainer,
+#contentContainer .content .addCommentBlock.commentreply .txtareaInputContainer,
+#contentContainer .content .replySameDegree .comment .txtareaInputContainer{
+    width: 460px;
+}
+#contentContainer .content .addCommentBlock .txtareaInputContainer .corners,
+#contentContainer .content .addCommentBlock.commentreply .txtareaInputContainer .corners,
+#contentContainer .content .replySameDegree .comment .txtareaInputContainer .corners{
+    background:url(../../../images/stream/txtAreareply-topBtm.png);
+    float: left;
+    height: 5px;
+    width:460px;
+}
+#contentContainer .content .addCommentBlock .txtareaInputContainer .corners.cornerTop,
+#contentContainer .content .addCommentBlock.commentreply .txtareaInputContainer .corners.cornerTop,
+#contentContainer .content .replySameDegree .comment .txtareaInputContainer .corners.cornerTop{
+    background-position: 0 0;
+}
+#contentContainer .content .addCommentBlock .txtareaInputContainer .corners.cornerBtm,
+#contentContainer .content .addCommentBlock.commentreply .txtareaInputContainer .corners.cornerBtm,
+#contentContainer .content .replySameDegree .comment .txtareaInputContainer .corners.cornerBtm{
+    background-position: 0 -5px;
+}
+#contentContainer .content .addCommentBlock .txtareaInputContainer .txtArea,
+#contentContainer .content .addCommentBlock.commentreply .txtareaInputContainer .txtArea,
+#contentContainer .content .replySameDegree .comment .txtareaInputContainer .txtArea{
+    background: url(../../../images/stream/txtArea-reply-mid.png) repeat-y;
+    width:450px;
+    float:left;
+}
+#contentContainer .content .addCommentBlock.commentLevelOne{
+    padding-left: 55px;
+}
+#contentContainer .content .addCommentBlock.commentLevelOne .txtareaInputContainer,
+#contentContainer .content .replyFirstDegree .comment .txtareaInputContainer{
+    width: 425px;
+}
+#contentContainer .content .addCommentBlock.commentLevelOne .txtareaInputContainer .corners,
+#contentContainer .content .replyFirstDegree .comment .txtareaInputContainer .corners{
+    background:url(../../../images/stream/txtAreareply-level1-topBtm.png) no-repeat;
+    float: left;
+    height: 5px;
+    width:425px;
+}
+#contentContainer .content .addCommentBlock.commentLevelOne .txtareaInputContainer .corners.cornerTop,
+#contentContainer .content .replyFirstDegree .comment .txtareaInputContainer .corners.cornerTop{
+    background-position: 0 0;
+}
+#contentContainer .content .addCommentBlock.commentLevelOne .txtareaInputContainer .corners.cornerBtm,
+#contentContainer .content .replyFirstDegree .comment .txtareaInputContainer .corners.cornerBtm{
+    background-position: 0 -6px;
+}
+#contentContainer .content .addCommentBlock.commentLevelOne .txtareaInputContainer .txtArea,
+#contentContainer .content .replyFirstDegree .comment .txtareaInputContainer .txtArea{
+    background: url(../../../images/stream/txtArea-reply-level-1-mid.png) repeat-y;
+    width:415px;
+}
+#contentContainer .content .addCommentBlock.commentLevelTwo{
+    padding-left: 90px;
+}
+#contentContainer .content .addCommentBlock.commentLevelTwo .txtareaInputContainer,
+#contentContainer .content .replySecondDegree .comment .txtareaInputContainer{
+    width: 390px;
+}
+#contentContainer .content .addCommentBlock.commentLevelTwo .txtareaInputContainer .corners,
+#contentContainer .content .replySecondDegree .comment .txtareaInputContainer .corners{
+    background:url(../../../images/stream/txtAreareply-level2-topBtm.png) no-repeat;
+    float: left;
+    height: 5px;
+    width:390px;
+}
+#contentContainer .content .addCommentBlock.commentLevelTwo .txtareaInputContainer .corners.cornerTop,
+#contentContainer .content .replySecondDegree .comment .txtareaInputContainer .corners.cornerTop{
+    background-position: 0 0;
+}
+#contentContainer .content .addCommentBlock.commentLevelTwo .txtareaInputContainer .corners.cornerBtm,
+#contentContainer .content .replySecondDegree .comment .txtareaInputContainer .corners.cornerBtm{
+    background-position: 0 -6px;
+}
+#contentContainer .content .addCommentBlock.commentLevelTwo .txtareaInputContainer .txtArea,
+#contentContainer .content .replySecondDegree .comment .txtareaInputContainer .txtArea{
+    background: url(../../../images/stream/txtArea-reply-level-2-mid.png) repeat-y;
+    width:380px;
+}
+#contentContainer .content .addCommentBlock.commentLevelThree{
+    padding-left: 125px;
+}
+#contentContainer .content .addCommentBlock.commentLevelThree .txtareaInputContainer,
+#contentContainer .content .replyThirdDegree .comment .txtareaInputContainer{
+    width: 355px;
+}
+#contentContainer .content .addCommentBlock.commentLevelThree .txtareaInputContainer .corners,
+#contentContainer .content .replyThirdDegree .comment .txtareaInputContainer .corners{
+    background:url(../../../images/stream/txtAreareply-level3-topBtm.png) no-repeat;
+    float: left;
+    height: 5px;
+    width:355px;
+}
+#contentContainer .content .addCommentBlock.commentLevelThree .txtareaInputContainer .corners.cornerTop,
+#contentContainer .content .replyThirdDegree .comment .txtareaInputContainer .corners.cornerTop{
+    background-position: 0 0;
+}
+#contentContainer .content .addCommentBlock.commentLevelThree .txtareaInputContainer .corners.cornerBtm,
+#contentContainer .content .replyThirdDegree .comment .txtareaInputContainer .corners.cornerBtm{
+    background-position: 0 -6px;
+}
+#contentContainer .content .addCommentBlock.commentLevelThree .txtareaInputContainer .txtArea,
+#contentContainer .content .replyThirdDegree .comment .txtareaInputContainer .txtArea{
+    background: url(../../../images/stream/txtArea-reply-level-3-mid.png) repeat-y;
+    width:345px;
+}
+.badassCounter{
+    background: url(../images/blog/likeCount.png);
+    float: left;
+    font-size: .9em;
+    height:60px;
+    margin:2px 5px 0 0;
+    width: 51px;
+}
+.LikesCounter{
+    background: url(../../../images/blog/likesCount.png);
+}
+.badassCounter .count{
+    display: block;
+    padding-top: 7px;
+    text-align: center;
+}
+.badassCounter .badassPost{
+    display: block;
+    height:20px;
+    margin-top:13px;
+    text-indent: -999em;
+}
+.customDropper,
+.tickerCustomDropper{
+    background: url(../../../../../images/common/editSwitch.png) no-repeat 0 0;
+    cursor: pointer;
+    height: 20px;
+    left: -39px;
+    position: absolute;
+    top: 0;
+    width: 21px;
+}
+.customDropper.active,
+.tickerCustomDropper.active{
+    background-position: 0 -20px;
+}
+.postInfo a{
+    text-decoration: none;
+}
+.postBody .postActionBlockRgt{
+    height: 102px;
+    position: absolute;
+    right: -50px;
+    top: 0px;
+    width: 50px;
+}
+
+.postBody .postActionBlockLft{
+    height: 102px;
+    position: absolute;
+    left: -51px;
+    top: 0px;
+    width: 50px;
+}
+
+.postBody .postActionBlockLft a, .postBody .postActionBlockRgt a{
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+.postBody .badassBadge{
+    background: #c9c9c9 url(../../../images/blog/theme/6/likeBadge.png) no-repeat 3px -4px;
+    margin-top: 2px;
+}
+
+.postBody .reblogBadge{
+    background: url("../../../images/stream/reblogNlike.png") no-repeat scroll 0 0 #C9C9C9;
+}
+a.reblogBadge{text-decoration: none;}

@@ -1,0 +1,133 @@
+{% extends ':admin:admin_base.html.twig' %}
+
+{#{% form_theme general_settings_form ':admin:twig_theme.html.twig' %}#}
+{#{% form_theme create_bots_form ':admin:twig_theme.html.twig' %}#}
+
+{% block content_title %}
+    <i class="fa fa-cogs"></i>&nbsp; Setup - Payment Gateways
+{% endblock content_title %}
+
+{% block content %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        {% include ':admin:admin_alert_succes.html.twig' %}
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        {% include ':admin:admin_alert_error.html.twig' %}
+    {% endfor %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box">
+            <div class="body" id="collapse4">
+            {{ form_start(form, {'attr': {'class': 'form-horizontal'} }) }}
+            {% for method in methods %}
+                <div class="box">
+                    <header>
+                        <div class="icons">
+                            <i class="fa fa-edit"></i>
+                        </div>
+                        <h5>{{ method.name }}</h5>
+                    </header>
+                    <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                        {% if method.name == 'Perfect Money' %}
+                            <div class="form-group {% if form_errors(form.perfectMoney.account) %}has-error{% endif %}">
+                                {{ form_label(form.perfectMoney.account, 'Account', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.perfectMoney.account, {'attr': {'class': 'form-control'}}) }}
+                                    {% if form_errors(form.perfectMoney.account) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.perfectMoney.account) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+                            <div class="form-group {% if form_errors(form.perfectMoney.alternatePassphrase) %}has-error{% endif %}">
+                                {{ form_label(form.perfectMoney.alternatePassphrase, 'Alternate Passphrase', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.perfectMoney.alternatePassphrase, {'attr': {'class': 'form-control'}}) }}
+                                    {% if form_errors(form.perfectMoney.alternatePassphrase) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.perfectMoney.alternatePassphrase) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+                            <div class="form-group {% if form_errors(form.perfectMoney.currency) %}has-error{% endif %}">
+                                {{ form_label(form.perfectMoney.currency, 'Currency', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.perfectMoney.currency, {'attr': {'class': 'form-control'}}) }}
+                                    {% if form_errors(form.perfectMoney.currency) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.perfectMoney.currency) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+                            <div class="form-group">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4">
+                                    <input type="submit" class="btn btn-primary" value="Save">
+                                </div>
+                            </div>
+                        {% elseif method.name == 'Payeer' %}
+                            <div class="form-group {% if form_errors(form.payeer.shopId) %}has-error{% endif %}">
+                                {{ form_label(form.payeer.shopId, 'Shop ID', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.payeer.shopId, {'attr': {'class': 'form-control'}}) }}
+                                    {% if form_errors(form.payeer.shopId) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.payeer.shopId) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+                            <div class="form-group {% if form_errors(form.payeer.secretKey) %}has-error{% endif %}">
+                                {{ form_label(form.payeer.secretKey, 'Secret Key', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.payeer.secretKey, {'attr': {'class': 'form-control'}}) }}
+                                    {% if form_errors(form.payeer.secretKey) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.payeer.secretKey) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+                            <div class="form-group {% if form_errors(form.payeer.currency) %}has-error{% endif %}">
+                                {{ form_label(form.payeer.currency, 'Currency', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.payeer.currency, {'attr': {'class': 'form-control'}}) }}
+                                    {% if form_errors(form.payeer.currency) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.payeer.currency) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+                            <div class="form-group ">
+                                <label class="control-label col-lg-4">Success Url</label>
+                                <div class="col-lg-4">
+                                    <div style="color: #0000ff; font-weight: bold; margin-top: 7px">
+                                        {{ app.request.scheme ~'://' ~ app.request.httpHost ~ path('office_account_add_funds_payeer_success') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label class="control-label col-lg-4">Fail Url</label>
+                                <div class="col-lg-4">
+                                    <div style="color: #0000ff; font-weight: bold; margin-top: 7px">
+                                        {{ app.request.scheme ~'://' ~ app.request.httpHost ~ path('office_account_add_funds_payeer_success') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label class="control-label col-lg-4">CallBack Url</label>
+                                <div class="col-lg-4">
+                                    <div style="color: #0000ff; font-weight: bold; margin-top: 7px">
+                                        {{ app.request.scheme ~'://' ~ app.request.httpHost ~ path('office_account_add_funds_payeer_callback') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4">
+                                    <input type="submit" class="btn btn-primary" value="Save">
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

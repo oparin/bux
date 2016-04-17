@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="{{ asset('css/admin_custom_style.css') }}">
+<table style="border: 1px double #000000">
+    <tr>
+        <td class="info-table-title-column">Fullname:</td>
+        <td class="info-table-data-column">{{ user.fullName }}</td>
+        <td class="info-table-title-column">Country:</td>
+        <td class="info-table-data-column">{{ user.country|country }}</td>
+    </tr>
+    <tr>
+        <td class="info-table-title-column">Signup Date:</td>
+        <td class="info-table-data-column">{{ user.registrationDate|date('d M, Y g:i a') }}</td>
+        <td class="info-table-title-column">Last Login Date:</td>
+        <td class="info-table-data-column">{{ user.lastLogin|date('d M, Y g:i a') }}</td>
+    </tr>
+    <tr>
+        <td class="info-table-title-column">Admin Notes:</td>
+        <td class="info-table-data-column" colspan="3">{{ user.adminSettings.personalNotes }}</td>
+    </tr>
+</table>

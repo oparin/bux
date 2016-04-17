@@ -1,0 +1,211 @@
+{% extends '::office_base.html.twig' %}
+
+{% block styles %}
+    {{ parent() }}
+    {#<link href="{{ asset('bundles/alidatatable/css/demo_table.css') }}" type="text/css" rel="stylesheet" />#}
+    {#<link href="{{ asset('bundles/alidatatable/css/smoothness/jquery-ui-1.8.4.custom.css') }}" type="text/css" rel="stylesheet" />#}
+    {#<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css">#}
+    {#<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>#}
+    {#<script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>#}
+
+{% endblock styles %}
+
+{% block iconbar %}
+    {#{% include 'BuxAccountBundle::iconbar.html.twig' %}#}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {% include 'BuxAccountBundle::blog_menu.html.twig' %}
+
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <div class="notification note-error">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+        <div class="col3-4 lastcol">
+            <!-- CONTENT BOX -->
+			
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.account.advertiser.manage'|trans }}</h2>
+                    </div>
+
+                    <div class="box-wrap clear">
+                        <div class="col1-3">&nbsp;</div>
+                        <div class="col1-3">
+                            <div class="mark clear">
+                                <form action="" method="post">
+                                    <div style="margin-left: 8%">
+                                        <select id="ad-type" class="list fl-space2" name="ad">
+                                            <option value="0">
+                                            </option>
+                                            <option value="1">
+                                                {{ 'frontend.advertise.menu.video_ads'|trans }}
+                                            </option>
+                                            <option value="2">
+                                                {{ 'frontend.advertise.menu.poll_ads'|trans }}
+                                            </option>
+                                            <option value="3">
+                                                {{ 'frontend.advertise.menu.auto_serf_ads'|trans }}
+                                            </option>
+                                            <option value="4">
+                                                {{ 'frontend.advertise.menu.banner_ads'|trans }}
+                                            </option>
+                                            <option value="5">
+                                                {{ 'frontend.advertise.menu.vip_banner_ads'|trans }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-field clear" style="float: left; margin-top: 7px; margin-left: 73px">
+                                        <input type="submit" class="button blue fr" value="{{ 'frontend.account.advertiser.add'|trans }}">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col1-3"></div>
+                    </div>
+					
+					
+                    <script type="text/javascript">
+    $(document).ready(function() {
+        switch($('#ad-type').val()) {
+            case '1':
+                $('#ad-video').css('display', 'block');
+                $('#ad-poll').css('display', 'none');
+                $('#ad-autosurf').css('display', 'none');
+                $('#ad-banner').css('display', 'none');
+                $('#ad-vip-banner').css('display', 'none');
+                break;
+            case '2':
+                $('#ad-video').css('display', 'none');
+                $('#ad-poll').css('display', 'block');
+                $('#ad-autosurf').css('display', 'none');
+                $('#ad-banner').css('display', 'none');
+                $('#ad-vip-banner').css('display', 'none');
+                break;
+            case '3':
+                $('#ad-video').css('display', 'none');
+                $('#ad-poll').css('display', 'none');
+                $('#ad-autosurf').css('display', 'block');
+                $('#ad-banner').css('display', 'none');
+                $('#ad-vip-banner').css('display', 'none');
+                break;
+            case '4':
+                $('#ad-video').css('display', 'none');
+                $('#ad-poll').css('display', 'none');
+                $('#ad-autosurf').css('display', 'none');
+                $('#ad-banner').css('display', 'block');
+                $('#ad-vip-banner').css('display', 'none');
+                break;
+            case '5':
+                $('#ad-video').css('display', 'none');
+                $('#ad-poll').css('display', 'none');
+                $('#ad-autosurf').css('display', 'none');
+                $('#ad-banner').css('display', 'none');
+                $('#ad-vip-banner').css('display', 'block');
+                break;
+            default:
+                $('#ad-video').css('display', 'none');
+                $('#ad-poll').css('display', 'none');
+                $('#ad-autosurf').css('display', 'none');
+                $('#ad-banner').css('display', 'none');
+                $('#ad-vip-banner').css('display', 'none');
+        };
+
+        $('#ad-type').change(function (){
+            switch($('#ad-type').val()) {
+                case '1':
+                    $('#ad-video').css('display', 'block');
+                    $('#ad-poll').css('display', 'none');
+                    $('#ad-autosurf').css('display', 'none');
+                    $('#ad-banner').css('display', 'none');
+                    $('#ad-vip-banner').css('display', 'none');
+                    break;
+                case '2':
+                    $('#ad-video').css('display', 'none');
+                    $('#ad-poll').css('display', 'block');
+                    $('#ad-autosurf').css('display', 'none');
+                    $('#ad-banner').css('display', 'none');
+                    $('#ad-vip-banner').css('display', 'none');
+                    break;
+                case '3':
+                    $('#ad-video').css('display', 'none');
+                    $('#ad-poll').css('display', 'none');
+                    $('#ad-autosurf').css('display', 'block');
+                    $('#ad-banner').css('display', 'none');
+                    $('#ad-vip-banner').css('display', 'none');
+                    break;
+                case '4':
+                    $('#ad-video').css('display', 'none');
+                    $('#ad-poll').css('display', 'none');
+                    $('#ad-autosurf').css('display', 'none');
+                    $('#ad-banner').css('display', 'block');
+                    $('#ad-vip-banner').css('display', 'none');
+                    break;
+                case '5':
+                    $('#ad-video').css('display', 'none');
+                    $('#ad-poll').css('display', 'none');
+                    $('#ad-autosurf').css('display', 'none');
+                    $('#ad-banner').css('display', 'none');
+                    $('#ad-vip-banner').css('display', 'block');
+                    break;
+                default:
+                    $('#ad-video').css('display', 'none');
+                    $('#ad-poll').css('display', 'none');
+                    $('#ad-autosurf').css('display', 'none');
+                    $('#ad-banner').css('display', 'none');
+                    $('#ad-vip-banner').css('display', 'none');
+            };
+        })
+    });
+</script>
+                    <div id="ad-video" style="" class="box-wrap clear">
+                        <div class="col3-3">
+                            {{ render(controller('BuxAccountBundle:AdvertiserPanel:viewVideo')) }}
+                            {#dsdsdsd#}
+                        </div>
+                    </div>
+					
+                    <div id="ad-poll" style="display: none" class="box-wrap clear">
+                        <div class="col3-3">
+                            {{ render(controller('BuxAccountBundle:AdvertiserPanel:viewPollAds')) }}
+                        </div>
+                    </div>
+					
+                    <div id="ad-autosurf" style="display: none" class="box-wrap clear">
+                        <div class="col3-3">
+                            {{ render(controller('BuxAccountBundle:AdvertiserPanel:viewAutoSerfAds')) }}
+                        </div>
+                    </div>
+                    <div id="ad-banner" style="display: none" class="box-wrap clear">
+                        <div class="col3-3">
+                            {{ render(controller('BuxAccountBundle:AdvertiserPanel:viewBannerAds')) }}
+                        </div>
+                    </div>
+                    <div id="ad-vip-banner" style="display: none" class="box-wrap clear">
+                        <div class="col3-3">
+                            {{ render(controller('BuxAccountBundle:AdvertiserPanel:viewVipBannerAds')) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}

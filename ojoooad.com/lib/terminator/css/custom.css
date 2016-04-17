@@ -1,0 +1,97 @@
+.list {
+    width: 170px;
+}
+
+label.error {
+    float: left;
+    padding-left: 5px;
+}
+
+.category {
+    background: none repeat scroll 0 0 #fcfcfc;
+    /*background: none repeat scroll 0 0 grey;*/
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+
+.category h2 {
+    /*background: url("images/header2.png") repeat-x scroll 0 0 transparent;*/
+    background-color: #EBECF0;
+    border-radius: 6px 6px 0 0;
+    color: #000000;
+    font-size: 13px;
+    height: 24px;
+    margin-bottom: 10px;
+    padding: 6px 0 0 25px;
+}
+
+.category .surf {
+    border: 1px solid #e8e8e8;
+    height: 47px;
+    margin: 10px;
+    position: relative;
+    /*background-color: #f5f5f5;;*/
+}
+
+.category .surf .image, .ads .category .surf .image2 {
+    background: url("images/ads-icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 38px;
+    margin: 5px 0 0 18px;
+    width: 94px;
+}
+
+.category .surf .adname {
+    font-size: 14px;
+    left: 20px;
+    position: absolute;
+    top: 0;
+    margin-top: 5px;
+}
+
+.category .surf .bold {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.category .surf .adname .desc {
+    color: #33343b;
+    font-size: 12px;
+    margin: 5px 0 0;
+}
+
+.category .surf .counter-cash {
+    position: absolute;
+    right: -1px;
+    top: 0;
+}
+
+.category .surf .counter-cash div {
+    background: none repeat scroll 0 0 #ebecf0;
+    color: #222222;
+    float: left;
+    height: 32px;
+    margin: 0 1px;
+    padding: 15px 16px 0;
+}
+
+.category .surf .counter-cash .cash1 {
+    background: none repeat scroll 0 0 #85c400;
+    color: #ffffff;
+    float: left;
+    height: 32px;
+    margin: 0 1px;
+    padding: 15px 16px 0;
+}
+
+/*.pagetop .modal-window, .main .modal-window, .footer .modal-window {*/
+.fos_user_registration_register .modal-window {
+    display: none;
+}
+.modal-800 {
+    width: 800px;
+}
+.modal-window {
+    width: auto;
+}

@@ -1,0 +1,11 @@
+{% extends "::office_base.html.twig" %}
+
+{% block content %}
+{#{% include "FOSUserBundle:Profile:show_content.html.twig" %}#}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        {#<div class="notification note-success">#}
+            {#<a href="#" class="close" title="Close notification">close</a>#}
+            <p><strong>{{ flashMessage }}</strong></p>
+        </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,15 @@
+services:
+    sg_datatables.video_ad:
+        class: Bux\AccountBundle\Datatables\VideoAdDataTable
+        tags:
+            - { name: sg.datatable.view }
+
+    grid.column.clicks_outside:
+        class: Bux\AccountBundle\Resources\views\AdvertiserPanel\Grid\Column\ClicksOutsideColumn
+        tags:
+            - { name: grid.column.extension }
+
+    grid.column.clicks_outside:
+        class: Bux\AccountBundle\Resources\views\AdvertiserPanel\Grid\Column\ViewsClicksColumn
+        tags:
+            - { name: grid.column.extension }

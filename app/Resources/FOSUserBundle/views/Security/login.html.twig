@@ -1,0 +1,102 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block header_title %}
+    <!-- subheader -->
+    <div class="rightsidebar" id="subheader">
+        <div class="subheader">
+            <div class="subtitle"><h1>Sign In</h1></div>
+            <div class="subdesc">
+                Sign In
+            </div>
+        </div>
+    </div>
+    <!-- subheader -->
+{% endblock header_title %}
+
+{% block header_subtitle %}
+{% endblock header_subtitle %}
+
+{% block body %}
+    <div id="main">
+
+        <!-- breadcrumb -->
+        <div id="breadcrumbs">
+            <img width="16" height="16" class="bread-icon" src="{{ asset('lib/versatile/images/home-icon.png') }}">
+            <div class="breadcrumbs">
+                <a href="{{ path('home') }}">Home</a>
+            </div>
+        </div><!-- breadcrumb -->
+
+        <div class="content">
+            <div class="post">
+
+                <div class="sysform" id="contactform">
+
+
+                    <!--begin:notice message block-->
+                    <div id="note">
+                        {% if error %}
+                            {#<div style="color: red">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+                            <div style="color: red">Wrong username or password</div>
+                        {% endif %}
+                    </div>
+
+                    <!--begin:notice message block-->
+                    <br>
+
+                    <form action="{{ path("fos_user_security_check") }}" method="post" id="login-form">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        <p>
+                            <div style="float: left; width: 100px">
+                                <label for="username" style="">{{ 'security.login.username'|trans }}</label>
+                            </div>
+                            <div>
+                                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="required input_small txt" />
+                            </div>
+                        </p>
+
+                        <p>
+                            <div style="float: left; width: 100px">
+                                <label for="password">{{ 'security.login.password'|trans }}</label>
+                            </div>
+                            <div>
+                                <input type="password" id="password" name="_password" required="required" class="required input_small txt" />
+                            </div>
+                        </p>
+                        <p>
+                        <div style="float: left; width: 95px">
+                            <label></label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                        </div>
+                        </p>
+                        <p>
+                        <div style="float: left; width: 100px">
+                            &nbsp;
+                        </div>
+                        <div>
+                            <div>
+                            <a href="{{ path('fos_user_registration_register') }}">Don't have an account?</a>
+                            </div>
+                            <div style="margin-left: 100px">
+                            <a href="{{ path('fos_user_resetting_request') }}">Forgot Password?</a>
+                            </div>
+                        </div>
+                        </p>
+                        <p>
+                            <input type="submit" value="{{ 'security.login.submit'|trans }}" style="margin-left: 97px; background-color: #004F1A; border-radius: 4px; color: white; padding: 5px; font-size: 18px">
+                            {#<a onclick="jQuery('#login-form').submit();" class="button small" style="margin-left: 100px">#}
+                                {#<span>{{ 'security.login.submit'|trans }}</span>#}
+                            {#</a>#}
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock body %}

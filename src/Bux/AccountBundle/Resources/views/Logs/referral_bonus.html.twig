@@ -1,0 +1,53 @@
+{% extends '::office_base.html.twig' %}
+
+{#{% form_theme form ':form:fields.html.twig' %}#}
+
+{% block iconbar %}
+    {#{% include 'BuxAccountBundle::iconbar.html.twig' %}#}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {% include 'BuxAccountBundle::blog_menu.html.twig' %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <div class="notification note-error">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <div class="col3-4 lastcol">
+            <!-- CONTENT BOX - DATATABLE -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.account.logs.referral_bonus'|trans }}</h2>
+                    </div>
+
+                    <div class="box-wrap clear">
+                        <table cellspacing="0" class="basic">
+                            <tbody>
+                            {% for statistic in statistics %}
+                                <tr>
+                                    <th class="full" style="width: 100px">Level {{ statistic.level }}</th>
+                                    <td class="value right" style="width: 200px">+ {{ statistic.bonus }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

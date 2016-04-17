@@ -1,0 +1,6 @@
+services:
+  bux.security.authentication_event_listener:
+    class: Bux\Admin\HomeBundle\EventListener\AuthenticationListener
+    arguments: [@doctrine.orm.entity_manager, @router]
+    tags:
+      - { name: kernel.event_subscriber }

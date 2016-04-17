@@ -1,0 +1,128 @@
+{% extends '::office_base.html.twig' %}
+
+{% block iconbar %}
+    {#{% include 'BuxAccountBundle::iconbar.html.twig' %}#}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {% include 'BuxAccountBundle::blog_menu.html.twig' %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <div class="notification note-error">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <div class="col3-4 lastcol">
+            <!-- CONTENT BOX - DATATABLE -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.account.menu.promo'|trans }}</h2>
+                    </div>
+                    <div class="notification note-attention">
+                        {#<a title="Close notification" class="close" href="#">close</a>#}
+                        <p><strong>Your referral link:</strong> {{ site_host }}/?ref={{ app.user.username }}</p>
+                    </div>
+                    <div class="box-wrap clear">
+                        <div style="text-align: center">
+                            <div>
+                                <img src="{{ asset('uploads/banner.gif') }}">
+                            </div>
+                            <div>
+                                <div style="float: left; margin-left: 115px">
+                                    <label style="font-weight: bold; margin-top: -20px">HTML: </label>
+                                </div>
+                                <div>
+                                    <textarea cols="50" style="margin-left: -120px">&lt;a href=&quot;{{ site_host }}?ref={{ app.user.username }}&quot;&gt;&lt;img src=&quot;{{ site_host }}{{ asset('uploads/banner.gif') }}&quot; width=&quot;468&quot; height=&quot;60&quot;/&gt;&lt;/a&gt;</textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="float: left; margin-left: 115px">
+                                    <label style="font-weight: bold; margin-top: -20px">BBCode: </label>
+                                </div>
+                                <div>
+                                    <textarea cols="50" style="margin-left: -135px">[url={{ site_host }}?ref={{ app.user.username }}][img]{{ site_host }}/uploads/banner.gif[/img][/url]</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 50px">
+                            <div>
+                                <img src="{{ asset('uploads/banner2.gif') }}">
+                            </div>
+                            <div>
+                                <div style="float: left; margin-left: 115px">
+                                    <label style="font-weight: bold; margin-top: -20px">HTML: </label>
+                                </div>
+                                <div>
+                                    <textarea cols="50" style="margin-left: -120px">&lt;a href=&quot;{{ site_host }}?ref={{ app.user.username }}&quot;&gt;&lt;img src=&quot;{{ site_host }}{{ asset('uploads/banner2.gif') }}&quot; width=&quot;468&quot; height=&quot;60&quot;/&gt;&lt;/a&gt;</textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="float: left; margin-left: 115px">
+                                    <label style="font-weight: bold; margin-top: -20px">BBCode: </label>
+                                </div>
+                                <div>
+                                    <textarea cols="50" style="margin-left: -135px">[url={{ site_host }}?ref={{ app.user.username }}][img]{{ site_host }}/uploads/banner2.gif[/img][/url]</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 50px">
+                            <div>
+                                <img src="{{ asset('uploads/banner3.gif') }}">
+                            </div>
+                            <div>
+                                <div style="float: left; margin-left: 115px">
+                                    <label style="font-weight: bold; margin-top: -20px">HTML: </label>
+                                </div>
+                                <div>
+                                    <textarea cols="50" style="margin-left: -120px">&lt;a href=&quot;{{ site_host }}?ref={{ app.user.username }}&quot;&gt;&lt;img src=&quot;{{ site_host }}{{ asset('uploads/banner3.gif') }}&quot; width=&quot;468&quot; height=&quot;60&quot;/&gt;&lt;/a&gt;</textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="float: left; margin-left: 115px">
+                                    <label style="font-weight: bold; margin-top: -20px">BBCode: </label>
+                                </div>
+                                <div>
+                                    <textarea cols="50" style="margin-left: -135px">[url={{ site_host }}?ref={{ app.user.username }}][img]{{ site_host }}/uploads/banner3.gif[/img][/url]</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 50px">
+                            <div>
+                                <img src="{{ asset('uploads/banner4.gif') }}">
+                            </div>
+                            <div>
+                                <div style="float: left; margin-left: 115px">
+                                    <label style="font-weight: bold; margin-top: -20px">HTML: </label>
+                                </div>
+                                <div>
+                                    <textarea cols="50" style="margin-left: -120px">&lt;a href=&quot;{{ site_host }}?ref={{ app.user.username }}&quot;&gt;&lt;img src=&quot;{{ site_host }}{{ asset('uploads/banner4.gif') }}&quot; width=&quot;468&quot; height=&quot;60&quot;/&gt;&lt;/a&gt;</textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="float: left; margin-left: 115px">
+                                    <label style="font-weight: bold; margin-top: -20px">BBCode: </label>
+                                </div>
+                                <div>
+                                    <textarea cols="50" style="margin-left: -135px">[url={{ site_host }}?ref={{ app.user.username }}][img]{{ site_host }}/uploads/banner4.gif[/img][/url]</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

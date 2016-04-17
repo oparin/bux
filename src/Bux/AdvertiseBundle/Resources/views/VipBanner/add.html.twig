@@ -1,0 +1,155 @@
+{% extends '::office_base.html.twig' %}
+
+{% form_theme form 'BuxAccountBundle:Twig:fields.html.twig' %}
+
+{% block iconbar %}
+    {#{% include 'BuxAccountBundle::iconbar.html.twig' %}#}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {% include 'BuxAccountBundle::blog_menu.html.twig' %}
+        <div class="col3-4 lastcol">
+            <!-- CONTENT BOX -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.account.advertiser.banner_ads_creation_form'|trans }}</h2>
+                    </div>
+
+                    <div class="box-wrap clear">
+                        {{ form_start(form, {'attr': {'class': 'validate-form form bt-space15'} }) }}
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.title, 'frontend.account.advertiser.form.title'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}
+                                    {{ form_widget(form.title, {'attr': {'class': 'required list fl-space2'} }) }}
+                                    {% if form_errors(form.title) %}
+                                        <label class="error form-error">{{ form_errors(form.title) }}</label>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        <div class="columns clear bt-space15">
+                            <div class="col3-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.targetUrl, 'frontend.account.advertiser.form.target_url'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}
+                                    {{ form_widget(form.targetUrl, {'attr': {'class': 'required list fl-space2', 'value': 'http://'} }) }}
+                                    <div style="padding-top: 5px">(eg. http://mysite.com, http://www.mysite.com)</div>
+                                    {% if form_errors(form.targetUrl) %}
+                                        <label class="error form-error">{{ form_errors(form.targetUrl) }}</label>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        <div class="columns clear bt-space15">
+                            <div class="col3-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.bannerUrl, 'frontend.account.advertiser.form.banner_url'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}
+                                    {{ form_widget(form.bannerUrl, {'attr': {'class': 'required list fl-space2', 'value': 'http://'} }) }}
+                                    {% if form_errors(form.bannerUrl) %}
+                                        <label class="error form-error">{{ form_errors(form.bannerUrl) }}</label>
+                                    {% else %}
+                                        <span>
+                                            <div style="padding-top: 5px">{{ 'frontend.account.advertiser.form.banner_size'|trans }} 936x120</div>
+                                        </span>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        {#<div class="columns clear bt-space15">#}
+                        {#<div class="col2-3">#}
+                        {#<div class="form-field clear">#}
+                        {#{{ form_label(form.maxClickInDay, 'frontend.account.advertiser.form.max_click_in_day'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}#}
+                        {#{{ form_widget(form.maxClickInDay, {'attr': {'class': 'required list fl-space2', 'value': '0'} }) }}#}
+                        {#{% if form_errors(form.maxClickInDay) %}#}
+                        {#<label class="error form-error">{{ form_errors(form.maxClickInDay) }}</label>#}
+                        {#{% endif %}#}
+                        {#</div><!-- /.form-field -->#}
+                        {#</div>#}
+                        {#</div>#}
+
+                        {#<div class="columns clear bt-space15">#}
+                        {#<div class="col2-3">#}
+                        {#<div class="form-field clear">#}
+                        {#{{ form_label(form.category, 'frontend.account.advertiser.form.ad_value'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}#}
+                        {#{{ form_widget(form.category, {'attr': {'class': 'required list fl-space2', 'style': 'width: 190px'} }) }}#}
+                        {#{% if form_errors(form.category) %}#}
+                        {#<label class="error form-error">{{ form_errors(form.category) }}</label>#}
+                        {#{% endif %}#}
+                        {#</div><!-- /.form-field -->#}
+                        {#</div>#}
+                        {#</div>#}
+
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.memberships, 'frontend.account.advertiser.form.target_membership'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}
+                                    {{ form_widget(form.memberships, {'attr': {'class': 'required fl-space2'} }) }}
+                                    {% if form_errors(form.memberships) %}
+                                        <label class="error form-error">{{ form_errors(form.memberships) }}</label>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.countries, 'frontend.account.advertiser.form.target_country'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}
+                                    {{ form_widget(form.countries, {'attr': {'class': 'required fl-space2'} }) }}
+                                    {% if form_errors(form.countries) %}
+                                        <label class="error form-error">{{ form_errors(form.countries) }}</label>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.terms, 'frontend.account.advertiser.form.terms'|trans, {'label_attr': {'class': 'form-label size-180 fl-space2'} }) }}
+                                    {{ form_widget(form.terms, {'attr': {'class': 'required list fl-space2', 'style': 'margin-left: -80px'} }) }}
+                                    {% if form_errors(form.terms) %}
+                                        <label class="error form-error">{{ form_errors(form.terms) }}</label>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+                            </div>
+                        </div>
+
+                        {{ form_rest(form) }}
+                        <div class="form-field clear" style="float: left; margin-left: 138px">
+                            <input type="submit" class="button blue fr" value="{{ 'frontend.blogs.action.save'|trans }}" />
+                        </div><!-- /.form-field -->
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#all-countries').click(function() {
+                if($("#all-countries").is(':checked')){
+                    $('.countries').attr('checked', true);
+                } else {
+                    $('.countries').attr('checked', false);
+                }
+            });
+
+            $('#all-memberships').click(function() {
+                if($("#all-memberships").is(':checked')){
+                    $('.memberships').attr('checked', true);
+                } else {
+                    $('.memberships').attr('checked', false);
+                }
+            });
+        });
+    </script>
+{% endblock js %}

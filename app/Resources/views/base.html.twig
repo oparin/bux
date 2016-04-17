@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="cufon-active cufon-ready"><head>
+    <meta charset="UTF-8">
+    <title>OJOOOAD</title>
+    <link href="{{ asset('lib/versatile/css/main.css') }}" media="all" type="text/css" rel="stylesheet">
+    <link href="{{ asset('lib/versatile/css/colorscheme.css') }}" media="all" type="text/css" rel="stylesheet">
+    <link media="all" type="text/css" href="{{ asset('lib/versatile/css/nivo-slider.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/versatile/css/custom.css') }}" type="text/css" rel="stylesheet">
+
+    <script src="{{ asset('lib/versatile/js/jquery-1.4.2.min.js') }}" type="text/javascript"></script>
+    {#<script src="{{ asset('js/jquery-1.11.2.min.js') }}" type="text/javascript"></script>#}
+    {#<script src="{{ asset('js/jquery-ticker.min.js') }}" type="text/javascript"></script>#}
+    <script src="{{ asset('lib/versatile/js/jquery.easing.1.3.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('lib/versatile/js/jquery.tools.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('lib/versatile/js/jquery.preloadify.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('lib/versatile/js/jquery.form.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('lib/versatile/js/jquery.validate.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('lib/versatile/js/jquery.prettyPhoto.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('lib/versatile/js/sys_custom.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('lib/versatile/js/nivo/nivo.slider.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('lib/versatile/js/sys_slider.js') }}" type="text/javascript"></script>
+
+    <script src="{{ asset('lib/versatile/js/cufon-yui.js') }}" type="text/javascript"></script><style type="text/css">cufon{text-indent:0!important;}@media screen,projection{cufon{display:inline!important;display:inline-block!important;position:relative!important;vertical-align:middle!important;font-size:1px!important;line-height:1px!important;}cufon cufontext{display:-moz-inline-box!important;display:inline-block!important;width:0!important;height:0!important;overflow:hidden!important;text-indent:-10000in!important;}cufon canvas{position:relative!important;}}@media print{cufon{padding:0!important;}cufon canvas{display:none!important;}}</style>
+    <script src="{{ asset('lib/versatile/js/cufon/Segan.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">/* &lt;![CDATA[ */Cufon.replace('h1, h2, h3, h4, h5, .infobox h1, .infobox h2, .logo, .dropcap1, .dropcap2, .dropcap3, .dropcap4, .infobox h3, .bigtitle, .infobox p, .subtitle, .subdesc, .subhtml,', { hover:true, fontFamily: 'Segan' });
+        /* ]]&gt; */
+    </script>
+
+
+    <!--[if lt IE 9]>
+    <script src="{{ asset('lib/versatile/js/html5.js') }}"></script>
+    <![endif]-->
+
+    <!--[if IE 6]>
+    <script src="{{ asset('lib/versatile/js/DD_belatedPNG.js') }}" type="text/javascript"></script>
+    <script>
+        /* EXAMPLE */
+        DD_belatedPNG.fix('*');
+        /* string argument can be any CSS selector */
+        /* .png_bg example is unnecessary */
+        /* change it to what suits you! */
+    </script>
+    <![endif]-->
+
+    {% block styles %}
+
+    {% endblock styles %}
+
+</head>
+<body id="stretched">
+<!-- #wrap-all -->
+<div id="wrap-all">
+<header id="header">
+    <!-- topbar -->
+    <div id="topbar">
+        <div class="inner">
+
+            <!-- logo -->
+            <div class="logo">
+                <a href="#">
+                    <img alt="logo" src="{{ asset('lib/versatile/images/logo.png') }}"></a>
+            </div>
+            <!-- logo -->
+
+            <!-- topmenu -->
+            <div class="topmenu">
+                <ul class="nav">
+                    <li>
+                        <a href="{{ path('home') }}">Home</a>
+                    </li>
+                    <li>
+                        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                            <a href="{{ path('office_advertise') }}">Advertise</a>
+                        {% else %}
+                            <a href="{{ path('home_advertise') }}">Advertise</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        <a href="{{ path('home_earn_money') }}">Earn money</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('home_testimonials') }}">Testimonials</a>
+                    </li>
+                    <li>
+                        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                            <a href="{{ path('office_support') }}">Contact</a>
+                        {% else %}
+                            <a href="{{ path('home_contact') }}">Contact</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        <a href="{{ path('home_faq') }}">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('home_about') }}">About</a>
+                    </li>
+                    <li>
+                        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                            <a href="{{ path('office_account') }}">Account</a>
+                        {% else %}
+                            <a href="{{ path('fos_user_security_login') }}">Sign In</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+            <!-- topmenu -->
+
+        </div><!-- inner -->
+    </div><!-- topbar -->
+
+    <div class="clear"></div>
+
+    {% block header_title %}
+    <!--featured slider-->
+    <div id="featured_slider">
+        <div class="inner">
+            <div id="slider" class="nivoSlider">
+                <a href="" class="nivo-imageLink" style="display: block;">
+                    <img alt="" src="{{ asset('lib/versatile/images/slider_image4.jpg') }}" style="display: none;"></a>
+                <a href="" class="nivo-imageLink" style="display: none;">
+                    <img alt="" src="{{ asset('lib/versatile/images/slider_image3.jpg') }}" style="display: none;"></a>
+                <a href="" class="nivo-imageLink" style="display: none;">
+                    <img alt="" src="{{ asset('lib/versatile/images/slider_image2.jpg') }}" style="display: none;"></a>
+                <a href="" class="nivo-imageLink" style="display: none;">
+                    <img alt="" src="{{ asset('lib/versatile/images/slider_image.jpg') }}" style="display: none;"></a>
+            </div>
+            <!-- Start: Highlight-->
+            <div class="header_highlight">
+                <h1>OJOOOAD its not PTC, its better than PTC</h1>
+                <h4>OJOOOAD is effective and easy!</h4>
+                <h4>Awarded and accepted by PTC professionals</h4>
+                <a class=" button large " style="background-color:#db004c" href="{{ path('fos_user_registration_register') }}"><span>Sign Up</span></a>
+            </div><!-- End: Highlight-->
+        </div>
+    </div>
+    <!--featured slider-->
+    {% endblock header_title %}
+    <!-- Header -->
+
+    {% block header_subtitle %}
+    <div class="clear"></div>
+
+    <!-- TEASER -->
+    <div class="infobox rightsidebar">
+        <div class="inner">
+            <div class="teaserfull">
+                <div class="one_third">
+                    <a class="button large" style="background-color:#00b4ff" href="{{ path('fos_user_registration_register') }}">
+                        <span>Get Started </span></a>
+                </div>
+                <div class="two_third last">
+                    <h3>Pre-Enrollment started on 22-nd march 2015</h3>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!-- TEASER -->
+    {% endblock header_subtitle %}
+
+    <div class="clear"></div>
+
+</header>
+
+<!-- pagemid -->
+<div class="pagemid rightsidebar">
+    <div class="topshadow">
+        <div class="inner">
+
+            {% block body %}
+            <div class="frontpage_inner">
+                <div class="content">
+                    <div class="one_half">
+                        <h2><cufon class="cufon cufon-canvas" alt="Why " style="width: 61px; height: 28px;"><canvas width="85" height="29" style="width: 85px; height: 29px; top: -1px; left: -2px;"></canvas><cufontext>Why </cufontext></cufon><cufon class="cufon cufon-canvas" alt="Versatile?" style="width: 116px; height: 28px;"><canvas width="134" height="29" style="width: 134px; height: 29px; top: -1px; left: -2px;"></canvas><cufontext>Versatile?</cufontext></cufon></h2>
+                        <p>Versatile is a Powerful &amp; Professional WordPress theme suitable for almost any other kind of website. Versatile admin panel gives you full control over every major design element throughout your site.</p>
+
+                        <p>Versatile admin panel comes with the color and font options where you can customize you website more than you could ever imagine. Take a look at the list of features.</p>
+                        <p><a class="button large full" style="background-color:#3ba600" href="#"><span>Options Panel Preview</span></a></p>
+                    </div>
+                    <div class="one_half last">
+                        <h2><cufon class="cufon cufon-canvas" alt="Versatile " style="width: 110px; height: 28px;"><canvas width="134" height="29" style="width: 134px; height: 29px; top: -1px; left: -2px;"></canvas><cufontext>Versatile </cufontext></cufon><cufon class="cufon cufon-canvas" alt="Speciality" style="width: 113px; height: 28px;"><canvas width="130" height="29" style="width: 130px; height: 29px; top: -1px; left: -2px;"></canvas><cufontext>Speciality</cufontext></cufon></h2>
+                        <ul class="list-check ">
+                            <li>Built in HTML5</li>
+                            <li>Easy to change background</li>
+                            <li>Unlimited Color Optionr</li>
+                            <li>Typography Size Changable</li>
+                            <li>Customizable Footer Widgets</li>
+
+                            <li>Left and Right Sidebars</li>
+                            <li>Custom Sidebars</li>
+                            <li>Custom post types for Slider &amp; Portfolio</li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            {% endblock body %}
+
+            <!-- #sidebar -->
+            <aside id="sidebar">
+                {% set visitors = 'visitors'|visitor %}
+                {% set visit = visitors.visit %}
+                <div class="content">
+                    <div style="text-align: center; font-weight: bold; font-size: 14px">Latest Registrations</div>
+                    <div class="widget_postslist vticker">
+                        <ul>
+                            {% for visitor in visit %}
+                                {#{{ dump(visitor.country) }}#}
+                                <li>
+                                    <div style="float: left">
+                                        <img width="32" alt="thumb" src="{{ asset('images/flag/' ~ visitor.flag) }}" class="thinframess">
+                                    </div>
+                                    <div style="margin-top: 8px; margin-left: 50px">New member {{ visitor.name }} from <br>{{ visitor.country }}</div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                {% set visit = visitors.registr %}
+                <div class="content" style="margin-top: -20px">
+                    <div style="text-align: center; font-weight: bold; font-size: 14px">Upgraded Members</div>
+                    <div class="widget_postslist vregist">
+                        <ul>
+                            {% for visitor in visit %}
+                                <li>
+                                    <div style="float: left">
+                                        <img width="32" alt="thumb" src="{{ asset('images/flag/' ~ visitor.flag) }}" class="thinframess">
+                                    </div>
+                                    <div style="margin-top: 8px; margin-left: 50px">Member <span style="font-weight: bold">{{ visitor.name }}</span> from <br> {{ visitor.country }}</div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </aside><!-- #sidebar -->
+
+        </div><!-- inner -->
+    </div><!--topshadow-->
+</div><!-- pagemid -->
+
+<div class="clear"></div>
+
+<div style="width: 952px; margin: 0 auto">
+    {% block banners %}
+        {% set banner = app.user|banner %}
+        {% if banner %}
+            <div class="columns clear bt-space20">
+                <div class="col1-1 lastcol">
+                    <div class="content-box bt-space10">
+                        {#<div class="box-body">#}
+                        <div class="box-wrap clear  box-slide-body">
+                            <div style="text-align: left">
+                                {% for ban in banner %}
+                                    <div style="padding: 2px; border: 1px solid #808080; float: left; width: 470px; height: 62">
+                                        <a href="{{ ban.targetUrl }}" target="_blank" onclick="bannerComplete({{ ban.id }});">
+                                            <img src="{{ ban.bannerUrl }}" alt="" style="width: 468px; height: 60px; vertical-align: bottom"/>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {#</div>#}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% set ban = app.user|big_banner %}
+        {% if ban %}
+            <div class="columns clear bt-space20">
+                <div class="col1-1 lastcol">
+                    <div class="content-box bt-space10">
+                        <div class="box-wrap clear  box-slide-body">
+                            <div style="text-align: left">
+                                <div style="padding: 2px; border: 1px solid #808080; float: left; width: 946px; height: 120">
+                                    <a href="{{ ban.targetUrl }}" target="_blank" onclick="vipBannerComplete({{ ban.id }});">
+                                        <img src="{{ ban.bannerUrl }}" alt="" style="width: 944px; height: 120px; vertical-align: bottom"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endblock banners %}
+</div>
+
+<!-- footer -->
+<footer id="footer">
+    <div class="inner">
+
+        <div class="one_fourth ">
+            <div class="footer_column">
+                <div class="syswidget">
+                    {{ 'footer_1'|footer|raw }}
+                </div>
+            </div>
+        </div>
+
+        <div class="one_fourth">
+            <div class="footer_column">
+                <div class="syswidget">
+                    <div class="syswidget">
+                        {{ 'footer_2'|footer|raw }}
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="one_fourth ">
+            <div class="footer_column">
+                <div class="syswidget">
+                    {{ 'footer_3'|footer|raw }}
+                </div>
+            </div>
+        </div>
+
+        <div class="one_fourth last">
+            <div class="footer_column">
+                <div class="syswidget">
+                    {{ 'footer_4'|footer|raw }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+</footer>
+<!-- footer -->
+
+<!-- copyright -->
+<div class="copyright">
+    <div class="inner">
+
+        <div class="copy_left">
+            (C) 2015 Copyright Ojoooad.com
+        </div>
+
+        {#<div class="copy_right">#}
+            {#<!-- sociables -->#}
+            {#<ul class="sociables">#}
+                {#<li><a href="#"><img alt="twitter" src="{{ asset('lib/versatile/images/followus/twitter_16.png') }}"> </a></li>#}
+                {#<li><a href="#"><img alt="dopplr" src="{{ asset('lib/versatile/images/followus/dopplr_16.png') }}"> </a></li>#}
+                {#<li><a href="#"><img alt="facebook" src="{{ asset('lib/versatile/images/followus/facebook_16.png') }}"> </a></li>#}
+                {#<li><a href="#"><img alt="yahoo-buzz" src="{{ asset('lib/versatile/images/followus/yahoo-buzz_16.png') }}"> </a></li>#}
+                {#<li><a href="#"><img alt="skype" src="{{ asset('lib/versatile/images/followus/skype_16.png') }}"> </a></li>#}
+                {#<li><a href="#"><img alt="linkedin" src="{{ asset('lib/versatile/images/followus/linkedin_16.png') }}"> </a></li>#}
+                {#<li><a href="#"><img alt="tumblr" src="{{ asset('lib/versatile/images/followus/tumblr_16.png') }}"> </a></li>#}
+                {#<li><a href="#"><img alt="designbump" src="{{ asset('lib/versatile/images/followus/designbump_16.png') }}"> </a></li>#}
+                {#<li><a href="#"><img alt="reddit" src="{{ asset('lib/versatile/images/followus/reddit_16.png') }}"> </a></li>#}
+            {#</ul><!-- sociables -->#}
+        {#</div>#}
+
+    </div>
+</div>
+<!-- copyright -->
+
+</div><!-- wrap-all -->
+{#<script src="{{ asset('js/jquery-ticker.min.js') }}" type="text/javascript"></script>#}
+<script src="{{ asset('js/jquery.easing.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/jquery.easy-ticker.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var dd = $('.vticker').easyTicker({
+            direction: 'down',
+            easing: 'easeInOutBack',
+            speed: 'slow',
+            interval: 5000,
+            height: 'auto',
+            visible: 4,
+            mousePause: 0
+//            controls: {
+//                up: '.up',
+//                down: '.down',
+//                toggle: '.toggle',
+//                stopText: 'Stop !!!'
+//            }
+        }).data('easyTicker');
+        var lr = $('.vregist').easyTicker({
+            direction: 'down',
+            easing: 'easeInOutBack',
+            speed: 'slow',
+            interval: 10000,
+            height: 'auto',
+            visible: 4,
+            mousePause: 0
+//            controls: {
+//                up: '.up',
+//                down: '.down',
+//                toggle: '.toggle',
+//                stopText: 'Stop !!!'
+//            }
+        }).data('easyTicker');
+    });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60518620-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript">
+    function bannerComplete(id)
+    {
+        $.ajax({
+            type: "POST",
+            url: "{{ path('office_banner_complete') }}",
+            data: {'id': id},
+            success: function(msg) {
+            }
+        })
+
+    }
+</script>
+<script type="text/javascript">
+    function vipBannerComplete(id)
+    {
+        $.ajax({
+            type: "POST",
+            url: "{{ path('office_vip_banner_complete') }}",
+            data: {'id': id},
+            success: function(msg) {
+            }
+        })
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+{% extends '::office_base.html.twig' %}
+
+{#{% form_theme form ':form:fields.html.twig' %}#}
+
+{% block iconbar %}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {#{% for flashMessage in app.session.flashbag.get('success') %}#}
+            {#<div class="notification note-success">#}
+                {#<a href="#" class="close" title="Close notification">close</a>#}
+                {#<p><strong>{{ flashMessage|raw }}</strong></p>#}
+            {#</div>#}
+        {#{% endfor %}#}
+
+        <div class="col4-4 lastcol">
+            <!-- CONTENT BOX - DATATABLE -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.dashboard.menu.video_ad'|trans }}</h2>
+                    </div>
+                    <div class="box-wrap clear" style="margin-left: 0%">
+
+                        {% if message %}
+                            <h2>
+                                {{ message }}
+                            </h2>
+                        {% endif %}
+
+                        <div class="category">
+                            {% for ad in ads %}
+                                <div class="surf">
+                                    <div class="image"></div>
+                                    <div class="adname" id="da1a">
+                                        <div class="bold">
+                                            <a onfocus="blur()" class="azul" href="{{ path('office_earn_money_view_video_ad', {'id': ad.id}) }}">{{ ad.title }}</a>
+                                        </div>
+                                        <div class="desc bold">{{ ad.description }}</div>
+                                    </div>
+                                    <div class="counter-cash">
+                                        <div style="width: 70px;" class="counter">{{ ad.value.time }} seconds</div>
+                                        <div style="width: 40px;" class="cash1"><b>${{ ad.value.value }}</b></div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div><!-- end of box-wrap -->
+                </div> <!-- end of box-body -->
+            </div> <!-- end of content-box -->
+        </div>
+    </div>
+{% endblock content %}

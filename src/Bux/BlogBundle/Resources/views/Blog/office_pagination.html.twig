@@ -1,0 +1,49 @@
+{% if pageCount > 1 %}
+    <div class="pager fr">
+        {% if previous is defined %}
+            <span class="nav">
+                <a href="{{ path(route, query|merge({(pageParameterName): 1})) }}" class="first" title="first page"><span>First</span></a>
+                <a href="{{ path(route, query|merge({(pageParameterName): previous})) }}" class="previous" title="previous page"><span>{{ 'Previous'|trans }}</span></a>
+            </span>
+        {% else %}
+        {% endif %}
+
+        <span class="pages">
+            {% if startPage > 1 %}
+                    <a href="{{ path(route, query|merge({(pageParameterName): 1})) }}">1</a>
+                {% if startPage == 3 %}
+                    <a href="{{ path(route, query|merge({(pageParameterName): 2})) }}">2</a>
+                {% elseif startPage != 2 %}
+                    <a href="" style="cursor: not-allowed"><span>...</span></a>
+                {% endif %}
+            {% endif %}
+
+            {% for page in pagesInRange %}
+                {% if page != current %}
+                    <a href="{{ path(route, query|merge({(pageParameterName): page})) }}" title="page {{ page }}"><span>{{ page }}</span></a>
+                {% else %}
+                    <a href="#" title="page {{ page }}" class="active"><span>{{ page }}</span></a>
+                {% endif %}
+            {% endfor %}
+
+            {% if pageCount > endPage %}
+                {% if pageCount > (endPage + 1) %}
+                    {% if pageCount > (endPage + 2) %}
+                        <a href="" style="cursor: not-allowed"><span>...</span></a>
+                    {% else %}
+                        <a href="{{ path(route, query|merge({(pageParameterName): (pageCount - 1)})) }}" title="page {{ pageCount - 1 }}">{{ pageCount -1 }}</a>
+                    {% endif %}
+                {% endif %}
+                    <a href="{{ path(route, query|merge({(pageParameterName): pageCount})) }}" title="page {{ pageCount }}"><span>{{ pageCount }}</span></a>
+            {% endif %}
+        </span>
+        {% if next is defined %}
+            <span class="nav">
+                <a href="{{ path(route, query|merge({(pageParameterName): next})) }}" class="next" title="next page"><span>{{ 'Next'|trans }}</span></a>
+                <a href="{{ path(route, query|merge({(pageParameterName): pageCount})) }}" class="last" title="last page"><span>Last</span></a>
+            </span>
+        {% else %}
+
+        {% endif %}
+    </div>
+{% endif %}

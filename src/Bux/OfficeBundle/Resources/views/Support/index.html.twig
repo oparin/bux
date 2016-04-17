@@ -1,0 +1,88 @@
+{% extends '::office_base.html.twig' %}
+
+{% form_theme form ':form:fields.html.twig' %}
+
+{% block iconbar %}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <div class="notification note-error">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <!-- DASHBOARD - LEFT COLUMN -->
+        <div class="col2-4">
+
+            <!-- CONTENT BOX - CLOSED -->
+            <div class="content-box bt-space10">
+                <div class="box-body">
+                    <div class="box-header box-slide-head">
+                        {#<span class="slide-but">open/close</span>#}
+                        <h2>{{ 'frontend.support.menu.open_new_ticket'|trans }}</h2>
+                    </div>
+                    <div class="box-wrap clear">
+                        <div class="mark icon-links">
+                            <ul>
+                                <li class="clear">
+                                    <img src="{{ asset('lib/terminator/') }}images/help-icon.png" class="icon" alt="" />
+                                    <p>
+                                        <small>{{ 'frontend.support.menu.new_ticket_text'|trans }}</small>
+                                    </p>
+                                    <a href="{{ path('office_support_new_ticket') }}" class="button blue fr" style="margin-left: 10px; margin-top: 5px; padding: 2.5px 10px; float: left">
+                                        {{ 'frontend.support.menu.open_new_ticket'|trans }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- end of box-body -->
+            </div> <!-- end of content-box -->
+
+        </div>
+
+        <div class="col2-4 lastcol">
+            <!-- CONTENT BOX - DATATABLE -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.support.menu.check_ticket_status'|trans }}</h2>
+                    </div>
+                    <div class="box-wrap clear">
+                        <div class="mark icon-links">
+                            <ul>
+                                <li class="clear">
+                                    <img src="{{ asset('lib/terminator/') }}images/ico_manage-users_48.png" class="icon" alt="" />
+                                    <p>
+                                        <small>{{ 'frontend.support.menu.check_ticket_status_text'|trans }}</small>
+                                    </p>
+                                    {{ form_start(form, {'attr': {'class': 'validate-form form bt-space15'} }) }}
+                                        <div class="col2-3" style="position: absolute; margin-left: 70px">
+                                            {{ form_label(form.ticketId, 'frontend.support.menu.ticket_id'|trans, {'label_attr': {'class': 'form-label fl-space2 required', 'style': 'width: 60px'} }) }}
+                                            {{ form_widget(form.ticketId, {'attr': {'class': 'required list fl-space2', 'style': 'width: 140px'} }) }}
+                                        </div>
+                                        {{ form_rest(form) }}
+                                        <div style="float: left; margin-top: 27px; margin-left: 10px" class="form-field clear">
+                                            <input type="submit" value="{{ 'frontend.support.menu.view_ticket'|trans }}" class="button blue fr">
+                                        </div>
+                                    {{ form_end(form) }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- end of box-wrap -->
+                </div> <!-- end of box-body -->
+            </div> <!-- end of content-box -->
+        </div>
+    </div>
+{% endblock content %}

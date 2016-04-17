@@ -1,0 +1,118 @@
+{% extends ':admin:admin_base.html.twig' %}
+
+{% block content_title %}
+    <i class="fa fa-dashboard"></i>&nbsp; Home - My Account
+{% endblock content_title %}
+
+{% block content %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        {% include ':admin:admin_alert_succes.html.twig' %}
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        {% include ':admin:admin_alert_error.html.twig' %}
+    {% endfor %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
+                <header>
+                    <div class="icons">
+                        <i class="fa fa-table"></i>
+                    </div>
+                    <h5>My Account</h5>
+                </header>
+                <div class="body" id="collapse4" style="height: 600px">
+                    <ul role="tablist" class="nav nav-tabs" id="myTab">
+                        <li class="{% if tab == 'profile' %}active{% endif %}" role="presentation">
+                            <a aria-expanded="false" aria-controls="profile" data-toggle="tab" role="tab" id="profile-tab" href="#profile">Profile</a>
+                        </li>
+                        <li class="{% if tab == 'password' %}active{% endif %}" role="presentation">
+                            <a aria-expanded="true" aria-controls="password" data-toggle="tab" role="tab" id="password-tab" href="#password">Change Password</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div aria-labelledby="profile-tab" id="profile" class="tab-pane fade {% if tab == 'profile' %}in active{% endif %}" role="tabpanel">
+                            <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                                {{ form_start(profile_form, {'attr': {'class': 'form-horizontal'} }) }}
+                                    <div class="form-group">
+                                        {{ form_label(profile_form.user.email, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(profile_form.user.email, {'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group">
+                                        {{ form_label(profile_form.personalNotes, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(profile_form.personalNotes, {'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group">
+                                        {{ form_label(profile_form.supportSignature, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                        <div class="col-lg-4">
+                                            {{ form_widget(profile_form.supportSignature, {'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    {{ form_rest(profile_form) }}
+
+                                    <div class="form-group">
+                                        <div class="col-lg-4"></div>
+                                        <div class="col-lg-4">
+                                            <input type="submit" class="btn btn-primary" value="Save">
+                                        </div>
+                                    </div>
+                                {{ form_end(profile_form) }}
+                            </div>
+                        </div>
+                        <div aria-labelledby="password-tab" id="password" class="tab-pane fade {% if tab == 'password' %}in active{% endif %}" role="tabpanel">
+                            <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                                {{ form_start(password_form, {'attr': {'class': 'form-horizontal'} }) }}
+                                <div class="form-group {% if form_errors(password_form.current_password) %}has-error{% endif %}">
+                                    {{ form_label(password_form.current_password, 'Current Password', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(password_form.current_password, {'attr': {'class': 'form-control'}}) }}
+                                        {% if form_errors(password_form.current_password) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(password_form.current_password) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+
+                                <div class="form-group {% if form_errors(password_form.plainPassword.first) %}has-error{% endif %}">
+                                    {{ form_label(password_form.plainPassword.first, 'New Password', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(password_form.plainPassword.first, {'attr': {'class': 'form-control'}}) }}
+                                        {% if form_errors(password_form.plainPassword.first) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(password_form.plainPassword.first) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+
+                                <div class="form-group">
+                                    {{ form_label(password_form.plainPassword.second, 'Confirm New Password', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(password_form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div><!-- /.form-group -->
+
+                                {{ form_rest(profile_form) }}
+
+                                <div class="form-group">
+                                    <div class="col-lg-4"></div>
+                                    <div class="col-lg-4">
+                                        <input type="submit" class="btn btn-primary" value="Save">
+                                    </div>
+                                </div>
+                                {{ form_end(password_form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}

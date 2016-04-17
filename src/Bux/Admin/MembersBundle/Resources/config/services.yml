@@ -1,0 +1,9 @@
+services:
+  grid.column.wallet:
+    class: Bux\Admin\MembersBundle\Grid\Column\WalletColumn
+    tags:
+      - { name: grid.column.extension }
+  grid.column.country:
+      class: Bux\Admin\MembersBundle\Grid\Column\CountryColumn
+      tags:
+        - { name: grid.column.extension }

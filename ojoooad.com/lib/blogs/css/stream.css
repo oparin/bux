@@ -1,0 +1,4110 @@
+@charset "utf-8";
+@import "jquery.countdown.css";
+/*
+	CSS Document
+	Project : ENV2
+	File 	: stream.css
+	Date 	: 20/02/13 (dd-mm-yy)
+	Author  : shiraz (shiraz@digitalbrandgroup.com)
+*/
+
+.content{
+    font-size: 1em;
+}
+.content .titleBlock{
+    border-bottom: 1px solid #d8d9da;
+    margin: 0 10px;
+    overflow: hidden;
+    padding: 20px 0;
+    width: 940px;
+}
+.content .titleBlock .counter{
+    float:left;
+    height:10px;
+    padding: 0 20px 0 0;
+    width:180px;
+}
+.content .titleBlock .titleContents{
+    float: left;
+    width:540px;
+}
+.content .titleBlock .titleTxt{
+    float: left;
+    font-size: .9em;
+    line-height: 1.8;
+    margin: 0;
+}
+.content .titleBlock .titleContents p{
+    float: left;
+    font-size: .8em;
+    line-height:1.4;
+}
+.content .titleBlock .txtCompleteStep{
+    background: url(../images/stream/txtCompleteStep.png) no-repeat;
+    height: 16px;
+    width: 360px;
+    text-indent: -999em;
+    float: right;
+    margin: 5px 10px 0 0;
+}
+.content .titleBlock.noBorder{
+    border: 0;
+}
+#profileSteps{
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#profileSteps.marginTop25{
+    margin-top: 25px;
+}
+#profileSteps li{
+    background: url(../images/signup/dash.png) no-repeat center left;
+    float: left;
+    margin: 0;
+    padding: 0 0 0 40px;
+}
+#profileSteps li.first{
+    background: none;
+    padding: 0;
+}
+#profileSteps .steps{
+    background: url(../images/signup/stepIndicatorBg.png) no-repeat;
+    color: #9f9f9f;
+    float: left;
+    font: normal normal normal .8em/1.8 'droid_sansregular' ;
+    height: 25px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    width: 24px;
+}
+#profileSteps .steps.currentStep{
+    background: url(../images/signup/stepIndicatorBg.png) no-repeat 0 -25px;
+    color: #FFF;
+    font: normal normal normal .8em/1.8 'droid_sansbold' ;
+}
+#profileSteps .steps.completedStep{
+    background: url(../images/signup/stepIndicatorBg.png) no-repeat 0 -50px;
+    text-indent: -999em;
+}
+.content .contentBlockLeft{
+    float: left;
+    position: relative;
+    width: 342px;
+}
+.content .contentBlockLeft .txtmakeMoney{
+    background: url(../images/stream/txtStartMakingMoney.png) no-repeat;
+    display: block;
+    height: 105px;
+    left:-122px;
+    position: absolute;
+    text-indent: -999em;
+    top:5px;
+    width: 151px;
+    z-index: 1;
+}
+.content .contentBlockLeft .packageBlockWrap{
+    margin: 0 0 10px 0;
+}
+.content .contentBlockLeft .packageblocks{
+    background: #f0eeee url(../images/stream/blockBg.png) repeat-x;
+    border:1px solid #c9c9c9;
+    color: #4a4a4a;
+    font-size: 1.1em;
+    overflow: hidden;
+    padding: 25px 15px 25px 15px;
+    position: relative;
+}
+.content .contentBlockLeft .packageblocks .btnActivate{
+    background: url(../images/stream/btnActivateNarrow.png) no-repeat;
+    float: right;
+    height: 32px;
+    width: 109px;
+}
+.content .contentBlockLeft .packageblocks .btnActivateNoEvent{
+    background: url(../images/stream/btnActivateNarrow.png) no-repeat;
+    float: right;
+    height: 32px;
+    width: 109px;
+}
+.content .contentBlockLeft .packageblocks .arrow{
+    background: url(../images/stream/btnActivateNarrow.png) no-repeat -109px 0;
+    float: right;
+    height: 32px;
+    width: 27px;
+}
+.content .contentBlockLeft .packageblocks .packageTitle{
+    float: left;
+    font-size: 1.1em;
+    font-weight: normal;
+    margin: 4px 0 0 0;
+}
+
+.content .contentBlockLeft .packageblocks .startHere{
+    font-size: 1.1em;
+    font-weight: normal;
+    font-family: Georgia;
+    font-style: italic;
+    margin: 4px 0 0 0;
+    color: #ba2525;
+}
+
+.content .contentBlockLeft .packageblocks .btmBorderWhite{
+    background: #fff;
+    bottom: 0px;
+    font-size: 0;
+    height:1px;
+    left: 0;
+    line-height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 340px;
+}
+.content .contentBlockLeft  .showprogramBlock{
+
+    background-color: #cccccc;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#d3d3d3), to(#eaeaea));
+    background-image: -webkit-linear-gradient(top, #d3d3d3, #eaeaea);
+    background-image: -moz-linear-gradient(top, #d3d3d3, #eaeaea);
+    background-image: -ms-linear-gradient(top, #d3d3d3, #eaeaea);
+    background-image: -o-linear-gradient(top, #d3d3d3, #eaeaea);
+    background-image: linear-gradient(to bottom, #d3d3d3, #eaeaea);
+    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#d3d3d3, endColorstr=#eaeaea);
+    font-size: .75em;
+    padding: 10px 20px;
+    color: #333;
+
+    /*background: #767575;
+    color: #FFF;
+    font-size: .75em;
+    padding: 10px 20px;*/
+}
+.content .contentBlockLeft  .showprogramBlock .programDetailWrap{
+    padding: 12px 0 0 0;
+}
+.content .contentBlockLeft  .showprogramBlock .programDetail{
+    margin: 0 0 3px 0;
+}
+.content .contentBlockLeft  .showprogramBlock .programDisplay{
+    color: #333;
+    display: block;
+    text-decoration: none;
+}
+.content .contentBlockLeft  .showprogramBlock .programDisplay .switch{
+    float: left;
+    font: normal normal normal 1.3em/1 'droid_sansbold' ;
+    margin: 0 5px 0 0;
+}
+.content .contentBlockLeft  .showprogramBlock .updateCCard{
+    color: #39C;
+    display: block;
+    margin: 20px 0 5px 0;
+}
+.content .contentBlockLeft  .showprogramBlock .updateCCard:hover,
+.content .contentBlockLeft  .showprogramBlock .cancelProgram:hover{
+    color: #3d3d3d;
+}
+.content .contentBlockLeft  .showprogramBlock .cancelProgram{
+    color: #39C;
+    display: block;
+    margin-bottom: 10px;
+}
+.content .contentBlockLeft .toplistedpostBlock{
+    width:100%;
+}
+.content .contentBlockLeft .toplistedpostBlock .categoryDetailBlock{
+    background: #e4e3e3;
+    font-size: .75em;
+    overflow: hidden;
+    padding: 10px 20px;
+}
+.content .contentBlockLeft .toplistedpostBlock .topPostBlock{
+    background: #fff;
+    border:1px solid #c9c9c9;
+    margin: 10px 0 0 0;
+}
+.content .contentBlockLeft .toplistedpostBlock .topPostBlock .postContent{
+    padding: 10px 10px 0 10px;
+}
+.content .contentBlockLeft .toplistedpostBlock .topPostBlock .postContent .postMeta{
+    color: #909090;
+    font-size: .70em;
+}
+.content .contentBlockLeft .toplistedpostBlock .topPostBlock .postFooter{
+    background: #767575;
+    font-size: .75em;
+    overflow: hidden;
+    padding: 10px;
+}
+.content .contentBlockLeft .toplistedpostBlock .topPostBlock .postFooter a{
+    color: #c9c9c9;
+}
+.content .contentBlockLeft .toplistedpostBlock .topPostBlock .postFooter a:hover{
+    color: #2b2b2b;
+}
+.content .contentBlockLeft .toplistedpostBlock .topPostBlock .postFooter a.badass{
+    background: url(../images/stream/likeIconsmall.png) no-repeat;
+    padding: 1px 0 0 20px;
+    text-decoration: none;
+}
+.content .contentBlockLeft .toplistedpostBlock .topPostBlock .postFooter a.badass:hover{
+    background: url(../images/stream/likeIconsmall.png) no-repeat 0px -16px;
+}
+.btnNeedHelp{
+    background: url(../images/stream/btnNeedHelp.png) no-repeat;
+    display: block;
+    height: 101px;
+    left: 0;
+    position: fixed;
+    top:185px;
+    width: 42px;
+}
+.btnRecordAudio{
+    background: url(../images/stream/recordAudio.png) no-repeat;
+    display: block;
+    height: 101px;
+    left: 0;
+    position: fixed;
+    top:300px;
+    width: 42px;
+}
+
+
+.content .contentBlockRight{
+    float: right;
+    width:582px;
+}
+.content .contentBlockRight .spacer{
+    overflow: hidden;
+    padding: 15px 0;
+    width: 580px;
+}
+.content #tickerDetailView.contentBlockRight .openComment,
+.content #tickerDetailView.contentBlockRight .closeComment{
+    background: url(../images/common/commentCloseOpen.png) no-repeat top right;
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+    padding: 15px 0;
+    width: 582px;
+}
+.content .contentBlockRight .closeComment{
+    background-position:  top left !important;
+}
+.content .contentBlockRight .videoBlock{
+    float: left;
+    width: 580px;
+    padding-bottom: 15px;
+}
+.content .contentBlockRight .streamTabs{
+    background: none;
+    border-radius: 0;
+    border:0;
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width:580px;
+    z-index: 1;
+}
+.content .contentBlockRight .streamTabs .tabSwitch{
+    background: none;
+    border-radius:0;
+    border:1px solid #235b7a;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+.content .contentBlockRight .streamTabs .tabSwitch li{
+    background: url(../images/stream/toolbarBg.png) repeat-x;
+    border:0;
+    border-right:1px solid #235b7a;
+    border-radius: 0;
+    color: #fff;
+    height: 82px;
+    margin: 0;
+    padding: 0;
+    width: 115px;
+}
+.content .contentBlockRight .streamTabs .tabSwitch li.ui-state-active{
+    background: url(../images/stream/toolbarBgActive.png) repeat-x;
+}
+.content .contentBlockRight .streamTabs .tabSwitch li.ui-state-hover{
+    background: url(../images/stream/toolbarBgHover.png) repeat-x;
+}
+
+.content .contentBlockRight .streamTabs .tabSwitch li.draftPost{
+    border:0;
+    width: 114px;
+}
+
+.content .contentBlockRight .streamTabs .tabSwitch li a{
+    display: block;
+    height: 100%;
+    padding: 0;
+    text-indent: -999em;
+    width: 100%;
+}
+.content .contentBlockRight .streamTabs .tabSwitch li.textPost a{
+    background: url(../images/stream/iconText.png) no-repeat center center;
+}
+.content .contentBlockRight .streamTabs .tabSwitch li.audioPost a{
+    background: url(../images/stream/iconAudio.png) no-repeat center center;
+}
+.content .contentBlockRight .streamTabs .tabSwitch li.imagePost a{
+    background: url(../images/stream/iconImage.png) no-repeat center center;
+}
+.content .contentBlockRight .streamTabs .tabSwitch li.videoPost a{
+    background: url(../images/stream/iconVideo.png) no-repeat center center;
+}
+
+.content .contentBlockRight .streamTabs .tabSwitch li.draftPost a{
+    background: url(../images/stream/iconDraft.png) no-repeat center center;
+}
+
+
+.content .contentBlockRight .streamTabs .ui-tabs-nav li.ui-tabs-active a,
+.content .contentBlockRight .streamTabs .ui-tabs-nav li.ui-state-focus{
+    outline: none;
+}
+
+.content .contentBlockRight .streamTabs .contents{
+    background: #FFF;
+    border-radius: 0;
+    border-top:0;
+    border:1px solid #c9c9c9;
+    font-size: .8em;
+    padding: 0;
+}
+.content .contentBlockRight .streamTabs .contents .textStreamContents,
+.content .contentBlockRight .streamTabs .contents .audioStreamContents,
+.content .contentBlockRight .streamTabs .contents .imageStreamContents,
+.content .contentBlockRight .streamTabs .contents .videoStreamContents{
+    font-family: "droid_sansregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 25px 20px 10px 20px;
+}
+#streamForm{
+    float: left;
+    font-size: .9em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#streamForm li{
+    float: left;
+    font-size: 1.1em;
+    padding-bottom: 15px;
+}
+#streamForm li.item{
+    cursor: pointer;
+}
+#streamForm li .sendNotificationBlock{
+    float: left;
+    font-size: .85em;
+    margin: 10px 0 0 0 ;
+}
+#streamForm li .sendNotificationBlock label.list{
+    line-height: 1.5;
+}
+#streamForm li .btnContainer{
+    float: right;
+}
+#streamForm li .btnContainer .btnPublish,
+#streamForm li .btnContainer .btnCancel,
+#audioStream li .btnContainer .btnPublish,
+#audioStream li .btnContainer .btnCancel,
+#imageStream li .btnContainer .btnPublish,
+#imageStream li .btnContainer .btnCancel,
+#videoStream li .btnContainer .btnPublish,
+#videoStream li .btnContainer .btnCancel{
+    font-family: 'droid_sansbold';
+    font-size: .85em;
+    width: 90px;
+}
+#streamForm li .btnContainer .btnDraft,
+#audioStream li .btnContainer .btnDraft,
+#imageStream li .btnContainer .btnDraft,
+#videoStream li .btnContainer .btnDraft{
+    font-family: 'droid_sansbold';
+    font-size: .85em;
+}
+
+#streamForm li .btnContainer .btnCancel,
+#audioStream li .btnContainer .btnCancel,
+#imageStream li .btnContainer .btnCancel,
+#videoStream li .btnContainer .btnCancel{
+    margin-left: 5px;
+}
+#streamForm .error{
+    display: none;
+}
+
+.content .contentBlockRight .txtGetstartedBlock{
+    float: left;
+    height: 90px;
+    position: relative;
+    width: 580px;
+}
+.content .contentBlockRight .txtGetstartedBlock .txtGetstarted{
+    background: url(../images/stream/getStarted.png) no-repeat;
+    height: 111px;
+    position: absolute;
+    right: -75px;
+    text-indent: -999em;
+    top:-60px;
+    width: 486px;
+}
+
+.content .contentBlockRight .streamTabs .contents .videoStreamContents .addVideoBlock,
+.content .contentBlockRight .streamTabs .contents .audioStreamContents .addAudioBlock,
+.content .contentBlockRight .streamTabs .contents .imageStreamContents .addImageBlock{
+    background: #e9f5ff;
+    border:1px solid #c4e4fe;
+    color: #4a4a4a;
+    font-size: .85em;
+    overflow: hidden;
+    padding: 10px;
+    width: 518px;
+}
+.content .contentBlockRight .streamTabs .contents .videoStreamContents .addVideoBlock p,
+.content .contentBlockRight .streamTabs .contents .audioStreamContents .addAudioBlock p,
+.content .contentBlockRight .streamTabs .contents .imageStreamContents .addImageBlock p{
+    float: left;
+    margin: 0;
+    width: 365px;
+}
+.content .contentBlockRight .streamTabs .contents .videoStreamContents .addVideoBlock .btnAddvideo,
+.content .contentBlockRight .streamTabs .contents .audioStreamContents .addAudioBlock .btnAddaudio,
+.content .contentBlockRight .streamTabs .contents .imageStreamContents .addImageBlock .btnAddimage{
+    float: right;
+    text-align: center;
+    width: 80px;
+}
+
+/*=============================================================================
+	The Media Upload Popup css classes
+=============================================================================*/
+.popup .popupContent.noBorder{
+    border-right:0 !important;
+    border-left:0 !important;
+    border-bottom:0 !important;
+}
+.mediaTab{
+    background: #FFF url(../images/profile/verticalLine.png) repeat-y 220px 0;
+    border-radius: 0;
+    border:0;
+    font-size: 1em;
+    padding: 0;
+    width:auto;
+}
+.mediaTab .ui-tabs-nav{
+    background: none;
+    border:0;
+    float: left;
+    padding: 0;
+    width: 220px;
+}
+.mediaTab .ui-tabs-nav li{
+    background: #FFF;
+    border-bottom:1px solid #e1e1e1 !important;
+    border-radius: 0;
+    border:0;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    width: 220px;
+}
+.mediaTab .ui-tabs-nav li.ui-tabs-active{
+    background: #FFF;
+    border-bottom:2px solid #e1e1e1 !important;
+}
+.mediaTab .ui-tabs-nav li:last-child{
+    border-bottom:1px solid #e1e1e1 !important;
+}
+.mediaTab .ui-tabs-nav li.ui-tabs-active a,
+.mediaTab .ui-tabs-nav li.ui-state-focus{
+    outline: none;
+}
+.mediaTab .ui-tabs-nav li a,
+.mediaTab .ui-state-active a,
+.mediaTab .ui-state-active a:link,
+.mediaTab .ui-state-active a:visited,
+.mediaTab .ui-state-default a{
+    color: #555555;
+    font-size: .9em;
+}
+.mediaTab .ui-tabs-nav li a{
+    float: left;
+    height: 60px;
+    padding: 0;
+    width: 220px;
+}
+.mediaTab .mediaIcon{
+    background: url(../images/stream/mediauploadIcons.png) no-repeat;
+    float: left;
+    margin: 23px 4px 0 14px;
+    text-indent: -999em;
+    width:22px;
+}
+.mediaTab .mediaIcon.star{
+    background-position: 0 0;
+    height: 30px;
+    margin: 12px 0 0 10px;
+    width:30px;
+}
+.mediaTab .mediaIcon.embed{
+    background-position: 0 -34px;
+    height: 18px;
+}
+.mediaTab .ui-tabs-active .mediaIcon.embed{
+    background-position: -23px -34px;
+}
+.mediaTab .mediaIcon.upload{
+    background-position: 0 -54px;
+    height: 18px;
+}
+.mediaTab .ui-tabs-active .mediaIcon.upload{
+    background-position: -23px -54px;
+}
+.mediaTab .mediaIcon.browse{
+    background-position: 0 -73px;
+    height: 20px;
+}
+.mediaTab .ui-tabs-active .mediaIcon.browse{
+    background-position: -23px -73px;
+}
+.mediaTab .ui-tabs-nav li .uploadOptions{
+    float: left;
+    font-weight: normal;
+    margin: 25px 0 0 10px;
+}
+.mediaTab .ui-tabs-nav li.ui-tabs-active .uploadOptions{
+    font-family: 'droid_sansbold';
+}
+.mediaTab .ui-tabs-nav li .stared{
+    float: left;
+    margin: 25px 0 0 15px;
+}
+.mediaTab .contents{
+    float: left;
+    font-size: 1em;
+    padding: 0;
+    width: 590px;
+}
+.mediaTab .uploadblockCnt{
+    height: 290px;
+    overflow: auto;
+}
+.mediaTab .uploadblockCnt .jspTrack,
+.mediaTab .galleryBlockCnt .jspTrack{
+    right: 8px;
+}
+.mediaTab .galleryBlockCnt{
+    height: 300px;
+    overflow: auto;
+}
+.mediaTab .embedForm{
+    font-size: .9em;
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 25px 5px 25px;
+    width: 540px;
+}
+.mediaTab .embedForm li{
+    color: #4a4a4a;
+    float: left;
+    font-size: .9em;
+    padding-bottom: 10px;
+}
+.mediaTab .embedForm  label.error{
+    display: none;
+}
+.mediaTab .embedForm .mediaUploadBlock{
+    height:300px;
+    overflow: auto;
+}
+.mediaTab .embedForm .radiobxContainer{
+    float: left;
+    margin-right: 30px;
+}
+.mediaTab .embedForm .radiobxContainer .prettyCheckbox.radio{
+    line-height: 1.5;
+}
+.mediaTab .embedForm .embedUrlInput{
+    background: url(../images/stream/embedTxtarea.png) no-repeat;
+    border: 0;
+    height: 79px;
+    margin-bottom: 10px;
+    padding: 5px;
+    resize:none;
+    width: 528px;
+}
+.mediaTab .mediaUpload{
+    float: left;
+    font-size: .85em;
+    list-style-type: none;
+    margin: 5px 20px 0 25px;
+    padding: 15px 0 0 0;
+}
+.mediaTab .mediaUpload li{
+    float: left;
+    padding-bottom: 25px;
+}
+.mediaTab .mediaUpload  label.error{
+    display: none;
+}
+.mediaTab .mediaUpload .mediaType{
+    background: url(../images/stream/uploadIcons.png) no-repeat;
+    float: left;
+    height:24px;
+    margin:0 25px 10px 3px;
+    text-indent: -999em;
+    width:29px;
+}
+.mediaTab .mediaUpload .mediaType.video{
+    background-position: 0 0;
+}
+.mediaTab .mediaUpload .mediaType.audio{
+    background-position: 0 -52px;
+}
+.mediaTab .mediaUpload .mediaType.image{
+    background-position: 0px -26px;
+}
+.mediaTab .mediaUpload .mediaName{
+    float: left;
+    margin: 4px 0 0 0;
+}
+.mediaTab .mediaUpload .data{
+    float: left;
+    margin:4px 0 0 5px;
+}
+.mediaTab .mediaUpload .remove{
+    background: url(../images/stream/uploadIcons.png) no-repeat -15px -76px;
+    float: right;
+    height: 15px;
+    margin: 5px 0 0 0;
+    text-indent: -999em;
+    width:20px;
+}
+.mediaTab .mediaUpload .uploadPercentageBlock{
+    background:#e6e6e6;
+    border-radius: 20px;
+    float: left;
+    height: 7px;
+    margin: 5px 0 0 0;
+    overflow: hidden;
+    width:100%;
+}
+.mediaTab .mediaUpload .percentage{
+    background:url(../images/stream/percentageBg.png) repeat-x;
+    border-radius: 20px;
+    border:1px solid #8ac300;
+    float: left;
+    font-size: 0;
+    height:5px;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -999em;
+}
+.mediaTab .galleryUpload{
+    float: left;
+    font-size: .85em;
+    list-style-type: none;
+    margin: 5px 20px 0 25px;
+    padding: 15px 0 0 0;
+    width: 540px;
+}
+.mediaTab .galleryUpload li{
+    background: #efedee;
+    border-radius: 0;
+    float: left;
+    height: 80px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 260px;
+}
+.mediaTab .galleryUpload li.even{
+    float: right;
+}
+.mediaTab .galleryUpload li.audio{
+    background: #FFF url(../images/stream/audiofile.jpg) no-repeat;
+}
+.mediaTab .galleryUpload .mediaInfoBlock{
+    background: url(../images/common/overlay.png);
+    color: #FFF;
+    display: none;
+    height: 80px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 260px;
+}
+.mediaTab .galleryUpload li:hover .mediaInfoBlock,
+.mediaTab .galleryUpload li.selectedMedia .mediaInfoBlock{
+    display: block;
+    cursor: pointer;
+}
+.mediaTab .galleryUpload .mediaInfoBlock .mediaTitle{
+    bottom: 15px;
+    left:10px;
+    position: absolute;
+}
+.mediaTab .galleryUpload .mediaInfoBlock .selected{
+    background: url(../images/stream/selectedMedia.png) no-repeat;
+    bottom: 10px;
+    display: block;
+    height: 34px;
+    position: absolute;
+    right:10px;
+    text-indent: -999em;
+    width: 34px;
+}
+.mediaTab .galleryUpload li.audio .mediaInfoBlock{
+    background: none;
+    color: #555;
+    display: block;
+}
+.mediaTab .galleryUpload li.audio .mediaInfoBlock .mediaTitle{
+    bottom: 40px;
+    left:65px;
+    position: absolute;
+}
+.mediaTab .galleryUpload li.audio .mediaInfoBlock .mediaRuntime{
+    bottom: 20px;
+    left:65px;
+    position: absolute;
+}
+.mediaTab .galleryUpload li.audio span.selected{
+    background: url(../images/stream/audioSelect.jpg) no-repeat 0 0;
+    bottom: 10px;
+    height: 28px;
+    position: absolute;
+    right: 10px;
+    width: 28px;
+}
+.mediaTab .galleryUpload li.audio:hover span.selected,
+.mediaTab .galleryUpload li.audio .selected span.selected{
+    background-position: 0 -28px;
+}
+.mediaTab .galleryUpload li.noResults{
+    background:#fff;
+    font-family: "droid_sansbold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height:255px;
+    line-height:255px;
+    text-align:center;
+    width:535px;
+}
+.mediaTab .galleryUpload li.loading{
+    background:#fff url(../images/common/loader/env2-loader.gif) no-repeat 220px 2px;
+    font-family: "droid_sansbold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: auto;
+    text-align: center;
+    width:535px;
+}
+.mediaTab #galUpgradeFormCntnr .embedForm,
+.mediaTab #upgradeFormCntnr .embedForm {
+    font-size: 1.1em;
+    padding: 25px 0;
+}
+.mediaTab .upgradeToMultimedia{
+    background:url(../images/stream/upgradeToMultimedia.jpg) no-repeat;
+    display: block;
+    height: 28px;
+    padding-bottom:5px;
+    text-indent: -999em;
+    width: 310px;
+}
+.mediaTab .upgradePackBlock{
+    padding: 0 !important;
+    width: 100%;
+}
+.mediaTab .upgradePackBlock .arrow{
+    background: url(../images/stream/arrow.jpg) no-repeat;
+    height: 125px;
+    position: absolute;
+    right: 130px;
+    width: 150px;
+}
+.mediaTab .contents .embedBtn{
+    float: right;
+    font-family: 'droid_sansbold',Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+    margin-top:5px;
+    width:100px;
+}
+.mediaTab .contents .embedBtn.addMore{
+    width:115px;
+}
+.mediaTab .embedForm #uplodifyImage{
+    background: url(../images/common/txtInput.png) repeat-x;
+    color: #222;
+    width:535px !important;
+}
+.mediaTab .embedForm #uplodifyImage .uploadify-button-text{
+    color: #4a4a4a;
+    font-size: .9em;
+    margin-left: 0.7em;
+}
+.mediaTab .embedForm .gallerySearchInputBlock{
+    overflow: hidden;
+}
+.mediaTab .embedForm .gallerySearchInputBlock .btnSearch{
+    float:left;
+    margin-left:15px;
+    width:70px
+}
+.btnAddvideo,
+.btnAddimage,
+.btnAddaudio{
+    font-size: 1em;
+}
+.btnAddmedia{
+    background: url(../images/stream/btnAddmedia.png) no-repeat;
+    float: right;
+    height: 32px;
+    width: 109px;
+}
+#videoFromComputer .btnAddvideo,
+#imageFromComputer .btnAddimage,
+#audioFromComputer .btnAddAudio,
+#addMediaFromGallery{
+    font-size: .85em !important;
+}
+
+/*=============================================================================
+	The Comment Block css classes
+=============================================================================*/
+.content .contentBlockRight .loadNextposts{
+    background: #fff url(../images/common/loader/env2-loader.gif) no-repeat 50% 50%;
+    border: 1px solid #c9c9c9;
+    padding: 25px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+.content .contentBlockRight .commentBlock,
+.content .contentBlockRight .postBlock{
+    background: #FFF;
+    border:1px solid #c9c9c9;
+}
+.contentBlockRight#tickerDetailView .commentBlock{
+    margin-bottom: 0 !important;
+}
+.content .contentBlockRight .postBlock .reblogedPost{
+    border-bottom:1px solid #c9c9c9;
+}
+.content .contentBlockRight .commentBlock{
+    border-top: 0;
+    border-bottom: 0;
+}
+.content .contentBlockRight .commentBlock.withFullBorder{
+    border:1px solid #c9c9c9 !important;
+}
+.content .commentList{
+    font-size: 1em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.content .commentList li{
+    color: #767575;
+    font-size: .85em;
+}
+.content .commentList .error{
+    display: none;
+}
+.content .commentList .addComment,
+.content .commentList .comments{
+    border-bottom: 1px solid #c9c9c9;
+    padding: 19px 15px 15px 15px;
+}
+#tickerDetailView .commentList .comments{
+    border-bottom: 0 !important;
+}
+.content .commentList .addComment.videoComment{
+    background: #F7F7F7;
+}
+.content .commentList .comments.replyFirstDegree{
+    background: url(../images/stream/replyIcon.jpg) no-repeat 20px 10px;
+    padding: 19px 15px 15px 45px;
+}
+.content .commentList .comments.replySecondDegree{
+    background: url(../images/stream/replyIcon.jpg) no-repeat 55px 10px;
+    padding: 19px 15px 15px 80px;
+}
+.content .commentList .comments.replyThirdDegree{
+    background: url(../images/stream/replyIcon.jpg) no-repeat 90px 10px;
+    padding: 19px 15px 15px 115px;
+}
+.content .commentList .comments.moreComments{
+    background: #767575;
+    border:0;
+    color: #c9c9c9;
+    padding: 15px;
+}
+.content .commentList .comments.moreComments a{
+    background: url(../images/stream/viewMoreCommentIcon.jpg) no-repeat;
+    color: #c9c9c9;
+    float: left;
+    margin: 0 0 0 5px;
+    padding: 5px 0 5px 45px;
+    text-decoration: none;
+}
+.content .commentList .comments.moreComments a:hover{
+    color: #4d4d4d;
+}
+.content .commentList .comments.moreComments .commentCountBlock{
+    float: right;
+    padding: 5px 10px 0 0;
+}
+.content .commentList .profileImage{
+    border:1px solid #c9c9c9;
+    float: left;
+    margin: 0 20px 0 0;
+}
+.content .commentList .comment{
+    float: left;
+    font-size: .85em;
+    min-height: 32px;
+    padding-bottom: 20px;
+    width:470px;
+}
+.content .commentList .comments.replyFirstDegree .comment{
+    width: 445px;
+}
+.content .commentList .comments.replySecondDegree .comment{
+    width: 405px;
+}
+.content .commentList .comments.replyThirdDegree .comment{
+    width: 375px;
+}
+
+.content .addCommentBlock .txtareaInputContainer{
+    font-size: 1em;
+    overflow: hidden;
+    position: relative;
+}
+.content .addCommentBlock .txtareaInputContainer .txtArea,
+.content .replySameDegree .comment .txtareaInputContainer .txtArea,
+.content .replyFirstDegree .comment .txtareaInputContainer .txtArea,
+.content .replySecondDegree .comment .txtareaInputContainer .txtArea,
+.content .replyThirdDegree .comment .txtareaInputContainer .txtArea{
+    border:0;
+    font: normal normal normal .85em/normal "droid_sansregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 16px;
+    padding: 4px 5px 0 5px;
+    resize:none;
+}
+.content .addCommentBlock label.error{
+    font-size: .9em;
+}
+.content .addCommentBlock .txtareaInputContainer,
+.content .addCommentBlock.commentreply .txtareaInputContainer,
+.content .replySameDegree .comment .txtareaInputContainer{
+    width: 460px;
+}
+.content .addCommentBlock .txtareaInputContainer .corners,
+.content .addCommentBlock.commentreply .txtareaInputContainer .corners,
+.content .replySameDegree .comment .txtareaInputContainer .corners{
+    background:url(../images/stream/txtAreareply-topBtm.png);
+    float: left;
+    height: 5px;
+    width:460px;
+}
+.content .addCommentBlock .txtareaInputContainer .corners.cornerTop,
+.content .addCommentBlock.commentreply .txtareaInputContainer .corners.cornerTop,
+.content .replySameDegree .comment .txtareaInputContainer .corners.cornerTop{
+    background-position: 0 0;
+}
+.content .addCommentBlock .txtareaInputContainer .corners.cornerBtm,
+.content .addCommentBlock.commentreply .txtareaInputContainer .corners.cornerBtm,
+.content .replySameDegree .comment .txtareaInputContainer .corners.cornerBtm{
+    background-position: 0 -5px;
+}
+.content .addCommentBlock .txtareaInputContainer .txtArea,
+.content .addCommentBlock.commentreply .txtareaInputContainer .txtArea,
+.content .replySameDegree .comment .txtareaInputContainer .txtArea{
+    background: url(../images/stream/txtArea-reply-mid.png) repeat-y;
+    width:450px;
+}
+.content .addCommentBlock.commentLevelOne{
+    padding-left: 55px;
+}
+.content .addCommentBlock.commentLevelOne .txtareaInputContainer,
+.content .replyFirstDegree .comment .txtareaInputContainer{
+    width: 425px;
+}
+.content .addCommentBlock.commentLevelOne .txtareaInputContainer .corners,
+.content .replyFirstDegree .comment .txtareaInputContainer .corners{
+    background:url(../images/stream/txtAreareply-level1-topBtm.png) no-repeat;
+    float: left;
+    height: 5px;
+    width:425px;
+}
+.content .addCommentBlock.commentLevelOne .txtareaInputContainer .corners.cornerTop,
+.content .replyFirstDegree .comment .txtareaInputContainer .corners.cornerTop{
+    background-position: 0 0;
+}
+.content .addCommentBlock.commentLevelOne .txtareaInputContainer .corners.cornerBtm,
+.content .replyFirstDegree .comment .txtareaInputContainer .corners.cornerBtm{
+    background-position: 0 -6px;
+}
+.content .addCommentBlock.commentLevelOne .txtareaInputContainer .txtArea,
+.content .replyFirstDegree .comment .txtareaInputContainer .txtArea{
+    background: url(../images/stream/txtArea-reply-level-1-mid.png) repeat-y;
+    width:415px;
+}
+.content .addCommentBlock.commentLevelTwo{
+    padding-left: 90px;
+}
+.content .addCommentBlock.commentLevelTwo .txtareaInputContainer,
+.content .replySecondDegree .comment .txtareaInputContainer{
+    width: 390px;
+}
+.content .addCommentBlock.commentLevelTwo .txtareaInputContainer .corners,
+.content .replySecondDegree .comment .txtareaInputContainer .corners{
+    background:url(../images/stream/txtAreareply-level2-topBtm.png) no-repeat;
+    float: left;
+    height: 5px;
+    width:390px;
+}
+.content .addCommentBlock.commentLevelTwo .txtareaInputContainer .corners.cornerTop,
+.content .replySecondDegree .comment .txtareaInputContainer .corners.cornerTop{
+    background-position: 0 0;
+}
+.content .addCommentBlock.commentLevelTwo .txtareaInputContainer .corners.cornerBtm,
+.content .replySecondDegree .comment .txtareaInputContainer .corners.cornerBtm{
+    background-position: 0 -6px;
+}
+.content .addCommentBlock.commentLevelTwo .txtareaInputContainer .txtArea,
+.content .replySecondDegree .comment .txtareaInputContainer .txtArea{
+    background: url(../images/stream/txtArea-reply-level-2-mid.png) repeat-y;
+    width:380px;
+}
+.content .addCommentBlock.commentLevelThree{
+    padding-left: 125px;
+}
+.content .addCommentBlock.commentLevelThree .txtareaInputContainer,
+.content .replyThirdDegree .comment .txtareaInputContainer{
+    width: 355px;
+}
+.content .addCommentBlock.commentLevelThree .txtareaInputContainer .corners,
+.content .replyThirdDegree .comment .txtareaInputContainer .corners{
+    background:url(../images/stream/txtAreareply-level3-topBtm.png) no-repeat;
+    float: left;
+    height: 5px;
+    width:355px;
+}
+.content .addCommentBlock.commentLevelThree .txtareaInputContainer .corners.cornerTop,
+.content .replyThirdDegree .comment .txtareaInputContainer .corners.cornerTop{
+    background-position: 0 0;
+}
+.content .addCommentBlock.commentLevelThree .txtareaInputContainer .corners.cornerBtm,
+.content .replyThirdDegree .comment .txtareaInputContainer .corners.cornerBtm{
+    background-position: 0 -6px;
+}
+.content .addCommentBlock.commentLevelThree .txtareaInputContainer .txtArea,
+.content .replyThirdDegree .comment .txtareaInputContainer .txtArea{
+    background: url(../images/stream/txtArea-reply-level-3-mid.png) repeat-y;
+    width:345px;
+}
+.content .commentList .comments .commentMeta{
+    float: left;
+    list-style-type: none;
+    margin: 0 0 0 70px;
+    padding: 0;
+}
+.content .commentList .comments .commentMeta li{
+    background: url(../images/stream/likeIcon.png) no-repeat 0 -14px;
+    float: left;
+    padding: 0 0 0 12px;
+}
+.content .commentList .comments .commentMeta li.badass{
+    background: url(../images/stream/likeIcon.png) no-repeat 0 0;
+    padding: 0 0 0 18px;
+}
+.content .commentList .comments.commentBubble{
+    background-color: #D7ECF4;
+}
+.content .commentList .comments.commentBubble a{
+    background: url(../images/stream/viewMoreCommentIcon.jpg) no-repeat top right;
+    color: #3399CC;
+    float: right;
+    font-size: 0.85em;
+    margin: 0 0 0 5px;
+    padding: 5px 45px 5px 0;
+    text-decoration: none;
+}
+.content .commentList .comments.commentBubble a:hover{
+    color: #4d4d4d;
+}
+
+
+
+.content .addCommentBlock{
+    background: #F7F7F7;
+    border-bottom: 1px solid #c9c9c9;
+    font-size: .9em;
+    overflow: hidden;
+    padding: 15px 20px;
+}
+.content .addCommentBlock .profileImage {
+    border: 1px solid #c9c9c9;
+    float: left;
+    margin: 0 20px 0 0;
+}
+.commentArticle .commentWrapper{
+    background:url(../images/stream/horizontalLine.jpg) repeat-x 100% 100%;
+    background-color: #edeff4;
+    color: #767575;
+    overflow: hidden;
+    position: relative;
+}
+.commentArticle .commentWrapper .commentDivider{
+    background:url(../images/stream/horizontalLine.jpg) repeat-x 100% 100%;
+    bottom: 0;
+    display: block;
+    height: 1px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+.commentArticle .commentWrapper.replyFirstDegree {
+    background: url(../images/stream/replyIcon.jpg) no-repeat 25px 10px;
+    padding-left: 35px;
+}
+.commentArticle .commentWrapper.replySecondDegree {
+    background: url(../images/stream/replyIcon.jpg) no-repeat 60px 10px;
+    padding-left: 70px;
+}
+.commentArticle .commentWrapper.replyThirdDegree {
+    background: url(../images/stream/replyIcon.jpg) no-repeat 90px 10px;
+    padding-left: 105px;
+}
+.content .commentArticle{
+    font-size: 1em;
+    position: relative;
+}
+.content .commentArticle .commentUser{
+    float: left;
+    margin:15px 0 0 20px;
+}
+.content .commentArticle .commentUser .profileImage{
+    border: 1px solid #c9c9c9;
+}
+.content .commentArticle .commentBlock{
+    background: none;
+    border:none;
+    font-size: .75em;
+    padding: 15px 20px;
+}
+.content .commentArticle .commentBlock .comment{
+    padding: 0 0 0 70px;
+}
+.content .commentArticle .commentBlock .comment .commentTxt{
+    margin-bottom:10px;
+    min-height: 25px;
+}
+.content .commentArticle .commentBlock .comment .commentTxt .commentText {
+    color: #000;
+}
+.content .commentArticle .commentBlock .commentMeta{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.content .commentArticle .commentBlock .commentMeta li{
+    background: url(../images/stream/likeIcon.png) no-repeat 0 -14px;
+    float: left;
+    padding: 0 0 0 12px;
+}
+.content .commentArticle .commentBlock .commentMeta li.badass{
+    background: url(../images/stream/likeIcon.png) no-repeat 0 0;
+    padding: 0 0 0 18px;
+}
+.content .commentArticle .commentBlock .commentMeta li.badass a{
+    color: #767575;
+    text-decoration: none;
+}
+.content .commentArticle .commentBlock .commentMeta li.badass a:hover{
+    color: #2b2b2b;
+}
+.content .commentArticle .commentBlock .flagComment{
+    display: none;
+}
+.content .commentArticle .commentBlock:hover .flagComment{
+    background: url(../images/stream/flag.jpg) no-repeat 4px 0;
+    display: block;
+    float: right;
+    font-size: .85em;
+    font-size: 1em !important;
+    padding: 0 0 0 25px;
+}
+.content .commentArticle .commentBlock .postOwnerActions{
+    background: url(../images/stream/dot.png) no-repeat 32px center;
+    display: none;
+    float:right;
+    width: 80px;
+}
+.content .commentArticle .commentBlock:hover .postOwnerActions,
+.content .commentArticle .commentBlock.hover .postOwnerActions{
+    display: block;
+}
+.content .commentArticle .commentBlock .postOwnerActions .actions{
+    color: #4182a6;
+    float:right;
+    padding: 0 6px 0 10px;
+}
+.content .commentArticle .commentBlock .postOwnerActions .actions.actionEdit{
+    padding: 0 6px 0 0;
+}
+.content .commentArticle .commentBlock .postOwnerActions .actions:hover{
+    color: #4d4d4d;
+}
+/*=============================================================================
+	The Post Block css classes
+=============================================================================*/
+.content .contentBlockRight .postBlock{
+    position: relative;
+}
+.content .contentBlockRight .postBlock .postActionBlock{
+    height:102px;
+    position: absolute;
+    right:-50px;
+    top:20px;
+    width:50px;
+}
+.content .contentBlockRight .postBlock .postActionBlock a{
+    background: #c9c9c9 url(../images/stream/reblogNlike.png) no-repeat;
+    color: #f7f7f7;
+    display: block;
+    font-size: 1em;
+    height:50px;
+    text-decoration: none;
+    text-indent: -999em;
+    width:50px;
+}
+.content .contentBlockRight .postBlock .postActionBlock a.LikesCounter{
+    background: #c9c9c9 url(../images/stream/reblogNlikes.png) no-repeat 0 -54px;
+}
+.content .contentBlockRight .postBlock .postActionBlock .reblog{
+    background-position: 0 0;
+}
+.content .contentBlockRight .postBlock .postActionBlock .reblog:hover{
+    background-position: -51px 0;
+}
+.content .contentBlockRight .postBlock .postActionBlock .badass{
+    background-position: 0 -51px;
+    margin-top: 2px
+}
+.content .contentBlockRight .postBlock .postActionBlock .badass:hover{
+    background-position: -51px -51px;
+}
+.content .contentBlockRight .postBlock .postActionBlock a .badassCount{
+    color:#fff;
+    float: left;
+    font-size: .70em;
+    margin: 14px 0 0 23px;
+    text-align: center;
+    text-indent: 0;
+    width: 27px;
+}
+.content .contentBlockRight .postBlock .postActionBlock a:hover .badassCount{
+    color: #767575;
+}
+.content .contentBlockRight .postBlock .postActionBlock a .badassTxt{
+    display: block;
+    text-indent: -999em;
+}
+.content .contentBlockRight .postBlock .postErrorBlock{
+    padding: 19px 15px 15px 15px;
+}
+.content .contentBlockRight .postBlock .postErrorBlock .postTitle{
+    font-size: 1.1em;
+    margin: 0;
+    background-color: #eaeaea;
+}
+.content .contentBlockRight .postBlock .postTitleBlock{
+    border-bottom: 1px solid #c9c9c9;
+    font-size: .85em;
+    padding: 19px 15px 15px 15px;
+    background-color: #eaeaea;
+}
+.content .contentBlockRight .postBlock .postTitleBlock .profileImage{
+    border:1px solid #c9c9c9;
+    float: left;
+    margin: 0 15px 0 0;
+}
+.content .contentBlockRight .postBlock .postTitleBlock .postTitle{
+    font-size: 1.35em;
+    margin: 0;
+}
+.content .contentBlockRight .postBlock .postTitleBlock .postTitle.lessonTitle{
+    font-size: 1.1em;
+}
+.content .contentBlockRight .postBlock .postTitleBlock .titleMeta{
+    color: #909090;
+    font-size: .85em;
+}
+.content .contentBlockRight .postBlock .postOwnerActions{
+    display: none;
+}
+.content .contentBlockRight .postBlock:hover .postOwnerActions,
+.content .contentBlockRight .postBlock.hover .postOwnerActions{
+    background: url(../images/stream/dot.png) no-repeat 32px center;
+    display: block;
+    float:right;
+    margin-top:20px;
+    width: 80px;
+}
+.content .contentBlockRight .postBlock .postOwnerActions .actions{
+    color: #4182a6;
+    float:right;
+    font-size: .9em;
+    padding: 7px 6px 7px 10px;
+}
+.content .contentBlockRight .postBlock .postOwnerActions .actions.actionEdit{
+    padding: 7px 6px 7px 0;
+}
+.content .contentBlockRight .postBlock .postOwnerActions .actions:hover{
+    color: #4d4d4d;
+}
+.content .contentBlockRight .postBlock .flagPost{
+    display: none;
+}
+.content .contentBlockRight .postBlock:hover .flagPost,
+.content .contentBlockRight .postBlock.hover .flagPost{
+    width: 24px;
+    height: 24px;
+    background: url(../images/stream/flag.png) no-repeat;
+    float: right;
+    text-indent: -999em;
+    margin: 20px 10px 0 0;
+    display: block;
+    cursor: pointer;
+}
+.content .contentBlockRight .postBlock .flagPost:hover{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.content .contentBlockRight .postBlock .videoPostBlock,
+.content .contentBlockRight .postBlock .imagePostBlock,
+.content .contentBlockRight .postBlock .textPostBlock{
+    padding: 20px;
+    font-size: .75em;
+    color: #000;
+    line-height: 1.5;
+    white-space: normal !important;
+    word-wrap: break-word;
+}
+.content .contentBlockRight .postBlock .textPostBlock{
+    padding-top: 0;
+}
+.content .contentBlockRight .postBlock .textPostBlock p{
+    margin-top:0;
+}
+.content .contentBlockRight .postBlock .audioPostBlock{}
+.content .contentBlockRight .postBlock .premiumPostBlock{}
+.content .contentBlockRight .postBlock .watchLessonBlock{
+    padding: 40px 40px 40px 0;
+}
+.content .contentBlockRight .postBlock .watchLessonBlock:hover{
+    color: #2a2a2a;
+}
+.content .contentBlockRight .postBlock .watchLessonBlock a{
+    color: #4a4a4a;
+    text-decoration: none;
+}
+.content .contentBlockRight .postBlock .watchLessonBlock a:hover{
+    color: #2a2a2a;
+}
+.content .contentBlockRight .postBlock .watchLessonBlock .btnPlay{
+    background: url(../images/stream/btnPlay.jpg) no-repeat;
+    float: left;
+    height: 27px;
+    margin: 0 30px 0 20px;
+    text-indent: -999em;
+    width:23px;
+}
+.content .contentBlockRight .postBlock .watchLessonBlock .btntakeLesson{
+    background: url(../images/stream/tickMarkIcon.png) no-repeat;
+    float: left;
+    height: 30px;
+    margin: 0 20px 0 20px;
+    outline: none;
+    text-indent: -999em;
+    width:30px;
+}
+.content .contentBlockRight .postBlock .watchLessonBlock .btnDownload{
+    background: url(../images/stream/btnDownload.png) no-repeat;
+    float: left;
+    height: 30px;
+    margin: 0 20px 0 20px;
+    outline: none;
+    text-indent: -999em;
+    width:30px;
+}
+.content .contentBlockRight .postBlock.reblogPost .postTitleBlock{
+    border:0;
+    color: #4a4a4a;
+    padding-bottom: 20px 20px 0 20px;
+}
+.content .contentBlockRight .postBlock.reblogPost{
+    border-bottom: 1px solid #c9c9c9;
+    border:0;
+    font: normal normal normal 1.1em/1.4 "droid_sansregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.content .contentBlockRight .postBlock.reblogPost .reblogpostTitle{
+    color: #4a4a4a;
+    font: normal normal normal .9em/1 "droid_sansbold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 15px 20px 0 17px;
+}
+.content .contentBlockRight .postBlock.reblogPost .textPostBlock,
+.content .contentBlockRight .postBlock.reblogPost .videoPostBlock,
+.content .contentBlockRight .postBlock.reblogPost .previewPostBlock{
+    padding: 0 20px;
+}
+.content .contentBlockRight .postBlock.reblogPost .previewPostBlock{
+    overflow: hidden;
+}
+.content .contentBlockRight .postBlock .watchLessonBlock.watchVideoEnabled{
+    padding: 15px 20px;
+}
+/*=============================================================================
+	The Post Sort Block css classes
+=============================================================================*/
+.content .contentBlockRight .sortBlock{
+    background: url(../images/stream/greyHr.jpg) repeat-x center right;
+    clear: both;
+    color: #767575;
+    font-size: .75em;
+    padding: 20px 0;
+    position: relative;
+}
+.content .contentBlockRight .sortBlock ul.sortMenu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.content .contentBlockRight .sortBlock ul.sortMenu li.sort{
+    float: right;
+}
+.content .contentBlockRight .sortBlock ul.sortMenu li.sort a{
+    background: #f6f6f6 url(../images/stream/sortArrow.png) no-repeat 40px 5px;
+    color: #767575;
+    margin-right: 60px;
+    padding: 0 25px 10px 10px;
+    text-decoration: none;
+}
+.content .contentBlockRight .sortBlock ul.sortMenu li.sort ul{
+    background: #FFF;
+    border: 1px solid #cbcbcb;
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 60px;
+    top:45px;
+    width: 145px;
+    z-index: 10;
+}
+.content .contentBlockRight .sortBlock ul.sortMenu li.sort:hover ul{
+    display: block;
+}
+.content .contentBlockRight .sortBlock ul.sortMenu li.sort ul li{
+    float: left;
+}
+.content .contentBlockRight .sortBlock ul.sortMenu li.sort ul li a{
+    background: #fff;
+    float: left;
+    margin: 0;
+    padding: 8px 10px;
+    width: 125px;
+}
+.content .contentBlockRight .sortBlock ul.sortMenu li.sort ul li a:hover,
+.content .contentBlockRight .sortBlock ul.sortMenu li.sort ul li a.active{
+    background: #f7f6f6;
+}
+.content .contentBlockRight .sortBlock ul.sortMenu li.sort ul li a.active span{
+    background: url(../images/stream/tickIcon.png) no-repeat right 3px;
+    float: left;
+    padding: 0 18px 0 0;
+}
+
+
+/*=============================================================================
+	The payment Block
+=============================================================================*/
+.paymentBlockWrap{
+    background: url(../images/common/overlay.png);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+#paymentBlock{
+    left:26%;
+    position: absolute;
+    top:20%;
+    width:299px;
+    z-index:100;
+}
+#paymentBlock .topBlock{
+    background: url(../images/stream/paymentBlockBg.png) no-repeat top left;
+    float: left;
+    height:14px;
+    width: 299px;
+}
+#paymentBlock .bottomBlock{
+    background: url(../images/stream/paymentBlockBg.png) no-repeat bottom left;
+    float: left;
+    height:4px;
+    width: 299px;
+}
+#paymentBlock .contentBlock{
+    background: url(../images/stream/paymentBlockMidBg.png) repeat-y;
+    float: left;
+    font-size: 1em;
+    padding: 30px 10px 10px 10px;
+    position: relative;
+    width: 279px;
+}
+#paymentBlock .contentBlock .discountBlock{
+    background: url(../images/stream/discount.png) no-repeat;
+    color:#fff;
+    display: block;
+    font-size:.8em;
+    height: 84px;
+    position: absolute;
+    right:-15px;
+    text-shadow:1px 1px 1px #000;
+    top:-20px;
+    width: 84px;
+}
+#paymentBlock .contentBlock .title{
+    float: left;
+    font-size: .85em;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+#paymentBlock .contentBlock .address{
+    clear: both;
+    color: #767575;
+    float: left;
+    font-size: .75em;
+    font-style: normal;
+    padding: 0 0 10px 0;
+}
+#paymentBlock .contentBlock .btnContainer{
+    float: left;
+    width:100%;
+}
+#paymentBlock .contentBlock .btnContainer .subscriptionBtns{
+    background: url(../images/stream/subscriptionBtns.png) no-repeat;
+    height: 31px;
+    width: 59px;
+}
+#paymentBlock .contentBlock .btnContainer .btnCancel{
+    background-position: 0 0;
+    float: left;
+}
+#paymentBlock .contentBlock .btnContainer .btnBack{
+    background-position:  -59px 0;
+    float: left;
+}
+#paymentBlock .contentBlock .btnContainer .btnChange{
+    background-position:  -118px 0;
+    float: left;
+}
+#paymentBlock .contentBlock .btnContainer .btnConfirm{
+    background-position:  -177px 0;
+    float: right;
+}
+#paymentBlock .contentBlock .btnContainer .btnNext{
+    background-position:  -236px 0;
+    float: right;
+}
+#paymentBlock .contentBlock .subscriptionContent{
+    clear: both;
+    float: left;
+    font-size: .75em;
+    padding-bottom: 25px;
+}
+#paymentBlock .paymentForm{
+    float: left;
+    font-size: .9em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#paymentBlock .paymentForm li{
+    float: left;
+    padding-bottom: 5px;
+}
+#paymentBlock .paymentForm li label.error,
+#paymentBlock .paymentForm li div.error{
+    display: none;
+    font-size: .75em;
+}
+#paymentBlock .paymentForm .visaIcon{
+    float: left;
+    margin: 2px 0 0 10px;
+}
+#paymentBlock .paymentForm li .ddChild li{
+    float: none;
+}
+/*--------------------------------------------------------------
+	Rate block
+--------------------------------------------------------------*/
+#paymentBlock.rateBlock {
+    float: left;
+    width: 440px;
+}
+#paymentBlock.rateBlock .topBlock{
+    background: url(../images/stream/rateBlockBg.png) no-repeat top left;
+    float: left;
+    height:15px;
+    width: 440px;
+}
+#paymentBlock.rateBlock .bottomBlock{
+    background: url(../images/stream/rateBlockBg.png) no-repeat bottom left;
+    float: left;
+    height:3px;
+    width: 440px;
+}
+#paymentBlock.rateBlock .contentBlock{
+    background: url(../images/stream/rateBlockmidBg.png) repeat-y top left;
+    float: left;
+    font-size: 1em;
+    padding: 18px 0px 0px 0px;
+    position: relative;
+    width: 440px;
+}
+#paymentBlock.rateBlock .rateBlockInner{
+    float: left;
+    padding: 0 1px;
+}
+#paymentBlock.rateBlock .rateBlockInner .rateBlockTable {
+    table-layout: fixed;
+}
+#paymentBlock.rateBlock .rateBlockInner .rateBlockTable th {
+    border-bottom: 1px solid #ededed;
+    color: #767575;
+    font: normal normal normal 1.2em/2 'droid_sansbold' ;
+}
+#paymentBlock.rateBlock .rateBlockInner .rateBlockTable tr {
+    color: #767575;
+    font: normal normal normal .75em/2 'droid_sansregular' ;
+}
+#paymentBlock.rateBlock .rateBlockInner .rateBlockTable td.borderRight {
+    border-right: 1px solid #ededed;
+}
+#paymentBlock.rateBlock .rateBlockInner .rateBlockTable tr.odd td {
+    background: #faf9f9;
+}
+#paymentBlock.rateBlock .rateBlockInner .rateBlockTable tr.even td {
+    background: #fff;
+}
+#paymentBlock.rateBlock .rateBlockInner .rateBlockTable tr td input {
+    margin: 15px 0;
+    font-size: 1em;
+}
+/*============================================================================
+	The payment upgrade popup Block
+=============================================================================*/
+#packageUpgradeBlock{
+    position: relative;
+}
+#packageUpgradeBlock .price{
+    background: url(../images/stream/price.png) no-repeat;
+    color: #FFF;
+    display: block;
+    font-size: .75em;
+    height: 64px;
+    left:-30px;
+    line-height: 1.3;
+    padding-top:15px;
+    position: absolute;
+    text-align:center;
+    text-shadow:1px 1px 1px #000;
+    top:-15px;
+    width:74px;
+
+}
+#packageUpgradeBlock .confirmSubscriptionBlock{
+    font-size: 1em;
+}
+#packageUpgradeBlock.popup .title{
+    font-size: .9em ;
+    padding:1em 0 .5em 3.5em;
+}
+#packageUpgradeBlock .subscriptionContent{
+    clear: both;
+    float: left;
+    font-size: .8em;
+    padding-bottom: 25px;
+}
+#packageUpgradeBlock .btnContainer{
+    background: no-repeat;
+    float: left;
+}
+#packageUpgradeBlock .btnContainer .subscriptionBtns{
+    background: url(../images/stream/subscriptionBtns.png) no-repeat;
+    height: 31px;
+    width: 59px;
+}
+#packageUpgradeBlock .btnContainer .btnCancel{
+    background-position: 0 0;
+    float: left;
+}
+#packageUpgradeBlock .btnContainer .btnBack{
+    background-position:  -59px 0;
+    float: left;
+}
+#packageUpgradeBlock .btnContainer .btnChange{
+    background-position:  -118px 0;
+    float: left;
+}
+#packageUpgradeBlock .btnContainer .btnConfirm{
+    background-position:  -177px 0;
+    float: right;
+}
+#packageUpgradeBlock  .btnContainer .btnNext{
+    background-position:  -236px 0;
+    float: right;
+}
+.subscribeBox,
+.subscribeBox #cboxWrapper,
+.subscribeBox #cboxLoadedContent,
+.subscribeBox #cboxContent{
+    overflow: visible !important;
+}
+#packageUpgradeBlock .billaddressBlock{
+    font-size: 1em;
+}
+#packageUpgradeBlock .address {
+    clear: both;
+    color: #767575;
+    float: left;
+    font-size: .85em;
+    font-style: normal;
+    padding: 0 0 10px 0;
+}
+#packageUpgradeBlock .paymentForm{
+    float: left;
+    font-size: .9em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#packageUpgradeBlock .paymentForm li{
+    float: left;
+    padding-bottom: 5px;
+}
+#packageUpgradeBlock .paymentForm li label.error{
+    display: none;
+    font-size: .75em;
+}
+#packageUpgradeBlock .paymentForm .visaIcon{
+    float: left;
+    margin: 2px 0 0 10px;
+}
+#packageUpgradeBlock .paymentForm li .ddChild li{
+    float: none;
+}
+#packageUpgradeBlock .billaddresseditBlock{
+    font-size: 1em;
+}
+#packageUpgradeBlock .billaddresseditBlock .btnChange{
+    float: right;
+}
+/*============================================================================
+	The Help Block
+=============================================================================*/
+#helpBlock{
+    display:none;
+    left:20%;
+    position:absolute;
+    top:100px;
+    z-index: 100;
+}
+#helpBlock .helpblockContentwrap{
+    background: #b4b4b4;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px #333;
+    float: left;
+    padding:5px;
+}
+#helpBlock .helpblockContentwrap .helpblockContent{
+    background: #F5F5F5;
+    float: left;
+    position: relative;
+    width: 580px;
+}
+#helpBlock .helpblockContentwrap .helpblockContent .drag{
+    background: url(../images/stream/drag.png) no-repeat;
+    cursor: pointer;
+    height: 47px;
+    left:50%;
+    margin-left: -47px;
+    position: absolute;
+    text-indent: -999em;
+    top:0;
+    width: 47px;
+}
+#helpBlock .helpblockContentwrap .helpblockContent .btnClose{
+    background: url(../images/stream/btnClose.png) no-repeat;
+    cursor: pointer;
+    height: 17px;
+    position: absolute;
+    right:22px;
+    text-indent: -999em;
+    top:22px;
+    width: 16px;
+}
+#helpBlock .helpblockContentwrap .helpblockContent .title{
+    border-bottom:1px solid #dbdbdb;
+    font-size: 1.1em;
+    margin:0;
+    padding:.7em 1.1em;
+}
+#helpBlock .helpblockContentwrap .helpVideoBlock{
+    border-bottom:1px solid #dbdbdb;
+    padding:20px;
+}
+#helpBlock .helpblockContentwrap .helpblockContent .moreHelpBlock{
+    float: left;
+    font-size: .85em;
+    padding:0 20px 25px 20px;
+}
+#helpBlock .helpblockContentwrap .helpblockContent .subTitle{
+    font-size: 1.1em;
+    margin:0;
+    padding:.7em 1.1em .2em 0;
+}
+#helpBlock .helpblockContentwrap .moreHelpBlock .formContainer{
+    float: left;
+}
+#helpBlock .helpblockContentwrap .moreHelpBlock .formContainer .btnSearch{
+    background: url(../images/stream/btnSearch.png) no-repeat;
+    float: right;
+    height: 32px;
+    width: 109px;
+}
+/*============================================================================
+	The Record Audio Block
+=============================================================================*/
+#recordAudio{
+    width: 400px;
+}
+#recordAudio .actionBtnContainer{
+    margin: 1px 0 0 0;
+    text-align: center;
+}
+#recordAudio .actionBtnContainer .actionBtn{
+    background: none;
+    border: none;
+    color: #FFF;
+    padding:15px 0;
+    text-shadow:0px 0px 1px #000;
+    width: 100%;
+}
+#recordAudio .actionBtnContainer .actionbtnDelete{
+    background: none;
+    border: none;
+    color:#555;
+    padding:15px 0;
+    width: 100%;
+}
+.hrGreen{
+    background: url(../images/stream/hrGreenNRed.png) repeat-x top center;
+    font-size: 0;
+    height: 1px;
+    line-height: 0;
+    overflow: hidden;
+    padding:0 1px;
+}
+.hrRed{
+    background: url(../images/stream/hrGreenNRed.png) repeat-x bottom center;
+    font-size: 0;
+    height: 1px;
+    line-height: 0;
+    overflow: hidden;
+}
+/*============================================================================
+	Flag a comment
+=============================================================================*/
+.flagComment{
+    float: right;
+    font-size: .85em;
+    background: url(../images/stream/flag.jpg) no-repeat 4px 0;
+    padding:0 0 0 25px;
+}
+#flagComment .flagformContainer{
+    width: 325px;
+    float: left;
+    font-size: 1em;
+}
+#flagComment #flagcommentForm{
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#flagComment #flagcommentForm li{
+    float: left;
+    margin-top: 10px;
+}
+#flagComment #flagcommentForm li label.error{
+    display: none;
+    font-size: .75em;
+}
+#flagComment #flagcommentForm li .ddChild li{
+    float: none;
+}
+#flagComment #flagcommentForm li .flagNote{
+    background: url(../images/stream/flagNotetxtarea.jpg) no-repeat;
+    width:313px;
+    height: 89px;
+    padding:5px;
+    resize:none;
+    border:0;
+    font: normal normal normal .8em/1.8 'droid_sansregular' ;
+    color: #4a4a4a;
+}
+
+/*============================================================================
+	Upgrade Payment Details
+=============================================================================*/
+#upgradePaymentDetails .updatepaymentformContainer{
+    font-size: 1em;
+    margin: 20px 0;
+    width:765px;
+}
+#upgradePaymentDetails .updatepaymentformContainer p{
+    font-size: .85em;
+    margin: 1em;
+}
+#upgradePaymentDetails .upgradeDetailsBlock{
+    float: left;
+    width: 100%
+}
+#upgradePaymentDetails .upgradeDetailsBlock .formBlock{
+    position: relative;
+    width:375px;
+}
+#upgradePaymentDetails .upgradeDetailsBlock .formBlock .blocktitle{
+    margin: 0;
+    position: absolute;
+    top:-70px;
+}
+#upgradePaymentDetails .upgradeDetailsBlock .formBlock ul{
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 15px 0 20px 0;
+}
+#upgradePaymentDetails .upgradeDetailsBlock li{
+    float: left;
+    margin-top: 7px;
+}
+#upgradePaymentDetails .upgradeDetailsBlock li label.labelTxt{
+    font-size: .80em;
+    padding-bottom: 3px;
+}
+#upgradePaymentDetails .upgradeDetailsBlock li label.error{
+    display: none;
+    font-size: .75em;
+}
+#upgradePaymentDetails .upgradeDetailsBlock li .ddChild ul,
+#upgradePaymentDetails .upgradeDetailsBlock li .ddChild li{
+    float: none;
+    margin: 0;
+}
+#upgradePaymentDetails .upgradeDetailsBlock li .ddChild ul{
+    padding:0;
+}
+#upgradePaymentDetails .upgradeDetailsBlock li  .secureTransaction{
+    background: url(../images/signup/shield.png) no-repeat;
+    float: left;
+    font-size: 1em;
+    font-style: italic;
+    margin: 20px 0 0 0;
+    padding: 5px 0 5px 35px;
+}
+#upgradePaymentDetails .upgradeDetailsBlock .errorBlock {
+    background-color: #F2DEDE;
+    border-color: #EED3D7;
+    color: #B94A48;
+    font-size: 1em;
+    left:50%;
+    margin-bottom: 20px;
+    margin-left: -250px;
+    overflow: hidden;
+    padding:10px;
+    position: absolute;
+    top:210px;
+    width:500px;
+    z-index: 1;
+}
+#upgradePaymentDetails .upgradeDetailsBlock .errorBlock p{
+    font-size: .8em;
+    margin: 0;
+    text-align: center;
+}
+/*============================================================================
+	Seo Details Block
+=============================================================================*/
+.content .contentBlockRight  .seoBlock{
+    background: #e4e3e3;
+    border:1px solid #c9c9c9;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    color: #4a4a4a;
+    float: left;
+    font-size: 1em;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 518px;
+}
+.content .contentBlockRight  .seoBlock .labelTitle,
+.content .contentBlockRight  .seoBlock .labelDescription{
+    display: block;
+    font-size: .85em;
+}
+.content .contentBlockRight  .seoBlock .maxCharInfoBlock{
+    float: left;
+    margin: 15px 0 0 10px;
+}
+.content .contentBlockRight  .seoBlock .maxCharInfoBlock.metaDescCharLength{
+    margin: 10px 0 0 0 !important;
+}
+.content .contentBlockRight  .seoBlock .maxCharInfoBlock .charLengthBlock{
+    background: #FFF;
+    border:1px solid #c9c9c9;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    float: left;
+    font-size: .85em;
+    height: 14px;
+    padding: 3px 0;
+    text-align: center;
+    width: 25px;
+}
+.content .contentBlockRight  .seoBlock .maxCharInfoBlock .charLengthtxtBlock{
+    float: left;
+    font-size: .85em;
+    margin:3px 0 0 5px;
+}
+.txtareaInput{
+    background: url(../images/stream/seoTxtarea.jpg) no-repeat;
+    border:0;
+    color: #4a4a4a;
+    font-size: .85em !important;
+    height: 135px;
+    padding: 7px;
+    resize:none;
+    width: 504px;
+}
+
+/*============================================================================
+	The responsive slides css
+=============================================================================*/
+.rslides {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+.rslides li {
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+}
+.rslides li:first-child {
+    display: block;
+    float: left;
+    position: relative;
+}
+.rslides img {
+    border: 0;
+    display: block;
+    float: left;
+    height: auto;
+    width: 100%;
+}
+.imagePostBlock .large-btns_nav {
+    position: absolute;
+    z-index: 3;
+    background: #000 url("../images/stream/slideControl.gif") no-repeat left 50%;
+    bottom: 0;
+    left: 0;
+    opacity: 0.3;
+    overflow: hidden;
+    text-indent: -9999px;
+    top: 0;
+    width: 55px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.imagePostBlock .large-btns_nav:active {
+    opacity: 1.0;
+}
+.imagePostBlock .large-btns_nav.next {
+    background-position: right 50%;
+    left: auto;
+    right: 0;
+}
+.imagePostBlock .pager,
+.previewPostBlock .pager{
+    float: right;
+}
+.imagePostBlock .rslides_nav,
+.previewPostBlock .rslides_nav{
+    background: url(../images/stream/slideNxtPrev.png);
+    float: left;
+    height: 17px;
+    margin: 15px 0 0 10px;
+    text-indent: -999em;
+    width: 17px;
+}
+.imagePostBlock .rslides_nav.prev,
+.previewPostBlock .rslides_nav.prev{
+    background-position: 0 -17px;
+}
+.imagePostBlock .rslides_nav.prev:hover,
+.previewPostBlock .rslides_nav.prev:hover{
+    background-position: 0 0;
+}
+.imagePostBlock .rslides_nav.next,
+.previewPostBlock .rslides_nav.next{
+    background-position: -18px -17px;
+}
+.imagePostBlock .rslides_nav.next:hover,
+.previewPostBlock .rslides_nav.next:hover{
+    background-position: -18px 0;
+}
+.imagePostBlock .rslides li,
+.previewPostBlock .rslides li{
+    padding-bottom:0 !important;
+    font-size: .85em !important;
+}
+.previewPostBlock .rslides li{
+    left: 1px;
+    width: 540px;
+}
+.previewPostBlock h3.title{
+    float: left;
+    margin: 0 0 5px 0;
+    width:400px;
+}
+.previewPostBlock a.removeMedia{
+    color: #d90808;
+    float: right;
+    margin-right: 2px;
+}
+.previewPostBlock a.removeMedia:hover{
+    color: #4d4d4d;
+}
+.previewPostBlock .mediaPlay{
+    background:url(../images/stream/playIcon.png);
+    display: block;
+    height: 100px;
+    margin: -50px -50px 0 0;
+    position: absolute;
+    right: 50%;
+    text-indent: -999em;
+    top:50%;
+    width:100px;
+}
+.previewPostBlock .audioPlayerBlock{
+    border:1px solid #e6e6e6;
+    clear: both;
+    float: left;
+    margin: 5px 0 0 0;
+    padding: 20px;
+    width: 497px;
+}
+.previewPostBlock .playAudio{
+    background:url(../images/stream/playAudioIcon.jpg) no-repeat;
+    float: left;
+    height: 20px;
+    margin-top: 6px;
+    text-indent: -999em;
+    width: 20px;
+}
+.previewPostBlock .audioDetailBlock{
+    float: left;
+    margin-left: 20px;
+    width: 450px;
+}
+/*============================================================================
+	The Search Widget in the stream section
+=============================================================================*/
+.searchWidget{
+    background: url(../images/stream/searchWidgetBg.jpg) repeat-y;
+    font-family: 'droid_sansregular' !important;
+    position: relative;
+    width: 540px;
+}
+.searchWidget .searchTermContainer{
+    float: left;
+    overflow: hidden;
+    padding: 0 10px 2px 0;
+    position: relative;
+    width: 530px;
+}
+.searchWidget .searchTermBlock{
+    background:#38789c url(../images/stream/searchTermBg.png) repeat-x;
+    border-top: 1px solid #749ab0;
+    border-right: 1px solid #2e6889;
+    border-bottom: 1px solid #b9cdd8;
+    border-left: 1px solid #789db3;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    color: #fff;
+    float: left;
+    font-size: .9em;
+    padding: 4px 3px 4px 6px;
+    margin: 5px 0 2px 10px;
+    font-family: 'droid_sansbold' ;
+    -moz-text-shadow:0px 0px 1px #000;
+    -webkit-text-shadow:0px 0px 1px #000;
+    text-shadow:0px 0px 1px #000;
+
+
+}
+.searchWidget .searchTermBlock span{
+    /*white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;*/
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.item .categoryName{
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.searchWidget .searchTermContainer .clicker{
+    background:url(../images/stream/searchWidgetArrow.png) no-repeat 50% 50%;
+    cursor: pointer;
+    display: block;
+    height: 25px;
+    position: absolute;
+    right:6px;
+    text-indent: -999em;
+    top: 5px;
+    width: 25px;
+}
+.searchWidget .searchTermContainer .clicker:hover{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    -moz-opacity:0.7;
+    -o-opacity:0.7;
+    opacity: 0.7;
+}
+.searchWidget .removeSearchTerm{
+    background:url(../images/stream/closeSearchTerm.png) no-repeat;
+    float: right;
+    height: 8px;
+    margin:6px 0px 0px 6px;
+    text-indent: 999em;
+    width: 8px;
+}
+.searchWidget .removeSearchTerm:hover{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    -moz-opacity:0.7;
+    -o-opacity:0.7;
+    opacity: 0.7;
+}
+.searchWidget .searchTermContainer .txtInput{
+    border:0;
+    color: #4a4a4a;
+    float: left;
+    font-size: .85em;
+    margin: 6px 0 0 10px;
+    padding: 5px;
+    width: 150px;
+}
+.searchWidget .corners{
+    background: url(../images/stream/searchWidgetCornerBg.jpg) no-repeat;
+    display: block;
+    height: 6px;
+    position: absolute;
+    width: 540px;
+}
+.searchWidget .corners.topBg{
+    background-position: top left;
+    left: 0;
+    top: 0;
+}
+.searchWidget .corners.btmBg{
+    background-position: bottom left;
+    bottom: -1px;
+    left: 0;
+}
+.searchWidget li.loader{
+    background: #fff url(../images/common/loader/env2-loader.gif) no-repeat 50% 50% !important;
+    height: 145px;
+}
+.searchWidget .teamNblog{
+    border-bottom: 1px solid #d4d4d4;
+    color: #4a4a4a;
+    font-size: .85em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.searchWidget .teamNblog li{
+    background:  url(../images/stream/teamNBlogIcon.png) no-repeat;
+    float: none !important;
+    margin:0 1px 0 1px;
+    padding:5px 10px 5px 35px !important;
+}
+.searchWidget .teamNblog li:hover,
+.searchWidget .teamNblog li.selected{
+    background: #f7f6f6 url(../images/stream/teamNBlogIcon.png) no-repeat;
+    cursor: pointer;
+}
+.searchWidget .teamNblog li.allMembers{
+    background-position: 10px 6px;
+}
+.searchWidget .teamNblog li.publicBlog{
+    background-position: 10px -21px;
+}
+.searchWidget .list,
+.searchWidget .profileList,
+.searchWidget .categoryList{
+    color: #4a4a4a;
+    font-size: .85em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.searchWidget .list{
+    border-bottom: 1px solid #d4d4d4;
+}
+.searchWidget .list li{
+    background: url(../images/stream/listDot.png) no-repeat 15px 12px;
+    float: none !important;
+    margin:0 1px 0 1px;
+    padding:6px 10px 6px 35px !important;
+}
+.searchWidget .list li:hover,
+.searchWidget .list li.selected{
+    background: #f7f6f6 url(../images/stream/listDot.png) no-repeat 15px 12px;
+    cursor: pointer;
+}
+.searchWidget .addCategory{
+
+    color: #4a4a4a;
+    font-size: .85em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.searchWidget .addCategory li{
+    float: none !important;
+    margin:0 1px 0 1px;
+    padding:5px 10px 5px 15px !important;
+    position: relative;
+}
+.searchWidget .addCategory li .addCatInput{
+    border: none;
+    color: #4a4a4a !important;
+    font-family: 'droid_sansregular' ;
+    font-size: .95em;
+    padding: 5px 0;
+    width:450px;
+}
+.searchWidget .addCategory li .categorySave{
+    background: url(../images/stream/iconEditNsave.png) no-repeat 0 -12px;
+    display: block;
+    height: 13px;
+    position: absolute;
+    top:10px;
+    right: 45px;
+    text-indent: -999em;
+    width: 22px;
+}
+.searchWidget .categoryList{
+    border-bottom: 1px solid #d4d4d4;
+}
+.searchWidget .categoryList li{
+    float: none !important;
+    margin:0 1px 0 1px;
+    overflow: hidden;
+    padding:6px 10px 6px 18px !important;
+}
+.searchWidget .categoryList li:hover,
+.searchWidget .categoryList li.selected{
+    background: #f7f6f6;
+    cursor: pointer;
+}
+.searchWidget .categoryList span.categoryName{
+    float: left;
+    width:450px;
+}
+.searchWidget .categoryList li.editActivated span.categoryName{
+    display: none;
+}
+.searchWidget .categoryList li .txtInput{
+    background: none;
+    border:0;
+    color: #4a4a4a !important;
+    display: none;
+    float: left;
+    padding: 2px 0;
+    width:450px;
+}
+.searchWidget .categoryList li.editActivated .txtInput{
+    display: block;
+}
+.searchWidget .categoryList .edit{
+    background: url(../images/stream/iconEditNsave.png) no-repeat -8px 1px;
+    float: right;
+    height:13px;
+    margin-top:2px;
+    text-indent: -999em;
+    width: 14px;
+}
+.searchWidget .categoryList .save{
+    background: url(../images/stream/iconEditNsave.png) no-repeat 0 -12px;
+    float: right;
+    height:13px;
+    margin-top:2px;
+    text-indent: -999em;
+    width: 22px;
+}
+.searchWidget .categoryList .delete{
+    background:url(../images/stream/iconDeleteCat.png);
+    float: right;
+    height: 14px;
+    margin:2px 10px 0 10px;
+    text-indent: -999em;
+    width: 15px;
+}
+.searchWidget .categoryList .edit:hover,
+.searchWidget .categoryList .save:hover,
+.searchWidget .categoryList .delete:hover{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    -moz-opacity:0.7;
+    -o-opacity:0.7;
+    opacity: 0.7;
+}
+.searchWidget .categoryList li .edit,
+.searchWidget .categoryList li .save,
+.searchWidget .categoryList li .delete{
+    display: none;
+}
+.searchWidget .categoryList li:hover .edit,
+.searchWidget .categoryList li:hover .save,
+.searchWidget .categoryList li:hover .delete,
+.searchWidget .categoryList li.selected .edit,
+.searchWidget .categoryList li.selected .save,
+.searchWidget .categoryList li.selected .delete{
+    display: block;
+}
+.searchWidget .jspPane{
+    width: 540px !important;
+}
+.searchWidget .jspVerticalBar{
+    right: 10px;
+}
+.searchWidget .customScroll{
+    border-top:1px solid #d4d4d4;
+    height:160px;
+    overflow:auto;
+}
+.searchWidget .profileList li{
+    border-bottom: 1px solid #d4d4d4;
+    float: none !important;
+    margin:0 1px 0 1px;
+    overflow: hidden;
+    padding:10px !important;
+}
+.searchWidget .profileList li .imageContainer{
+    border: 1px solid #1f4e68;
+    float: left;
+    height: 40px;
+    margin-right: 10px;
+    width: 40px;
+}
+.searchWidget .profileList li:hover,
+.searchWidget .profileList li.selected{
+    background: #f7f6f6;
+}
+.searchWidget .profileList .profileInfo{
+    display: block;
+    line-height: 1;
+    margin-top: 9px;
+}
+.selectorContainer .ddChild li{
+    float: none !important;
+}
+/*============================================================================
+	Products - tags, subject box page
+=============================================================================*/
+.coreProducts {
+    float: left;
+    background-color: #7d7e7d;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#7d7e7d), to(#0e0e0e));
+    background-image: -webkit-linear-gradient(top, #7d7e7d, #0e0e0e);
+    background-image: -moz-linear-gradient(top, #7d7e7d, #0e0e0e);
+    background-image: -ms-linear-gradient(top, #7d7e7d, #0e0e0e);
+    background-image: -o-linear-gradient(top, #7d7e7d, #0e0e0e);
+    background-image: linear-gradient(to bottom, #7d7e7d, #0e0e0e);
+    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#7d7e7d, endColorstr=#0e0e0e);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFF;
+    border-radius: 8px 8px 0px 0px;
+    margin-bottom: 2px;
+    width: 301px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;	/*background: #e4e3e3;
+	padding: 10px 10px 7px 10px;
+	width: 322px;*/
+}
+.content .contentBlockLeft .packageblocks.darkBg {
+    background: #f0eeee url(../images/stream/darkBlockBg.png) repeat-x;
+}
+.searchBlock .btnSubmit {
+    font-size: .75em;
+    padding-top: 3px;
+}
+h6.title {
+    float: left;
+    font-family: "droid_sansbold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: .85em;
+    margin: 0 0 10px 0;
+}
+.speakersList li {
+    line-height: 2;
+}
+.speakersList li a {
+    text-decoration: none;
+}
+.speakersList li.showMore {
+    text-decoration: underline;
+}
+.commentList.productDetails .comments.moreComments a {
+    background: none !important;
+    padding: 5px 0 0 0 !important;
+    margin: 0 8px 0 8px !important;
+}
+.commentList.productDetails .comments.moreComments .commentsRightBg a{
+    background: url(../images/stream/viewMoreCommentIcon.jpg) right center no-repeat  !important;
+    padding: 5px 45px 5px 0px  !important;
+}
+.productsWrap {
+    width: 280px;
+    height: 195px;
+    border: 1px solid #c9c9c9;
+    background: #fff;
+    margin: 0 18px 18px 0;
+    float: left;
+}
+.productsWrap.even {
+    margin: 0 0 20px 0;
+}
+.productsWrap .fullView {
+    position: relative;
+    z-index: 100;
+}
+.productsWrap .fullView .buyNow {
+    position: absolute;
+    background: url(../images/stream/ribbon.png) center center no-repeat;
+    width: 67px;
+    height: 21px;
+    top: 69px;
+    left: 0;
+}
+.productsWrap .topContent {
+    height: 145px;
+    border-bottom: 1px solid #c9c9c9;
+    background: url(../images/stream/dot.jpg) left 48% repeat-x;
+    padding: 10px;
+}
+.productsWrap .topContent h5 {
+    margin: 0;
+    text-align: center;
+}
+.productsWrap .topContent .speakerDetails {
+    position: relative;
+}
+.speakerDetailsSlides,
+.detailViewSlides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.speakerDetailsSlides li {
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding-top: 85px;
+}
+.detailViewSlides li {
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.centered-btns_tabs {
+    padding: 0;
+}
+.speakerDetailsSlides li:first-child,
+.detailView li:first-child {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.speakerDetails .centered-btns_nav:focus,
+.detailView .centered-btns_nav:focus {
+    outline: none;
+}
+
+.speakerDetails .centered-btns_tabs{
+    margin-top: -55px;
+    text-align: center;
+    position: relative;
+    z-index: 100;
+}
+.detailView .centered-btns_tabs {
+    margin-top: 11px;
+    text-align: center;
+    z-index: 100;
+    position: relative;
+}
+
+.speakerDetails .centered-btns_tabs li,
+.detailView .centered-btns_tabs li {
+    display: inline;
+    float: none;
+    _float: left;
+    *float: left;
+    margin-right: 5px;
+}
+
+.speakerDetails .centered-btns_tabs a,
+.detailView .centered-btns_tabs a {
+    text-indent: -9999px;
+    overflow: hidden;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background: #ccc;
+    background: rgba(0,0,0, .2);
+    display: inline-block;
+    _display: block;
+    *display: block;
+    -webkit-box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
+    -moz-box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
+    box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
+    width: 9px;
+    height: 9px;
+}
+
+.speakerDetails .centered-btns_here a,
+.detailView .centered-btns_here a{
+    background: #222;
+    background: rgba(0,0,0, .8);
+}
+.productsWrap .topContent .speakerDetails .speakerThumb {
+    position: absolute;
+    top:9px;
+    left: 100px;
+    width: 47px;
+    height: 46px;
+    background: #fff;
+    padding: 3px;
+    border: 1px solid #c9c9c9;
+}
+.productsWrap .tabs {
+    height: 29px;
+}
+.productsWrap .tabs a {
+    float:left;
+    padding: 8px 5px 7px 5px;
+    text-decoration: none;
+    color: #37779b;
+}
+.productsWrap .tabs a.rightBorder {
+    border-right: 1px solid #c9c9c9;
+}
+.productsWrap .tabs span {
+    float: left;
+    padding: 8px 0 7px 10px;
+}
+.productsWrap .playAudio {
+    background: #5a9ec3;
+    color: #fff !important;
+    padding: 3px 5px !important;
+    float: right !important;
+    margin: 4px 5px 0 0;
+}
+.productsWrap .detailView {
+    padding: 10px 20px;
+    height: 175px;
+    position: relative;
+}
+.productsWrap .detailsViewList span,
+.detailsBlock .detailsViewList span {
+    float: left;
+    width: 90px;
+    padding: 0 0 10px 8px;
+    background: url(../images/stream/list.jpg) left 8px no-repeat;
+}
+.detailsBlock .detailsViewList  {
+    padding: 0 110px 0 0;
+}
+.detailsBlock a.back, .productsWrap .detailView a.back, .speakersBlock a.back {
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+    color: #37779b;
+}
+.contentBlockRight .detailsBlock, .contentBlockRight .speakersBlock {
+    background: #FFF;
+    border: 1px solid #c9c9c9;
+    min-height: 130px;
+    padding: 20px;
+}
+.speakersBlock ul.speakerPic li {
+    width: 47px;
+    height: 46px;
+    background: #fff;
+    padding: 3px;
+    border: 1px solid #c9c9c9;
+    margin-right: 20px;
+    float: left;
+}
+.speakersBlock ul.speakerPic li a.tooltip {
+    text-indent: -9999em;
+}
+label.dateToField {
+    float: left;
+    margin-top: 8px;
+    width: 20px;
+}
+
+
+
+
+/*============================================================================
+	Products - The media management
+=============================================================================*/
+#mediaManagerBlock{
+    float: left;
+    font-size: 1em;
+    position: relative;
+    width: 582px;
+}
+#mediaManagerBlock .mediaManagerHeader{
+    float: left;
+    width: 100%;
+    padding: 0 0 1.5em 0;
+}
+#mediaManagerBlock .mediaManagerHeader h2.productTitle{
+    float: left;
+    font-size: 1em;
+    margin: 0.65em 0 0 0;
+}
+#mediaManagerBlock .mediaManagerHeader .btnUploadMedia{
+    float: right;
+}
+#mediaManagerBlock .planBlock{
+    float: left;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px solid #d2d2d2;
+}
+#mediaManagerBlock .planBlock .title{
+    float: left;
+    font-size: .8em;
+}
+#mediaManagerBlock .planBlock .planDetailBlock{
+    float: right;
+    font-size: .75em;
+    margin: 1em .8em 1em 2em;
+}
+#mediaManagerBlock .mediaSatisticsBlock{
+    float:left;
+    font-size: .75em;
+    width: 100%;
+    color: #4a4a4a;
+}
+#mediaManagerBlock .mediaSatisticsBlock .statisticsBlock{
+    float: left;
+    width: 100%;
+    margin-top:10px;
+}
+#mediaManagerBlock .mediaSatisticsBlock .statisticsBlock .txtstatAbout{
+    float: left;
+    width: 105px;
+    text-align: right;
+    margin-right: 30px;
+}
+#mediaManagerBlock .mediaSatisticsBlock .statisticsBlock .statMeterContainer{
+    float: right;
+    width:435px;
+}
+#mediaManagerBlock .mediaSatisticsBlock .statisticsBlock .statMeterBlock{
+    background:#e6e6e6;
+    border-radius: 2px;
+    float: left;
+    height: 7px;
+    margin: 4px 0 0 0;
+    overflow: hidden;
+    width:100%;
+}
+#mediaManagerBlock .mediaSatisticsBlock .statisticsBlock .statMeterBlock .statMeter{
+    background:url(../images/stream/meterBg.png) repeat-x;
+    border-radius: 2px;
+    border:1px solid #2e6889;
+    float: left;
+    font-size: 0;
+    height:5px;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -999em;
+}
+#mediaManagerBlock .mediaSatisticsBlock .statisticsBlock .statMeterContainer .usedSpace,
+#mediaManagerBlock .mediaSatisticsBlock .statisticsBlock .statMeterContainer .availableSpace{
+    margin:10px 5px 10px 0;
+}
+#mediaManagerBlock .mediaUpload{
+    float: left;
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 1em;
+}
+#mediaManagerBlock .mediaUpload .infoBox{
+    background: #e7f7ff;
+    border: 1px solid #bde7ff;
+    color: #555;
+    font-size: .75em;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#mediaManagerBlock .mediaUpload .formElemBlock{
+    position: relative;
+    width: 275px;
+    font-size: .9em;
+    margin-bottom: 10px;
+    float: left;
+}
+#mediaManagerBlock .mediaUpload .formElemBlock .labelTxt{
+    float: left;
+    clear:both;
+}
+#mediaManagerBlock .mediaUpload .formElemBlock label.error{
+    float: left;
+    font-size: .9em;
+}
+#mediaManagerBlock .mediaUpload .formElemBlock .txtInput{
+    color: #737373;
+}
+#mediaManagerBlock .mediaUpload .formElemBlock .txtareaDesc{
+    background: url(../images/stream/mediaUploadDescTxtarea.jpg) no-repeat;
+    width:265px;
+    height: 95px;
+    border:0;
+    resize:none;
+    padding:5px;
+    color: #737373;
+    font-family: 'droid_sansregular';
+    font-size: .9em;
+}
+#mediaManagerBlock .mediaUpload .formElemBlock .btnBrowse,
+#mediaManagerBlock .mediaUpload .btnContainer .btnuploadNow,
+#mediaManagerBlock .mediaUpload .btnContainer .btnCancel{
+    float: right;
+    width:100px;
+    font-size: .85em;
+}
+#mediaManagerBlock .mediaUpload .btnContainer{
+    float: right;
+    margin:20px 0 0 0;
+}
+#mediaManagerBlock .mediaUpload .btnContainer .btnCancel,
+#mediaManagerBlock .mediaUpload .btnContainer .btnuploadNow{
+    font-size: .75em;
+    margin-left: 15px;
+}
+#mediaManagerBlock .mediaUpload .uploadStatusBlock{
+    padding: 35px 25px 0 25px;
+}
+#mediaManagerBlock .mediaUpload .uploadStatusBlock .noTopPadding{
+    padding-top:0 !important;
+}
+#mediaManagerBlock .mediaUpload .uploadPercentageBlock{
+    background:#e6e6e6;
+    border-radius: 20px;
+    float: left;
+    height: 7px;
+    margin: 5px 0 0 0;
+    overflow: hidden;
+    width:100%;
+}
+#mediaManagerBlock .mediaUpload .percentage{
+    background:url(../images/stream/percentageBg.png) repeat-x;
+    border-radius: 20px;
+    border:1px solid #8ac300;
+    float: left;
+    font-size: 0;
+    height:5px;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -999em;
+}
+#mediaManagerBlock .mediaUpload .percentageCompleted,
+#mediaManagerBlock .mediaUpload .fileInfo{
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: .75em;
+    padding-top: 20px;
+}
+#mediaManagerBlock .mediaUpload .fileInfo{
+    padding-bottom: 10px;
+}
+#mediaManagerBlock .mediaUpload .videouploadPreviewBlock{
+    width: 300px;
+    height: 180px;
+    background: #ccc;
+    margin: 0 auto 30px auto;
+    display: block;
+    position: relative;
+}
+#mediaManagerBlock .mediaUpload .videouploadPreviewBlock .loader{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: url(../images/common/mediaupload-loader.gif) no-repeat;
+    top:35%;
+    left: 50%;
+    margin: -15px 0 0 -15px;
+    z-index: 2;
+}
+#mediaManagerBlock .mediaUpload .videouploadPreviewBlock .fileInfo{
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    z-index: 2;
+}
+#mediaManagerBlock .mediaUpload .videouploadPreviewBlock img.preview{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 180px;
+    z-index: 1;
+}
+#mediaFilterBlock{
+    float: left;
+    width: 100%;
+    padding-bottom: 15px;
+}
+#mediaFilterBlock .filterbyBlock{
+    float: left;
+    font-size: .75em;
+    margin: 0 25px 0 10px;
+}
+#mediaFilterBlock .filterbyBlock .labelTxt{
+    float: left;
+}
+#mediaFilterBlock .filterbyBlock .cboxContainer{
+    float: left;
+    margin: 0 0 0 10px;
+}
+#mediaFilterBlock .filterInputBlock{
+    float: left;
+    font-size: .8em;
+    margin: 10px 0 0 0;
+}
+#mediaFilterBlock .filterInputBlock .txtInput{
+    color: #828282;
+}
+#mediaFilterBlock .btnFilter{
+    float: right;
+    width: 110px;
+    margin: 10px 0 0 0;
+}
+
+/* The multimedia view block css*/
+
+.multimediaBlock{
+    font-size: 1em;
+}
+.flipBlock{
+    display: none;
+}
+.multimediaBlock .multimediaViewBlock,
+.multimediaBlock .multimediaSettingsBlock{
+    background: #fff;
+    border:1px solid #c9c9c9;
+    float: left;
+    width: 580px;
+    margin-bottom: 15px;
+    min-height: 150px;
+}
+
+.multimediaBlock .multimediaViewBlock .MediaVideoBlock{
+    padding: 15px;
+    position: relative;
+    float: left;
+    width: 550px;
+}
+.multimediaBlock .multimediaViewBlock .imageBlock{
+    float: left;
+    width: 205px;
+    height: 115px;
+    margin-right: 25px;
+    background: #ccc;
+}
+.multimediaBlock .multimediaViewBlock .mediaDetailBlock{
+    float: right;
+    width: 310px;
+    padding-right: 10px;
+}
+.multimediaBlock .multimediaViewBlock .mediaDetailBlock.audioBlock{
+    float: left;
+    width: 540px;
+}
+.multimediaBlock .multimediaViewBlock .mediaDetailBlock.audioBlock header{
+    float: left;
+    width: 100%;
+}
+.multimediaBlock .multimediaViewBlock h3.videoTitle{
+    float: left;
+    margin: 0;
+}
+.multimediaBlock .multimediaViewBlock .mediaDetailBlock.audioBlock .uploadedDate{
+    float: left;
+    font-size: .75em;
+    color: #909090;
+    margin: 7px 0 0 10px;
+}
+.multimediaBlock .multimediaViewBlock .playCount{
+    font-size: .75em;
+    float: right;
+    color: #909090;
+    background: url(../images/stream/iconCloseNplay.jpg) no-repeat;
+    padding-left: 22px;
+    margin-top: 6px;
+}
+.multimediaBlock .multimediaViewBlock .audioplayCount{
+    font-size: .75em;
+    float: right;
+    color: #909090;
+    background: url(../images/stream/audioIcon.jpg) no-repeat;
+    padding-left: 25px;
+    margin-top: 6px;
+}
+.multimediaBlock .multimediaViewBlock p.mediaInfo{
+    float: left;
+    width: 100%;
+    font-size: .75em;
+    color: #909090;
+}
+.multimediaBlock .multimediaViewBlock .moreinfoNactions{
+    height:16px;
+    /*float: left;*/
+    width: 100%;
+    font-size: .75em;
+    color: #909090;
+}
+.multimediaBlock .multimediaViewBlock .actionBlock{
+    float: right;
+}
+.multimediaBlock .multimediaViewBlock .actionBlock .icons{
+    background: url(../images/stream/multimediaActionsIcon.jpg) no-repeat;
+    width: 16px;
+    height: 16px;text-indent: -999em;
+    float: left;
+    margin-left: 13px;
+    cursor: pointer;
+}
+.multimediaBlock .multimediaViewBlock .actionBlock .icons.settings{
+    background-position: -2px 0;
+}
+.multimediaBlock .multimediaViewBlock .actionBlock .icons.download{
+    background-position: -20px 0px;
+}
+.multimediaBlock .multimediaViewBlock .actionBlock .icons.delete{
+    background-position: -38px 0px;
+}
+.multimediaBlock .multimediaViewBlock .actionBlock .icons:hover{
+    opacity: .5;
+}
+
+/* The multimedia settings block css*/
+
+.multimediaViewBlock{
+    position: relative;
+}
+.multimediaViewBlock .close{
+    position: absolute;
+    top:5px;
+    right: 10px;
+    z-index: 1;
+    text-indent: -999em;
+    display: block;
+    background: url(../images/stream/iconCloseNplay.jpg) no-repeat 2px -12px;
+    width: 20px;
+    cursor: pointer;
+}
+.multimediaViewBlock .settingsTab{
+    padding: 0;
+    border:0;
+    background: none;
+}
+.multimediaViewBlock .settingsTab .ui-tabs-nav{
+    padding:0;
+    width: 50px;
+    border:0;
+    background: none;
+}
+.multimediaViewBlock .settingsTab .ui-tabs-nav li{
+    border: 0 none;
+    text-indent: -9999em;
+    margin:0;
+    padding:0 !important;
+}
+.multimediaViewBlock .settingsTab .ui-tabs-nav li a{
+    padding:0;
+    outline: none;
+    cursor: pointer;
+}
+.multimediaViewBlock .settingsTab .ui-tabs-nav li.navSettings a{
+    background: url(../images/stream/mediaTabswitch.jpg) no-repeat;
+    width: 51px;
+    height: 75px;
+}
+.multimediaViewBlock .settingsTab .ui-tabs-nav li.navSettings.ui-tabs-active a{
+    background-position: -51px 0;
+}
+.multimediaViewBlock .settingsTab .ui-tabs-nav li.navEmbed a{
+    background: url(../images/stream/mediaTabswitch.jpg) no-repeat -51px -75px;
+    width: 51px;
+    height: 75px;
+}
+.multimediaViewBlock .settingsTab .ui-tabs-nav li.navEmbed.ui-tabs-active a{
+    background-position: 0 -75px;
+}
+.multimediaViewBlock .ui-tabs-vertical{
+    width: auto;
+}
+.multimediaViewBlock .ui-tabs-vertical .ui-tabs-panel{
+    padding:0;
+    float: left;
+    width: 505px;
+    padding: 10px 10px 0 15px;
+    font-size: .7em;
+}
+.multimediaViewBlock .settingsBlock .optionBlockWrap,
+.multimediaViewBlock .embedBlock .titleInputBlock{
+    float: left;
+    width:240px;
+}
+.multimediaViewBlock .settingsBlock .optionBlock{
+    background: #ededed;
+    border: 1px solid #c9c9c9;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -o-border-radius:3px;
+    border-radius: 3px;
+    padding: 5px;
+    width: 230px;
+    float: left;
+    margin-bottom: 4px;
+}
+.multimediaViewBlock .settingsBlock .optionBlock .labelTxt{
+    float: left;
+    width: 140px;
+    line-height: 1.5;
+}
+.multimediaViewBlock .settingsBlock .optionBlock .cboxContainer{
+    float: left;
+    margin:0 5px 0 0;
+}
+.multimediaViewBlock .settingsBlock .optionBlock label.prettyCheckbox{
+    line-height: 1.5;
+    margin:0;
+}
+.multimediaViewBlock .settingsBlock .embedcodeBlock,
+.multimediaViewBlock .embedBlock .descriptionBlock{
+    float: right;
+    width: 250px;
+}
+.multimediaViewBlock .settingsBlock .embedcodeBlock .labelTxt,
+.multimediaViewBlock .embedBlock .descriptionBlock .labelTxt{
+    font-size: 1.2em;
+    color: #4a4a4a;
+    margin: 0 0 5px 0;
+    float: left;
+    width: 100%
+}
+.multimediaViewBlock .settingsBlock .embedcodeBlock .txtarea,
+.multimediaViewBlock .embedBlock .descriptionBlock .txtarea{
+    background: url(../images/stream/mediaTabtxtarea.jpg) no-repeat;
+    width: 238px;
+    height: 58px;
+    padding: 5px;
+    border:0;
+    resize:none;
+    color: #737373;
+}
+.multimediaViewBlock .settingsBlock .embedcodeBlock .btnUpdate,
+.multimediaViewBlock .embedBlock .descriptionBlock .btnUpdate{
+    font-family: 'droid_sansbold';
+    float: right;
+    margin:8px 2px 0 0;
+    width: 110px;
+}
+.multimediaViewBlock .embedBlock .titleInputBlock .labelTxt{
+    font-size: 1.2em;
+    color: #4a4a4a;
+    float: left;
+    margin:0 0 5px 0;
+}
+.multimediaViewBlock .embedBlock .titleInputBlock .inputContainer{
+    float: left;
+    width: 100%;
+}
+.multimediaViewBlock .embedBlock .titleInputBlock .inputContainer .txtInput{
+    color: #737373;
+}
+.multimediaViewBlock .embedBlock .optionBlock{
+    float: left;
+    width: 100%;
+    margin-top:15px;
+}
+.multimediaViewBlock .embedBlock .optionBlock .labelTxt{
+    float: left;
+    font-size: .95em;
+}
+.multimediaViewBlock .embedBlock .optionBlock .cboxContainer{
+    float: left;
+    margin-left: 15px;
+}
+.multimediaViewBlock .embedBlock .optionBlock .cboxContainer .prettyCheckbox{
+    margin: 0;
+}
+.removeItemPopup p.removeTxt{
+    font-size: 20px;
+}
+
+/*============================================================================
+	Checkout - The checkout process
+=============================================================================*/
+#checkoutBlock{
+    background: #FFF;
+    border: 1px solid #c9c9c9;
+    padding: 30px 100px 30px 100px;
+}
+#checkoutBlock .headerTextContainer {
+    text-align: center;
+    margin: auto auto 10px auto;
+}
+#checkoutBlock .headerText{
+    font-weight: bolder;
+}
+#checkoutBlock .headerTextSecondary{
+    text-align: center;
+}
+#checkoutBlock .headerTextCallout{
+    color: #37789c;
+}
+#checkoutBlock .introVideoContainer{
+    text-align: center;
+    margin: auto auto 10px auto;
+}
+#checkoutBlock .introVideo{
+    display:inline-block;
+    padding:10px;
+    background:white;
+    border:1px solid #d0d0d0;
+    border-bottom:1px solid #aaa;
+    height:405px;
+    width:720px;
+}
+#checkoutBlock .complianceVideoContainer{
+    text-align: center;
+    margin: auto auto 10px auto;
+}
+
+#checkoutBlock .complianceVideo{
+    display:inline-block;
+    padding:10px;
+    background:white;
+    border:1px solid #d0d0d0;
+    border-bottom:1px solid #aaa;
+    height:307px;
+    width:545px;
+}
+
+#checkoutBlock .countdownContainer{
+    text-align: center;
+}
+#checkoutBlock h3
+{
+    font-size: 40px;
+    text-align: center;
+    margin: 20px 0 40px;
+}
+#checkoutBlock .introText{
+    text-align: center;
+    font-size: .75em;
+    line-height: 1.5;
+    padding-bottom: 10px;
+    width: 100%;
+}
+#checkoutBlock .disclaimerText{
+    text-align: justify;
+    font-size:0.75em;
+    padding: 20px;
+}
+
+#checkoutBlock .usDisclaimerText{
+    font-size:0.7em;
+    color: #808080;
+}
+
+
+#checkoutBlock .thankyouTxt{
+    background:url(../images/stream/thank4order.png) no-repeat;
+    clear: both;
+    float: left;
+    height: 23px;
+    text-indent: -999em;
+    width: 100%;
+    margin: 20px 0 0 0;
+}
+
+#checkoutBlock .removeLine{
+    text-decoration: none;
+}
+#checkoutBlock #profileSteps{
+    float: none;
+    margin:0 auto 10px auto;
+    overflow: hidden;
+    width: 220px;
+}
+#checkoutBlock .checkoutContent{
+    font-size: .9em;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+#checkoutBlock .checkoutContent .topBlock{
+    margin:10px 0 25px 0;
+}
+#checkoutBlock .checkoutContent .stepTwo .topBlock{
+    margin:10px 0 45px 0;
+}
+#checkoutBlock .checkoutContent .splInfoPara{
+    background: #e8f7ff;
+    border: 1px solid #a5c2d2;
+    color: #6b91a7;
+    padding:15px 20px;
+}
+#checkoutBlock .checkoutContent .topBlock .agreeSubscriptionTermsBlock{
+    margin: 0 auto;
+    width: 280px;
+}
+#checkoutBlock .checkoutContent .topBlock .title{
+    margin: 2em 0 1em 0;
+    text-align: center;
+}
+#checkoutBlock .checkoutContent .videoplayerBlock{
+    height: 300px;
+    margin: 45px 0;
+    position: relative;
+    width: 527px;
+}
+#checkoutBlock .checkoutContent .scrollBlock{
+    height:450px;
+    overflow: auto;
+    border-style: solid;
+    border-width: 1px;
+}
+#checkoutBlock .checkoutContent .formElemBlock{
+    margin: 25px 0 0 0;
+}
+#checkoutBlock .checkoutContent .stepTwo .formElemBlock{
+    margin:55px 0 0 0;
+}
+#checkoutBlock .checkoutContent .formElemBlock .inputContainer {
+    margin-right: 20px;
+}
+#checkoutBlock .checkoutContent .formElemBlock .btnBlock{
+    margin: 35px 0 0 0;
+}
+#checkoutBlock .checkoutContent .formElemBlock .btnBlock .actionBtns{
+    float: right;
+    font-size: .85em;
+    width: 100px;
+}
+#checkoutBlock .checkoutContent .formElemBlock .btnBlock .actionBtns.btnBack{
+    float: left;
+}
+#checkoutBlock .checkoutContent .formElemBlock .btnBlock .actionBtns.paySubmit{
+    width:auto;
+}
+#checkoutBlock .upgradeDetailsBlock{}
+#checkoutBlock .upgradeDetailsBlock .formBlock{
+    position: relative;
+}
+#checkoutBlock .upgradeDetailsBlock .formBlock .blocktitle{
+    margin: 0;
+    position: absolute;
+    top:-70px;
+}
+#checkoutBlock .upgradeDetailsBlock .formBlock ul{
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+#checkoutBlock .upgradeDetailsBlock li{
+    clear: both;
+}
+#checkoutBlock .upgradeDetailsBlock li label.labelTxt{
+    padding-bottom: 3px;
+    padding-top: 10px;
+}
+#checkoutBlock .upgradeDetailsBlock li label.error{
+    display: none;
+    font-size: .9em;
+}
+#checkoutBlock .upgradeDetailsBlock li .ddChild ul,
+#checkoutBlock .upgradeDetailsBlock li .ddChild li{
+    float: none;
+    margin: 0;
+}
+#checkoutBlock .upgradeDetailsBlock li .ddChild ul{
+    padding:0;
+}
+#checkoutBlock .upgradeDetailsBlock li  .secureTransaction{
+    background: url(../images/signup/shield.png) no-repeat;
+    float: left;
+    font-size: 1em;
+    font-style: italic;
+    margin: 10px 0 0 0;
+    padding: 5px 0 5px 35px;
+}
+#checkoutBlock .billingAddressContainer {
+    margin-top: 0px;
+}
+#checkoutBlock .creditCardContainer {
+    margin-top: 415px;
+}
+#checkoutBlock .radiolabelTxt{
+    float: left;
+    margin-left: 5px;
+    width: 480px;
+}
+#checkoutBlock .paymentGateways{
+    float: left;
+    margin:20px 0 0 20px;
+}
+#checkoutBlock .leftColumnBlock {
+    float: left;
+    padding-top:10px;
+}
+#checkoutBlock .rightColumnBlock
+{
+    float: left;
+    padding-top: 10px;
+    margin-left: 0px;
+}
+#checkoutBlock .cvvBlock{
+    float: left;
+    margin-left: 22px;
+}
+#checkoutBlock .cvvBlockNM{
+    float: left;
+}
+#checkoutBlock .cvvBlock .inputContainer{
+    float: left;
+}
+#checkoutBlock .expYearBlock {
+    margin-left: 20px;
+}
+#checkoutBlock .paymentGateways{
+    float: left;
+    margin:0 0 0 15px;
+}
+#salesSubmit .btnBuynow{
+    font-size: .85em;
+}
+#checkoutBlock .titleCustom{
+    font-size:1em;
+    margin-bottom: 0;
+    position: relative;
+    top: 5px;
+}
+#checkoutBlock .divider
+{
+    background:url(../images/stream/divider.png) center top no-repeat;
+    height:1px;
+    line-height:1px;
+    font-size:0px;
+    margin:30px 0px;
+}
+#checkoutBlock .hiddenForm
+{
+    text-align: center;
+    height: 0px;
+}
+#checkoutBlock label.error{
+    text-align: left;
+    width: 100%;
+    float: left;
+}
+
+/*=============================================================================
+	The Master Course css classes
+=============================================================================*/
+.activate_master {
+    border:1px solid #573803;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size:12px;
+    font-family:helvetica, sans-serif;
+    padding: 10px 20px 10px 20px;
+    text-decoration:none;
+    display:inline-block;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+    color: #FFFFFF;
+    background-color: #94F502;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#94F502), to(#008c00));
+    background-image: -webkit-linear-gradient(top, #94F502, #008c00);
+    background-image: -moz-linear-gradient(top, #94F502, #008c00);
+    background-image: -ms-linear-gradient(top, #94F502, #008c00);
+    background-image: -o-linear-gradient(top, #94F502, #008c00);
+    background-image: linear-gradient(to bottom, #94F502, #008c00);
+    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#94F502, endColorstr=#008c00);
+}
+
+.activate_master:hover{
+    border:1px solid #579001;
+    background-color: #75c202; background-image: -webkit-gradient(linear, left top, left bottom, from(#75c202), to(#005900));
+    background-image: -webkit-linear-gradient(top, #75c202, #005900);
+    background-image: -moz-linear-gradient(top, #75c202, #005900);
+    background-image: -ms-linear-gradient(top, #75c202, #005900);
+    background-image: -o-linear-gradient(top, #75c202, #005900);
+    background-image: linear-gradient(to bottom, #75c202, #005900);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#75c202, endColorstr=#005900);
+}
+/*Processing Button Gold*/
+.processing_master{
+    border: 1px solid #573803;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: helvetica, sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+    color: #FFFFFF;
+    background-color: #3093c7;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#3093c7), to(#1c5a85));
+    background-image: -webkit-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -moz-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -ms-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -o-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: linear-gradient(to bottom, #3093c7, #1c5a85);
+    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#3093c7, endColorstr=#1c5a85);
+    padding-top: 10px;
+    padding-right: 28px;
+    padding-bottom: 10px;
+    padding-left: 26px;
+}
+.processing_master:hover {
+    border:1px solid #1c5675;
+    background-color: #26759e;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#26759e), to(#133d5b));
+    background-image: -webkit-linear-gradient(top, #26759e, #133d5b);
+    background-image: -moz-linear-gradient(top, #26759e, #133d5b);
+    background-image: -ms-linear-gradient(top, #26759e, #133d5b);
+    background-image: -o-linear-gradient(top, #26759e, #133d5b);
+    background-image: linear-gradient(to bottom, #26759e, #133d5b);
+    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#26759e, endColorstr=#133d5b);
+}
+
+
+
+/*=============================================================================
+	The Event ticket css classes
+=============================================================================*/
+.eventList{
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    width: 580px;
+}
+.eventList li.events{
+    background: #fff;
+    border:1px solid #cbcbcb;
+    margin-bottom: 20px;
+    min-height: 400px;
+    width: 278px;
+}
+.eventList .btnContainer{
+    overflow: hidden;
+    padding:0 25px;
+}
+.eventList .btnContainer .btnEventInfo{
+    float: left;
+    width: 100px;
+}
+.eventList .btnContainer .btnBuyNow{
+    float: right;
+    width: 100px;
+}
+.eventList .linkContainer{
+    padding-top: 15px;
+    text-align: center;
+}
+.eventList .linkContainer .downloadLink{
+    background: url(../images/events/downloadIcon.png) no-repeat;
+    font-size: .75em;
+    padding: 2px 0 0 30px;
+}
+#eventDetailBlock {
+    background: #fff;
+    border: 1px solid #e0e1e1;
+    padding: 25px;
+    /*font-size: 1em;
+    width:610px;*/
+}
+#eventDetailBlock .eventDetailContent{
+    width:560px;
+    float: left;
+}
+#eventDetailBlock .eventHeader{
+    text-align: center;
+}
+#eventDetailBlock .eventHeader p{
+    font-size: .9em;
+}
+#eventDetailBlock .eventDetailContent h1.title{
+    color: #0e0e0e;
+    font:bold 2.5em/normal "droid_sansbold", Myriad Pro,Arial,"Helvetica Neue",Helvetica,sans-serif;
+    text-align: center;
+}
+#eventDetailBlock .eventDetailContent h2.subTitle{
+    color: #363636;
+    font-size:1.6em;
+    text-align: center;
+    margin: 25px 0 0 0;
+}
+#eventDetailBlock ul.listing {
+    font-size: .9em;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+#eventDetailBlock ul.listing li{
+    list-style-type: none;
+    background: url(../images/events/bulet.jpg) 0px 5px no-repeat;
+    padding: 5px 22px;
+}
+#eventDetailBlock .divider {
+    background: url(../images/events/divider.jpg) center top no-repeat;
+    height: 1px;
+    line-height: 1px;
+    font-size: 0px;
+    margin: 30px 0px;
+}
+#eventDetailBlock .headingTxt{
+    font:normal 2em/normal "droid_sansbold", Myriad Pro,Arial,"Helvetica Neue",Helvetica,sans-serif;
+    margin: 0;
+    text-align: center;
+}
+#eventDetailBlock h2.directionTxt,
+#eventDetailBlock h2.optionsTxt{
+    font:normal 1.2em/normal "droid_sansbold", Myriad Pro,Arial,"Helvetica Neue",Helvetica,sans-serif;
+    color:#363636;
+    text-align: center;
+}
+#eventDetailBlock h2.dineOptsHeadingTxt{
+    font:normal 1.5em/normal "droid_sansregular", Myriad Pro,Arial,"Helvetica Neue",Helvetica,sans-serif;
+    color:#363636;
+    margin: 0;
+    padding-bottom: 5px;
+    text-align: left;
+}
+#eventDetailBlock h2.dineOptsHeadingTxtNimg{
+    font:normal 1.4em/normal "droid_sansregular", Myriad Pro,Arial,"Helvetica Neue",Helvetica,sans-serif;
+    color:#363636;
+    margin: 0;
+    padding-bottom: 5px;
+    text-align: left;
+}
+/*
+audio settings tab on media hosting page
+.multimediaViewBlock .settingsTab .ui-tabs-nav li.audioSettings a ->
+.multimediaViewBlock .settingsTab .ui-tabs-nav li.audioSettings.ui-tabs-active a
+*/
+.multimediaViewBlock .settingsTab .ui-tabs-nav li.audioSettings a{
+    background: url(../images/stream/audioTabswitch.jpg) no-repeat;
+    width: 51px;
+    height: 75px;
+}
+.multimediaViewBlock .settingsTab .ui-tabs-nav li.audioSettings.ui-tabs-active a{
+    background-position: -51px 0;
+}
+
+/*=============================================================================
+	The Miami Event Information Classes
+=============================================================================*/
+#miamiInfo .miami_btn {
+    border: 1px solid #25729a;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 15px 30px;
+    text-decoration: none;
+    display: inline-block;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+    color: #FFAD0A;
+    background-color: #3093c7;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#3093c7), to(#1c5a85));
+    background-image: -webkit-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -moz-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -ms-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -o-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: linear-gradient(to bottom, #3093c7, #1c5a85);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#3093c7, endColorstr=#1c5a85);
+    font: bold 24px arial, helvetica, sans-serif;
+}
+
+#miamiInfo .miami_btn:hover {
+    border: 1px solid #1c5675;
+    background-color: #47CCB6;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#47CCB6), to(#1F706E));
+    background-image: -webkit-linear-gradient(top, #47CCB6, #1F706E);
+    background-image: -moz-linear-gradient(top, #47CCB6, #1F706E);
+    background-image: -ms-linear-gradient(top, #47CCB6, #1F706E);
+    background-image: -o-linear-gradient(top, #47CCB6, #1F706E);
+    background-image: linear-gradient(to bottom, #47CCB6, #1F706E);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#47CCB6, endColorstr=#1F706E);
+    color: #FFF;
+    text-decoration: none;
+}
+
+#miamiInfo .miami_container {
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #999999;
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: auto;
+    width: 520px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 330px;
+    background: #FFF url(../images/events/miami/info_bkgrd_top.png) no-repeat top;
+}
+
+#miamiInfo .miami_info {
+    margin-bottom: 30px;
+    line-height: 18px;
+}
+
+#miamiInfo .infor_bottom {
+    background-image: url(../images/events/miami/info_bkgrd_bottom.png);
+    background-position: bottom;
+    width: 560px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #999;
+    padding-top: 50px;
+    line-height: 18px;
+    text-align: center;
+    height: 200px;
+    clear: both;
+}
+
+#miamiInfo .miami_container h1 {
+    text-align: center;
+}
+
+#miamiInfo a:link {
+    color: #ffad0a;
+    text-decoration: none;
+}
+
+#miamiInfo a:hover {
+    color: #1D757F;
+    text-decoration: underline;
+}
+
+#miamiInfo a:visited {
+    text-decoration: none;
+    /*color: #399;*/
+}
+
+#miamiInfo .purchase {
+    text-align: center;
+    color: #666;
+    padding: 20px;
+    background: #F8F8F8;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#miamiInfo a:active {
+    text-decoration: none;
+}
+
+#miamiInfo .miami_container h5 {
+    text-align: center;
+    color: #F7931F;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#miamiInfo h1, h2, h3, h4, h5, h6 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+#miamiInfo .titles {
+    font: 18px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #666;
+    width: 100%;
+    /*		height:30px;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: left;
+}
+
+#miamiInfo .titles_green {
+    font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #38BC96;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    border-bottom: 1px dotted #F79535;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: 1px;
+    width: 90%;
+    float: left;
+}
+
+#miamiInfo .titles_icon {
+    font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #38BC96;
+    float: left;
+    width: 40px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 11px;
+    border-bottom: 1px dotted #F79535;
+}
+
+#miamiInfo .p {
+    clear: left;
+    float: left;
+    width: 100%;
+}
+
+#miamiInfo .gen_copy {
+    clear: left;
+    float: left;
+    width: 100%;
+}
+
+#miamiInfo .clear_div {
+    color: #FFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #eaeaea;
+    float: left;
+    width: 100%;
+    clear: left;
+}
+
+#miamiInfo .clear_div_clear {
+    color: #FFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: left;
+    width: 100%;
+    clear: left;
+}
+
+#miamiInfo h4 {
+    font-size: 12px;
+    color: #999999;
+    line-height: 5px;
+    font-weight: normal;
+}
+
+#miamiInfo .float_left {
+    float: left;
+    margin-right: 30px;
+    clear: left;
+}
+
+#miamiInfo .hotel-copy {
+    float: left;
+    width: 380px;
+}
+
+#miamiInfo body {
+    background-color: #CCC;
+}
+
+#miamiInfo .miami_btn1 {
+    border: 1px solid #25729a;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 20px;
+    font-family: arial, helvetica, sans-serif;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #3093c7;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#3093c7), to(#1c5a85));
+    background-image: -webkit-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -moz-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -ms-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -o-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: linear-gradient(to bottom, #3093c7, #1c5a85);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#3093c7, endColorstr=#1c5a85);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#miamiInfo .miami_btn2 {
+    border: 1px solid #25729a;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 20px;
+    font-family: arial, helvetica, sans-serif;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+    display: inline-block;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    color: #FFAD0A;
+    background-color: #3093c7;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#3093c7), to(#1c5a85));
+    background-image: -webkit-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -moz-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -ms-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -o-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: linear-gradient(to bottom, #3093c7, #1c5a85);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#3093c7, endColorstr=#1c5a85);
+}
+
+#miamiInfo .miami_btn3 {
+    border: 1px solid #25729a;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 15px 30px;
+    text-decoration: none;
+    display: inline-block;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+    color: #FFAD0A;
+    background-color: #3093c7;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#3093c7), to(#1c5a85));
+    background-image: -webkit-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -moz-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -ms-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: -o-linear-gradient(top, #3093c7, #1c5a85);
+    background-image: linear-gradient(to bottom, #3093c7, #1c5a85);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#3093c7, endColorstr=#1c5a85);
+    font: bold 24px arial, helvetica, sans-serif;
+}
+
+
+
+#miamiInfo .titlesEventInfo .titles_green,
+#miamiInfo .titlesEventInfo .titles_icon
+{
+    border:0;
+    margin-bottom: 20px;
+}
+
+#miamiInfo .titlesEventInfo {
+    border-bottom:1px dotted #f79535;
+    float:left;
+    width: 100%;
+    height: 47px;
+    margin-bottom: 20px;
+}
+
+/*=============================================================================
+	The advertising block css classes
+=============================================================================*/
+
+#adBlock a {
+    width: 342px;
+    height: 174px;
+    display: block;
+    background-image: url(../images/ads/blog_affil_resources.png);
+    text-indent: -99999px;
+    margin-bottom: 10px;
+}
+
+#adBlock a:hover {
+    width: 342px;
+    height: 174 px;
+    display: block;
+    background-image: url(../images/ads/blog_affil_resources_hover.png);
+}

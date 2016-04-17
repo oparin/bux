@@ -1,0 +1,89 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block header_title %}
+    <!-- subheader -->
+    <div class="rightsidebar" id="subheader">
+        <div class="subheader">
+            <div class="subtitle"><h1>Contact</h1></div>
+            <div class="subdesc">
+                Contact
+            </div>
+        </div>
+    </div>
+    <!-- subheader -->
+{% endblock header_title %}
+
+{% block header_subtitle %}
+{% endblock header_subtitle %}
+
+{% block body %}
+    <div id="main">
+
+        <!-- breadcrumb -->
+        <div id="breadcrumbs">
+            <img width="16" height="16" class="bread-icon" src="{{ asset('lib/versatile/images/home-icon.png') }}">
+            <div class="breadcrumbs">
+                <a href="{{ path('home') }}">Home</a>
+            </div>
+        </div><!-- breadcrumb -->
+
+        <div class="content">
+            <div class="post">
+                <div class="sysform" id="contactform">
+                    {% for flashMessage in app.session.flashbag.get('success') %}
+                        <div class="notification note-success">
+                            <a href="#" class="close" title="Close notification">close</a>
+                            <p><strong>{{ flashMessage }}</strong></p>
+                        </div>
+                    {% endfor %}
+                    <form action="{{ path('home_contact') }}" method="POST" class="fos_user_registration_register" id="register-form">
+                        <p>
+                        <div style="float: left; width: 120px">
+                            {{ form_label(form.email) }}
+                        </div>
+                        <div style="float: left">
+                            {{ form_widget(form.email, {'attr': {'class': 'required email input txt'}}) }}
+                        </div>
+                        {% if form_errors(form.email) %}
+                            <div style="padding-left: 350px; color: red">
+                                {{ form_errors(form.email) }}
+                            </div>
+                        {% endif %}
+                        </p>
+                        <div style="clear: both"></div>
+
+                        <p>
+                        <div style="float: left; width: 120px">
+                            {{ form_label(form.text) }}
+                        </div>
+                        <div style="float: left">
+                            {{ form_widget(form.text, {'attr': {'class': 'required textbox input', 'rows': '6', 'cols': '30', 'style': 'width: 460px'}}) }}
+                        </div>
+                        {% if form_errors(form.email) %}
+                            <div style="padding-left: 350px; color: red">
+                                {{ form_errors(form.text) }}
+                            </div>
+                        {% endif %}
+                        </p>
+                        <div style="clear: both"></div>
+                        {{ form_rest(form) }}
+                        <div style="margin-top: 10px">
+                            {#<input type="submit" value="{{ 'registration.submit'|trans }}" />#}
+                            <a onclick="jQuery('#register-form').submit();" class="button small" style="margin-left: 120px">
+                                <span>Send</span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.close').click(function(){
+            $('.notification').remove();
+            return false;
+        });
+    </script>
+{% endblock body %}

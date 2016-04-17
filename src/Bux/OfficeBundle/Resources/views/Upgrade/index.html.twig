@@ -1,0 +1,271 @@
+{% extends '::office_base.html.twig' %}
+
+{% form_theme form ':form:fields.html.twig' %}
+{% form_theme form_payment ':form:fields.html.twig' %}
+
+{% block iconbar %}
+    {#{% include 'BuxAccountBundle::iconbar.html.twig' %}#}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {% include 'BuxAccountBundle::blog_menu.html.twig' %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <div class="notification note-error">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <div class="col3-4 lastcol">
+            <!-- CONTENT BOX - DATATABLE -->
+            <div class="content-box">
+                <div class="box-body">
+
+                    <div class="box-header clear">
+                        <ul class="tabs clear">
+                            <li><a href="#data-table" class="selected">{{ 'frontend.funds_transfer.form.upgrade_using_purchase_balance'|trans }}</a></li>
+                            {#<li><a href="#table" class="">{{ 'frontend.funds_transfer.form.upgrade_using_payment_gateways'|trans }}</a></li>#}
+                        </ul>
+                        <h2>{{ 'frontend.dashboard.menu.upgrade'|trans }}</h2>
+                    </div>
+
+                    <div class="box-wrap clear">
+                        <table class="style1" style="">
+                            <thead>
+                            <tr>
+                                <th style="width: 400px;" class="sorting"></th>
+                                {% for membership in memberships %}
+                                    <th style="width: 169px;" class="sorting">{{ membership.name }}</th>
+                                {% endfor %}
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Duration (days)</td>
+                                    {% for membership in memberships %}
+                                        <td>{{ membership.duration }}</td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Video Ads</td>
+                                    {% for membership in memberships %}
+                                        <td>{{ membership.videoClick }}%</td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Survey</td>
+                                    {% for membership in memberships %}
+                                        <td>{{ membership.pollClick }}%</td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Maximum video ads per day</td>
+                                    {% for membership in memberships %}
+                                        <td>
+                                            {% if membership.maxVideoClickInDay == 0 %}
+                                                unlim
+                                            {% else %}
+                                                {{ membership.maxVideoClickInDay }}
+                                            {% endif %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Maximum surveys per day</td>
+                                    {% for membership in memberships %}
+                                        <td>
+                                            {% if membership.maxPollClickInDay == 0 %}
+                                                unlim
+                                            {% else %}
+                                                {{ membership.maxPollClickInDay }}
+                                            {% endif %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Referral Video Click</td>
+                                    {% for membership in memberships %}
+                                        <td>{{ membership.refVideoClick }}%</td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Referral Survey Click</td>
+                                    {% for membership in memberships %}
+                                        <td>{{ membership.refPollClick }}%</td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Purchase comission</td>
+                                    {% for membership in memberships %}
+                                        <td>{{ membership.purchaseComission }}%</td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Upgrade comission</td>
+                                    {% for membership in memberships %}
+                                        <td>{{ membership.upgradeComission }}%</td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Direct Referral Limit</td>
+                                    {% for membership in memberships %}
+                                        <td>
+                                            {% if membership.refLimit == 0 %}
+                                                unlim
+                                            {% else %}
+                                                {{ membership.refLimit }}
+                                            {% endif %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Maximum withdraw per day</td>
+                                    {% for membership in memberships %}
+                                        <td>
+                                            {% if membership.withdrawSettings %}
+                                                {% if membership.withdrawSettings.maxInDay == '0.00' %}
+                                                    unlim
+                                                {% else %}
+                                                    {{ membership.withdrawSettings.maxInDay }}$
+                                                {% endif %}
+                                            {% endif %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Minimum Payout</td>
+                                    {% for membership in memberships %}
+                                        <td>
+                                        {% if membership.withdrawSettings %}
+                                            {{ membership.withdrawSettings.minPayout }}$
+                                        {% endif %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Cashout Time</td>
+                                    {% for membership in memberships %}
+                                        <td>
+                                        {% if membership.withdrawSettings %}
+                                            {{ membership.withdrawSettings.cashoutTime }}
+                                        {% endif %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+                                {#<tr class="odd">#}
+                                    {#<td style="font-weight: bold">Available Surveys</td>#}
+                                    {#{% for membership in memberships %}#}
+                                        {#<td>{{ membership.countPollAd }}</td>#}
+                                    {#{% endfor %}#}
+                                {#</tr>#}
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Available Banner Credits</td>
+                                    {% for membership in memberships %}
+                                        <td>{{ membership.bannerCredits }}</td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Available Vip Banner Credits</td>
+                                    {% for membership in memberships %}
+                                        <td>{{ membership.vipBannerCredits }}</td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Available Autosurf Credits</td>
+                                    {% for membership in memberships %}
+                                        <td>{{ membership.autosurfCredits }}</td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="odd">
+                                    <td style="font-weight: bold">Price</td>
+                                    {% for membership in memberships %}
+                                        <td style="font-weight: bold">${{ membership.price }}</td>
+                                    {% endfor %}
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- TABLE -->
+                        <div id="data-table" style="display: block;">
+                            {{ form_start(form, {'attr': {'class': 'validate-form form bt-space15'} }) }}
+                            <div class="columns clear bt-space15">
+                                <div class="col2-3">
+                                    <div class="form-field clear">
+                                        {{ form_label(form.status, 'frontend.account.add_funds.status'|trans, {'label_attr': {'class': 'form-label size-120 fl-space2'} }) }}
+										<div>
+                                        {{ form_widget(form.status, {'attr': {'class': 'required list fl-space2'} }) }}
+										</div>
+										<div><a href="{{ path('office_account_add_funds')}}">Add Funds</a></div>
+                                        {% if form_errors(form.status) %}
+                                            <label class="error form-error">{{ form_errors(form.status) }}</label>
+                                        {% endif %}
+                                    </div><!-- /.form-field -->
+                                </div>
+                            </div>
+
+                            <div class="columns clear bt-space15">
+                                <div class="col2-3">
+                                    <div class="form-field clear">
+                                        <label class="form-label size-120 fl-space2 required">{{ 'frontend.account.account_summary.purchase_balance'|trans }}</label>
+                                        <input type="text" class="fl-space2 text" value="$ {{ app.user.purchaseWallet.sum }}" disabled="disabled">
+                                    </div><!-- /.form-field -->
+                                </div>
+                            </div>
+                            {{ form_rest(form) }}
+                            <div class="form-field clear" style="float: left; margin-left: 130px">
+                                <input type="submit" class="button blue fr" value="{{ 'frontend.upgrade.form.send'|trans }}" />
+                            </div><!-- /.form-field -->
+                            {{ form_end(form) }}
+                        </div><!-- /#table -->
+
+                        <!-- TABLE -->
+                        <div id="table" style="display: none;">
+                            {{ form_start(form_payment, {'attr': {'class': 'validate-form form bt-space15'} }) }}
+                            <div class="columns clear bt-space15">
+                                <div class="col2-3">
+                                    <div class="form-field clear">
+                                        {{ form_label(form_payment.status, 'frontend.upgrade.form.status'|trans, {'label_attr': {'class': 'form-label size-120 fl-space2'} }) }}
+                                        {{ form_widget(form_payment.status, {'attr': {'class': 'required list fl-space2'} }) }}
+                                        {% if form_errors(form_payment.status) %}
+                                            <label class="error form-error">{{ form_errors(form_payment.status) }}</label>
+                                        {% endif %}
+                                    </div><!-- /.form-field -->
+                                </div>
+                            </div>
+
+                            <div class="columns clear bt-space15">
+                                <div class="col2-3">
+                                    <div class="form-field clear">
+                                        {{ form_label(form_payment.method, 'frontend.account.add_funds.method'|trans, {'label_attr': {'class': 'form-label size-120 fl-space2'} }) }}
+                                        {{ form_widget(form_payment.method, {'attr': {'class': 'required list fl-space2'} }) }}
+                                        {% if form_errors(form_payment.method) %}
+                                            <label class="error form-error">{{ form_errors(form_payment.method) }}</label>
+                                        {% endif %}
+                                    </div><!-- /.form-field -->
+                                </div>
+                            </div>
+
+                            {{ form_rest(form_payment) }}
+                            <div class="form-field clear" style="float: left; margin-left: 130px">
+                                <input type="submit" class="button blue fr" value="{{ 'frontend.upgrade.form.send'|trans }}" />
+                            </div><!-- /.form-field -->
+                            {{ form_end(form_payment) }}
+                        </div><!-- /#table -->
+
+                    </div><!-- end of box-wrap -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

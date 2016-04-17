@@ -1,0 +1,114 @@
+bux_admin_utilities:
+    resource: "@BuxAdminUtilitiesBundle/Controller/"
+    type:     annotation
+    prefix:   /monacolistinggg/utilities
+
+bux_admin_setup:
+    resource: "@BuxAdminSetupBundle/Controller/"
+    type:     annotation
+    prefix:   /monacolistinggg/setup
+
+bux_earn_money:
+    resource: "@BuxEarnMoneyBundle/Controller/"
+    type:     annotation
+    prefix:   /office/earn-money
+
+bux_advertise:
+    resource: "@BuxAdvertiseBundle/Controller/"
+    type:     annotation
+    prefix:   /office/advertise
+
+bux_admin_advertisements:
+    resource: "@BuxAdminAdvertisementsBundle/Controller/"
+    type:     annotation
+    prefix:   /monacolistinggg/advertisements
+
+bux_admin_support:
+    resource: "@BuxAdminSupportBundle/Controller/"
+    type:     annotation
+    prefix:   /monacolistinggg
+
+bux_admin_withdrawals:
+    resource: "@BuxAdminWithdrawalsBundle/Controller/"
+    type:     annotation
+    prefix:   /monacolistinggg
+
+bux_admin_deposits:
+    resource: "@BuxAdminDepositsBundle/Controller/"
+    type:     annotation
+    prefix:   /monacolistinggg
+
+bux_statistic:
+    resource: "@BuxStatisticBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+bux_account:
+    resource: "@BuxAccountBundle/Controller/"
+    type:     annotation
+    prefix:   /office/account
+
+bux_admin_members:
+    resource: "@BuxAdminMembersBundle/Controller/"
+    type:     annotation
+    prefix:   /monacolistinggg
+
+bux_admin_home:
+    resource: "@BuxAdminHomeBundle/Controller/"
+    type:     annotation
+    prefix:   /monacolistinggg
+
+bux_wallet:
+    resource: "@BuxWalletBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+bux_office:
+    resource: "@BuxOfficeBundle/Controller/"
+    type:     annotation
+    prefix:   /office
+
+bux_home:
+    resource: "@BuxHomeBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+bux_blog:
+    resource: "@BuxBlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+bux_user:
+    resource: "@BuxUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+bux_admin_dashboard:
+    resource: "@BuxAdminDashboardBundle/Controller/"
+    type:     annotation
+    prefix:   /monacolistinggg
+
+bux_admin_blog:
+    resource: "@BuxAdminBlogBundle/Controller/"
+    type:     annotation
+    prefix:   /monacolistinggg
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+#
+#fos_user_register:
+#    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+#    prefix: /register
+
+admin_login:
+    pattern:  /monacolistinggg/login
+    defaults: { _controller: FOSUserBundle:Security:login }
+
+admin_check:
+    pattern:  /monacolistinggg/login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+admin_logout:
+    pattern:  /monacolistinggg/logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
+

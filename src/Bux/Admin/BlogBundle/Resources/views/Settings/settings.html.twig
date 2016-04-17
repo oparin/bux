@@ -1,0 +1,165 @@
+{% extends ':admin:admin_base.html.twig' %}
+
+{% form_theme form_header_menu 'BuxAdminBlogBundle:Settings:settings_theme.html.twig' %}
+
+{% block content_title %}
+    <i class="fa fa-gear"></i>&nbsp; Blog Settings
+{% endblock content_title %}
+
+{% block content %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        {% include ':admin:admin_alert_succes.html.twig' %}
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        {% include ':admin:admin_alert_error.html.twig' %}
+    {% endfor %}
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="box dark">
+                <header>
+                    <div class="icons">
+                        <i class="fa fa-edit"></i>
+                    </div>
+                    <h5>Banners</h5>
+
+                    <!-- .toolbar -->
+                    <div class="toolbar">
+                        <nav style="padding: 8px;">
+                            <a class="btn btn-default btn-xs collapse-box" href="javascript:;">
+                                <i class="fa fa-minus"></i>
+                            </a>
+                            <a class="btn btn-default btn-xs full-box" href="javascript:;">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                            <a class="btn btn-danger btn-xs close-box" href="javascript:;">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </nav>
+                    </div><!-- /.toolbar -->
+                </header>
+                <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            {{ form_label(form_banners.bannerSideFile, 'Banner side', { 'label_attr': {'class': 'control-label col-lg-4'} }) }}
+                            <div class="col-lg-8">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                        {% if form_banners.vars.value.bannerSide %}
+                                            <img src="{{ vich_uploader_asset(setting, 'bannerSideFile') }}" alt="" />
+                                        {% endif %}
+                                    </div>
+                                    <div>
+                                      <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span>
+                                          <span class="fileinput-exists">Change</span>
+                                          {{ form_widget(form_banners.bannerSideFile) }}
+                                      </span>
+                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            {{ form_label(form_banners.bannerSideLink, null, { 'label_attr': {'class': 'control-label col-lg-4'} }) }}
+                            <div class="col-lg-8">
+                                {#<input type="email" class="form-control" required="required" name="edit_member_form_type[email]" id="edit_member_form_type_email">#}
+                                {{ form_widget(form_banners.bannerSideLink, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form_banners.bannerBottomFile, 'Banner bottom', { 'label_attr': {'class': 'control-label col-lg-4'} }) }}
+                            <div class="col-lg-8">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                        {% if form_banners.vars.value.bannerBottom %}
+                                            <img src="{{ vich_uploader_asset(setting, 'bannerBottomFile') }}" alt="" />
+                                        {% endif %}
+                                    </div>
+                                    <div>
+                                      <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span>
+                                          <span class="fileinput-exists">Change</span>
+                                          {{ form_widget(form_banners.bannerBottomFile) }}
+                                      </span>
+                                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            {{ form_label(form_banners.bannerBottomLink, null, { 'label_attr': {'class': 'control-label col-lg-4'} }) }}
+                            <div class="col-lg-8">
+                                {#<input type="email" class="form-control" required="required" name="edit_member_form_type[email]" id="edit_member_form_type_email">#}
+                                {{ form_widget(form_banners.bannerBottomLink, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-5">
+                                <input type="submit" class="btn btn-primary" value="Save">
+                            </div>
+                        </div>
+                        {{ form_rest(form_banners) }}
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="box">
+                <header>
+                    <div class="icons">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <h5>Header Menu</h5>
+                    <div class="toolbar">
+                        <nav style="padding: 8px;">
+                            <a class="btn btn-default btn-xs collapse-box" href="javascript:;">
+                                <i class="fa fa-minus"></i>
+                            </a>
+                            <a class="btn btn-default btn-xs full-box" href="javascript:;">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                            <a class="btn btn-danger btn-xs close-box" href="javascript:;">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </nav>
+                    </div>
+                </header>
+                <div class="body">
+                    <form name="test" class="form-horizontal" method="POST">
+                        <div class="form-group">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-8">
+                                {% for menu in form_header_menu.menu %}
+                                    {{ form_widget(menu) }}
+                                {% endfor %}
+                                {{ form_rest(form_header_menu) }}
+                            </div>
+                        </div><!-- /.row -->
+                        <div class="form-group">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-8">
+                                <input type="submit" class="btn btn-primary" value="Save" style="margin-left: 22px">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+    </div><!-- /.row -->
+{% endblock content %}
+
+{% block js %}
+    <script>
+        $(function() {
+            Metis.formWizard();
+        });
+    </script>
+    <script>
+        $(function() {
+            Metis.formGeneral();
+        });
+    </script>
+{% endblock js %}

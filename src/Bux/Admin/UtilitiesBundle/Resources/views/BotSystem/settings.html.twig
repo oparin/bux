@@ -1,0 +1,402 @@
+{% extends ':admin:admin_base.html.twig' %}
+
+{% form_theme general_settings_form ':admin:twig_theme.html.twig' %}
+{% form_theme create_bots_form ':admin:twig_theme.html.twig' %}
+
+{% block content_title %}
+    <i class="fa fa-database"></i>&nbsp; Utilities - Bot System
+{% endblock content_title %}
+
+{% block content %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        {% include ':admin:admin_alert_succes.html.twig' %}
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        {% include ':admin:admin_alert_error.html.twig' %}
+    {% endfor %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box">
+            <div class="body" id="collapse4">
+                <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <li class="{% if tab == 'stat' %}active{% endif %}" role="presentation">
+                        <a aria-expanded="false" aria-controls="stat" data-toggle="tab" role="tab" id="stat-tab" href="#stat">Statistic</a>
+                    </li>
+                    <li class="{% if tab == 'settings' %}active{% endif %}" role="presentation">
+                        <a aria-expanded="true" aria-controls="settings" data-toggle="tab" role="tab" id="settings-tab" href="#settings">General settings & Bot generator</a>
+                    </li>
+                    <li class="{% if tab == 'types' %}active{% endif %}" role="presentation">
+                        <a aria-expanded="true" aria-controls="types" data-toggle="tab" role="tab" id="types-tab" href="#types">Bot Types</a>
+                    </li>
+                    <li class="{% if tab == 'membership' %}active{% endif %}" role="presentation">
+                        <a aria-expanded="true" aria-controls="types" data-toggle="tab" role="tab" id="membership-tab" href="#membership">Membership Settings</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div aria-labelledby="stat-tab" id="stat" class="tab-pane fade {% if tab == 'stat' %}in active{% endif %}" role="tabpanel">
+                        <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                            <table>
+                                <tr>
+                                    <td style="text-align: right">Total bots created:</td>
+                                    <td style="text-align: left; font-weight: bold; color: #555555">
+                                        <span style="margin-left: 25px">{{ count_free_bots + count_rent_bots }}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right">Bots in use:</td>
+                                    <td style="text-align: left; font-weight: bold; color: red">
+                                        <span style="margin-left: 25px">{{ count_rent_bots }}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right">Bots available to rent:</td>
+                                    <td style="text-align: left; font-weight: bold; color: green">
+                                        <span style="margin-left: 25px">{{ count_free_bots }}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div aria-labelledby="settings-tab" id="settings" class="tab-pane fade {% if tab == 'settings' %}in active{% endif %}" role="tabpanel">
+                        <div class="box">
+                            <header>
+                                <div class="icons">
+                                    <i class="fa fa-edit"></i>
+                                </div>
+                                <h5>General Settings</h5>
+                            </header>
+                            <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                                {{ form_start(general_settings_form, {'attr': {'class': 'form-horizontal'} }) }}
+                                <div class="form-group {% if form_errors(general_settings_form.clickValue) %}has-error{% endif %}">
+                                    {{ form_label(general_settings_form.clickValue, 'Click value for bots', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(general_settings_form.clickValue, {'attr': {'class': 'form-control', 'placeholder': '0.00'}}) }}
+                                        <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">(0.01 = $0.01)</div>
+                                        {% if form_errors(general_settings_form.clickValue) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(general_settings_form.clickValue) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+
+                                <div class="form-group {% if form_errors(general_settings_form.videoValue) %}has-error{% endif %}">
+                                    {{ form_label(general_settings_form.videoValue, 'Video value for bots', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(general_settings_form.videoValue, {'attr': {'class': 'form-control', 'placeholder': '0.00'}}) }}
+                                        <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">(0.01 = $0.01)</div>
+                                        {% if form_errors(general_settings_form.videoValue) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(general_settings_form.videoValue) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+
+                                <div class="form-group {% if form_errors(general_settings_form.pollValue) %}has-error{% endif %}">
+                                    {{ form_label(general_settings_form.pollValue, 'Poll value for bots', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(general_settings_form.pollValue, {'attr': {'class': 'form-control', 'placeholder': '0.00'}}) }}
+                                        <div style="position: absolute; margin-top: -27px; margin-left: 300px; width: 90px">(0.01 = $0.01)</div>
+                                        {% if form_errors(general_settings_form.pollValue) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(general_settings_form.pollValue) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+
+                                <div class="form-group {% if form_errors(general_settings_form.rentOption) %}has-error{% endif %}">
+                                    {{ form_label(general_settings_form.rentOption, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(general_settings_form.rentOption, {'attr': {'class': 'form-control'}}) }}
+                                        {% if form_errors(general_settings_form.rentOption) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(general_settings_form.rentOption) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+                                {{ form_rest(general_settings_form) }}
+                                <div class="form-group">
+                                    <div class="col-lg-4"></div>
+                                    <div class="col-lg-4">
+                                        <input type="submit" class="btn btn-primary" value="Save">
+                                    </div>
+                                </div>
+                                {{ form_end(general_settings_form) }}
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <header>
+                                <div class="icons">
+                                    <i class="fa fa-edit"></i>
+                                </div>
+                                <h5>Create bots</h5>
+                            </header>
+                            <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                                {{ form_start(create_bots_form, {'attr': {'class': 'form-horizontal'} }) }}
+                                <div class="form-group {% if form_errors(create_bots_form.number) %}has-error{% endif %}">
+                                    {{ form_label(create_bots_form.number, 'Number of bots', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(create_bots_form.number, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                        {% if form_errors(create_bots_form.number) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(create_bots_form.number) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+
+                                {{ form_rest(create_bots_form) }}
+                                <div class="form-group">
+                                    <div class="col-lg-4"></div>
+                                    <div class="col-lg-4">
+                                        <input type="submit" class="btn btn-primary" value="Create">
+                                    </div>
+                                </div>
+                                {{ form_end(create_bots_form) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div aria-labelledby="types-tab" id="types" class="tab-pane fade {% if tab == 'types' %}in active{% endif %}" role="tabpanel">
+                        <div class="box">
+                            <header>
+                                <div class="icons">
+                                    <i class="fa fa-edit"></i>
+                                </div>
+                                <h5>Add new bot type</h5>
+                            </header>
+                            <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                                {{ form_start(bot_type_form, {'attr': {'class': 'form-horizontal'} }) }}
+                                <div class="form-group {% if form_errors(bot_type_form.name) %}has-error{% endif %}">
+                                    {{ form_label(bot_type_form.name, 'Groupe name', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(bot_type_form.name, {'attr': {'class': 'form-control'}}) }}
+                                        {% if form_errors(bot_type_form.name) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(bot_type_form.name) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+                                <div class="form-group {% if form_errors(bot_type_form.minClicks) %}has-error{% endif %}">
+                                    {{ form_label(bot_type_form.minClicks, 'Minimum of clicks per day', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(bot_type_form.minClicks, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                        {% if form_errors(bot_type_form.minClicks) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(bot_type_form.minClicks) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+                                <div class="form-group {% if form_errors(bot_type_form.maxClicks) %}has-error{% endif %}">
+                                    {{ form_label(bot_type_form.maxClicks, 'Maximum of clicks per day', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(bot_type_form.maxClicks, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                        {% if form_errors(bot_type_form.maxClicks) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(bot_type_form.maxClicks) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+                                <div class="form-group {% if form_errors(bot_type_form.minVideo) %}has-error{% endif %}">
+                                    {{ form_label(bot_type_form.minVideo, 'Minimum of video per day', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(bot_type_form.minVideo, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                        {% if form_errors(bot_type_form.minVideo) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(bot_type_form.minVideo) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+                                <div class="form-group {% if form_errors(bot_type_form.maxVideo) %}has-error{% endif %}">
+                                    {{ form_label(bot_type_form.maxVideo, 'Maximum of video per day', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(bot_type_form.maxVideo, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                        {% if form_errors(bot_type_form.maxVideo) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(bot_type_form.maxVideo) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+                                <div class="form-group {% if form_errors(bot_type_form.minPoll) %}has-error{% endif %}">
+                                    {{ form_label(bot_type_form.minPoll, 'Minimum of poll per day', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(bot_type_form.minPoll, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                        {% if form_errors(bot_type_form.minPoll) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(bot_type_form.minPoll) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+                                <div class="form-group {% if form_errors(bot_type_form.maxPoll) %}has-error{% endif %}">
+                                    {{ form_label(bot_type_form.maxPoll, 'Maximum of poll per day', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(bot_type_form.maxPoll, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                        {% if form_errors(bot_type_form.maxPoll) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(bot_type_form.maxPoll) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+                                <div class="form-group {% if form_errors(bot_type_form.daysActivity) %}has-error{% endif %}">
+                                    {{ form_label(bot_type_form.daysActivity, 'Days to inactivity', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                    <div class="col-lg-4">
+                                        {{ form_widget(bot_type_form.daysActivity, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                        {% if form_errors(bot_type_form.daysActivity) %}
+                                            <span id="required2-error" class="help-block">{{ form_errors(bot_type_form.daysActivity) }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- /.form-group -->
+                                {{ form_rest(bot_type_form) }}
+                                <div class="form-group">
+                                    <div class="col-lg-4"></div>
+                                    <div class="col-lg-4">
+                                        <input type="submit" class="btn btn-primary" value="Save">
+                                    </div>
+                                </div>
+                                {{ form_end(bot_type_form) }}
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <header>
+                                <div class="icons">
+                                    <i class="fa fa-table"></i>
+                                </div>
+                                <h5>Bot Types</h5>
+                            </header>
+                            <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                                <table class="table table-bordered table-condensed table-hover table-striped dataTable no-footer">
+                                    <tr>
+                                        <th>Group</th>
+                                        <th>Min. Clicks</th>
+                                        <th>Max. Clicks</th>
+                                        <th>Min. Video</th>
+                                        <th>Max. Video</th>
+                                        <th>Min. Poll</th>
+                                        <th>Max. Poll</th>
+                                        <th>Days of Activity</th>
+                                        <th style="width: 150px">Action</th>
+                                    </tr>
+                                    {% for type in bot_types %}
+                                        <tr class="grid-row-cells even">
+                                            <td>{{ type.name }}</td>
+                                            <td>{{ type.minClicks }}</td>
+                                            <td>{{ type.maxClicks }}</td>
+                                            <td>{{ type.minVideo }}</td>
+                                            <td>{{ type.maxVideo }}</td>
+                                            <td>{{ type.minPoll }}</td>
+                                            <td>{{ type.maxPoll }}</td>
+                                            <td>
+                                                {{ type.daysActivity }}
+                                            </td>
+                                            <td>
+                                                <a href="{{ path('admin_utilities_bot_system', {'typeId': type.id}) }}"><button>Edit</button></a>
+                                                <a href="{{ path('admin_utilities_bot_system_delete_bot_type', {'id': type.id}) }}" onclick="return confirm('You really want to delete?')">
+                                                    <button>Delete</button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div aria-labelledby="membership-tab" id="membership" class="tab-pane fade {% if tab == 'membership' %}in active{% endif %}" role="tabpanel">
+                        {% for member in membership %}
+                        <div class="box">
+                            <header>
+                                <div class="icons">
+                                    <i class="fa fa-table"></i>
+                                </div>
+                                <h5>{{ member.name }}</h5>
+                            </header>
+                            <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                                <form id="test" class="form-horizontal" action="javascript:void(null);">
+                                    <div class="form-group ">
+                                        <label class="control-label col-lg-4">Assign a bot type</label>
+                                        <div class="col-lg-4">
+                                            <select class="form-control" name="type">
+                                                {% for type in bot_types %}
+                                                    <option value="{{ type.id }}">{{ type.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group ">
+                                        <label class="control-label col-lg-4">Percentage to assign</label>
+                                        <div class="col-lg-4">
+                                            <input type="text" placeholder="0" class="form-control" required="required" name="percent">
+                                        </div>
+                                    </div><!-- /.form-group -->
+
+                                    <input type="hidden" name="membership" value="{{ member.id }}">
+
+                                    <div class="form-group">
+                                        <div class="col-lg-4"></div>
+                                        <div class="col-lg-4">
+                                            <input type="submit" value="Assign" class="btn btn-primary">
+                                        </div>
+                                    </div>
+
+                                    <div class="error-message">
+
+                                    </div>
+
+                                    <div class="table_membership">
+                                        <table class="table table-bordered table-condensed table-hover table-striped dataTable no-footer">
+                                            <tr>
+                                                <th>Bot type</th>
+                                                <th>Percentage</th>
+                                                <th></th>
+                                            </tr>
+                                            {% for type in member.botMembershipType %}
+                                                <tr class="grid-row-cells even">
+                                                    <td>{{ type.botType.name }}</td>
+                                                    <td>{{ type.percent }}</td>
+                                                    <td>
+                                                        <a href="{{ path('admin_utilities_bot_system_delete_membership_type', {'id': type.id}) }}" onclick="return confirm('You really want to delete?')">
+                                                            <button type="button">Delete</button>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        </table>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script>
+    $(function() {
+        Metis.formWizard();
+    });
+</script>
+<script>
+    $(function() {
+        Metis.formGeneral();
+    });
+</script>
+<script type="text/javascript">
+    $("form").submit(function() {
+        var block = $(this);
+        var msg   = $(this).serialize();
+        $.ajax({
+            type: 'POST',
+            url: "{{ path('admin_utilities_bot_system_add_membership_type') }}",
+            data: msg,
+            success: function(data) {
+                try {
+                    var result = $.parseJSON(data);
+                    var error_block = '<div role="alert" class="alert alert-danger alert-dismissible fade in" style="text-align: center">' +
+                            '<button data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>' +
+                            '<strong>' + result.error + '</strong></div>';
+                    block.find('div.error-message').html(error_block);
+                }
+                catch(err) {
+                    block.find('div.table_membership').html(data);
+                }
+            },
+            error:  function(xhr, str){
+                console.log(xhr.responseCode);
+            }
+        });
+
+    })
+</script>
+{% endblock js %}

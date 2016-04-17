@@ -1,0 +1,72 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block header_title %}
+    <!-- subheader -->
+    <div class="rightsidebar" id="subheader">
+        <div class="subheader">
+            <div class="subtitle"><h1>Reset Password</h1></div>
+            <div class="subdesc">
+                Reset Password
+            </div>
+        </div>
+    </div>
+    <!-- subheader -->
+{% endblock header_title %}
+
+{% block header_subtitle %}
+{% endblock header_subtitle %}
+
+{% block body %}
+    <div id="main">
+
+        <!-- breadcrumb -->
+        <div id="breadcrumbs">
+            <img width="16" height="16" class="bread-icon" src="{{ asset('lib/versatile/images/home-icon.png') }}">
+            <div class="breadcrumbs">
+                <a href="{{ path('home') }}">Home</a>
+            </div>
+        </div><!-- breadcrumb -->
+
+        <div class="content">
+            <div class="post">
+
+                {#<h3><cufon class="cufon cufon-canvas" alt="Sign " style="width: 87px; height: 24px;"><canvas width="107" height="25" style="width: 107px; height: 25px; top: -1px; left: -2px;"></canvas><cufontext>Sign </cufontext></cufon><cufon class="cufon cufon-canvas" alt="In" style="width: 27px; height: 24px;"><canvas width="43" height="25" style="width: 43px; height: 25px; top: -1px; left: -2px;"></canvas><cufontext>In</cufontext></cufon></h3>#}
+                <div class="sysform" id="contactform">
+
+
+                    <!--begin:notice message block-->
+                    <div id="note">
+                        {% if invalid_username is defined %}
+                            <div style="color: red; text-align: center">
+                                {{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!--begin:notice message block-->
+                    <br>
+
+                    <form action="{{ path('fos_user_resetting_send_email') }}" method="post" id="login-form">
+                        <p>
+                        <div style="float: left; width: 180px">
+                            <label for="username">{{ 'resetting.request.username'|trans }}</label>
+                        </div>
+                        <div>
+                            <input type="text" id="username" name="username" required="required" class="required input txt" />
+                        </div>
+                        </p>
+
+                        <p>
+                            <a onclick="jQuery('#login-form').submit();" class="button small" style="margin-left: 180px">
+                                <span>{{ 'resetting.request.submit'|trans }}</span>
+                            </a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock body %}

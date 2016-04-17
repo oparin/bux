@@ -1,0 +1,21 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block subject %}
+    {% autoescape false %}
+    Welcome to OJOOOAD
+    {% endautoescape %}
+{% endblock %}
+
+{% block body_text %}
+{% endblock %}
+
+{% block body_html %}
+    <p>Dear {{ user.username }} <br></p>
+
+    <p>Thanks for registering at OJOOOAD! We are glad you have chosen to be a part of our community and we hope you enjoy your stay.</p>
+
+    <p>To complete your registration, please visit this URL:</p>
+    <a href="{{ confirmationUrl }}">{{ confirmationUrl }}</a>
+
+    <br>All the best,<br>
+    OJOOAD Team.
+{% endblock %}

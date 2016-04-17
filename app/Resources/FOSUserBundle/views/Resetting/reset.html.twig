@@ -1,0 +1,29 @@
+{% extends "::office_base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content %}
+<form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" {{ form_enctype(form) }} method="POST" class="fos_user_resetting_reset">
+    <div class="columns clear bt-space15">
+        <div class="col3-3">
+            <div class="form-field clear">
+                {{ form_label(form.plainPassword.first, null, {'label_attr': {'class': 'form-label size-180 fl-space2 required'}}) }}
+                {{ form_widget(form.plainPassword.first, {'attr': {'class': 'required text fl-space2'}}) }}
+            </div><!-- /.form-field -->
+        </div>
+    </div>
+    <div class="columns clear bt-space15">
+        <div class="col3-3">
+            <div class="form-field clear">
+                {{ form_label(form.plainPassword.second, null, {'label_attr': {'class': 'form-label size-180 fl-space2 required'}}) }}
+                {{ form_widget(form.plainPassword.second, {'attr': {'class': 'required text fl-space2'}}) }}
+            </div><!-- /.form-field -->
+        </div>
+    </div>
+    {{ form_rest(form) }}
+    <div class="form-field clear" style="float: left; margin-left: 140px">
+        <input type="submit" class="button blue fr" value="Save">
+    </div>
+</form>
+<div style="clear: both"></div>
+{% endblock content %}

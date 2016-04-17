@@ -1,0 +1,149 @@
+{% extends '::office_base.html.twig' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('css/jquery.Jcrop.css') }}" type="text/css"/>
+{% endblock styles %}
+
+{% block content %}
+<div class="columns clear bt-space20">
+
+    {% include 'BuxBlogBundle:Blog:blog_menu.html.twig' %}
+
+    <!-- DASHBOARD - RIGHT COLUMN -->
+    <div class="col3-4 lastcol">
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+        <!-- CONTENT BOX - DATATABLE -->
+        <div class="content-box">
+            <div class="box-body">
+                <div class="box-header clear">
+                    <h2>{{ 'frontend.blogs.menu.blog_settings'|trans }}</h2>
+                </div>
+
+                <div class="box-wrap clear">
+                    {{ form_start(form, {'attr': {'class': 'validate-form form bt-space15', 'onsubmit': 'return checkCoords();'} }) }}
+                    <script type="text/javascript">
+                        function PreviewImage(id) {
+                            var oFReader = new FileReader();
+                            if (id == "previewAvatar") {
+                                oFReader.readAsDataURL(document.getElementById("blog_settings_form_type_avatarFile").files[0]);
+                                $('#image_box').html('');
+                                $('#image_box').html('<img src="#" id="previewAvatar">');
+                                $('#avatar_change').val(1);
+                            } else if (id == "previewHeader") {
+                                oFReader.readAsDataURL(document.getElementById("blog_settings_form_type_headerFile").files[0]);
+                                $('#header_box').html('');
+                                $('#header_box').html('<img src="#" id="previewHeader">');
+                                $('#header_change').val(1);
+                            }
+
+                            oFReader.onload = function (oFREvent) {
+                                document.getElementById(id).src = oFREvent.target.result;
+                            };
+                            if (id == "previewAvatar") {
+                                cropAvatar();
+                            }
+                            if(id == "previewHeader") {
+                                cropHeader();
+                            }
+                        };
+
+                    </script>
+                    <div class="form-field clear">
+                        <div id="image_box" style="margin-left: 132px; border: 1px solid #808080; padding: 2px; overflow: auto">
+                            <img src="{{ vich_uploader_asset(app.user.blogSettings, 'avatarFile') }}" id="previewAvatar" />
+                        </div>
+                        {{ form_label(form.avatarFile, null, {'label_attr': {'class': 'form-label size-120 fl-space2 avatar'} }) }}
+                        {{ form_widget(form.avatarFile, {'attr': {'class': 'form-file fl-space2', 'onchange': 'PreviewImage("previewAvatar");', 'accept': 'jpe?g'} }) }}
+                        <input type="hidden" id="avatarx" name="avatarx" />
+                        <input type="hidden" id="avatary" name="avatary" />
+                        <input type="hidden" id="avatarw" name="avatarw" />
+                        <input type="hidden" id="avatarh" name="avatarh" />
+                        <input id="avatar_change" type="hidden" value="0" name="avatar_change">
+                    </div>
+                    <div style="height: 50px"></div>
+                    <div class="form-field clear">
+                        <div id="header_box" style="margin-left: 132px; border: 1px solid #808080; padding: 2px; overflow: auto">
+                            <img src="{{ vich_uploader_asset(app.user.blogSettings, 'headerFile') }}" id="previewHeader" style="width: 558px;" />
+                        </div>
+                        {{ form_label(form.headerFile, null, {'label_attr': {'class': 'form-label size-120 fl-space2'} }) }}
+                        {{ form_widget(form.headerFile, {'attr': {'class': 'form-file fl-space2', 'onchange': 'PreviewImage("previewHeader");', 'accept': 'jpe?g'} }) }}
+                        <input type="hidden" id="headerx" name="headerx" />
+                        <input type="hidden" id="headery" name="headery" />
+                        <input type="hidden" id="headerw" name="headerw" />
+                        <input type="hidden" id="headerh" name="headerh" />
+                        <input id="header_change" type="hidden" value="0" name="header_change">
+                    </div>
+                    {{ form_rest(form) }}
+                    <div class="form-field clear" style="float: left; margin-left: 130px">
+                        <input type="submit" class="button blue fr" value="{{ 'frontend.blogs.action.save'|trans }}" />
+                    </div><!-- /.form-field -->
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ asset('js/jquery.Jcrop.min.js') }}"></script>
+    <script type="text/javascript">
+        function cropAvatar() {
+            setTimeout(function() {
+                $("#previewAvatar").Jcrop({
+                    aspectRatio: 1,
+                    onSelect: updateCoords,
+                    minSize: [ 172, 172 ],
+                    maxSize: [ 172, 172 ]
+                });
+            }, 1000);
+        }
+
+        function cropHeader() {
+            setTimeout(function() {
+                $("#previewHeader").Jcrop({
+//                    aspectRatio: 1,
+                    onSelect: updateHeaderCoords,
+                    minSize: [ 960, 265 ],
+                    maxSize: [ 960, 265 ]
+                });
+            }, 1000);
+        }
+
+        function updateCoords(c)
+        {
+            $('#avatarx').val(c.x);
+            $('#avatary').val(c.y);
+            $('#avatarw').val(c.w);
+            $('#avatarh').val(c.h);
+        };
+
+        function updateHeaderCoords(c)
+        {
+            $('#headerx').val(c.x);
+            $('#headery').val(c.y);
+            $('#headerw').val(c.w);
+            $('#headerh').val(c.h);
+        };
+
+        function checkCoords()
+        {
+            if ($('#avatar_change').val() == 1) {
+                if (parseInt($('#avatarw').val())) return true;
+                alert('Please select a crop region then press submit.');
+                return false;
+            }
+            if ($('#header_change').val() == 1) {
+                if (parseInt($('#headerw').val())) return true;
+                alert('Please select a crop region then press submit.');
+                return false;
+            }
+        };
+    </script>
+{% endblock js %}

@@ -1,0 +1,200 @@
+{% extends '::office_base.html.twig' %}
+
+{% form_theme video_form _self %}
+{% form_theme poll_form _self %}
+{% form_theme auto_serf_form _self %}
+{% form_theme banner_form _self %}
+
+{% block choice_widget_options -%}
+    {% for group_label, choice in options %}
+        {%- if choice is iterable -%}
+            <optgroup label="{{ group_label|trans({}, translation_domain) }}">
+                {% set options = choice %}
+                {{- block('choice_widget_options') -}}
+            </optgroup>
+        {%- else -%}
+            <option value="{{ choice.value }}"{% if choice is selectedchoice(value) %} selected="selected"{% endif %}>
+                {{ choice.label|trans({}, translation_domain) }} Credits - ${{ choice.data.price }}
+            </option>
+        {%- endif -%}
+    {% endfor %}
+{%- endblock choice_widget_options %}
+
+{% block iconbar %}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage|raw }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <div class="col4-4 lastcol">
+            <!-- CONTENT BOX - DATATABLE -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.advertise.menu.advertise'|trans }}</h2>
+                    </div>
+                    <div class="box-wrap clear" style="padding: 20px 0px 10px 0px;margin-left: 20px">
+                        <div class="col1-3 online-user">
+                            <div class="mark clear">
+                                <div class="avatar">
+                                    <img alt="" src="{{ asset('lib/terminator/images/movie-icon.png') }}">
+                                </div>
+                                <div class="desc">
+                                    <ul class="links">
+                                        <li><a title="view stats" class="graph" href="#">stats </a></li>
+                                        <li><a title="view shopping cart" class="cart" href="#">shopping cart</a></li>
+                                        <li><a title="view user history" class="hist" href="#">history</a></li>
+                                        <li><a title="send message" class="mesg" href="#">send message</a></li>
+                                        <li><span title="male" class="male">male</span></li>
+                                    </ul>
+                                    <h4>
+                                        <strong>
+                                            {{ 'frontend.advertise.menu.video_ads'|trans }}
+                                        </strong>
+                                    </h4>
+                                    {{ form_start(video_form) }}
+                                    <div class="col3-3" style="margin-left: 10px">
+                                        {{ form_widget(video_form.video, {'attr': {'class': 'required list fl-space2'} }) }}
+                                    </div>
+                                    {{ form_rest(video_form) }}
+                                    <div style="float: left; margin-top: 7px; margin-left: 50px" class="form-field clear">
+                                        <input type="submit" value="{{ 'frontend.advertise.menu.buy_now'|trans }}" class="button blue fr">
+                                    </div>
+                                    {{ form_end(video_form) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col1-3 online-user">
+                            <div class="mark clear">
+                                <div class="avatar">
+                                    <img alt="" src="{{ asset('lib/terminator/images/questionnaire.png') }}">
+                                </div>
+                                <div class="desc">
+                                    <ul class="links">
+                                        <li><a title="view stats" class="graph" href="#">stats </a></li>
+                                        <li><a title="view shopping cart" class="cart" href="#">shopping cart</a></li>
+                                        <li><a title="view user history" class="hist" href="#">history</a></li>
+                                        <li><a title="send message" class="mesg" href="#">send message</a></li>
+                                        <li><span title="male" class="male">male</span></li>
+                                    </ul>
+                                    <h4>
+                                        <strong>
+                                            {{ 'frontend.advertise.menu.poll_ads'|trans }}
+                                        </strong>
+                                    </h4>
+                                    {{ form_start(poll_form) }}
+                                    <div class="col3-3" style="margin-left: 10px">
+                                        {{ form_widget(poll_form.poll, {'attr': {'class': 'required list fl-space2'} }) }}
+                                    </div>
+                                    {{ form_rest(poll_form) }}
+                                    <div style="float: left; margin-top: 7px; margin-left: 50px" class="form-field clear">
+                                        <input type="submit" value="{{ 'frontend.advertise.menu.buy_now'|trans }}" class="button blue fr">
+                                    </div>
+                                    {{ form_end(poll_form) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col1-3 online-user">
+                            <div class="mark clear">
+                                <div class="avatar">
+                                    <img alt="" src="{{ asset('lib/terminator/images/earth-icon.png') }}">
+                                </div>
+                                <div class="desc">
+                                    <ul class="links">
+                                        <li><a title="view stats" class="graph" href="#">stats </a></li>
+                                        <li><a title="view shopping cart" class="cart" href="#">shopping cart</a></li>
+                                        <li><a title="view user history" class="hist" href="#">history</a></li>
+                                        <li><a title="send message" class="mesg" href="#">send message</a></li>
+                                        <li><span title="male" class="male">male</span></li>
+                                    </ul>
+                                    <h4>
+                                        <strong>
+                                            {{ 'frontend.advertise.menu.auto_serf_ads'|trans }}
+                                        </strong>
+                                    </h4>
+                                    {{ form_start(auto_serf_form) }}
+                                    <div class="col3-3" style="margin-left: 10px">
+                                        {{ form_widget(auto_serf_form.packages, {'attr': {'class': 'required list fl-space2'} }) }}
+                                    </div>
+                                    {{ form_rest(auto_serf_form) }}
+                                    <div style="float: left; margin-top: 7px; margin-left: 50px" class="form-field clear">
+                                        <input type="submit" value="{{ 'frontend.advertise.menu.buy_now'|trans }}" class="button blue fr">
+                                    </div>
+                                    {{ form_end(auto_serf_form) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col1-3 online-user">
+                            <div class="mark clear">
+                                <div class="avatar">
+                                    <img alt="" src="{{ asset('lib/terminator/images/banner.png') }}">
+                                </div>
+                                <div class="desc">
+                                    <ul class="links">
+                                        <li><a title="view stats" class="graph" href="#">stats </a></li>
+                                        <li><a title="view shopping cart" class="cart" href="#">shopping cart</a></li>
+                                        <li><a title="view user history" class="hist" href="#">history</a></li>
+                                        <li><a title="send message" class="mesg" href="#">send message</a></li>
+                                        <li><span title="male" class="male">male</span></li>
+                                    </ul>
+                                    <h4>
+                                        <strong>
+                                            {{ 'frontend.advertise.menu.banner_ads'|trans }}
+                                        </strong>
+                                    </h4>
+                                    {{ form_start(banner_form) }}
+                                    <div class="col3-3" style="margin-left: 10px">
+                                        {{ form_widget(banner_form.packages, {'attr': {'class': 'required list fl-space2'} }) }}
+                                    </div>
+                                    {{ form_rest(banner_form) }}
+                                    <div style="float: left; margin-top: 7px; margin-left: 50px" class="form-field clear">
+                                        <input type="submit" value="{{ 'frontend.advertise.menu.buy_now'|trans }}" class="button blue fr">
+                                    </div>
+                                    {{ form_end(banner_form) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col1-3 online-user">
+                            <div class="mark clear">
+                                <div class="avatar">
+                                    <img alt="" src="{{ asset('lib/terminator/images/banner.png') }}">
+                                </div>
+                                <div class="desc">
+                                    <ul class="links">
+                                        <li><a title="view stats" class="graph" href="#">stats </a></li>
+                                        <li><a title="view shopping cart" class="cart" href="#">shopping cart</a></li>
+                                        <li><a title="view user history" class="hist" href="#">history</a></li>
+                                        <li><a title="send message" class="mesg" href="#">send message</a></li>
+                                        <li><span title="male" class="male">male</span></li>
+                                    </ul>
+                                    <h4>
+                                        <strong>
+                                            {{ 'frontend.advertise.menu.vip_banner_ads'|trans }}
+                                        </strong>
+                                    </h4>
+                                    {{ form_start(vip_banner_form) }}
+                                    <div class="col3-3" style="margin-left: 10px">
+                                        {{ form_widget(vip_banner_form.packages, {'attr': {'class': 'required list fl-space2'} }) }}
+                                    </div>
+                                    {{ form_rest(vip_banner_form) }}
+                                    <div style="float: left; margin-top: 7px; margin-left: 50px" class="form-field clear">
+                                        <input type="submit" value="{{ 'frontend.advertise.menu.buy_now'|trans }}" class="button blue fr">
+                                    </div>
+                                    {{ form_end(vip_banner_form) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end of box-wrap -->
+                </div> <!-- end of box-body -->
+            </div> <!-- end of content-box -->
+        </div>
+    </div>
+{% endblock content %}

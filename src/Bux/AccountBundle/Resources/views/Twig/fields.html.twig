@@ -1,0 +1,118 @@
+{% block form_label -%}
+    {% if label is not sameas(false) %}
+        {%- if not compound -%}
+            {% set label_attr = label_attr|merge({'for': id}) %}
+        {%- endif -%}
+        {%- if required -%}
+            {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+        {%- endif -%}
+        {%- if label is empty -%}
+            {% set label = name|humanize %}
+        {%- endif -%}
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
+        {{ label|trans({}, translation_domain) }}
+        {%- if required -%}
+            &nbsp;<span class="required">*</span>
+        {%- endif -%}
+        </label>
+    {%- endif %}
+{%- endblock form_label %}
+
+{% block radio_widget -%}
+    <div style="">
+        <div style="float: left">
+            <div style="float: left">
+                <input type="radio" {{ block('widget_attributes') }} value="1" style="margin-left: -80px">
+            </div>
+            <div style="margin-left: -80px; margin-top: 3px; float: left">Yes</div>
+        </div>
+        <div style="float: left">
+            <div style="float: left">
+                <input type="radio" {{ block('widget_attributes') }} value="0" checked="checked" style="margin-left: -80px">
+            </div>
+            <div style="margin-left: -80px; margin-top: 3px; float: left">No</div>
+        </div>
+    </div>
+{%- endblock radio_widget %}
+
+{% block choice_widget_options -%}
+    {% for group_label, choice in options %}
+        {% if form.vars.id == "new_auto_serf_ad_form_type_category" %}
+            {%- if choice is iterable -%}
+                <optgroup label="{{ group_label|trans({}, translation_domain) }}">
+                    {% set options = choice %}
+                    {{- block('choice_widget_options') -}}
+                </optgroup>
+            {%- else -%}
+                <option value="{{ choice.value }}"{% if choice is selectedchoice(value) %} selected="selected"{% endif %}>
+                    {{ choice.data.credits }} {{ 'frontend.account.advertiser.form.credits'|trans }} - {{ choice.data.time }} {{ 'frontend.account.advertiser.form.seconds'|trans }}
+                </option>
+            {%- endif -%}
+        {% else %}
+            {%- if choice is iterable -%}
+                <optgroup label="{{ group_label|trans({}, translation_domain) }}">
+                    {% set options = choice %}
+                    {{- block('choice_widget_options') -}}
+                </optgroup>
+            {%- else -%}
+                <option value="{{ choice.value }}"{% if choice is selectedchoice(value) %} selected="selected"{% endif %}>
+                    {% if choice.data.time is defined %}
+                        ${{ choice.label|trans({}, translation_domain) }} {{ 'frontend.account.advertiser.form.per_click'|trans }} - {{ choice.data.time }} {{ 'frontend.account.advertiser.form.seconds'|trans }}
+                    {% else %}
+                        ${{ choice.label|trans({}, translation_domain) }} {{ 'frontend.account.advertiser.form.per_click'|trans }}
+                    {% endif %}
+                </option>
+            {%- endif -%}
+        {% endif %}
+    {% endfor %}
+{%- endblock choice_widget_options %}
+
+{% block ad_country_widget %}
+    {% spaceless %}
+        <div style="">
+            <div style="float: left; margin-left: -6px">
+                <input id="all-countries" type="checkbox">
+            </div>
+            <div style="padding-top: 4px">{{ 'frontend.account.advertiser.form.all_countries'|trans }}</div>
+        </div>
+        <div style="clear: both"></div>
+        <div style="margin-left: 139px; margin-top: 10px; height: 100px; width: 250px; overflow-y: scroll">
+            {% for choice in form.children %}
+                <div>
+                    <div style="float: left; margin-left: -5px">
+                        <input class="countries" type="checkbox" id="{{ choice.vars.id }}" name="{{ choice.vars.full_name }}" {% if choice.vars.value is defined %} value="{{ choice.vars.value }}"{% endif %}{% if choice.vars.checked %} checked="checked"{% endif %} />
+                    </div>
+                    <div style="padding-top: 4px; padding-left: 17px">
+                        {{ choice.vars.label }}
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+            {% endfor %}
+        </div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block ad_membership_widget %}
+    {% spaceless %}
+        <div style="">
+            <div style="float: left; margin-left: -6px">
+                <input id="all-memberships" type="checkbox">
+            </div>
+            <div style="padding-top: 4px">{{ 'frontend.account.advertiser.form.all_memberships'|trans }}</div>
+        </div>
+        <div style="clear: both"></div>
+        <div style="margin-left: 139px; margin-top: 10px; height: 100px; width: 250px; overflow-y: scroll">
+            {% for choice in form.children %}
+                <div>
+                    <div style="float: left; margin-left: -5px">
+                        <input class="memberships" type="checkbox" id="{{ choice.vars.id }}" name="{{ choice.vars.full_name }}" {% if choice.vars.value is defined %} value="{{ choice.vars.value }}"{% endif %}{% if choice.vars.checked %} checked="checked"{% endif %} />
+                    </div>
+                    <div style="padding-top: 4px; padding-left: 17px">
+                        {{ choice.vars.label }}
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+            {% endfor %}
+        </div>
+    {% endspaceless %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{#<html>#}
+{#<head>#}
+    {#<script src="{{ asset('lib/metis/lib/jquery/jquery.min.js') }}"></script>#}
+{#</head>#}
+{#<body>#}
+{#<div style="float: left; margin-left: 30px">#}
+    {#<a href="#">Blog</a>#}
+{#</div>#}
+{#<div style="float: left; margin-left: 30px">#}
+    {#<a href="{{ path('office_my_blogs') }}">My blogs</a>#}
+{#</div>#}
+{#<div style="float: right">#}
+    {#<a href="{{ path('fos_user_security_logout') }}">Logout</a>#}
+{#</div>#}
+{#&#123;&#35;<iframe id="frame" src="http://www.svetofor.kg" width="1024" height="600" align="left">&#35;&#125;#}
+    {#&#123;&#35;Ваш браузер не поддерживает плавающие фреймы!&#35;&#125;#}
+{#&#123;&#35;</iframe>&#35;&#125;#}
+{#&#123;&#35;<input id="test" type="button" value="click">&#35;&#125;#}
+{#&#123;&#35;<script type="text/javascript">&#35;&#125;#}
+    {#&#123;&#35;$( document ).ready(function() &#123;&#35;}#}
+        {#&#123;&#35;$('#test').click(function() &#123;&#35;}#}
+            {#&#123;&#35;$('#frame').attr('src', 'http://www.diesel.elcat.kg');&#35;&#125;#}
+            {#&#123;&#35;console.log(111);&#35;&#125;#}
+        {#&#123;&#35;});&#35;&#125;#}
+    {#&#123;&#35;});&#35;&#125;#}
+{#&#123;&#35;</script>&#35;&#125;#}
+{#</body>#}
+{#</html>#}
+
+{% extends '::office_base.html.twig' %}

@@ -1,0 +1,1673 @@
+@charset "utf-8";
+html, button, input, select, textarea {
+    color: #222;
+}
+textarea, input {
+    outline: medium none;
+}
+body {
+    background: none repeat scroll 0 0 #f6f6f6;
+    color: #4d4d4d;
+    font: 1em/1.4 "droid_sansregular","Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0;
+}
+*::-moz-selection {
+    background: none repeat scroll 0 0 #3a759f;
+    color: #fff;
+    text-shadow: none;
+}
+a {
+    color: #3399ff;
+    text-decoration: underline;
+}
+a:visited {
+    color: #347498;
+    font-weight: bold;
+}
+a:hover {
+    color: #3399cc;
+}
+.clearBoth {
+    clear: both;
+}
+.z1 {
+    z-index: 1;
+}
+.z2 {
+    z-index: 2;
+}
+a.linkBlack {
+    color: #000;
+}
+a.linkBlack:hover {
+    color: #347498;
+}
+a.linkWhite {
+    color: #39c;
+}
+a.linkWhite:hover {
+    color: #000;
+}
+a.linkRed {
+    color: #ff0000;
+}
+a.linkBlack:hover {
+    color: #000;
+}
+a.linkGrey {
+    color: #c9c9c9;
+}
+a.linkGrey:hover {
+    color: #4d4d4d;
+}
+a.linkBlue {
+    color: #3c7ca0 !important;
+}
+a.linkBlue:hover {
+    color: #4d4d4d;
+}
+.btmGreyBordered {
+    border-bottom: 1px solid #e0e1e1;
+}
+.bgBlue {
+    background: none repeat scroll 0 0 #ecf6fb;
+}
+.bgRed {
+    background: none repeat scroll 0 0 #f00000;
+}
+.bgGreen {
+    background: none repeat scroll 0 0 #98d011;
+}
+.blueBox {
+    background: none repeat scroll 0 0 #ecf6fb;
+    border: 1px solid #dbdbdb;
+}
+.greenBorder {
+    border: 1px solid #77a800;
+}
+.greyBorder {
+    border: 1px solid #acacac;
+}
+.blueBorder {
+    border: 1px solid #366c8b;
+}
+.redBorder {
+    border: 1px solid #bb0000;
+}
+.topBordered {
+    border-top: 1px solid #d4d4d4;
+}
+.btnLarge {
+    background: url("../images/common/btnLarge.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    color: #fff;
+    display: block;
+    font: 1.25em/2.5 'droid_sansregular';
+    height: 46px;
+    margin: 0 0 20px;
+    text-align: center;
+    text-shadow: 0 1px 1px #010101;
+    width: 360px;
+}
+.btnGrey {
+    background: url("../images/common/greyBtnBg.png") repeat-x scroll 0 0 #d6d6d6;
+}
+.btnBlue {
+    background: url("../images/common/blueBtnBg.png") repeat-x scroll 0 0 #37789c;
+}
+.btnGreen {
+    background: url("../images/common/greenBtnBg.jpg") repeat-x scroll 0 0 #89b012;
+}
+.envHr {
+    background: url("../images/common/lightGreyHR.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    font-size: 0;
+    height: 1px;
+    line-height: 0;
+    overflow: hidden;
+}
+.btnSubmit {
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'droid_sansbold';
+    font-size: 0.85em;
+    height: 29px;
+    padding-top: 5px;
+    text-shadow: 0 0 1px #000;
+}
+.submitBlue {
+    background: url("../images/common/btnBluebg.jpg") repeat-x scroll 0 0 #37789c;
+    border: 1px solid #2e6889;
+}
+.submitRed {
+    background: url("../images/common/btnRedbg.jpg") repeat-x scroll 0 0 #be1010;
+    border: 1px solid #a70000;
+}
+.envbtnBlue {
+    background: url("../images/common/blueBtnBg.png") repeat-x scroll 0 0 #37789c;
+    border: 1px solid #366c8b !important;
+    border-radius: 3px;
+    color: #fff !important;
+    cursor: pointer;
+    font-family: 'droid_sansbold' !important;
+    font-size: 0.75em;
+    font-weight: normal !important;
+    padding: 7px 12px;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+}
+.envbtnGreen {
+    background: url("../images/common/greenBtnBg.jpg") repeat-x scroll 0 0 #7aa104;
+    border: 1px solid #7aa104 !important;
+    border-radius: 3px;
+    color: #fff !important;
+    cursor: pointer;
+    font-family: 'droid_sansbold' !important;
+    font-size: 0.75em;
+    font-weight: normal !important;
+    padding: 7px 12px;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+}
+.envbtnGold {
+    background: url("../images/common/goldBtnBg.jpg") repeat-x scroll 0 0 #d8bc01;
+    border: 1px solid #d8bc01 !important;
+    border-radius: 3px;
+    color: #fff !important;
+    cursor: pointer;
+    font-family: 'droid_sansbold' !important;
+    font-size: 0.75em;
+    font-weight: normal !important;
+    padding: 7px 12px;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+}
+.envbtnRed {
+    background: url("../images/common/redBtnBg.jpg") repeat-x scroll 0 0 #bd1010;
+    border: 1px solid #a70000 !important;
+    border-radius: 3px;
+    color: #fff !important;
+    cursor: pointer;
+    font-family: 'droid_sansbold';
+    font-size: 0.75em;
+    font-weight: normal !important;
+    padding: 7px 12px;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+}
+.envbtnGrey {
+    background: url("../images/common/ashBtnBg.png") repeat-x scroll 0 0 #d6d6d6;
+    border: 1px solid #acacac !important;
+    border-radius: 3px;
+    color: #a5a5a5 !important;
+    cursor: pointer;
+    font-family: 'droid_sansbold' !important;
+    font-size: 0.75em;
+    font-weight: normal !important;
+    padding: 7px 12px;
+    text-decoration: none;
+}
+.noBorder {
+    border: 0 none !important;
+}
+.width0 {
+    display: none;
+}
+#globalContainer {
+    background: url("../images/common/pageTopBg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    width: 100%;
+}
+.popup .title {
+    color: #555;
+    font-size: 1.1em;
+    font-weight: normal;
+    margin: 0;
+    padding: 1em 0 1em 20px;
+}
+.popup .popupContent {
+    border: 1px solid #eaeaea !important;
+    font-size: 0.9em;
+    padding: 0 20px;
+}
+.popup .btnContainer {
+    background: none repeat scroll 0 0 #eaeaea;
+    margin: 1px 0 0;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+}
+#header {
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+#header .header {
+    float: left;
+    width: 100%;
+}
+#header .header h1.logo {
+    float: left;
+    height: 42px;
+    margin: 2px 0 0;
+    padding-bottom: 15px;
+    width: 335px;
+}
+#header .header h1.logo a {
+    background: url("../images/common/empowerNetwork_logo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    text-indent: -999em;
+}
+#header .accountNavBlock {
+    background: url("../images/common/pageTopBg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    float: right;
+    padding: 9px 0 0 9px;
+}
+#header .accountNavBlock .profileImg {
+    border: 1px solid #1f4e68;
+    float: right;
+    height: 40px;
+    margin-right: 10px;
+    width: 40px;
+}
+#header .accountNavBlock .profileName {
+    background: url("../images/common/arrow.png") no-repeat scroll 100% 40% rgba(0, 0, 0, 0);
+    color: #fff;
+    float: right;
+    font-size: 0.8em;
+    padding: 12px 20px 20px 5px;
+    text-decoration: none;
+}
+#header .accountNavBlock .profileName:hover {
+    color: #3399cc;
+}
+#header .accountNavBlock .accountNav {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#header .accountNavBlock .accountNav li.menuItems {
+    float: right;
+    margin: 0;
+    position: relative;
+}
+#header .accountNavBlock .accountNav li .subMenu {
+    background-color: #7d7e7d;
+    background-image: linear-gradient(to bottom, #7d7e7d, #0e0e0e);
+    display: none;
+    font-size: 0.8em;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 100px;
+    z-index: 10000000;
+}
+#header .accountNavBlock .accountNav li:hover .subMenu {
+    box-shadow: 0 4px 5px #000;
+    display: block;
+}
+#header .accountNavBlock .accountNav .subMenu a {
+    color: #fff;
+    display: block;
+    padding: 0 0 5px;
+    text-decoration: none;
+}
+#header .accountNavBlock .accountNav .subMenu a:hover {
+    text-decoration: underline;
+}
+#contentContainer {
+    background: none repeat scroll 0 0 #fff;
+    float: left;
+    width: 100%;
+}
+#contentContainer .content {
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+#footer {
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+#footer .footer {
+    float: left;
+    width: 100%;
+}
+.footer .footerContents {
+    border-top: 1px solid #e0e1e1;
+    color: #757575;
+    float: left;
+    font-size: 0.75em;
+    margin: 0 10px;
+    padding: 10px 0 30px;
+    width: 940px;
+}
+.footer .footerContents.extented {
+    margin: 0;
+    width: 960px;
+}
+.footer .footerContents.streamFooter {
+    margin: 0;
+    width: 960px;
+}
+.footer .footerContents .supportTxt {
+    float: left;
+    margin: 0;
+    width: 440px;
+}
+.footerNavWrap {
+    float: right;
+    width: 500px;
+}
+.footer .footerContents .footerNav {
+    float: right;
+}
+.footer .footerContents .coprights {
+    clear: both;
+    float: right;
+    text-align: right;
+    width: 100%;
+}
+.tabularContent {
+    font-size: 1em;
+}
+.tabularData {
+    border: 1px solid #e1e2e3;
+    border-collapse: collapse;
+    color: #4a4a4a;
+    table-layout: fixed;
+}
+.tabularData th {
+    background: url("../images/common/onepxWhite.jpg") repeat-x scroll 0 0 #efefef;
+    border: 1px solid #e0e1e1;
+    font-family: 'droid_sansbold';
+    font-weight: normal;
+}
+.tabularData td {
+    border: 1px solid #e0e1e1;
+}
+.tabularData tbody tr:nth-child(2n) td, .tabularData tbody tr.even td {
+    background: none repeat scroll 0 0 #fff;
+}
+.tabularData td:first-child {
+    background: url("../images/common/onepxf6.jpg") repeat-y scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+.tabularContent.heightLessData .tabularData td {
+    padding: 10px 0 !important;
+}
+.forgetPassword {
+    margin: 100px auto 250px;
+    width: 360px;
+}
+.forgetPassword h2 {
+    color: #4a4a4a;
+    font: 24px/24px 'droid_sansbold';
+    text-align: left;
+}
+.forgetPassword ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.forgetPassword ul li {
+    margin: 0;
+    padding: 0 0 10px;
+}
+.forgetPassword ul li label {
+    font: 14px/14px 'droid_sansregular';
+}
+.forgetPassword .error {
+    display: none;
+}
+.longblueBtn {
+    background: url("../images/common/btnLarge.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #ffffff;
+    float: left;
+    font: 18px/18px 'droid_sansregular';
+    height: 46px;
+    margin-top: 5px;
+    text-align: center;
+    text-shadow: -1px 2px #666666;
+    width: 360px;
+}
+.txtoops {
+    color: #347498;
+    font-size: 15em;
+    margin: 50px 0 0;
+    text-align: center;
+}
+#statusUpdateBlockWrap {
+    background: none repeat scroll 0 0 #fff;
+    border-bottom: 1px solid #d8d9da;
+}
+#statusUpdateBlockWrap .tickerBlock {
+    margin: 0 auto;
+    width: 960px;
+}
+#statusUpdateBlockWrap .statusUpdateBlock {
+    margin: 0 auto;
+    padding: 15px 0;
+    position: relative;
+    width: 960px;
+}
+#statusUpdateBlockWrap .statusUpdateBlock .shade {
+    background: url("../images/common/hrScrollBg.png") repeat-y scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    width: 75px;
+    z-index: 1;
+}
+#statusUpdateBlockWrap .statusUpdateBlock .shade.shadeLeft {
+    left: 0;
+}
+#statusUpdateBlockWrap .statusUpdateBlock .shade.shadeRight {
+    background-position: right top !important;
+    right: 0 !important;
+}
+#statusUpdateBlockWrap .statusUpdateBlock #contentContainer .content {
+    width: 580px;
+}
+#statusUpdateBlockWrap ul#statusTicker {
+    font-size: 0.8em;
+}
+#statusUpdateBlockWrap.rotate {
+    float: left;
+    padding: 20px 0;
+    width: 100%;
+}
+#statusUpdateBlockWrap.rotate .statusUpdateBlock {
+    float: left;
+    padding: 5px 0;
+    position: relative;
+    width: 960px;
+}
+#statusUpdateBlockWrap.rotate .statusUpdateBlock ul#statusTicker {
+    float: left;
+    font-size: 0.8em;
+    list-style-type: none;
+    margin: 10px 0;
+    overflow: hidden;
+    padding: 0;
+    width: 365px;
+}
+#statusUpdateBlockWrap.rotate .statusUpdateBlock ul#statusTicker li {
+    clear: both;
+    float: left;
+    margin: 4px 0;
+    padding: 5px;
+    position: relative;
+    width: 340px;
+}
+#statusUpdateBlockWrap.rotate .statusUpdateBlock ul#statusTicker li.view-details:hover {
+    cursor: pointer;
+}
+#statusUpdateBlockWrap.rotate .statusUpdateBlock ul#statusTicker li.selected {
+    border: 1px solid #c9c9c9;
+}
+#statusUpdateBlockWrap.rotate .statusUpdateBlock ul li.selected:after {
+    background: url("../images/common/pointer.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    content: "";
+    display: block;
+    height: 29px;
+    position: absolute;
+    right: -9px;
+    top: 0;
+    width: 9px;
+}
+#statusUpdateBlockWrap.rotate .clicker {
+    background: url("../images/common/arrow.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 9px;
+    margin-left: 140px;
+    position: absolute;
+    text-decoration: none;
+    text-indent: -999em;
+    width: 18px;
+    z-index: 111;
+}
+#statusUpdateBlockWrap.rotate .clicker.prev {
+    top: 0;
+}
+#statusUpdateBlockWrap.rotate .clicker.next {
+    background-position: 0 -9px;
+    bottom: 0;
+}
+#statusUpdateBlockWrap .clicker {
+    display: none;
+}
+#selectedPost {
+    float: right;
+    margin-right: 2px;
+    position: relative;
+    width: 580px;
+    z-index: 9998;
+}
+#selectedPost .content {
+    position: absolute;
+}
+.paddingTopnBtm20 {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.content #tickerDetailView .sortBlock {
+    background-image: none !important;
+    padding: 0 !important;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    #globalContainer {
+        float: none;
+        margin: auto;
+        width: 320px;
+    }
+    #publicBlog {
+        float: none;
+        margin: auto;
+        width: 320px;
+    }
+    #contentContainer .content {
+        float: none;
+        margin: auto;
+        width: 100%;
+    }
+    #header {
+        width: 320px;
+    }
+    #header .header {
+        width: 320px;
+    }
+    #header .header h1.logo {
+        float: left;
+        margin: 2px 0 0;
+        width: 320px;
+    }
+    #header .header h1.logo a {
+        background: url("../images/blog/empowerNetwork_logo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        height: 38px;
+        margin: auto;
+        width: 300px;
+    }
+    #publicBlog .blogHeader {
+        margin: auto;
+        width: 320px;
+    }
+    #publicBlog .blogHeader .resizeMenu {
+        display: block;
+        margin: auto;
+        padding-top: 20px;
+        width: 310px;
+    }
+    #publicBlog .archiesList {
+        width: 320px;
+    }
+    #publicBlog .blogHeader .blogBanner .progileImg {
+        bottom: -13px;
+        left: 12px;
+    }
+    #publicBlog .blogHeader ul.bolgNav {
+        display: none;
+    }
+    #publicBlog .blogList {
+        float: none;
+        margin: auto;
+        width: 99%;
+    }
+    #publicBlog .blogContent {
+        float: none;
+        margin: auto;
+        width: 99%;
+    }
+    #publicBlog .proveitNow {
+        display: none;
+    }
+    #publicBlog .blogList .poweredVerisign {
+        display: none;
+    }
+    #footer {
+        width: 320px;
+    }
+    .footer .footerContents {
+        margin: 0;
+        padding: 5% 0;
+        text-align: center;
+        width: 320px !important;
+    }
+    .footer .footerContents .supportTxt {
+        margin-bottom: 20px;
+        width: auto !important;
+    }
+    .footerNavWrap {
+        text-align: center;
+        width: 320px;
+    }
+    .footer .footerContents .supportTxt {
+        float: none;
+    }
+    .footer .footerContents .footerNav {
+        float: left;
+    }
+    .footer .footerContents .coprights {
+        float: none;
+    }
+    .pagination {
+        float: left;
+        margin-bottom: 5%;
+    }
+    #contentContainer .content .commentList {
+        margin-bottom: 8.5%;
+    }
+    #contentContainer .content .commentList .comment {
+        width: 210px;
+    }
+    #contentContainer .content .commentList .comments.replyFirstDegree .comment {
+        width: 180px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 145px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree {
+        background-position: 35px 10px;
+        padding: 19px 15px 15px 60px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 160px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree {
+        background-position: 60px 10px;
+        padding: 19px 15px 15px 87px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree .comment {
+        width: 140px;
+    }
+    #contentContainer .content .commentList li .blogInput {
+        width: 210px;
+    }
+    #contentContainer .content .commentList li .blogInput .blogInputInner {
+        width: 200px;
+    }
+    #publicBlog .blogList .blogSearch {
+        width: 57%;
+    }
+    #publicBlog .blogList .searchBtn {
+        display: block;
+        float: right;
+        height: 36px;
+        margin-right: 5%;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 640px) {
+    #globalContainer {
+        float: none;
+        margin: auto;
+        width: 480px;
+    }
+    #publicBlog {
+        float: none;
+        margin: auto;
+        width: 480px;
+    }
+    #contentContainer .content {
+        float: none;
+        margin: auto;
+        width: 100%;
+    }
+    #header {
+        width: 480px;
+    }
+    #header .header {
+        width: 480px;
+    }
+    #header .header h1.logo {
+        float: left;
+        margin: 2px 0 0;
+        width: 480px;
+    }
+    #header .header h1.logo a {
+        background: url("../images/blog/empowerNetwork_logo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        float: left;
+        height: 38px;
+        width: 300px;
+    }
+    #publicBlog .blogHeader {
+        margin: auto;
+        width: 480px;
+    }
+    #publicBlog .blogHeader .resizeMenu {
+        display: block;
+        margin: auto;
+        padding-top: 20px;
+        width: 470px;
+    }
+    #publicBlog .blogHeader ul.bolgNav {
+        display: none;
+    }
+    #publicBlog .blogList {
+        float: none;
+        margin: auto;
+        width: 99%;
+    }
+    #publicBlog .blogContent {
+        float: none;
+        margin: auto;
+        width: 99%;
+    }
+    #publicBlog .proveitNow {
+        display: none;
+    }
+    #publicBlog .blogList .poweredVerisign {
+        display: none;
+    }
+    #footer {
+        width: 480px;
+    }
+    .footer .footerContents {
+        margin: 0;
+        padding: 5% 0;
+        text-align: center;
+        width: 480px !important;
+    }
+    .footer .footerContents .supportTxt {
+        margin-bottom: 20px;
+        width: auto !important;
+    }
+    .footerNavWrap {
+        text-align: center;
+        width: 480px;
+    }
+    .footer .footerContents .supportTxt {
+        float: none;
+    }
+    .footer .footerContents .footerNav {
+        float: none;
+    }
+    .footer .footerContents .coprights {
+        display: block;
+        float: none;
+        text-align: center;
+    }
+    #contentContainer .content .commentList {
+        margin-bottom: 8.5%;
+    }
+    #contentContainer .content .commentList .comment {
+        width: 370px;
+    }
+    #contentContainer .content .commentList .comments.replyFirstDegree .comment {
+        width: 340px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 325px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree {
+        background-position: 35px 10px;
+        padding: 19px 15px 15px 60px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 160px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree {
+        background-position: 60px 10px;
+        padding: 19px 15px 15px 87px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree .comment {
+        width: 295px;
+    }
+    #contentContainer .content .commentList li .blogInput {
+        width: 370px;
+    }
+    #contentContainer .content .commentList li .blogInput .blogInputInner {
+        width: 360px;
+    }
+}
+@media only screen and (min-width: 640px) and (max-width: 768px) {
+    #globalContainer {
+        float: none;
+        margin: auto;
+        width: 640px;
+    }
+    #publicBlog {
+        float: none;
+        margin: auto;
+        width: 640px;
+    }
+    #contentContainer .content {
+        float: none;
+        margin: auto;
+        width: 100%;
+    }
+    #header {
+        width: 640px;
+    }
+    #header .header {
+        width: 640px;
+    }
+    #header .header h1.logo {
+        float: left;
+        margin: 2px 0 0;
+        width: 500px;
+    }
+    #header .header h1.logo a {
+        background: url("../images/blog/empowerNetwork_logo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        float: left;
+        height: 38px;
+        width: 300px;
+    }
+    #publicBlog .blogHeader {
+        margin: auto;
+        width: 640px;
+    }
+    #publicBlog .blogHeader .resizeMenu {
+        display: block;
+        margin: auto;
+        padding-top: 20px;
+        width: 630px;
+    }
+    #publicBlog .blogHeader ul.bolgNav {
+        display: none;
+    }
+    #publicBlog .blogList {
+        float: none;
+        margin: auto;
+        width: 99%;
+    }
+    #publicBlog .blogContent {
+        float: none;
+        margin: auto;
+        width: 99%;
+    }
+    #publicBlog .proveitNow {
+        display: none;
+    }
+    #publicBlog .blogList .poweredVerisign {
+        display: none;
+    }
+    #footer {
+        width: 640px;
+    }
+    .footer .footerContents {
+        margin: 0;
+        padding: 5% 0;
+        text-align: center;
+        width: 640px !important;
+    }
+    .footer .footerContents .supportTxt {
+        margin-bottom: 20px;
+        width: auto !important;
+    }
+    .footerNavWrap {
+        float: none;
+        text-align: center;
+        width: auto;
+    }
+    .footer .footerContents .supportTxt {
+        float: none;
+    }
+    .footer .footerContents .footerNav {
+        float: none;
+    }
+    .footer .footerContents .coprights {
+        display: block;
+        float: none;
+        text-align: center;
+    }
+    #contentContainer .content .commentList {
+        margin-bottom: 8.5%;
+    }
+    #contentContainer .content .commentList .comment {
+        width: 370px;
+    }
+    #contentContainer .content .commentList .comments.replyFirstDegree .comment {
+        width: 340px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 325px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree {
+        background-position: 35px 10px;
+        padding: 19px 15px 15px 60px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 160px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree {
+        background-position: 60px 10px;
+        padding: 19px 15px 15px 87px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree .comment {
+        width: 295px;
+    }
+    #contentContainer .content .commentList li .blogInput {
+        width: 370px;
+    }
+    #contentContainer .content .commentList li .blogInput .blogInputInner {
+        width: 360px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    #customBlog #globalContainer {
+        width: auto;
+    }
+    #customBlog #contentContainer .content {
+        width: 768px;
+    }
+    #publicBlog {
+        float: none;
+        margin: auto;
+        width: 768px;
+    }
+    #header {
+        margin: auto;
+        width: 768px;
+    }
+    #publicBlog .blogHeader ul.bolgNav li a {
+        padding: 24px 17px 20px;
+    }
+    #publicBlog .blogList .poweredVerisign {
+        display: none;
+    }
+    #footer {
+        margin: auto;
+        width: 768px;
+    }
+    #footer .footer {
+        margin: auto;
+        width: 768px;
+    }
+    .footer .footerContents {
+        margin: auto;
+        padding: 5% 0;
+        text-align: center;
+        width: 768px !important;
+    }
+    .footerNavWrap {
+        text-align: center;
+        width: 100%;
+    }
+    .footer .footerContents .supportTxt {
+        float: none;
+        padding-bottom: 3%;
+        width: 100%;
+    }
+    .footer .footerContents .footerNav {
+        float: none;
+    }
+    .footer .footerContents .coprights {
+        float: none;
+    }
+    #contentContainer .content .commentList {
+        margin-bottom: 8.5%;
+    }
+    #contentContainer .content .commentList .comment {
+        width: 355px;
+    }
+    #contentContainer .content .commentList .comments.replyFirstDegree .comment {
+        width: 325px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 325px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree {
+        background-position: 35px 10px;
+        padding: 19px 15px 15px 60px;
+    }
+    #contentContainer .content .commentList .comments.replySecondDegree .comment {
+        width: 305px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree {
+        background-position: 60px 10px;
+        padding: 19px 15px 15px 87px;
+    }
+    #contentContainer .content .commentList .comments.replyThirdDegree .comment {
+        width: 280px;
+    }
+    #contentContainer .content .commentList li .blogInput {
+        width: 355px;
+    }
+    #contentContainer .content .commentList li .blogInput .blogInputInner {
+        width: 345px;
+    }
+}
+.blogEditorWrap {
+    background: url("../images/blog/customizerBlockBg.png") repeat-x scroll 0 0 #fff;
+}
+#blogEditor {
+    font-size: 1em;
+    margin: 0 auto;
+    width: 960px;
+}
+#domainListBlock {
+    float: left;
+    width: 100%;
+}
+#domainListBlock .domainList {
+    float: left;
+    font-size: 0.75em;
+    margin: 0;
+    padding: 0 0 11px;
+    width: 775px;
+}
+#domainListBlock .domainList li {
+    float: left;
+    margin: 0;
+    padding: 11px 40px 0 0;
+    position: relative;
+    z-index: 9999;
+}
+#domainListBlock .domainList li.hasSubnav {
+    background: url("../images/blog/submenuPointer.png") no-repeat scroll right 7px rgba(0, 0, 0, 0);
+}
+#domainListBlock .domainList li.hasSubnav.subnavActive {
+    background: url("../images/blog/submenuPointer.png") no-repeat scroll right -14px rgba(0, 0, 0, 0);
+}
+#domainListBlock .domainList li a {
+    color: #4a4a4a;
+    position: relative;
+    text-decoration: none;
+}
+#domainListBlock .domainList li .activeLink {
+    background: url("../images/blog/navSelected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    bottom: -20px;
+    display: block;
+    height: 9px;
+    left: 50%;
+    position: absolute;
+    width: 10px;
+}
+#domainListBlock .domainList li .subNav {
+    background: none repeat scroll 0 0 #fff;
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+}
+#domainListBlock .domainList li .subNav li {
+    background: url("../images/blog/subnavListBg.png") repeat-y scroll 0 0 rgba(0, 0, 0, 0);
+    padding: 0;
+    position: relative;
+    width: 179px;
+}
+#domainListBlock .domainList li .subNav li.corners {
+    background: url("../images/blog/subnavCorners.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    border: 0 none !important;
+    height: 4px;
+    overflow: hidden;
+}
+#domainListBlock .domainList li .subNav li.corners.btmCorner {
+    background-position: 0 -4px !important;
+}
+#domainListBlock .domainList li .subNav li a {
+    float: left;
+    padding: 12px 10px 0 15px;
+}
+#domainListBlock .domainList li .subNav li a.last {
+    padding-bottom: 10px;
+}
+#domainListBlock .addDomain {
+    background: url("../images/blog/iconAdd.png") no-repeat scroll 14px 14px #c8c8c8;
+    color: #6e6e6e;
+    float: right;
+    font-size: 0.75em;
+    height: 28px;
+    padding: 10px 0 0 35px;
+    text-decoration: none;
+    width: 150px;
+}
+#blogCustomizerBlock {
+    float: left;
+    width: 960px;
+}
+#blogCustomizerBlock .customizerControlBlock ul {
+    font-size: 0.75em;
+    margin: 0;
+    padding: 0;
+}
+#blogCustomizerBlock .customizerControlBlock ul li {
+    float: left;
+    margin: 0 25px;
+    padding: 0;
+}
+#blogCustomizerBlock .customizerControlBlock ul li a {
+    color: #4a4a4a;
+    float: left;
+    padding: 13px 0;
+    text-decoration: none;
+}
+#blogCustomizerBlock .customizerControlBlock ul li a:hover {
+    color: #3a759f;
+}
+#blogCustomizerBlock .customizerControlBlock ul li a.active {
+    color: #3a759f;
+    font-family: 'droid_sansbold';
+    outline: medium none;
+}
+#blogCustomizerBlock .customizerContentBlock {
+    float: left;
+    width: 960px;
+}
+#blogCustomizerBlock .pageCustomizerBlock {
+    margin: 20px 0 10px;
+    overflow: hidden;
+}
+.domainInfo {
+    background: url("../images/common/tick.png") no-repeat scroll 2% center #e9f5ff;
+    border: 1px solid #c4e4fe;
+    border-radius: 3px;
+    padding: 1% 1% 1% 6%;
+}
+.wrapBox {
+    background: none repeat scroll 0 0 #f9f8f8;
+    border: 1px solid #e1e2e2;
+    border-radius: 3px;
+    padding: 1% 1.5%;
+    position: relative;
+}
+.wrapBoxLft {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #f9f8f8;
+    border-color: #e1e2e2 -moz-use-text-color #e1e2e2 #e1e2e2;
+    border-image: none;
+    border-radius: 3px 0 0 3px;
+    border-style: solid none solid solid;
+    border-width: 1px 0 1px 1px;
+    padding: 5px;
+    position: relative;
+    width: 470px;
+}
+.lnk-url label.error {
+    left: 60px;
+    position: absolute;
+    top: 65px;
+}
+.lnk-ttl label.error {
+    left: 68px;
+    position: absolute;
+    top: 65px;
+}
+.wrapBoxRgt {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #f9f8f8;
+    border-color: #e1e2e2 #e1e2e2 #e1e2e2 -moz-use-text-color;
+    border-image: none;
+    border-radius: 0 3px 3px 0;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 0;
+    padding: 5px;
+    position: relative;
+    width: 469px;
+}
+.wrapBoxRgt label.error {
+    margin-left: 55px;
+}
+.domainDetailsTable th {
+    background: none repeat scroll 0 0 #4a4a4a;
+    color: #fff;
+    font-weight: normal;
+    padding: 3px 25px 3px 15px;
+}
+.domainDetailsTable tr td {
+    background: none repeat scroll 0 0 #fff !important;
+    border-bottom: 1px solid #6e6e6e;
+    padding: 3px 25px 3px 15px;
+}
+.wrapBox.redAlert {
+    background: url("../images/blog/alert.png") no-repeat scroll 2% center #f9f8f8;
+    color: #e50000;
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 1.2% 1.5% 1% 4%;
+}
+.topOptionsPanel #filterForm li.formList {
+    width: 960px !important;
+}
+#menucheck_cntnr .cboxContainer label.list {
+    line-height: 1.5 !important;
+}
+#article_title_font_title.ddTitleText .ddlabel, #article_body_font_title.ddTitleText .ddlabel, #sidebar_title_font_title.ddTitleText .ddlabel, #sidebar_subtext_font_title.ddTitleText .ddlabel {
+    display: block;
+    height: 18px;
+    overflow: hidden;
+}
+.countDisplay {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #c9c9c9;
+    border-radius: 3px;
+    margin: 4px 10px 0 20px;
+    padding: 2px 4px;
+}
+.pageCustomizerBlock .wrapBox a {
+    color: #37779b;
+    text-decoration: underline;
+}
+.pageCustomizerBlock .wrapBox a.delete {
+    color: #ee0000;
+}
+.navCustomizerBlock .btnSaveChanges {
+    float: right;
+    font-size: 1em;
+}
+.seoCustomizerBlock #meta_title_error, .seoCustomizerBlock #meta_keyword_error, .seoCustomizerBlock #google_analytics_error {
+    float: left;
+    width: 100%;
+}
+.subdomainCustomizerBlock .cboxContainer {
+    float: left;
+    margin: 5px 0 0 !important;
+    width: 110px;
+}
+.subdomainCustomizerBlock .message {
+    background: url("../images/blog/iconSuccess_fail.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: right;
+    margin: 8px 0 0;
+    padding: 0 20px 0 0;
+}
+.subdomainCustomizerBlock .message.available {
+    background-position: 100% -39px;
+    color: #569900;
+}
+.subdomainCustomizerBlock .message.taken {
+    background-position: 100% 2px;
+    color: #fe0000;
+}
+.photoBlock {
+    background: url("../images/blog/uploadImageHolder.jpg") no-repeat scroll center center #f6f6f6;
+    border: 1px solid #d9d9d9;
+    float: left;
+    height: 235px;
+    width: 278px;
+}
+.photoBlockWrap .sliderBlock {
+    float: left;
+    padding: 10px 0;
+    width: 280px;
+}
+.photoBlockWrap .sliderBlock .scale {
+    background: url("../images/profile/iconScale.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 24px;
+    text-indent: -999em;
+}
+.photoBlockWrap .sliderBlock .scale.scaleDown {
+    width: 20px;
+}
+.photoBlockWrap .sliderBlock .scale.scaleUp {
+    background-position: -20px 0;
+    width: 32px;
+}
+.photoBlockWrap .sliderBlock .scale a {
+    display: block;
+    text-indent: -999em;
+}
+.photoBlockWrap .btnSaveImage, .photoBlockWrap .btnBrowseImage {
+    font-size: 0.85em;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.photoBlockWrap .browse {
+    cursor: pointer;
+    height: 30px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.slider {
+    float: left;
+    height: 25px;
+    margin: 0 9px;
+    width: 210px;
+}
+.uploadImageHolder {
+    background: url("../images/blog/uploadImageHolder.jpg") no-repeat scroll center center #f7f6f6;
+    border: 1px solid #d8d9da;
+    display: block;
+    min-height: 183px;
+    padding: 12px;
+    width: 960px;
+}
+.uploadImageHolderVertical {
+    background: url("../images/blog/uploadImageHolder.jpg") no-repeat scroll center center #f7f6f6;
+    border: 1px solid #d8d9da;
+    display: block;
+    min-height: 340px;
+    padding: 12px;
+    width: 174px;
+}
+.uploadImageHolderVertical:hover .bannerEditBg a {
+    padding-left: 11.5%;
+}
+.imageUploadLandscape .footerImageUpload {
+    margin: 20px auto;
+    overflow: hidden;
+    width: 400px;
+}
+.imageHeader #bannerImageContainer.landscapeImageHoder {
+    height: 265px;
+}
+.imageFooter #bannerImageContainer.landscapeImageHoder {
+    height: 188px;
+}
+.imageUploadPortrait #bannerImageContainer.potraitImageHoder {
+    height: 555px;
+    width: 312px;
+}
+#filterForm {
+    float: left;
+    font-family: 'droid_sansregular';
+    font-size: 0.75em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#filterForm li.formList {
+    border-bottom: 1px solid #e0e1e1;
+    clear: both;
+    float: left;
+    padding: 12px 0;
+    width: 898px;
+}
+#filterForm li.noBorder {
+    border: 0 none;
+}
+#filterForm li label.labelTxt {
+    float: left;
+    padding-bottom: 8px;
+}
+#filterForm li .btnSubmit {
+    border: 1px solid #366c8b;
+    border-radius: 2px;
+    float: right;
+    font-family: 'droid_sansregular' !important;
+    font-size: 1em;
+    margin: 25px 0 0;
+    padding: 5px 20px;
+    width: 100px;
+}
+#filterForm li .cboxContainer {
+    float: left;
+    margin-right: 15px;
+}
+#filterForm li label.list {
+    line-height: 1.7;
+    margin: 0;
+}
+#filterForm li .dd {
+    font-size: 1em;
+}
+#filterForm li .dd .ddTitle .ddTitleText {
+    padding: 8px 20px 6px 6px;
+}
+#filterForm li.nobottomPadding {
+    padding-bottom: 0 !important;
+}
+#filterForm li .btnSaveChanges, #filterForm li .btnNext, #filterForm li .btnVerifyDomain {
+    float: right;
+    font-size: 1em;
+    margin-bottom: 20px;
+    min-width: 100px;
+}
+#filterForm li .btnSeoChanges {
+    float: right;
+    font-size: 1em;
+    margin-bottom: 25px;
+    margin-top: 24px;
+}
+#filterForm li .btnAddPages, #filterForm li .btnCancelCustomization, #filterForm li .btnpublishPage, #filterForm li .btnRemoveDomain {
+    float: right;
+    font-size: 1em;
+    min-width: 100px;
+}
+.optionsTab {
+    border-bottom: 1px solid #e0e1e1;
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 0 0;
+    width: 100%;
+}
+.optionsTab li {
+    bottom: -1px;
+    float: left;
+    position: relative;
+    width: 185px;
+    z-index: 1000;
+}
+.optionsTab li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+.optionsTab li.active {
+    background: none repeat scroll 0 0 #fff;
+    border-left: 1px solid #e0e1e1;
+    border-right: 1px solid #e0e1e1;
+    border-top: 1px solid #e0e1e1;
+}
+.optionsTab li.active strong {
+    color: #3a759f;
+}
+.greyBtn {
+    background: none repeat scroll 0 0 #ededed;
+    border-radius: 3px;
+    color: #b4b4b4 !important;
+    font-family: 'Open Sans',sans-serif,Arial,Helvetica;
+    font-size: 0.875em;
+    font-weight: 700 !important;
+    line-height: 23px;
+    margin: 43px 30px 0 0;
+    padding: 5px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.greenBtn {
+    background: none repeat scroll 0 0 #90cfd0;
+    border-radius: 3px;
+    color: #fff !important;
+    font-family: 'Droid Sans',sans-serif;
+    font-size: 0.875em;
+    font-weight: 700 !important;
+    line-height: 23px;
+    margin: 45px 0 0;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+.blueBtn {
+    background: none repeat scroll 0 0 #58a0e3;
+    border: 1px solid #428dd2;
+    border-radius: 3px;
+    color: #fff !important;
+    font-family: 'Roboto',Arial,Helvetica,sans-serif;
+    font-size: 0.875em;
+    font-weight: 400 !important;
+    line-height: 23px;
+    margin: 43px 0 0;
+    padding: 8px 18px;
+    text-decoration: none;
+}
+.liteGreyBtn {
+    background: none repeat scroll 0 0 #ededed;
+    border-radius: 3px;
+    color: #747373 !important;
+    font-family: Arial,Helvetica;
+    font-size: 0.875em;
+    font-weight: normal;
+    line-height: 23px;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+.liteGreenBtn {
+    background: none repeat scroll 0 0 #61d296;
+    border-radius: 3px;
+    color: #ffffff !important;
+    font-family: "Myriad Pro",Arial,Helvetica,sans-serif;
+    font-size: 0.875em;
+    font-weight: 300 !important;
+    line-height: 23px;
+    margin: 43px 0 0;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+.readMoreBtn-3 {
+    background: url("../images/blog/theme/4/readMoreBtn-3.png") no-repeat scroll right top rgba(0, 0, 0, 0);
+    cursor: pointer;
+    font-size: 0;
+    height: 37px;
+    margin: 43px 0 0;
+    width: 95px;
+}
+.postCmtBtn-3 {
+    background: url("../images/blog/theme/4/postCmtBtn-3.png") no-repeat scroll right top rgba(0, 0, 0, 0);
+    cursor: pointer;
+    font-size: 0;
+    height: 38px;
+    margin: 43px 0 0;
+    width: 129px;
+}
+.themepickerBlock {
+    float: left;
+    padding: 15px 0 18px;
+}
+.themepickerBlock ul.themeList {
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 10px;
+}
+.themepickerBlock ul.themeList li {
+    float: left;
+    height: 205px;
+    margin: 20px 20px 10px 0;
+    position: relative;
+    width: 223px;
+}
+.themepickerBlock ul.themeList li .themeThumb {
+    background: none repeat scroll 0 0 #f7f6f6;
+    border: 1px solid #cecdcd;
+    border-radius: 3px;
+    float: left;
+    height: 204px;
+    margin-bottom: 7px;
+    overflow: hidden;
+    width: 223px;
+}
+.themepickerBlock ul.themeList li .themeTick {
+    background: url("../images/stream/selectedMedia.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: none;
+    float: right;
+    height: 34px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 34px;
+    z-index: 99999;
+}
+.themepickerBlock ul.themeList li .themeThumb .previewTxt {
+    bottom: 20px;
+    color: #fff;
+    display: none;
+    font-size: 0.9em;
+    position: absolute;
+    right: 50px;
+    text-decoration: none;
+    z-index: 99999;
+}
+.themepickerBlock ul.themeList li .themeThumb:hover .previewTxt, .themepickerBlock ul.themeList li .themeThumb.active .previewTxt {
+    display: block;
+}
+.themepickerBlock ul.themeList li .themeThumb.applied .previewTxt {
+    display: none;
+}
+.themepickerBlock ul.themeList li .themeThumb:hover .themeOverlay, .themepickerBlock ul.themeList li .themeThumb.active .themeOverlay {
+    background: url("../images/common/overlay.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 10px solid #4c8eb3;
+    border-radius: 3px;
+    float: left;
+    height: 185px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 205px;
+}
+.themepickerBlock ul.themeList li .themeThumb:hover .previewOverlay, .themepickerBlock ul.themeList li .themeThumb.active .previewOverlay {
+    background: url("../images/common/previewOverlay.png") repeat-x scroll right bottom rgba(0, 0, 0, 0);
+    border: 10px solid #4c8eb3;
+    border-radius: 3px;
+    bottom: 0;
+    display: block;
+    height: 185px;
+    left: 0;
+    position: absolute;
+    width: 205px;
+}
+.themepickerBlock ul.themeList li .themeThumb.applied .previewOverlay, .themepickerBlock ul.themeList li .themeThumb.applied:hover .previewOverlay {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 10px solid #f5b000;
+    border-radius: 3px;
+    bottom: 0;
+    display: block;
+    height: 185px;
+    left: 0;
+    position: absolute;
+    width: 205px;
+}
+.themepickerBlock ul.themeList li .themeThumb.active.applied .previewOverlay {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.themepickerBlock ul.themeList li .themeThumb.active .themeTick, .themepickerBlock ul.themeList li .themeThumb:hover .themeTick {
+    display: none;
+}
+.themepickerBlock .paginationThemePicker a {
+    background: url("../images/helpCenter/paginationBg.jpg") repeat-x scroll left bottom #fff;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    color: #4a4a4a;
+    display: inline-block;
+    font: 0.75em/1.8 'droid_sansregular';
+    height: 20px;
+    outline: medium none;
+    padding: 2px 0 0;
+    text-align: center;
+    text-decoration: none;
+    width: 22px;
+}
+.themepickerBlock .paginationThemePicker a.active {
+    background: none repeat scroll 0 0 #5295ba;
+    border: 1px solid #2e6889;
+    color: #fff;
+    font: 0.75em/1.8 'droid_sansbold';
+}
+.previewmode {
+    background: url("../images/common/previewOverlay.png") repeat scroll right bottom rgba(0, 0, 0, 0);
+    padding: 14px 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999999;
+}
+.previewmode .previewBlock {
+    display: block;
+    height: 30px;
+    margin: 0 auto;
+    width: 1185px;
+}
+.themepickerBlock ul.themeList li .thumbName {
+    font-size: 13px;
+    margin: 5px 0;
+    text-align: center;
+}

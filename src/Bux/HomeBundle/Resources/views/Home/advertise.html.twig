@@ -1,0 +1,176 @@
+{% extends "base.html.twig" %}
+
+{% block header_title %}
+    <!-- subheader -->
+    <div class="rightsidebar" id="subheader">
+        <div class="subheader">
+            <div class="subtitle"><h1>Advertise</h1></div>
+            <div class="subdesc">
+                Advertise
+            </div>
+        </div>
+    </div>
+    <!-- subheader -->
+{% endblock header_title %}
+
+{% block header_subtitle %}
+{% endblock header_subtitle %}
+
+{% block body %}
+<div id="main">
+
+    <!-- breadcrumb -->
+    <div id="breadcrumbs">
+        <img width="16" height="16" class="bread-icon" src="{{ asset('lib/versatile/images/home-icon.png') }}">
+        <div class="breadcrumbs">
+            <a href="{{ path('home') }}">Home</a>
+        </div>
+    </div><!-- breadcrumb -->
+
+    <div class="content">
+        <div class="post">
+
+            <div class="col1-3 online-user">
+                <div class="mark clear">
+                    <div class="avatar">
+                        <img src="{{ asset('lib/terminator/images/movie-icon.png') }}" alt="">
+                    </div>
+                    <div class="desc">
+                        <ul class="links">
+                            <li><a href="#" class="graph" title="view stats">stats </a></li>
+                            <li><a href="#" class="cart" title="view shopping cart">shopping cart</a></li>
+                            <li><a href="#" class="hist" title="view user history">history</a></li>
+                            <li><a href="#" class="mesg" title="send message">send message</a></li>
+                            <li><span class="male" title="male">male</span></li>
+                        </ul>
+                        <span>
+                            <strong>
+                                Video Ads
+                            </strong>
+                        </span>
+                        <form action="{{ path('fos_user_security_login') }}" method="post">
+                            <div style="margin-left: 10px" class="col3-3">
+                                <select class="required list fl-space2" name="video_credits_form_type[video]" id="video_credits_form_type_video">
+                                    {% for ad in video %}
+                                        <option>{{ ad.credits }} Credits - ${{ ad.price }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <input type="hidden" value="8d10b6f83c2bf41871611fb96cee5d48d3844b95" name="video_credits_form_type[_token]" id="video_credits_form_type__token">
+                            <div class="form-field clear" style="float: left;margin-left: 50px">
+                                <input type="submit" class="button blue fr" value="Buy Now!">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col1-3 online-user">
+                <div class="mark clear">
+                    <div class="avatar">
+                        <img src="{{ asset('lib/terminator/images/questionnaire.png') }}" alt="">
+                    </div>
+                    <div class="desc">
+                        <ul class="links">
+                            <li><a href="#" class="graph" title="view stats">stats </a></li>
+                            <li><a href="#" class="cart" title="view shopping cart">shopping cart</a></li>
+                            <li><a href="#" class="hist" title="view user history">history</a></li>
+                            <li><a href="#" class="mesg" title="send message">send message</a></li>
+                            <li><span class="male" title="male">male</span></li>
+                        </ul>
+                        <span>
+                            <strong>
+                                Survey Ads
+                            </strong>
+                        </span>
+                        <form action="{{ path('fos_user_security_login') }}" method="post">
+                            <div style="margin-left: 10px" class="col3-3">
+                                <select class="required list fl-space2" name="poll_credits_form_type[poll]" id="poll_credits_form_type_poll">
+                                    {% for ad in poll %}
+                                        <option>{{ ad.credits }} Credits - ${{ ad.price }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <input type="hidden" value="d7f0903cfc15619dbcaa7a00227e4e602aa32271" name="poll_credits_form_type[_token]" id="poll_credits_form_type__token">
+                            <div class="form-field clear" style="float: left; margin-left: 50px">
+                                <input type="submit" class="button blue fr" value="Buy Now!">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col1-3 online-user">
+                <div class="mark clear">
+                    <div class="avatar">
+                        <img src="{{ asset('lib/terminator/images/earth-icon.png') }}" alt="">
+                    </div>
+                    <div class="desc">
+                        <ul class="links">
+                            <li><a href="#" class="graph" title="view stats">stats </a></li>
+                            <li><a href="#" class="cart" title="view shopping cart">shopping cart</a></li>
+                            <li><a href="#" class="hist" title="view user history">history</a></li>
+                            <li><a href="#" class="mesg" title="send message">send message</a></li>
+                            <li><span class="male" title="male">male</span></li>
+                        </ul>
+                        <span>
+                            <strong>
+                                Autosurf Ads
+                            </strong>
+                        </span>
+                        <form action="{{ path('fos_user_security_login') }}" method="post">
+                            <div style="margin-left: 10px" class="col3-3">
+                                <select class="required list fl-space2" name="auto_serf_credits_form_type[packages]" id="auto_serf_credits_form_type_packages">
+                                    {% for ad in autosurf %}
+                                        <option>{{ ad.credits }} Credits - ${{ ad.price }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <input type="hidden" value="2329c6468d56a5356c1b8550bd338947c65e6bb9" name="auto_serf_credits_form_type[_token]" id="auto_serf_credits_form_type__token">
+                            <div class="form-field clear" style="float: left; margin-left: 50px">
+                                <input type="submit" class="button blue fr" value="Buy Now!">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col1-3 online-user">
+                <div class="mark clear">
+                    <div class="avatar">
+                        <img src="{{ asset('lib/terminator/images/banner.png') }}" alt="">
+                    </div>
+                    <div class="desc">
+                        <ul class="links">
+                            <li><a href="#" class="graph" title="view stats">stats </a></li>
+                            <li><a href="#" class="cart" title="view shopping cart">shopping cart</a></li>
+                            <li><a href="#" class="hist" title="view user history">history</a></li>
+                            <li><a href="#" class="mesg" title="send message">send message</a></li>
+                            <li><span class="male" title="male">male</span></li>
+                        </ul>
+                        <span>
+                            <strong>
+                                Banner Ads
+                            </strong>
+                        </span>
+                        <form action="{{ path('fos_user_security_login') }}" method="post">
+                            <div style="margin-left: 10px" class="col3-3">
+                                <select class="required list fl-space2" name="banner_credits_form_type[packages]" id="banner_credits_form_type_packages">
+                                    {% for ad in banner %}
+                                        <option>{{ ad.credits }} Credits - ${{ ad.price }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <input type="hidden" value="88576ef252c5c10bce3900dbcbbb432bb7712f74" name="banner_credits_form_type[_token]" id="banner_credits_form_type__token">
+                            <div class="form-field clear" style="float: left; margin-left: 50px">
+                                <input type="submit" class="button blue fr" value="Buy Now!">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock body %}

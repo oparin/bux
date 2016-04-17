@@ -1,0 +1,20 @@
+services:
+    bux.user.referral_listener:
+        class: Bux\UserBundle\EventListener\ReferralListener
+        arguments: ["@doctrine.orm.entity_manager", "@service_container", "@session"]
+        tags:
+            - { name: kernel.event_subscriber }
+    bux.twig.country_extension:
+        class: Bux\UserBundle\Twig\CountryExtension
+        tags:
+            - { name: twig.extension }
+
+    acme_user.registration.form.type:
+        class: Bux\UserBundle\Form\Type\RegistrationFormType
+        tags:
+            - { name: form.type, alias: bux_user_registration }
+
+    bux_user.profile.form.type:
+            class: Bux\UserBundle\Form\Type\ProfileFormType
+            tags:
+                - { name: form.type, alias: bux_user_edit_profile }

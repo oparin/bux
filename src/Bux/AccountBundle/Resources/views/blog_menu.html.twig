@@ -1,0 +1,148 @@
+<!-- DASHBOARD - LEFT COLUMN -->
+<div class="col1-4">
+
+    <!-- CONTENT BOX - CLOSED -->
+    <div class="content-box bt-space10">
+        <div class="box-body">
+            <div class="box-header box-slide-head">
+                <span class="slide-but">open/close</span>
+                <h2>{{ 'frontend.account.menu.global'|trans }}</h2>
+            </div>
+            <div class="box-wrap clear  box-slide-body">
+                <div id="event-list" class="event-list">
+                    <ul class="clear">
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-normal" title="Low priority"></span>
+                                <a href="{{ path('office_account') }}" class="event-link" title="Read more">{{ 'frontend.account.menu.account_summary'|trans }}</a>
+                            </span>
+                        </li>
+                        {#<li>#}
+                            {#<span class="event-list-title clear">#}
+                                {#<span class="priority-normal" title="Low priority"></span>#}
+                                {#<a href="{{ path('office_funds_transfer') }}" class="event-link" title="Read more">{{ 'frontend.account.menu.funds_transfer'|trans }}</a>#}
+                            {#</span>#}
+                        {#</li>#}
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-normal" title="Low priority"></span>
+                                <a href="{{ path('office_account_add_funds') }}" class="event-link" title="Read more">{{ 'frontend.account.menu.add_funds'|trans }}</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-normal" title="Low priority"></span>
+                                <a href="{{ path('office_account_cashout') }}" class="event-link" title="Read more">{{ 'frontend.account.menu.withdraw'|trans }}</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-normal" title="Low priority"></span>
+                                <a href="{{ path('office_account_promo') }}" class="event-link">{{ 'frontend.account.menu.promo'|trans }}</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- end of box-body -->
+    </div> <!-- end of content-box -->
+
+    <!-- CONTENT BOX - CLOSED -->
+    <div class="content-box bt-space10">
+        <div class="box-body">
+            <div class="box-header box-slide-head">
+                <span class="slide-but">open/close</span>
+                <h2>{{ 'frontend.account.menu.settings'|trans }}</h2>
+            </div>
+            <div class="box-wrap clear  box-slide-body">
+                <div id="event-list" class="event-list">
+                    <ul class="clear">
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-normal" title="Low priority"></span>
+                                <a href="{{ path('office_account_advertiser_panel') }}" class="event-link" title="Read more">{{ 'frontend.account.menu.advertiser_panel'|trans }}</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- end of box-body -->
+    </div> <!-- end of content-box -->
+
+    <!-- CONTENT BOX - CLOSED -->
+    <div class="content-box bt-space10">
+        <div class="box-body">
+            <div class="box-header box-slide-head">
+                <span class="slide-but">open/close</span>
+                <h2>{{ 'frontend.account.menu.referrals'|trans }}</h2>
+            </div>
+            <div class="box-wrap clear  box-slide-body">
+                <div id="event-list" class="event-list">
+                    <ul class="clear">
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-normal"></span>
+                                <a href="{{ path('office_account_direct_referrals') }}" class="event-link">{{ 'frontend.account.menu.direct_referrals'|trans }}</a>
+                            </span>
+                        </li>
+                        {#<li>#}
+                            {#<span class="event-list-title clear">#}
+                                {#<span class="priority-normal"></span>#}
+                                {#<a href="{{ path('office_account_rented_referrals') }}" class="event-link">{{ 'frontend.account.menu.rented_referrals'|trans }}</a>#}
+                            {#</span>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<span class="event-list-title clear">#}
+                                {#<span class="priority-normal"></span>#}
+                                {#<a href="{{ path('office_account_rent_referrals') }}" class="event-link">{{ 'frontend.account.menu.rent_referrals'|trans }}</a>#}
+                            {#</span>#}
+                        {#</li>#}
+                        {% if app|buyReferral %}
+                        {#<li>#}
+                            {#<span class="event-list-title clear">#}
+                                {#<span class="priority-normal"></span>#}
+                                {#<a href="{{ path('office_account_buy_referrals') }}" class="event-link">{{ 'frontend.account.menu.buy_referrals'|trans }}</a>#}
+                            {#</span>#}
+                        {#</li>#}
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- end of box-body -->
+    </div> <!-- end of content-box -->
+
+    <!-- CONTENT BOX - CLOSED -->
+    <div class="content-box bt-space10">
+        <div class="box-body">
+            <div class="box-header box-slide-head">
+                <span class="slide-but">open/close</span>
+                <h2>{{ 'frontend.account.menu.logs'|trans }}</h2>
+            </div>
+            <div class="box-wrap clear  box-slide-body">
+                <div id="event-list" class="event-list">
+                    <ul class="clear">
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-low" title="Low priority"></span>
+                                <a href="{{ path('office_account_logs_deposit_history') }}" class="event-link">{{ 'frontend.account.menu.deposit_history'|trans }}</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-low" title="Low priority"></span>
+                                <a href="{{ path('office_account_logs_withdraw_history') }}" class="event-link">{{ 'frontend.account.menu.withdrow_history'|trans }}</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-low" title="Low priority"></span>
+                                <a href="{{ path('office_account_logs_referral_bonus') }}" class="event-link">{{ 'frontend.account.menu.referral_bonus'|trans }}</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- end of box-body -->
+    </div> <!-- end of content-box -->
+
+</div>

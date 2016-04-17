@@ -1,0 +1,115 @@
+{% extends ':admin:admin_base.html.twig' %}
+
+{% form_theme form '@BuxAdminDeposits/twig_theme.html.twig' %}
+
+{% block content_title %}
+    <i class="fa fa-arrow-circle-o-down"></i>&nbsp; Deposits - Add Manual Deposit
+{% endblock content_title %}
+
+{% block content %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        {% include ':admin:admin_alert_succes.html.twig' %}
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        {% include ':admin:admin_alert_error.html.twig' %}
+    {% endfor %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
+                <header>
+                    <div class="icons">
+                        <i class="fa fa-edit"></i>
+                    </div>
+                    <h5>Add Manual Deposit</h5>
+                </header>
+                <div class="body" id="collapse4">
+                    {{ form_start(form, {'attr': {'class': 'form-horizontal'} }) }}
+                    <div class="form-group {% if form_errors(form.username) %}has-error{% endif %}">
+                        {{ form_label(form.username, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                        <div class="col-lg-4">
+                            {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+                            {% if form_errors(form.username) %}
+                                <span id="required2-error" class="help-block">{{ form_errors(form.username) }}</span>
+                            {% endif %}
+                        </div>
+                    </div><!-- /.form-group -->
+
+                    <div class="form-group {% if form_errors(form.amount) %}has-error{% endif %}">
+                        {{ form_label(form.amount, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                        <div class="col-lg-4">
+                            {{ form_widget(form.amount, {'attr': {'class': 'form-control', 'placeholder': '0.00'}}) }}
+                            {% if form_errors(form.amount) %}
+                                <span id="required2-error" class="help-block">{{ form_errors(form.amount) }}</span>
+                            {% endif %}
+                        </div>
+                    </div><!-- /.form-group -->
+
+                    <div class="form-group {% if form_errors(form.method) %}has-error{% endif %}">
+                        {{ form_label(form.method, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                        <div class="col-lg-4">
+                            {{ form_widget(form.method, {'attr': {'class': 'form-control'}}) }}
+                            {% if form_errors(form.method) %}
+                                <span id="required2-error" class="help-block">{{ form_errors(form.method) }}</span>
+                            {% endif %}
+                        </div>
+                    </div><!-- /.form-group -->
+
+                    <div class="form-group {% if form_errors(form.fromAccount) %}has-error{% endif %}">
+                        {{ form_label(form.fromAccount, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                        <div class="col-lg-4">
+                            {{ form_widget(form.fromAccount, {'attr': {'class': 'form-control'}}) }}
+                            {% if form_errors(form.fromAccount) %}
+                                <span id="required2-error" class="help-block">{{ form_errors(form.fromAccount) }}</span>
+                            {% endif %}
+                        </div>
+                    </div><!-- /.form-group -->
+
+                    <div class="form-group {% if form_errors(form.transactionID) %}has-error{% endif %}">
+                        {{ form_label(form.transactionID, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                        <div class="col-lg-4">
+                            {{ form_widget(form.transactionID, {'attr': {'class': 'form-control'}}) }}
+                            {% if form_errors(form.transactionID) %}
+                                <span id="required2-error" class="help-block">{{ form_errors(form.transactionID) }}</span>
+                            {% endif %}
+                        </div>
+                    </div><!-- /.form-group -->
+
+                    <div class="form-group">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-8">
+                            {{ form_widget(form.purchaseBalance) }}
+                        </div>
+                    </div><!-- /.row -->
+
+                    {{ form_rest(form) }}
+                    <div class="form-group">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-4">
+                            <input type="submit" class="btn btn-primary" value="Send">
+                        </div>
+                    </div>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(function() {
+                $( "#accordion" ).accordion({
+                    collapsible: true,
+                    active: false
+                });
+            });
+        });
+    </script>
+    <script>
+        $(function() {
+            Metis.formWizard();
+        });
+    </script>
+{% endblock js %}

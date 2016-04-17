@@ -1,0 +1,21 @@
+services:
+  bux.listener.set.poll.commission:
+    class: Bux\EarnMoneyBundle\EventListener\PollListener
+    arguments:
+        mailer: "@doctrine.orm.entity_manager"
+    tags:
+        - { name: kernel.event_listener, event: set.poll.commission, method: setCommission }
+
+  bux.listener.set.auto_serf.commission:
+      class: Bux\EarnMoneyBundle\EventListener\AutoSerfListener
+      arguments:
+          mailer: "@doctrine.orm.entity_manager"
+      tags:
+          - { name: kernel.event_listener, event: set.auto_serf.commission, method: setCommission }
+
+  bux.listener.set.video.commission:
+      class: Bux\EarnMoneyBundle\EventListener\VideoListener
+      arguments:
+          mailer: "@doctrine.orm.entity_manager"
+      tags:
+          - { name: kernel.event_listener, event: set.video.commission, method: setCommission }

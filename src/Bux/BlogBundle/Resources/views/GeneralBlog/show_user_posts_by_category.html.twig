@@ -1,0 +1,43 @@
+{% extends('BuxBlogBundle::general_blog_base.html.twig') %}
+
+{% block blog_content %}
+    {% for blog in blogs %}
+
+        <div class="blogPostColum clearfix postBody">
+
+            <div class="blogPostHead hideFlow">
+                <div class="width80 floatLeft">
+                    <h2 class="articleTitle">
+                        <a class="wordWrap block" href="{{ path('show_user_post', {'username': user.username, 'id': blog.id}) }}">{{ blog.title }}</a>
+                    </h2>
+                    <p class="postDate postInfo">Posted by
+                        <a href="http://www.empowernetwork.com/profile/glassbrick"><strong>{{ user.username }}</strong></a>
+                        on {{ blog.date|date('F d, Y') }}
+                    </p>
+                </div>
+            </div>
+            <div class="postContent wordWrap">
+                {{ blog.text|raw }}
+            </div>
+            <div class="clear"></div>
+            <div class="paddingTop30">
+                {#<div class="floatLeft">#}
+                    {#<div class="floatLeft">#}
+                        {#<g:plusone size="tall" data-href="http://glassbrick.empowernetwork.com/blog/congratulations-new-team-members"></g:plusone>#}
+                        {#<a href="https://twitter.com/share" class="twitter-share-button" data-related="jasoncosta" data-url="http://glassbrick.empowernetwork.com/blog/congratulations-new-team-members" data-lang="en" data-size="small" data-count="vertical">Tweet</a>#}
+                    {#</div>#}
+                {#</div>#}
+                <a href="{{ path('show_user_post', {'username': user.username, 'id': blog.id}) }}" class="articleBtn greyBtn floatRight marginTop10" title="Read More">Read More</a>
+            </div>
+            <div class="formContainer"></div>
+            <span class="clear"><!-- --></span>
+        </div>
+
+        <input type="hidden" class="firstimestmp" value="2014-02-03 17:08:12" />
+    {% endfor %}
+    <div class="pagination floatRight noMargin">
+        <div id="loader" class="floatLeft"></div>
+        {{ knp_pagination_render(blogs) }}
+    </div>
+    <div class="clear"></div>
+{% endblock blog_content %}

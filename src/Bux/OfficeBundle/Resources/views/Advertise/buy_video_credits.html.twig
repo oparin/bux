@@ -1,0 +1,82 @@
+{% extends '::office_base.html.twig' %}
+
+{#{% form_theme video_form _self %}#}
+
+{% block iconbar %}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage|raw }}</strong></p>
+            </div>
+        {% endfor %}
+
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <div class="notification note-error">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage|raw }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <div class="col4-4 lastcol">
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.advertise.menu.advertise'|trans }}</h2>
+                    </div>
+                    <div class="box-wrap clear">
+                        <div class="mark icon-links" style="width: 400px; margin: 0 auto; height: 180px">
+                            <div>
+                                <h2>{{ 'frontend.advertise.menu.confirm_your_order'|trans }}</h2>
+                            </div>
+                            <div>
+                                <table cellspacing="0" class="basic">
+                                    <tbody>
+                                    <tr>
+                                        <td style="width: 15px">
+                                            <img alt="" class="block" src="{{ asset('lib/terminator/images/ball_blue_16.png') }}">
+                                        </td>
+                                        <th>{{ 'frontend.advertise.menu.product'|trans }}</th>
+                                        <td class="value right" style="font-weight: bold; color: #024C00">{{ 'frontend.advertise.menu.video_ads'|trans }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 15px">
+                                            <img alt="" class="block" src="{{ asset('lib/terminator/images/ball_blue_16.png') }}">
+                                        </td>
+                                        <th>{{ 'frontend.advertise.menu.item'|trans }}</th>
+                                        <td class="value right" style="font-weight: bold; color: #024C00">{{ package.credits }} {{ 'frontend.advertise.menu.credits'|trans }} - ${{ package.price }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 15px">
+                                            <img alt="" class="block" src="{{ asset('lib/terminator/images/ball_blue_16.png') }}">
+                                        </td>
+                                        <th>{{ 'frontend.advertise.menu.purchase_balance'|trans }}</th>
+                                        <td class="value right" style="font-weight: bold; color: #024C00">${{ app.user.purchaseWallet.sum }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div style="margin-left: 30%">
+                                <div>
+                                    <form method="post" action="">
+                                        <button type="submit" style="margin-left: 10px; margin-top: 5px; padding: 1.8px 6px; float: left" class="button green fr">
+                                            {{ 'frontend.advertise.menu.buy_now'|trans }}
+                                        </button>
+                                    </form>
+                                </div>
+                                <div>
+                                    <a style="margin-left: 10px; margin-top: 5px; padding: 2.5px 10px; float: left" class="button red fr" href="{{ path('office_advertise') }}">
+                                        {{ 'frontend.advertise.menu.cancel'|trans }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end of box-wrap -->
+                </div> <!-- end of box-body -->
+            </div> <!-- end of content-box -->
+        </div>
+    </div>
+{% endblock content %}

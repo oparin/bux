@@ -1,0 +1,215 @@
+{% extends ':admin:admin_base.html.twig' %}
+
+{% form_theme form _self %}
+
+{% block choice_widget_options -%}
+    {% for group_label, choice in options %}
+        {%- if choice is iterable -%}
+            <optgroup label="{{ group_label|trans({}, translation_domain) }}">
+                {% set options = choice %}
+                {{- block('choice_widget_options') -}}
+            </optgroup>
+        {%- else -%}
+            <option value="{{ choice.value }}"{% if choice is selectedchoice(value) %} selected="selected"{% endif %}>
+                {{ choice.label|trans({}, translation_domain) }} seconds
+            </option>
+        {%- endif -%}
+    {% endfor %}
+{%- endblock choice_widget_options %}
+
+{% block ad_country_widget %}
+    {% spaceless %}
+        <div style="">
+            <div style="float: left; margin-left: -6px; margin-top: 6px">
+                <input id="all-countries" type="checkbox" class="uniform">
+            </div>
+            <div style="padding-top: 8px">{{ 'frontend.account.advertiser.form.all_countries'|trans }}</div>
+        </div>
+        <div style="clear: both"></div>
+        <div style="margin-left: -4px; margin-top: 10px; height: 100px; width: 300px; overflow-y: scroll">
+            {% for choice in form.children %}
+                <div style="padding-left: 5px">
+                    <div style="float: left; margin-left: -5px">
+                        <input class="countries" type="checkbox" id="{{ choice.vars.id }}" name="{{ choice.vars.full_name }}" {% if choice.vars.value is defined %} value="{{ choice.vars.value }}"{% endif %}{% if choice.vars.checked %} checked="checked"{% endif %} />
+                    </div>
+                    <div style="padding-top: 4px; padding-left: 17px">
+                        {{ choice.vars.label }}
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+            {% endfor %}
+        </div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block ad_membership_widget %}
+    {% spaceless %}
+        <div style="">
+            <div style="float: left; margin-left: -6px; margin-top: 6px">
+                <input id="all-membership" type="checkbox" class="uniform">
+            </div>
+            <div style="padding-top: 8px">All Memberships</div>
+        </div>
+        <div style="clear: both"></div>
+        <div style="margin-left: -4px; margin-top: 10px; height: 100px; width: 300px; overflow-y: scroll">
+            {% for choice in form.children %}
+                <div style="padding-left: 5px">
+                    <div style="float: left; margin-left: -5px">
+                        <input class="memberships" type="checkbox" id="{{ choice.vars.id }}" name="{{ choice.vars.full_name }}" {% if choice.vars.value is defined %} value="{{ choice.vars.value }}"{% endif %}{% if choice.vars.checked %} checked="checked"{% endif %} />
+                    </div>
+                    <div style="padding-top: 4px; padding-left: 17px">
+                        {{ choice.vars.label }}
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+            {% endfor %}
+        </div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block content_title %}
+    <i class="fa fa-desktop"></i>&nbsp; Advertisements - AutoSerf
+{% endblock content_title %}
+
+{% block content %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        {% include ':admin:admin_alert_succes.html.twig' %}
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        {% include ':admin:admin_alert_error.html.twig' %}
+    {% endfor %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
+                <div class="body" id="collapse4">
+                    <div class="box">
+                        <header>
+                            <div class="icons">
+                                <i class="fa fa-edit"></i>
+                            </div>
+                            <h5>Create a new AutoSerf Ad</h5>
+                        </header>
+                        <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+                            {{ form_start(form, {'attr': {'class': 'form-horizontal'} }) }}
+                            <div class="form-group {% if form_errors(form.title) %}has-error{% endif %}">
+                                {{ form_label(form.title, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                                    {% if form_errors(form.title) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.title) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group {% if form_errors(form.targetUrl) %}has-error{% endif %}">
+                                {{ form_label(form.targetUrl, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.targetUrl, {'attr': {'class': 'form-control', 'placeholder': 'http://'}}) }}
+                                    {% if form_errors(form.targetUrl) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.targetUrl) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group {% if form_errors(form.category) %}has-error{% endif %}">
+                                {{ form_label(form.category, 'AutoSerf value', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+                                    {% if form_errors(form.category) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.category) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group {% if form_errors(form.credits) %}has-error{% endif %}">
+                                {{ form_label(form.credits, null, {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.credits, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                    {% if form_errors(form.credits) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.credits) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group {% if form_errors(form.maxClickInDay) %}has-error{% endif %}">
+                                {{ form_label(form.maxClickInDay, 'Maximum clicks per day', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.maxClickInDay, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                    {% if form_errors(form.maxClickInDay) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.maxClickInDay) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                {{ form_label(form.memberships, 'Target Membership', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.memberships, {'attr': {'class': 'form-control'}}) }}
+                                    {% if form_errors(form.memberships) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.memberships) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                {{ form_label(form.countries, 'Target Country', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(form.countries, {'attr': {'class': 'form-control'}}) }}
+                                    {% if form_errors(form.countries) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(form.countries) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            {{ form_rest(form) }}
+                            <div class="form-group">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4">
+                                    <input type="submit" class="btn btn-primary" value="Save">
+                                </div>
+                            </div>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script>
+        $(function() {
+            Metis.formWizard();
+        });
+    </script>
+    <script>
+        $(function() {
+            Metis.formGeneral();
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#all-countries').click(function() {
+
+                if($("#all-countries").is(':checked')){
+                    console.log(11);
+                    $('.countries').prop('checked', true);
+                } else {
+                    console.log(22);
+                    $('.countries').prop('checked', false);
+                }
+            });
+            $('#all-membership').click(function() {
+
+                if($("#all-membership").is(':checked')){
+                    console.log(11);
+                    $('.memberships').prop('checked', true);
+                } else {
+                    console.log(22);
+                    $('.memberships').prop('checked', false);
+                }
+            })
+        });
+    </script>
+{% endblock js %}

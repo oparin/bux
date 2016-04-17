@@ -1,0 +1,115 @@
+<html>
+<head>
+    <link href="{{ asset('css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+    <style>
+        body {
+            font-size: 12px;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+            width: 100%;
+        }
+        .surfbar {
+            background: none repeat scroll 0 0 #270f0b;
+            color: #fff;
+            font-family: Arial,Helvetica,sans-serif;
+            font-weight: bold;
+            height: 70px;
+            margin: 0;
+        }
+        .logo {
+            background: url("styles/images/logo.png") no-repeat scroll left center transparent;
+            float: left;
+            height: 70px;
+            margin-left: 10px;
+            margin-top: 0;
+            width: 255px;
+        }
+        #surfbar {
+            float: left;
+            padding: 20px 0 0 20px;
+        }
+        .successbox {
+            background: url("{{ asset('images/ok-icon.png') }}") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+            display: none;
+            height: 48px;
+            padding-left: 55px;
+            padding-top: 10px;
+        }
+        .banner {
+            float: right;
+            margin-right: 20px;
+            margin-top: 2px;
+        }
+    </style>
+    <script type="text/javascript" src="{{ asset('bundles/alidatatable/js/jquery.js') }}"></script>
+    {#<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>#}
+</head>
+<body>
+    <div class="surfbar">
+        <div class="logo"></div>
+        <div id="surfbar" style="display: block;">
+            <div id="wait" style="display: block">Please wait...</div>
+            <div class="progress" style="width: 200px; display: none">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                </div>
+            </div>
+            <div class="successbox" style="display: none;">Your link was validated, now you can close this window.</div>
+        </div>
+        <div class="banner">
+            <a target="_blank" href="bannerclick.php?id=21">
+                <img border="0" width="468" height="60" src="http://www.evibux.com/banner1.gif">
+            </a>
+        </div>
+    </div>
+    <div style="width: 600px; margin: 0 auto; margin-top: 50px">
+        {%  set url = ad.targetUrl|replace({'watch?v=': 'embed/'}) ~ '?rel=0&autoplay=1' %}
+        <iframe width="600" height="450"
+            src="{{ url }}">
+        </iframe>
+    </div>
+
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $('#wait').css("display", "none");
+            $('.progress').css("display", "block");
+            var time = {{ ad.value.time }};
+            var value = 100 / time;
+            count(value, time);
+
+        });
+        function createTimer(number, writeNumber) {
+            setTimeout(function() {
+                $('.progress-bar').css("width", writeNumber + "%");
+                if (writeNumber >= 100) {
+                    setTimeout(function() {
+                        $.ajax({
+                            type: "POST",
+                            url: "{{ path('video_ad_validate_success') }}",
+                            data: { id: {{ ad.id }} }
+                        })
+                        .done(function(msg) {
+                            if (msg == 'ok') {
+                                $('.progress').css("display", "none");
+                                $('.successbox').css("display", "block");
+                            }
+                        });
+                    }, 1000);
+                }
+            }, 1000 + 1000 * number)
+        }
+        function count(initMessage, numberCount) {
+            setTimeout(function() {
+                $('.progress-bar').css("width", "0%");
+            }, 2000);
+
+            var writeNumber = 0;
+            for (var i = 1; i <= numberCount + 1; i++) {
+                writeNumber = writeNumber + initMessage;
+                createTimer(i, writeNumber);
+            }
+        }
+    </script>
+</body>
+</html>

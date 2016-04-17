@@ -1,0 +1,18 @@
+@charset "utf-8";
+/*
+	CSS Document
+	Project : ENV2
+	File 	: typography.css
+	Date 	: 20/02/13 (dd-mm-yy)
+	Author  : shiraz (shiraz@digitalbrandgroup.com)
+*/
+
+/*=============================================================================
+	The height css classes
+=============================================================================*/
+.height90px{height: 90px;}
+.height130px{height: 130px;}
+.height293px{height: 293px;}
+
+.minheight200px{min-height:200px;}
+.minheight245px{min-height:245px;}

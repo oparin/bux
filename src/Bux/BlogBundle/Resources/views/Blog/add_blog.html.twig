@@ -1,0 +1,66 @@
+{% extends '::office_base.html.twig' %}
+
+{% form_theme form 'BuxBlogBundle:Twig:fields.html.twig' %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {% include 'BuxBlogBundle:Blog:blog_menu.html.twig' %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+        <div class="col3-4 lastcol">
+            <!-- CONTENT BOX - DATATABLE -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.blogs.menu.post'|trans }}</h2>
+                    </div>
+
+                    <div class="box-wrap clear">
+                        {% if category %}
+                        {{ form_start(form, {'attr': {'class': 'validate-form form bt-space15'} }) }}
+                        <div class="columns clear bt-space15">
+                            <div class="col2-3">
+                                <div class="form-field clear">
+                                    {{ form_label(form.title, 'frontend.blogs.table.title'|trans, {'label_attr': {'class': 'form-label size-80 fl-space2'} }) }}
+                                    {{ form_widget(form.title, {'attr': {'class': 'required text fl-space2'} }) }}
+                                </div><!-- /.form-field -->
+
+                                <div class="form-field clear">
+                                    {{ form_label(form.text, 'frontend.blogs.table.text'|trans, {'label_attr': {'class': 'form-label size-80 fl-space2'} }) }}
+                                    {{ form_widget(form.text, {'attr': {'class': 'form-textarea required display tinymce'} }) }}
+                                    {% if form_errors(form.text) %}
+                                        <label class="error form-error" style="margin-left: 86px; margin-top: -20px">{{ form_errors(form.text) }}</label>
+                                    {% endif %}
+                                </div><!-- /.form-field -->
+
+                                <div class="form-field clear">
+                                    {{ form_label(form.category, 'frontend.blogs.table.category'|trans, {'label_attr': {'class': 'form-label size-80 fl-space2'} }) }}
+                                    {{ form_widget(form.category, {'attr': {'class': 'fl-space2 required', 'style': 'width: 160px'} }) }}
+                                </div><!-- /.form-field -->
+
+                            </div>
+                        </div>
+
+                        {{ form_rest(form) }}
+                        <div class="form-field clear" style="float: left; margin-left: 90px">
+                            <input type="submit" class="button blue fr" value="{{ 'frontend.blogs.action.save'|trans }}" />
+                        </div><!-- /.form-field -->
+
+                        {{ form_end(form) }}
+                        {% else %}
+                            <a href="{{ path('office_add_post_category') }}">First you need to create a category</a>
+                        {% endif %}
+                    </div><!-- end of box-wrap -->
+                </div> <!-- end of box-body -->
+            </div> <!-- end of content-box -->
+        </div>
+
+
+    </div>
+{% endblock content %}

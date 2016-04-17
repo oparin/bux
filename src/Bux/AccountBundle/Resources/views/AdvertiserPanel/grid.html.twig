@@ -1,0 +1,24 @@
+<style>
+    .last-column {
+        width: 220px;
+    }
+</style>
+{{ grid(grid, '@BuxAccount/AdvertiserPanel/Grid/blocks_js.jquery.html.twig') }}
+{#{{ grid(grid, '@BuxAccount/AdvertiserPanel/Grid/blocks.html.twig') }}#}
+<script type="text/javascript">
+    function setPause(url, id)
+    {
+        $.ajax({
+            type: "POST",
+            url: url
+        })
+        .done(function(msg) {
+            if (msg == 'start') {
+                $('#pause_' + id).html("{{ 'frontend.account.advertiser.table.pause'|trans }}");
+            }
+            if (msg == 'pause') {
+                $('#pause_' + id).html("{{ 'frontend.account.advertiser.table.start'|trans }}");
+            }
+        });
+    }
+</script>

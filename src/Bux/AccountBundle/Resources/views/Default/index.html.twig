@@ -1,0 +1,178 @@
+{% extends '::office_base.html.twig' %}
+
+{% block styles %}
+    {#<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css"/>#}
+    {#<script type="text/javascript" src="{{ asset('js/fusionCharts.js') }}"></script>#}
+{% endblock styles %}
+
+{% block iconbar %}
+    {#{% include 'BuxAccountBundle::iconbar.html.twig' %}#}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {% include 'BuxAccountBundle::blog_menu.html.twig' %}
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <div class="notification note-error">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+        <div class="col3-4 lastcol">
+            <!-- CONTENT BOX - EVENTS-->
+            <div class="content-box bt-space10 events">
+                <div class="box-body">
+                    <div class="box-header box-slide-head">
+                        <span class="slide-but">open/close</span>
+                        <ul class="tabs clear">
+                            <li><a href="#event-summary">{{ 'frontend.account.account_summary.summary'|trans }}</a></li>
+                            <li><a href="#event-stat" id="statistic">{{ 'frontend.account.account_summary.statistics'|trans }}</a></li>
+                        </ul>
+                        <h2>{{ 'frontend.account.menu.account_summary'|trans }}</h2>
+                    </div>
+                    <div class="box-wrap clear  box-slide-body">
+
+                        <!-- TAB - EVENT LIST -->
+                        <div id="event-summary" class="event-list">
+                            <div class="columns clear">
+                                <div class="col1-2">
+
+                                    <!-- OVERVIEW - BASIC TABLE -->
+                                    <h2><cufon class="cufon cufon-canvas" alt="{{ 'frontend.account.account_summary.earning_balance_stats'|trans }}" style="width: 70px; height: 18px;"><canvas width="81" height="22" style="width: 81px; height: 22px; top: -3px; left: -3px;"></canvas><cufontext>Overviews</cufontext></cufon></h2>
+                                    <table cellspacing="0" class="basic">
+                                        <tbody>
+                                            <tr>
+                                                <th class="full">{{ 'frontend.account.account_summary.balance'|trans }}</th>
+                                                <td class="value right">{{ app.user.wallet.sum }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="full">{{ 'frontend.account.account_summary.purchase_balance'|trans }}</th>
+                                                <td class="value right">{{ app.user.purchaseWallet.sum }} (<a href="{{ path('office_account_add_funds') }}">{{ 'frontend.account.account_summary.add_funds'|trans }}</a>)</td>
+                                            </tr>
+                                            <tr>
+                                                {% if app.user.autoSerfSeconds < 60  %}
+                                                    {% set minuts = '0:' ~ app.user.autoSerfSeconds %}
+                                                {% else %}
+                                                    {% set minuts = (app.user.autoSerfSeconds / 60)|round(0, 'floor') ~ ':' ~ (app.user.autoSerfSeconds % 60) %}
+                                                {% endif %}
+                                                <th class="full">{{ 'frontend.account.account_summary.auto_surf_minuts'|trans }}</th>
+                                                <td class="value right">
+                                                    <div  style="width: 200px">
+                                                        {{ minuts }} (<a href="{{ path('office_account_convert_minuts') }}">{{ 'frontend.account.account_summary.convert_minuts'|trans }}</a>)
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="full">{{ 'frontend.account.account_summary.survey_balance_hold'|trans }}</th>
+                                                <td class="value right">{{ app.user.surveyWalletBalance.sum }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="full">{{ 'frontend.account.account_summary.survey_balance_available'|trans }}</th>
+                                                <td class="value right">{{ app.user.surveyWalletAvailableBalance.sum }}
+												{% if transfer %}
+                                                    (<a href="{{ path('transfer_balance') }}">{{ 'frontend.account.account_summary.transfer'|trans }}</a>)
+                                                {% endif %}
+												</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col1-2 lastcol">
+
+                                    <!-- MESSAGES - BASIC TABLE -->
+                                    <h2><cufon class="cufon cufon-canvas" alt="{{ 'frontend.account.account_summary.advertising_balance_stats'|trans }}" style="width: 36px; height: 18px;"><canvas width="56" height="22" style="width: 56px; height: 22px; top: -3px; left: -3px;"></canvas><cufontext>Last </cufontext></cufon></h2>
+                                    <table cellspacing="0" class="basic">
+                                        <tbody>
+                                            <tr>
+                                                <th class="full">{{ 'frontend.account.account_summary.video_credits'|trans }}</th>
+                                                <td class="value right">{{ app.user.videoCredits.credits }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="full">{{ 'frontend.account.account_summary.poll_credits'|trans }}</th>
+                                                <td class="value right">{{ app.user.pollCredits.credits }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="full">{{ 'frontend.account.account_summary.auto_serf_credits'|trans }}</th>
+                                                <td class="value right">{{ app.user.autoSerfCredits.credits }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="full">{{ 'frontend.account.account_summary.banner_credits'|trans }}</th>
+                                                <td class="value right">{{ app.user.bannerCredits.credits }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="full">{{ 'frontend.account.account_summary.vip_banner_credits'|trans }}</th>
+                                                <td class="value right">{{ app.user.bigBannerCredits.credits }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col1-2">
+                                    <!-- OVERVIEW - BASIC TABLE -->
+                                    <h2><cufon class="cufon cufon-canvas" alt="{{ 'frontend.account.account_summary.referral_stats'|trans }}" style="width: 70px; height: 18px;"><canvas width="81" height="22" style="width: 81px; height: 22px; top: -3px; left: -3px;"></canvas><cufontext>Overviews</cufontext></cufon></h2>
+                                    <table cellspacing="0" class="basic">
+                                        <tbody>
+                                        <tr>
+                                            <th class="full">{{ 'frontend.account.account_summary.direct_referrals'|trans }}</th>
+                                            <td class="value right">{{ direct_referrals }}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB - CALENDAR -->
+                        <div id="event-stat" class="event-calendar">
+                            <div id="my-chart" style="float: left">FusionCharts will render here</div>
+                            <div id="ref-chart" style="margin-left: 355px">FusionCharts will render here</div>
+                        </div>
+
+                    </div> <!-- end of box-wrap -->
+                </div> <!-- end of box-body -->
+            </div> <!-- end of content-box -->
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ asset('js/fusioncharts.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/fusioncharts.theme.fint.js') }}"></script>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $('#statistic').click(function(){
+                if (!$('.fusioncharts-container').html()) {
+                    var myChart = new FusionCharts({
+                        type: 'column3d',
+                        renderAt: 'my-chart',
+                        width: 340,
+                        height: 300,
+                        "dataFormat": "jsonurl",
+                        "dataSource": "{{ path('office_get_my_income') }}"
+                    });
+
+                    var refChart = new FusionCharts({
+                        type: 'column3d',
+                        renderAt: 'ref-chart',
+                        width: 340,
+                        height: 300,
+                        "dataFormat": "jsonurl",
+                        "dataSource": "{{ path('office_get_referral_income') }}"
+                    });
+
+                    myChart.render();
+                    refChart.render();
+                }
+            });
+        });
+    </script>
+{% endblock js %}

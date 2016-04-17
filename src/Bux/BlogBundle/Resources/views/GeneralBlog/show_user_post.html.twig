@@ -1,0 +1,19 @@
+{% extends('BuxBlogBundle::general_blog_base.html.twig') %}
+
+{% block blog_content %}
+    <div class="pageContentOuter">
+        <div class="discussionContainer">
+            <div class="blogPostColum clearfix noBorder-padding">
+                <div class="blogPostHead hideFlow">
+                    <div class="width80 floatLeft">
+                        <h2>{{ post.title }}</h2>
+                    </div>
+                </div>
+                <div class="postContent noborderBtm">
+                    {{ post.text|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+{% endblock blog_content %}

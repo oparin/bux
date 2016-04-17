@@ -1,0 +1,369 @@
+{% extends ':admin:admin_base.html.twig' %}
+
+{% form_theme general_form ':admin:twig_theme.html.twig' %}
+{% form_theme packages_form ':admin:twig_theme.html.twig' %}
+{% form_theme categories_form ':admin:twig_theme.html.twig' %}
+
+{% block content_title %}
+    <i class="fa fa-desktop"></i>&nbsp; Advertisements - Poll Ads Settings
+{% endblock content_title %}
+
+{% block content %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        {% include ':admin:admin_alert_succes.html.twig' %}
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        {% include ':admin:admin_alert_error.html.twig' %}
+    {% endfor %}
+    <div class="row">
+    <div class="col-lg-12">
+    <div class="box">
+    <header>
+        <div class="icons">
+            <i class="fa fa-edit"></i>
+        </div>
+        <h5>Poll Ads Settings</h5>
+    </header>
+    <div class="body" id="collapse4" style="height: 600px">
+    <ul role="tablist" class="nav nav-tabs" id="myTab">
+        <li class="{% if tab == 'general' %}active{% endif %}" role="presentation">
+            <a aria-expanded="false" aria-controls="general" data-toggle="tab" role="tab" id="general-tab" href="#general">General Settings</a>
+        </li>
+        <li class="{% if tab == 'package' %}active{% endif %}" role="presentation">
+            <a aria-expanded="true" aria-controls="package" data-toggle="tab" role="tab" id="package-tab" href="#package">Packages</a>
+        </li>
+        <li class="{% if tab == 'category' %}active{% endif %}" role="presentation">
+            <a aria-expanded="true" aria-controls="category" data-toggle="tab" role="tab" id="category-tab" href="#category">Categories</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+    <div aria-labelledby="general-tab" id="general" class="tab-pane fade {% if tab == 'general' %}in active{% endif %}" role="tabpanel">
+        <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+            {{ form_start(general_form, {'attr': {'class': 'form-horizontal'} }) }}
+            <div class="form-group">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-8">
+                    {{ form_widget(general_form.adminApprove, {'attr':{'class': 'uniform'} }) }}
+                </div>
+            </div><!-- /.row -->
+
+            <div class="form-group">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-8">
+                    {{ form_widget(general_form.autoCredits, {'attr':{'class': 'uniform'} }) }}
+                </div>
+            </div><!-- /.row -->
+
+            <div class="form-group {% if form_errors(general_form.maxTitle) %}has-error{% endif %}">
+                {{ form_label(general_form.maxTitle, 'Maximum characters for ad title', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                <div class="col-lg-4">
+                    {{ form_widget(general_form.maxTitle, {'attr': {'class': 'form-control'}}) }}
+                    {% if form_errors(general_form.maxTitle) %}
+                        <span id="required2-error" class="help-block">{{ form_errors(general_form.maxTitle) }}</span>
+                    {% endif %}
+                </div>
+            </div><!-- /.form-group -->
+
+            <div class="form-group {% if form_errors(general_form.maxDescription) %}has-error{% endif %}">
+                {{ form_label(general_form.maxDescription, 'Maximum characters for ad description', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                <div class="col-lg-4">
+                    {{ form_widget(general_form.maxDescription, {'attr': {'class': 'form-control'}}) }}
+                    {% if form_errors(general_form.maxDescription) %}
+                        <span id="required2-error" class="help-block">{{ form_errors(general_form.maxDescription) }}</span>
+                    {% endif %}
+                </div>
+            </div><!-- /.form-group -->
+
+            <div class="form-group {% if form_errors(general_form.transferPeriod) %}has-error{% endif %}">
+                {{ form_label(general_form.transferPeriod, 'Transfer period (days)', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                <div class="col-lg-4">
+                    {{ form_widget(general_form.transferPeriod, {'attr': {'class': 'form-control'}}) }}
+                    {% if form_errors(general_form.transferPeriod) %}
+                        <span id="required2-error" class="help-block">{{ form_errors(general_form.transferPeriod) }}</span>
+                    {% endif %}
+                </div>
+            </div><!-- /.form-group -->
+
+            <div class="form-group">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-8">
+                    {{ form_widget(general_form.clickInDay, {'attr':{'class': 'uniform'} }) }}
+                </div>
+            </div><!-- /.row -->
+            {{ form_rest(general_form) }}
+            <div class="form-group">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <input type="submit" class="btn btn-primary" value="Save">
+                </div>
+            </div>
+            {{ form_end(general_form) }}
+        </div>
+    </div>
+
+    {# Packages #}
+    <div aria-labelledby="package-tab" id="package" class="tab-pane fade {% if tab == 'package' %}in active{% endif %}" role="tabpanel">
+        <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="box">
+                        <header>
+                            <div class="icons">
+                                <i class="fa fa-edit"></i>
+                            </div>
+                            <h5>Add New Package</h5>
+                            <div class="toolbar">
+                                <nav style="padding: 8px;">
+                                    <a class="btn btn-default btn-xs collapse-box" href="javascript:;">
+                                        <i class="fa fa-minus"></i>
+                                    </a>
+                                    <a class="btn btn-default btn-xs full-box" href="javascript:;">
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+                                    <a class="btn btn-danger btn-xs close-box" href="javascript:;">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </nav>
+                            </div>
+                        </header>
+
+                        <div class="body">
+                            {{ form_start(packages_form, {'attr': {'class': 'form-horizontal'} }) }}
+                            <div class="form-group {% if form_errors(packages_form.credits) %}has-error{% endif %}">
+                                {{ form_label(packages_form.credits, 'Credits', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(packages_form.credits, {'attr': {'class': 'form-control', 'placeholder': '0'}}) }}
+                                    {% if form_errors(packages_form.credits) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(packages_form.credits) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group {% if form_errors(packages_form.price) %}has-error{% endif %}">
+                                {{ form_label(packages_form.price, 'Price', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(packages_form.price, {'attr': {'class': 'form-control', 'placeholder': '0.00'}}) }}
+                                    {% if form_errors(packages_form.price) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(packages_form.price) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            {{ form_rest(packages_form) }}
+                            <div class="form-group">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4">
+                                    <input type="submit" class="btn btn-primary" value="Save">
+                                </div>
+                            </div>
+                            {{ form_end(packages_form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="box">
+                        <header>
+                            <div class="icons">
+                                <i class="fa fa-table"></i>
+                            </div>
+                            <h5>Manage Packages</h5>
+                        </header>
+
+                        <div class="body">
+                            <table class="table table-bordered table-condensed table-hover table-striped dataTable no-footer">
+                                <tr>
+                                    <th>Credits</th>
+                                    <th>Price</th>
+                                    <th style="width: 150px">Action</th>
+                                </tr>
+                                {% for package in packages %}
+                                    <tr class="grid-row-cells even">
+                                        <td>{{ package.credits }}</td>
+                                        <td>{{ package.price }}</td>
+                                        <td>
+                                            <a href="{{ path('admin_advertisements_poll_settings', {'packageId': package.id}) }}"><button>Edit</button></a>
+                                            <a href="{{ path('admin_advertisements_poll_delete_package', {'id': package.id}) }}" onclick="return confirm('You really want to delete?')">
+                                                <button>Delete</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Categories #}
+    <div aria-labelledby="category-tab" id="category" class="tab-pane fade {% if tab == 'category' %}in active{% endif %}" role="tabpanel">
+        <div class="body collapse in" id="div-1" aria-expanded="true" style="">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="box">
+                        <header>
+                            <div class="icons">
+                                <i class="fa fa-edit"></i>
+                            </div>
+                            <h5>Add New Category</h5>
+                            <div class="toolbar">
+                                <nav style="padding: 8px;">
+                                    <a class="btn btn-default btn-xs collapse-box" href="javascript:;">
+                                        <i class="fa fa-minus"></i>
+                                    </a>
+                                    <a class="btn btn-default btn-xs full-box" href="javascript:;">
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+                                    <a class="btn btn-danger btn-xs close-box" href="javascript:;">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </nav>
+                            </div>
+                        </header>
+
+                        <div class="body">
+                            {{ form_start(categories_form, {'attr': {'class': 'form-horizontal'} }) }}
+                            <div class="form-group {% if form_errors(categories_form.name) %}has-error{% endif %}">
+                                {{ form_label(categories_form.name, 'Category Name', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(categories_form.name, {'attr': {'class': 'form-control'}}) }}
+                                    {% if form_errors(categories_form.name) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(categories_form.name) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group {% if form_errors(categories_form.value) %}has-error{% endif %}">
+                                {{ form_label(categories_form.value, 'Value', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(categories_form.value, {'attr': {'class': 'form-control', 'placeholder': '0.00'}}) }}
+                                    {% if form_errors(categories_form.value) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(categories_form.value) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group {% if form_errors(categories_form.credits) %}has-error{% endif %}">
+                                {{ form_label(categories_form.credits, 'Credits', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(categories_form.credits, {'attr': {'class': 'form-control', 'placeholder': '0'} }) }}
+                                    {% if form_errors(categories_form.credits) %}
+                                        <span id="required2-error" class="help-block">{{ form_errors(categories_form.credits) }}</span>
+                                    {% endif %}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            {#<div class="form-group {% if form_errors(categories_form.time) %}has-error{% endif %}">#}
+                                {#{{ form_label(categories_form.time, 'Time', {'label_attr': {'class': 'control-label col-lg-4'}}) }}#}
+                                {#<div class="col-lg-4">#}
+                                    {#{{ form_widget(categories_form.time, {'attr': {'class': 'form-control', 'placeholder': '0'} }) }}#}
+                                    {#{% if form_errors(categories_form.time) %}#}
+                                        {#<span id="required2-error" class="help-block">{{ form_errors(categories_form.time) }}</span>#}
+                                    {#{% endif %}#}
+                                {#</div>#}
+                            {#</div><!-- /.form-group -->#}
+
+                            <div class="form-group">
+                                {{ form_label(categories_form.refEarning, 'Allow ref earning', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(categories_form.refEarning, {'attr':{'class': 'uniform'} }) }}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                {{ form_label(categories_form.hideDescription, 'Hide Description', {'label_attr': {'class': 'control-label col-lg-4'}}) }}
+                                <div class="col-lg-4">
+                                    {{ form_widget(categories_form.hideDescription, {'attr':{'class': 'uniform'} }) }}
+                                </div>
+                            </div><!-- /.form-group -->
+
+                            {{ form_rest(categories_form) }}
+                            <div class="form-group">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4">
+                                    <input type="submit" class="btn btn-primary" value="Save">
+                                </div>
+                            </div>
+                            {{ form_end(categories_form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="box">
+                        <header>
+                            <div class="icons">
+                                <i class="fa fa-table"></i>
+                            </div>
+                            <h5>Manage Categories</h5>
+                        </header>
+
+                        <div class="body">
+                            <table class="table table-bordered table-condensed table-hover table-striped dataTable no-footer">
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Value</th>
+                                    <th>Credits</th>
+                                    {#<th>Time (seconds)</th>#}
+                                    <th>Allow ref earning</th>
+                                    <th>Hide ad descr.</th>
+                                    <th style="width: 150px">Action</th>
+                                </tr>
+                                {% for category in categories %}
+                                    <tr class="grid-row-cells even">
+                                        <td>{{ category.name }}</td>
+                                        <td>{{ category.value }}</td>
+                                        <td>{{ category.credits }}</td>
+                                        {#<td>{{ category.time }}</td>#}
+                                        <td>
+                                            {% if category.refEarning %}
+                                                Yes
+                                            {% else %}
+                                                No
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if category.hideDescription %}
+                                                Yes
+                                            {% else %}
+                                                No
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a href="{{ path('admin_advertisements_poll_settings', {'packageId': 0, 'categoryId': category.id}) }}"><button>Edit</button></a>
+                                            <a href="{{ path('admin_advertisements_poll_delete_category', {'id': category.id}) }}" onclick="return confirm('You really want to delete?')">
+                                                <button>Delete</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script>
+        $(function() {
+            Metis.formWizard();
+        });
+    </script>
+    <script>
+        $(function() {
+            Metis.formGeneral();
+        });
+    </script>
+{% endblock js %}

@@ -1,0 +1,152 @@
+{% extends '::office_base.html.twig' %}
+
+{% block styles %}
+
+{% endblock styles %}
+
+{% block iconbar %}
+    {#{% include 'BuxAccountBundle::iconbar.html.twig' %}#}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {#{% include 'BuxAccountBundle::blog_menu.html.twig' %}#}
+
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <div class="notification note-error">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+        <div class="col1-1 lastcol">
+            <!-- CONTENT BOX -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.account.advertiser.auto_serf'|trans }}</h2>
+                    </div>
+
+                    <div class="box-wrap clear">
+                        <div class="col1-3">&nbsp;</div>
+                        <div id="info-box" style="display: none; height: 20px; float: left; font-weight: bold; border: 1px solid #808080; width: 902px; padding-top: 5px; padding-left: 50px">
+                            <div id="ad-title" style="float: left">sd</div>
+                            <div id="ad-count" style="padding-left: 15px; float: left">dsd</div>
+                            <div id="ad-time" style="padding-left: 145px">Minutes earned this session: 0:0</div>
+                        </div>
+                        <div id="ad-box" style="margin-top: 40px">
+                            {#<div style="padding: 2px; border: 1px solid #808080; height: 777px">#}
+                                {#<iframe id="farame" src="#" width="950" height="768" align="left">#}
+                                    {#Ваш браузер не поддерживает плавающие фреймы!#}
+                                {#</iframe>#}
+                                {#<div  id="farame" style="width: 500px; height: 500px"></div>#}
+                            {#</div>#}
+                            <div class="form-field clear" style="float: left; margin-top: 7px; margin-left: 73px">
+                                {#<a href="{{ path('office_earn_money_view_auto_serf_ads') }}" class="button blue fr">{{ 'frontend.account.advertiser.start'|trans }}</a>#}
+                                <a href="#" class="button blue fr" onclick="getAutoSerfAds();">{{ 'frontend.account.advertiser.start'|trans }}</a>
+                            </div>
+                        </div>
+                        <div class="col1-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script type="text/javascript">
+        function getAutoSerfAds()
+        {
+            $.ajax({
+                type: "POST",
+                url: "{{ path('office_earn_money_get_auto_serf_ads') }}",
+                dataType: "json"
+            })
+            .done(function(data) {
+                if (data.code == '404') {
+                    $('#ad-box').html('<h1>' + data.result + '</h1>');
+                } else if (data.code == '200') {
+                    startAutoSerf(data.result);
+                }
+            });
+        };
+
+        function startAutoSerf(data)
+        {
+            var count   = 0;
+            var time    = 0;
+            var seconds = 0;
+            var length = data.length - 1;
+            data.forEach(function(ad) {
+                seconds += ad.category.seconds;
+                if (count == 0) {
+                    $('#info-box').css('display', 'block');
+                    if (count == length) {
+                        setTimeout(viewAd(ad, 1, seconds), 1);
+                    } else {
+                        setTimeout(viewAd(ad, 0, seconds), 1);
+                    }
+                } else {
+                    if (count == length) {
+                        setTimeout(viewAd(ad, 1, seconds), 1000 * time);
+                    } else {
+                        setTimeout(viewAd(ad, 0, seconds), 1000 * time);
+                    }
+
+                }
+                count += 1;
+                time += ad.category.time;
+            });
+        };
+
+        function viewAd(ad, end, seconds)
+        {
+            return function() {
+                $('#ad-title').html(ad.title);
+                $('#ad-box').html('<div style="padding: 2px; border: 1px solid #808080; height: 777px"><iframe src="' + ad.targetUrl + '" width="950" height="768" align="left">Ваш браузер не поддерживает плавающие фреймы!</iframe></div>');
+                var j = 0;
+                for (var i = ad.category.time - 1; i >= 0; i--) {
+                    setTimeout(secondCount(i, ad, end, seconds), 1000 * (j + 1));
+                    j++;
+                }
+            };
+        }
+
+        function secondCount(i, ad, end, seconds)
+        {
+            return function() {
+
+                $('#ad-count').html('&nbsp; (' + i + ')');
+                if (i == 0) {
+                    $.ajax({
+                        type: "POST",
+                        url: "{{ path('office_earn_money_auto_serf_ads_complete') }}",
+                        data: {'id': ad.id}
+                    })
+                    .done(function(data) {
+                        if (seconds < 60) {
+                            $('#ad-time').html('Minutes earned this session: 0:' + seconds);
+                        } else {
+                            $('#ad-time').html('Minutes earned this session: ' + Math.floor(seconds / 60) + ':' + seconds % 60);
+                        }
+
+//                        if ($.isArray(data)) {
+//                            console.log(data);
+//                        }
+                    });
+                    if (end == 1) {
+                        $('#ad-box').html('<h1>No Result!</h1>');
+                    }
+                }
+            };
+        }
+    </script>
+{% endblock js %}

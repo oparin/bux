@@ -1,0 +1,134 @@
+@charset "utf-8";
+.formContainer{
+    width: 100%;
+    background: #fff;
+    float: left;
+    display: none;
+}
+#noCommentsConteiner{
+    border: 1px solid #d3d3d3;
+    box-sizing: border-box;
+    border-top: 0;
+    padding-bottom: 15px;
+}
+.loginFormContainer, .guestFormContainer{
+    margin: 0 auto;
+    width:380px;
+    font-size: .85em;
+}
+#loginForm, #guestForm{
+    list-style-type: none;
+    margin: 0 0 15px 0;
+    padding: 10px 0 0 0;
+    text-align: left;
+}
+#loginForm li .btnLogin,
+#guestForm li .btnPost{
+    float: right;
+    font-size: .9em;
+    margin: 10px 0;
+}
+#guestForm li .btnPost{
+    margin-bottom: 30px;
+}
+#loginForm li.labelTxt,
+#loginForm label.error,
+#guestForm li.labelTxt,
+#guestForm label.error{
+    font-size: 12px;
+}
+
+.instantSignUp{
+    width: 525px;
+    float: left;
+}
+.instantSignUp .paymentForm {
+    float: left;
+    padding: 0;
+    margin: 20px 0;
+    list-style-type: none;
+}
+.instantSignUp .paymentForm li{
+    float: left;
+    margin-left: 20px;
+    width: 232px;
+}
+.instantSignUp .paymentForm li.maxWidth{
+    width: 485px;
+}
+.instantSignUp .paymentForm li .labelTxt{
+    font-size: 12px;
+    text-align: left;
+    display: block;
+}
+.instantSignUp .btnContainer{
+    background: none;
+    border: 0;
+    float: left;
+    padding: 0;
+}
+.instantSignUp .inputContainer li{
+    float: none;
+    margin: 0;
+    text-align: left;
+}
+.instantSignUp .dd .ddTitle .ddTitleText{
+    text-align: left;
+}
+.instantSignUp .dd .ddTitle .ddlabel{
+    display: block;
+    height: 20px;
+    overflow: hidden;
+}
+.instantSignUp label.error{
+    float: left;
+    font-size: 12px;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+.pointer{
+    cursor: pointer;
+}
+.instantSignUp .agreeBoxWrap{
+    float: left;
+    margin-top: 15px;
+}
+.instantSignUp .agreeBoxWrap .agreeBox{
+    float: left;
+    width: 384px;
+}
+.instantSignUp .agreeBoxWrap .cboxAgree{
+    font-size: 12px;
+}
+.instantSignUp .submitContainer{
+    float: right;
+    margin-top: 8px;
+}
+.instantSignUp label.prettyCheckbox span.holderWrap{
+    margin-top: 3px;
+}
+#loginForm h2.welcomeTxt,
+#guestForm h2.welcomeTxt{
+    color: #4D4D4D;
+}
+#guestForm .control-group.error{
+    position: relative;
+}
+#guestForm .control-group.error ul{
+    padding: 0;
+    margin-top:20px;
+    list-style-type: none;
+    top: 95px;
+    position: absolute;
+    display: block;
+    width: 200px;
+}
+#guestForm .control-group.error .control-label{
+    color: #4D4D4D;
+}
+#guestForm a:link, a:visited,
+#loginForm a:link, a:visited,
+.instantSignUp a:link, a:visited{
+    color: #3399FF;
+}

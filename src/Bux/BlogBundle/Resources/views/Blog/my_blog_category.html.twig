@@ -1,0 +1,72 @@
+{% extends '::office_base.html.twig' %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {% include 'BuxBlogBundle:Blog:blog_menu.html.twig' %}
+
+        <!-- DASHBOARD - RIGHT COLUMN -->
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="notification note-success">
+                <a href="#" class="close" title="Close notification">close</a>
+                <p><strong>{{ flashMessage }}</strong></p>
+            </div>
+        {% endfor %}
+        <div class="col3-4 lastcol">
+            <!-- CONTENT BOX - DATATABLE -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.blogs.menu.post_categories'|trans }}</h2>
+                    </div>
+
+                    <div class="box-wrap clear">
+
+                        <!-- TABLE -->
+                        <div id="table">
+                            <form method="post" action="">
+                                <table class="style1">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 20px">#</th>
+                                        <th style="width: 500px">{{ 'frontend.blogs.table.name'|trans }}</th>
+                                        <th style="width: 80px; margin: 0 auto">{{ 'frontend.blogs.action.action'|trans }}</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    {% set confirm = 'frontend.blogs.action.you_want_to_delete'|trans %}
+                                    {% for category in categories %}
+                                        <tr>
+                                            <td>{{ loop.index }}</td>
+                                            <td>{{ category.name }}</td>
+                                            <td>
+                                                <a href="{{ path('user_posts_category', {'username': app.user.username, 'id': category.id}) }}" target="_blank">
+                                                    <img src="{{ asset('lib/terminator/images/print_icon.png') }}" class="icon16 fl-space2" alt="" title="{{ 'frontend.blogs.action.show'|trans }}" />
+                                                </a>
+                                                <a href="{{ path('office_edit_post_category', {'id': category.id}) }}">
+                                                    <img src="{{ asset('lib/terminator/images/ico_edit_16.png') }}" class="icon16 fl-space2" alt="" title="{{ 'frontend.blogs.action.edit'|trans }}" />
+                                                </a>
+                                                <a href="{{ path('office_delete_blog_category', {'id': category.id}) }}" onclick="if (!confirm('{{ confirm }}')) return false">
+                                                    <img src="{{ asset('lib/terminator/images/ico_delete_16.png') }}" class="icon16 fl-space2" alt="" title="{{ 'frontend.blogs.action.delete'|trans }}" />
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+                                <div class="tab-footer clear">
+                                    {{ knp_pagination_render(categories) }}
+                                </div>
+
+                            </form>
+                        </div><!-- /#table -->
+
+                    </div><!-- end of box-wrap -->
+                </div> <!-- end of box-body -->
+            </div> <!-- end of content-box -->
+        </div>
+
+
+    </div>
+{% endblock content %}

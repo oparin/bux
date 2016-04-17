@@ -1,0 +1,176 @@
+@charset "utf-8";
+/*
+	CSS Document
+	Project : ENV2
+	File 	: Forms.css
+	Date 	: 20/02/13 (dd-mm-yy)
+	Author  : shiraz (shiraz@digitalbrandgroup.com)
+*/
+
+/* ==========================================================================
+ Form Elements
+========================================================================== */
+
+/*=== Text Input CSS ===*/
+
+.inputContainer{
+    position: relative;
+}
+.inputContainer .corners{
+    background: url(../images/common/txtInputCorners.png) no-repeat;
+    height: 31px;
+    position: absolute;
+    top: 0;
+    width: 5px;
+}
+.inputContainer .cornerRgt{
+    background-position: -7px 0;
+    right: 0;
+}
+.inputContainer .txtInput{
+    background: url(../images/common/txtInput.png) repeat-x;
+    border: none;
+    color: #4a4a4a;
+    font:normal normal normal .9em/normal "droid_sansregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 31px;
+    margin: 0 5px 0 0;
+    overflow: hidden;
+    padding: 0 0 0 5px;
+    position: relative;
+    text-indent: 1px;
+}
+
+.loginInput
+{
+    height:auto;
+    width: 140px;
+    background: #ffffff;
+    border: #cccccc solid 1px;
+    font-family: 'robotolight', arial, helvetica, sans-serif;
+    font-size: 15px;
+    color: #4a4a4a;
+    padding: 5px 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.instantLoginInput
+{
+    height:auto;
+    width: 370px;
+    background: #ffffff;
+    border: #cccccc solid 1px;
+    font-family: 'robotolight', arial, helvetica, sans-serif;
+    font-size: 15px;
+    color: #4a4a4a;
+    padding: 5px 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+
+.loginContainer
+{
+    margin:auto;
+}
+
+.loginContainer .inputContainer .txtInput {
+    background: none;
+    border: #cccccc solid 1px;
+    color: #4a4a4a;
+    font: normal normal normal .9em/normal "droid_sansregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: auto;
+    margin: 0 0 0 0;
+    overflow: visible;
+    padding: 5px 5px;
+    position: relative;
+    text-indent: 1px;
+}
+
+.loginContainer .inputContainer span {
+    display: none;
+}
+
+
+
+
+
+.lt-ie9 .inputContainer .txtInput{
+    line-height: 31px;
+}
+.lt-ie8 .inputContainer .txtInput{
+    top: -1px;
+}
+.inputContainer .ui-datepicker-trigger{
+    padding: 5px;
+    position: absolute;
+    right:4px;
+    top: 4px;
+}
+.inputContainer .ui-datepicker-trigger:hover{
+    background: #4d4d4d;
+    cursor: pointer;
+}
+.inputContainer .colorVal{
+    background: #f7f6f6;
+    border:1px solid #c9c9c9;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    -o-border-radius:5px;
+    border-radius:5px;
+    display:block;
+    height:15px;
+    left:7px;
+    position:absolute;
+    text-indent:-999em;
+    top:7px;
+    width:15px;
+}
+.inputContainer .txtInput.colorPicker{
+    padding-left: 25px;
+}
+.inputContainer .smallTxtArea {
+    background: url(../images/common/smallTextAreaInput.png) repeat-x;
+    border: none;
+    color: #4a4a4a;
+    font: normal normal normal .9em/normal "droid_sansregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 62px;
+    margin: 0 5px 0 0;
+    overflow: hidden;
+    padding: 10px 0 0 5px;
+    position: relative;
+    text-indent: 1px;
+    resize: none;
+}
+.inputContainer .smallTxtAreaCorners {
+    background: url(../images/common/smallTextAreaRightCorner.png) no-repeat 0 0;
+    height: 72px;
+    position: absolute;
+    top: 0;
+    width: 3px;
+    right: 2px;
+}
+.inputContainer .bigTxtArea {
+    background: url(../images/common/bigTextAreaInput.png) repeat-x;
+    border: none;
+    color: #4a4a4a;
+    font: normal normal normal .9em/normal "droid_sansregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 162px;
+    margin: 0 5px 0 0;
+    overflow: hidden;
+    padding: 10px 0 0 5px;
+    position: relative;
+    text-indent: 1px;
+    resize: none;
+}
+.inputContainer .bigTxtAreaCorners {
+    background: url(../images/common/bigTextAreaRightCorner.png) no-repeat 0 0;
+    height: 172px;
+    position: absolute;
+    top: 0;
+    width: 3px;
+    right: 2px;
+}

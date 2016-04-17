@@ -1,0 +1,29 @@
+@charset "utf-8";
+/*
+	CSS Document
+	Project : ENV2
+	File 	: typography.css
+	Date 	: 20/02/13 (dd-mm-yy)
+	Author  : shiraz (shiraz@digitalbrandgroup.com)
+*/
+
+/*=============================================================================
+	The padding css classes
+=============================================================================*/
+
+.padding10px{ padding: 10px; }
+
+/*=== Padding Top css classes ===*/
+.paddingTop03{ padding-top: 3px; }
+.paddingTop07{ padding-top: 7px; }
+.paddingTop08{ padding-top: 8px; }
+.paddingTop17{ padding-top: 17px; }
+
+/*=== Padding Right css classes ===*/
+
+/*=== Padding Bottom css classes ===*/
+.paddingBtm24 { padding-bottom:24px !important }
+/*=== Padding Left css classes ===*/
+
+/*=== Padding In Em css classes ===*/
+.paddingOneEm{ padding:1em }

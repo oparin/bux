@@ -1,0 +1,89 @@
+<!-- DASHBOARD - LEFT COLUMN -->
+<div class="col1-4">
+
+    <!-- CONTENT BOX - EVENTS-->
+    <div class="content-box bt-space10 events">
+        <div class="box-body">
+            <div class="box-header box-slide-head">
+                <span class="slide-but">open/close</span>
+                <h2>{{ 'frontend.blogs.menu.blogs'|trans }}</h2>
+            </div>
+            <div class="box-wrap clear  box-slide-body">
+                <!-- TAB - EVENT LIST -->
+                <div id="event-list" class="event-list">
+                    <ul class="clear">
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-normal" title="Low priority">Low</span>
+                                <a href="{{ path('user_blog', {'username': app.user.username}) }}" class="event-link" title="Read more" target="_blank">{{ 'frontend.blogs.menu.my_blog'|trans }}</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-normal" title="Low priority">Low</span>
+                                <a href="{{ path('office_my_blogs') }}" class="event-link" title="Read more">{{ 'frontend.blogs.menu.all_blogs'|trans }}</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-low" title="Low priority">Low</span>
+                                <a href="{{ path('office_add_blog') }}" class="event-link" title="Read more">{{ 'frontend.blogs.menu.add_blog'|trans }}</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- end of box-wrap -->
+        </div> <!-- end of box-body -->
+    </div> <!-- end of content-box -->
+
+    <!-- CONTENT BOX - CLOSED -->
+    <div class="content-box bt-space10">
+        <div class="box-body">
+            <div class="box-header box-slide-head">
+                <span class="slide-but">open/close</span>
+                <h2>{{ 'frontend.blogs.menu.blog_categories'|trans }}</h2>
+            </div>
+            <div class="box-wrap clear  box-slide-body">
+                <div id="event-list" class="event-list">
+                    <ul class="clear">
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-normal" title="Low priority"></span>
+                                <a href="{{ path('office_my_categories') }}" class="event-link" title="Read more">{{ 'frontend.blogs.menu.all_category'|trans }}</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-low" title="Low priority"></span>
+                                <a href="{{ path('office_add_post_category') }}" class="event-link" title="Read more">{{ 'frontend.blogs.menu.add_category'|trans }}</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- end of box-body -->
+    </div> <!-- end of content-box -->
+
+    <!-- CONTENT BOX - CLOSED -->
+    <div class="content-box bt-space10">
+        <div class="box-body">
+            <div class="box-header box-slide-head">
+                <span class="slide-but">open/close</span>
+                <h2>{{ 'frontend.blogs.menu.settings'|trans }}</h2>
+            </div>
+            <div class="box-wrap clear  box-slide-body">
+                <div id="event-list" class="event-list">
+                    <ul class="clear">
+                        <li>
+                            <span class="event-list-title clear">
+                                <span class="priority-normal" title="Low priority"></span>
+                                <a href="{{ path('office_blog_settings') }}" class="event-link" title="Read more">{{ 'frontend.blogs.menu.blog_settings'|trans }}</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- end of box-body -->
+    </div> <!-- end of content-box -->
+
+</div>

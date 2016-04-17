@@ -1,0 +1,26 @@
+{% extends '::office_base.html.twig' %}
+
+{% block iconbar %}
+    {#{% include 'BuxAccountBundle::iconbar.html.twig' %}#}
+{% endblock iconbar %}
+
+{% block content %}
+    <div class="columns clear bt-space20">
+        {% include 'BuxAccountBundle::blog_menu.html.twig' %}
+        <div class="col3-4 lastcol">
+            <!-- CONTENT BOX -->
+            <div class="content-box">
+                <div class="box-body">
+                    <div class="box-header clear">
+                        <h2>{{ 'frontend.advertise.form.thank_you'|trans }}</h2>
+                    </div>
+
+                    <div class="box-wrap clear">
+                        <p>{{ 'frontend.advertise.form.thank_you_purchase'|trans }}</p>
+                        <p style="color: #008000">{{ 'frontend.advertise.form.account_was_updated'|trans }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

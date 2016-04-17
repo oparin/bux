@@ -1,0 +1,7 @@
+services:
+    blog_banner_extension:
+        class: Bux\BlogBundle\Twig\BlogBannerExtension
+        arguments: ["@doctrine.orm.entity_manager"]
+        public: false
+        tags:
+            - { name: twig.extension }

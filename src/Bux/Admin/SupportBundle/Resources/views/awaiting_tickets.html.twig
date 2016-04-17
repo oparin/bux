@@ -1,0 +1,37 @@
+{% extends ':admin:admin_base.html.twig' %}
+
+{% block content_title %}
+    <i class="fa fa-envelope-o"></i>&nbsp;Support - Awaiting Reply Tickets
+{% endblock content_title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
+                <header>
+                    <div class="icons">
+                        <i class="fa fa-table"></i>
+                    </div>
+                    <h5>Awaiting Reply Tickets</h5>
+                </header>
+                <div class="body" id="collapse4">
+                    {{ grid_search(grid, ':admin:admin_grid.html.twig') }}
+                    {{ grid(grid, ':admin:admin_grid.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(function() {
+                $( "#accordion" ).accordion({
+                    collapsible: true,
+                    active: false
+                });
+            });
+        });
+    </script>
+{% endblock js %}
